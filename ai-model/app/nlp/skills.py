@@ -46,3 +46,4 @@ if __name__ == "__main__":
 
     print("----- SKILLS FOUND -----")
     print(skills_found)
+    
