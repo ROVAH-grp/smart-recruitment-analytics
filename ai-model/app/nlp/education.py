@@ -10,6 +10,17 @@ EDUCATION_KEYWORDS = [
 # Words that suggest this is an objective/summary sentence, not an education entry
 SUMMARY_INDICATORS = ["seeking", "opportunity", "gaining", "practical industry"]
 
+# Maps degree abbreviations/variants to a canonical category,
+# so "B.Tech" and "Bachelor" are recognized as equivalent.
+EDUCATION_SYNONYMS = {
+    "b.tech": "bachelor", "btech": "bachelor", "b.e.": "bachelor", "be": "bachelor",
+    "b.sc": "bachelor", "bsc": "bachelor", "bachelor": "bachelor",
+    "m.tech": "master", "mtech": "master", "m.e.": "bachelor", "me": "master",
+    "m.sc": "master", "msc": "master", "master": "master",
+    "diploma": "diploma", "mba": "master", "mca": "bachelor", "bca": "bachelor",
+    "phd": "doctorate"
+}
+
 
 def extract_education(resume_text: str) -> list:
     """
@@ -37,6 +48,26 @@ def extract_education(resume_text: str) -> list:
                 break
 
     return education_entries
+
+
+def education_matches_requirement(candidate_education: list, required_education: list) -> bool:
+    """
+    Checks whether any candidate education entry matches a required
+    education category, using EDUCATION_SYNONYMS to normalize degree
+    abbreviations (e.g. "B.Tech" counts as "Bachelor").
+    """
+    combined_text = " ".join(candidate_education).lower()
+
+    candidate_categories = set()
+    for keyword, category in EDUCATION_SYNONYMS.items():
+        if keyword in combined_text:
+            candidate_categories.add(category)
+
+    required_categories = {
+        EDUCATION_SYNONYMS.get(req.lower(), req.lower()) for req in required_education
+    }
+
+    return bool(candidate_categories & required_categories)
 
 
 if __name__ == "__main__":
