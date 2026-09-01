@@ -86,7 +86,7 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
       width: "var(--sidebar-width)",
       minWidth: "var(--sidebar-width)",
       height: "100vh",
-      background: "var(--navy)",
+      background: "var(--sidebar-bg)",
       display: "flex",
       flexDirection: "column",
       position: "fixed",
@@ -95,16 +95,16 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
       overflow: "hidden",
     }}>
       {/* Subtle top gradient accent */}
-      <div className="decor-line" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, var(--accent-dark), transparent)" }} />
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(79,110,247,0.6), transparent)" }} />
 
       {/* Logo */}
-      <div style={{ padding: "20px 18px 16px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <div style={{ padding: "20px 18px 16px", borderBottom: "1px solid var(--sidebar-border)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{
             width: 34, height: 34, borderRadius: 9,
-            background: "linear-gradient(135deg, var(--accent-grad-1) 0%, var(--accent-grad-2) 100%)",
+            background: "linear-gradient(135deg, #4F6EF7 0%, #818CF8 100%)",
             display: "flex", alignItems: "center", justifyContent: "center",
-            flexShrink: 0, boxShadow: "0 4px 12px var(--accent-shadow)",
+            flexShrink: 0, boxShadow: "0 4px 12px rgba(79,110,247,0.4)",
           }}>
             <svg viewBox="0 0 20 20" fill="none" width="16" height="16">
               <path d="M10 2L2.5 6.5l7.5 4 7.5-4L10 2z" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
@@ -113,8 +113,8 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
             </svg>
           </div>
           <div>
-            <div style={{ color: "#F9FAFB", fontWeight: 700, fontSize: 15.5, letterSpacing: "-0.3px", lineHeight: 1.1, fontFamily: "var(--font-display)" }}>RecruitFlow</div>
-            <div style={{ color: "rgba(156,163,175,0.8)", fontSize: 10, fontWeight: 500, letterSpacing: "0.8px", textTransform: "uppercase", marginTop: 1 }}>Analytics</div>
+            <div style={{ color: "#F9FAFB", fontWeight: 700, fontSize: 15, letterSpacing: "-0.3px", lineHeight: 1.1 }}>RecruitFlow</div>
+            <div style={{ color: "var(--sidebar-text)", fontSize: 10, fontWeight: 500, letterSpacing: "0.8px", textTransform: "uppercase", marginTop: 1 }}>Analytics</div>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
       <nav style={{ flex: 1, padding: "10px 10px 10px", overflowY: "auto", display: "flex", flexDirection: "column", gap: 0 }}>
         {sections.map((section, si) => (
           <div key={si} style={{ marginBottom: 4 }}>
-            <div style={{ padding: "10px 10px 5px", fontSize: 9.5, fontWeight: 700, letterSpacing: "1px", color: "rgba(156,163,175,0.5)", textTransform: "uppercase" }}>
+            <div style={{ padding: "10px 10px 5px", fontSize: 9.5, fontWeight: 700, letterSpacing: "1px", color: "var(--sidebar-text)", textTransform: "uppercase" }}>
               {section.label}
             </div>
             {section.items.map(item => {
@@ -140,15 +140,15 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
                     cursor: "pointer",
                     width: "100%",
                     textAlign: "left",
-                    background: isActive ? "var(--accent-light)" : "transparent",
-                    color: isActive ? "var(--accent)" : "rgba(156,163,175,0.75)",
+                    background: isActive ? "var(--sidebar-item-active)" : "transparent",
+                    color: isActive ? "var(--sidebar-text-active)" : "var(--sidebar-text)",
                     fontFamily: "inherit",
                     fontSize: 13,
                     fontWeight: isActive ? 600 : 400,
                     marginBottom: 1,
                     position: "relative",
                     transition: "all 0.15s ease",
-                    boxShadow: isActive ? "inset 0 0 0 1px var(--accent-glow)" : "none",
+                    boxShadow: isActive ? "inset 0 0 0 1px rgba(79,110,247,0.2)" : "none",
                   }}
                   onMouseEnter={e => {
                     if (!isActive) {
@@ -159,7 +159,7 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
                   onMouseLeave={e => {
                     if (!isActive) {
                       (e.currentTarget as HTMLButtonElement).style.background = "transparent";
-                      (e.currentTarget as HTMLButtonElement).style.color = "rgba(156,163,175,0.75)";
+                      (e.currentTarget as HTMLButtonElement).style.color = "var(--sidebar-text)";
                     }
                   }}
                 >
@@ -167,7 +167,7 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
                     <span style={{
                       position: "absolute", left: 0, top: "50%", transform: "translateY(-50%)",
                       width: 3, height: 16, borderRadius: "0 2px 2px 0",
-                      background: "var(--accent)",
+                      background: "var(--sidebar-indicator)",
                     }} />
                   )}
                   <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 18, height: 18, flexShrink: 0 }}>
@@ -177,8 +177,8 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
                   {item.badge !== undefined && (
                     <span style={{
                       fontSize: 10.5, fontWeight: 700,
-                      background: isActive ? "var(--accent-glow)" : "rgba(255,255,255,0.08)",
-                      color: isActive ? "var(--accent)" : "rgba(156,163,175,0.6)",
+                      background: isActive ? "rgba(79,110,247,0.35)" : "rgba(255,255,255,0.08)",
+                      color: isActive ? "#A5B4FC" : "var(--sidebar-text)",
                       padding: "1px 6px", borderRadius: 99,
                       letterSpacing: "0",
                       lineHeight: "16px",
@@ -196,20 +196,20 @@ export default function Sidebar({ active, onNavigate }: SidebarProps) {
         <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
           <div style={{
             width: 34, height: 34, borderRadius: 9,
-            background: "linear-gradient(135deg, var(--accent-grad-1) 0%, var(--accent-grad-2) 100%)",
+            background: "linear-gradient(135deg, #4F6EF7 0%, #818CF8 100%)",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: 13.5, fontWeight: 700, color: "#fff", flexShrink: 0,
           }}>S</div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ color: "rgba(249,250,251,0.9)", fontSize: 13, fontWeight: 600, letterSpacing: "-0.1px" }}>Sarah Mitchell</div>
-            <div style={{ color: "rgba(156,163,175,0.65)", fontSize: 11, marginTop: 1 }}>HR Manager</div>
+            <div style={{ color: "var(--sidebar-text)", fontSize: 11, marginTop: 1 }}>HR Manager</div>
           </div>
           <button style={{
             width: 28, height: 28, borderRadius: 7,
             background: "rgba(255,255,255,0.06)",
             border: "1px solid rgba(255,255,255,0.08)",
             display: "flex", alignItems: "center", justifyContent: "center",
-            cursor: "pointer", color: "rgba(156,163,175,0.5)",
+            cursor: "pointer", color: "var(--sidebar-text)",
           }}>
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" width="13" height="13">
               <path d="M6 14H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3"/><polyline points="11,11 14,8 11,5"/><line x1="14" y1="8" x2="6" y2="8"/>

@@ -13,7 +13,7 @@ interface KPICardProps {
   sparkColor?: string;
 }
 
-export default function KPICard({ label, value, icon, iconBg, iconColor, trend, subtitle, sparkData, sparkColor = "var(--accent)" }: KPICardProps) {
+export default function KPICard({ label, value, icon, iconBg, iconColor, trend, subtitle, sparkData, sparkColor = "#4F6EF7" }: KPICardProps) {
   return (
     <div
       className="card-hover"
@@ -60,7 +60,7 @@ export default function KPICard({ label, value, icon, iconBg, iconColor, trend, 
 
       {/* Sparkline */}
       {sparkData && (
-        <div className="kpi-spark" style={{ marginTop: 10, opacity: 0.7 }}>
+        <div style={{ marginTop: 10, opacity: 0.7 }}>
           <Sparklines data={sparkData} width={150} height={28} margin={2}>
             <SparklinesLine color={sparkColor} style={{ fill: "none", strokeWidth: 1.8 }} />
           </Sparklines>

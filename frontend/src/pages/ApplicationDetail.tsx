@@ -54,14 +54,14 @@ export default function ApplicationDetail({ app, onBack }: { app: App; onBack: (
         }}>{app.candidate[0]}</div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 800, color: "var(--text)", margin: 0, letterSpacing: "-0.5px" }}>{app.candidate}</h1>
+            <h1 style={{ fontSize: 20, fontWeight: 800, color: "var(--text)", margin: 0, letterSpacing: "-0.5px" }}>{app.candidate}</h1>
             <Badge status={app.status} size="md" dot />
           </div>
           <p style={{ fontSize: 13, color: "var(--text-secondary)", margin: "4px 0 0", letterSpacing: "-0.1px" }}>{app.job} · {app.dept}</p>
         </div>
         <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           <button style={{ padding: "7px 14px", borderRadius: 8, border: "1px solid var(--border)", background: "transparent", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", cursor: "pointer", fontFamily: "inherit" }}>Edit</button>
-          <button style={{ padding: "7px 14px", borderRadius: 8, border: "none", background: "var(--accent)", color: "#fff", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", boxShadow: "0 2px 8px var(--accent-shadow)" }}>Send Offer</button>
+          <button style={{ padding: "7px 14px", borderRadius: 8, border: "none", background: "var(--accent)", color: "#fff", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", boxShadow: "0 2px 8px rgba(79,110,247,0.3)" }}>Send Offer</button>
         </div>
       </div>
 
@@ -129,7 +129,7 @@ export default function ApplicationDetail({ app, onBack }: { app: App; onBack: (
                 <circle cx="40" cy="40" r="30" fill="none" stroke="var(--border-light)" strokeWidth="8"/>
                 <circle
                   cx="40" cy="40" r="30" fill="none"
-                  stroke={app.matchScore >= 85 ? "var(--green)" : app.matchScore >= 70 ? "var(--amber)" : "var(--red)"}
+                  stroke={app.matchScore >= 85 ? "#059669" : app.matchScore >= 70 ? "#D97706" : "#DC2626"}
                   strokeWidth="8"
                   strokeDasharray={`${app.matchScore * 1.885} 188.5`}
                   strokeLinecap="round"
@@ -172,8 +172,8 @@ export default function ApplicationDetail({ app, onBack }: { app: App; onBack: (
               </div>
               <div style={{ marginBottom: 14 }}>
                 <Sparklines data={scoreHistory} width={180} height={40}>
-                  <SparklinesLine color="var(--accent)" style={{ fill: "none", strokeWidth: 2 }} />
-                  <SparklinesReferenceLine type="avg" style={{ stroke: "var(--border-strong)", strokeDasharray: "3 2", strokeWidth: 1 }} />
+                  <SparklinesLine color="#4F6EF7" style={{ fill: "none", strokeWidth: 2 }} />
+                  <SparklinesReferenceLine type="avg" style={{ stroke: "#E5E7EB", strokeDasharray: "3 2", strokeWidth: 1 }} />
                 </Sparklines>
                 <div style={{ fontSize: 10.5, color: "var(--text-tertiary)", marginTop: 4 }}>Score progression across rounds</div>
               </div>

@@ -23,7 +23,7 @@ export default function Settings() {
   return (
     <div style={{ padding: "28px 28px 40px" }}>
       <div style={{ marginBottom: 24 }}>
-        <h1 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 700, color: "var(--text)", margin: "0 0 4px", letterSpacing: "-0.4px" }}>Settings</h1>
+        <h1 style={{ fontSize: 20, fontWeight: 700, color: "var(--text)", margin: "0 0 4px", letterSpacing: "-0.4px" }}>Settings</h1>
         <p style={{ fontSize: 13, color: "var(--text-secondary)", margin: 0 }}>Manage your account and system preferences.</p>
       </div>
 
@@ -69,14 +69,14 @@ export default function Settings() {
         </div>
 
         {/* Danger Zone */}
-        <div style={{ background: "var(--surface)", border: "1px solid var(--red-border)", borderRadius: "var(--radius)", boxShadow: "var(--shadow-sm)", padding: "20px 22px" }}>
-          <h2 style={{ fontSize: 14, fontWeight: 700, color: "var(--red)", margin: "0 0 14px" }}>Danger Zone</h2>
+        <div style={{ background: "var(--surface)", border: "1px solid #FEE2E2", borderRadius: "var(--radius)", boxShadow: "var(--shadow-sm)", padding: "20px 22px" }}>
+          <h2 style={{ fontSize: 14, fontWeight: 700, color: "#DC2626", margin: "0 0 14px" }}>Danger Zone</h2>
           <p style={{ fontSize: 13, color: "var(--text-secondary)", marginBottom: 16 }}>These actions are irreversible. Please proceed with caution.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            <button style={{ padding: "9px 18px", background: "transparent", color: "var(--red)", border: "1px solid var(--red-border)", borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", textAlign: "left" }}>
+            <button style={{ padding: "9px 18px", background: "transparent", color: "#DC2626", border: "1px solid #FCA5A5", borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", textAlign: "left" }}>
               Export All Data
             </button>
-            <button style={{ padding: "9px 18px", background: "var(--red-light)", color: "var(--red)", border: "1px solid var(--red-border)", borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", textAlign: "left" }}>
+            <button style={{ padding: "9px 18px", background: "#FEF2F2", color: "#DC2626", border: "1px solid #FCA5A5", borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", textAlign: "left" }}>
               Delete Account
             </button>
           </div>

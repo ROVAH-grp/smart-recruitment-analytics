@@ -23,10 +23,11 @@ interface GenericTableProps<T extends Record<string, unknown>> {
   searchKeys?: string[];
   loading?: boolean;
   onAddClick?: () => void;
+  onExport?: () => void;
 }
 
 export default function GenericTable<T extends Record<string, unknown>>({
-  title, subtitle, data, columns, addLabel, searchKeys = [], loading = false, onAddClick,
+  title, subtitle, data, columns, addLabel, searchKeys = [], loading = false, onAddClick, onExport,
 }: GenericTableProps<T>) {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -57,12 +58,21 @@ export default function GenericTable<T extends Record<string, unknown>>({
       {/* Header */}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 20 }}>
         <div>
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 800, color: "var(--text)", margin: "0 0 3px", letterSpacing: "-0.5px" }}>{title}</h1>
+          <h1 style={{ fontSize: 20, fontWeight: 800, color: "var(--text)", margin: "0 0 3px", letterSpacing: "-0.5px" }}>{title}</h1>
           {subtitle && <p style={{ fontSize: 12.5, color: "var(--text-secondary)", margin: 0 }}>{subtitle}</p>}
         </div>
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
           {searchKeys.length > 0 && (
             <SearchBar value={search} onChange={v => { setSearch(v); setPage(1); }} placeholder={`Search ${title.toLowerCase()}…`} />
+          )}
+          {onExport && (
+            <button
+              onClick={onExport}
+              style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 14px", borderRadius: 9, border: "1px solid var(--border)", background: "var(--surface)", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", cursor: "pointer", fontFamily: "inherit" }}
+            >
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="12" height="12"><path d="M7 1v8M4 6l3 3 3-3"/><path d="M1 10v2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-2"/></svg>
+              Export
+            </button>
           )}
           {addLabel && (
             <button
@@ -72,7 +82,7 @@ export default function GenericTable<T extends Record<string, unknown>>({
                 background: "var(--accent)", color: "#fff", border: "none",
                 borderRadius: 9, padding: "9px 16px", fontSize: 13.5, fontWeight: 600,
                 cursor: "pointer", fontFamily: "inherit",
-                boxShadow: "0 2px 10px var(--accent-shadow)", transition: "background 0.15s",
+                boxShadow: "0 2px 10px rgba(79,110,247,0.32)", transition: "background 0.15s",
               }}
               onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.background = "var(--accent-dark)"}
               onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.background = "var(--accent)"}

@@ -43,7 +43,7 @@ export function ErrorState({ onRetry }: { onRetry?: () => void }) {
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "60px 32px", textAlign: "center" }}>
       <div style={{
         width: 56, height: 56, borderRadius: 14,
-        background: "var(--red-light)", border: "1px solid var(--red-border)",
+        background: "var(--red-light)", border: "1px solid #FECACA",
         display: "flex", alignItems: "center", justifyContent: "center",
         marginBottom: 16, color: "var(--red)",
       }}>

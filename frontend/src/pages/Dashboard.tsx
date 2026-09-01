@@ -1,8 +1,10 @@
 import { useState } from "react";
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, Legend, PieChart, Pie, Cell, Area, AreaChart,
 } from "recharts";
+import { exportToCsv } from "../utils/exportCsv";
+import { applications } from "../data/mockData";
 import KPICard from "../components/KPICard";
 
 /* ── data ── */
@@ -40,81 +42,81 @@ const sourceData = [
   { name: "Other", value: 35 },
 ];
 
-const COLORS = ["var(--accent)", "var(--cyan-mid)", "var(--green-mid)", "var(--amber-mid)", "var(--purple-mid)", "var(--text-tertiary)"];
+const COLORS = ["#4F6EF7", "#06B6D4", "#10B981", "#F59E0B", "#8B5CF6", "#94A3B8"];
 
 const funnelStages = [
-  { name: "Applied",     value: 1000, color: "var(--accent)" },
-  { name: "Screened",    value: 620,  color: "var(--accent-dark)" },
-  { name: "Shortlisted", value: 390,  color: "var(--cyan-mid)" },
-  { name: "Interviewed", value: 240,  color: "var(--green-mid)" },
-  { name: "Selected",    value: 160,  color: "var(--amber-mid)" },
-  { name: "Offered",     value: 130,  color: "var(--purple-mid)" },
-  { name: "Joined",      value: 102,  color: "var(--rose)" },
+  { name: "Applied",     value: 1000, color: "#4F6EF7" },
+  { name: "Screened",    value: 620,  color: "#818CF8" },
+  { name: "Shortlisted", value: 390,  color: "#06B6D4" },
+  { name: "Interviewed", value: 240,  color: "#10B981" },
+  { name: "Selected",    value: 160,  color: "#F59E0B" },
+  { name: "Offered",     value: 130,  color: "#8B5CF6" },
+  { name: "Joined",      value: 102,  color: "#E11D48" },
 ];
 
 const kpis = [
   {
     label: "Total Applicants", value: "1,000",
-    iconBg: "var(--accent-light)", iconColor: "var(--accent)",
+    iconBg: "#EEF1FE", iconColor: "#4F6EF7",
     trend: { value: "+12%", up: true },
     sparkData: [54,62,89,75,110,95,130,118,142,105,90,74],
-    sparkColor: "var(--accent)",
+    sparkColor: "#4F6EF7",
     icon: <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M16 17v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>,
   },
   {
     label: "Total Joined", value: "102",
-    iconBg: "var(--cyan-light)", iconColor: "var(--cyan)",
+    iconBg: "#ECFEFF", iconColor: "#0891B2",
     trend: { value: "+8%", up: true },
     sparkData: [6,7,9,8,12,10,14,13,16,11,9,8],
-    sparkColor: "var(--cyan-mid)",
+    sparkColor: "#06B6D4",
     icon: <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M16 9.7V10a8 8 0 1 1-4.73-7.33"/><polyline points="18,3 10,11 7,8"/></svg>,
   },
   {
     label: "Avg. Time to Hire", value: "18 days",
-    iconBg: "var(--amber-light)", iconColor: "var(--amber)",
+    iconBg: "#FFFBEB", iconColor: "#D97706",
     trend: { value: "−2d", up: false },
     sparkData: [22,20,21,19,18,20,17,18,16,18,19,18],
-    sparkColor: "var(--amber-mid)",
+    sparkColor: "#F59E0B",
     icon: <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><circle cx="9" cy="9" r="8"/><polyline points="9,4 9,9 12,11"/></svg>,
   },
   {
     label: "Avg. Time to Fill", value: "24 days",
-    iconBg: "var(--purple-light)", iconColor: "var(--purple)",
+    iconBg: "#F5F3FF", iconColor: "#7C3AED",
     trend: { value: "+3d", up: false },
     sparkData: [20,22,24,21,25,23,26,24,24,25,23,24],
-    sparkColor: "var(--purple-mid)",
+    sparkColor: "#8B5CF6",
     icon: <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><rect x="1" y="3" width="16" height="14" rx="2"/><line x1="13" y1="1" x2="13" y2="5"/><line x1="5" y1="1" x2="5" y2="5"/><line x1="1" y1="8" x2="17" y2="8"/></svg>,
   },
   {
     label: "Avg. Interview Score", value: "74.68",
-    iconBg: "var(--green-light)", iconColor: "var(--green)",
+    iconBg: "#F0FDF4", iconColor: "#059669",
     trend: { value: "+1.2", up: true },
     sparkData: [71,72,73,74,74,75,74,75,74,74,75,74],
-    sparkColor: "var(--green-mid)",
+    sparkColor: "#10B981",
     icon: <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polygon points="9,1 11.5,6.5 17.5,7.4 13,11.7 14.3,17.5 9,14.5 3.7,17.5 5,11.7 0.5,7.4 6.5,6.5"/></svg>,
   },
   {
     label: "Offer Acceptance", value: "64%",
-    iconBg: "var(--rose-light)", iconColor: "var(--rose)",
+    iconBg: "#FFF1F2", iconColor: "#E11D48",
     trend: { value: "−3%", up: false },
     sparkData: [68,66,65,67,64,66,65,63,64,65,64,64],
-    sparkColor: "var(--rose)",
+    sparkColor: "#E11D48",
     icon: <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="18,9 14,9 11,17 7,1 4,9 0,9"/></svg>,
   },
   {
     label: "Hiring Success Rate", value: "10.2%",
-    iconBg: "var(--accent-2-light)", iconColor: "var(--accent-2)",
+    iconBg: "#EEF1FE", iconColor: "#4F6EF7",
     trend: { value: "+0.8%", up: true },
     subtitle: "Joined ÷ Applicants",
     sparkData: [9.1,9.3,9.5,9.8,10.0,10.0,10.1,10.0,10.2,10.1,10.2,10.2],
-    sparkColor: "var(--accent)",
+    sparkColor: "#4F6EF7",
     icon: <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><line x1="15" y1="17" x2="15" y2="8"/><line x1="9" y1="17" x2="9" y2="3"/><line x1="3" y1="17" x2="3" y2="11"/></svg>,
   },
 ];
 
 const TT = {
-  background: "var(--chart-tooltip-bg)", border: "1px solid var(--chart-tooltip-border)", borderRadius: 8,
-  boxShadow: "var(--chart-tooltip-shadow)", fontSize: 12.5, fontFamily: "Inter, sans-serif", padding: "8px 12px", color: "var(--text)",
+  background: "#fff", border: "1px solid #E2E6F0", borderRadius: 8,
+  boxShadow: "0 4px 16px rgba(17,24,39,0.08)", fontSize: 12.5, fontFamily: "Inter, sans-serif", padding: "8px 12px",
 };
 
 function SectionHeader({ title, subtitle, action }: { title: string; subtitle?: string; action?: string }) {
@@ -142,10 +144,10 @@ function ChartCard({ children, style }: { children: React.ReactNode; style?: Rea
 
 /* ── Recent Activity ── */
 const recentActivity = [
-  { who: "Aryan Mehta", action: "moved to Shortlisted", job: "Sr. Frontend Engineer", time: "2m ago", avatar: "A", color: "var(--accent)" },
-  { who: "Priya Sharma", action: "offer accepted", job: "HR Business Partner", time: "18m ago", avatar: "P", color: "var(--green-mid)" },
-  { who: "Vikram Singh", action: "interview completed", job: "Backend Engineer", time: "1h ago", avatar: "V", color: "var(--amber-mid)" },
-  { who: "Sneha Kapoor", action: "application screened", job: "Data Scientist", time: "2h ago", avatar: "S", color: "var(--purple-mid)" },
+  { who: "Aryan Mehta", action: "moved to Shortlisted", job: "Sr. Frontend Engineer", time: "2m ago", avatar: "A", color: "#4F6EF7" },
+  { who: "Priya Sharma", action: "offer accepted", job: "HR Business Partner", time: "18m ago", avatar: "P", color: "#10B981" },
+  { who: "Vikram Singh", action: "interview completed", job: "Backend Engineer", time: "1h ago", avatar: "V", color: "#F59E0B" },
+  { who: "Sneha Kapoor", action: "application screened", job: "Data Scientist", time: "2h ago", avatar: "S", color: "#8B5CF6" },
 ];
 
 export default function Dashboard() {
@@ -157,7 +159,7 @@ export default function Dashboard() {
       <div style={{ marginBottom: 24 }}>
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
           <div>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: "var(--text)", margin: "0 0 5px", letterSpacing: "-0.6px" }}>
+            <h1 style={{ fontSize: 22, fontWeight: 800, color: "var(--text)", margin: "0 0 5px", letterSpacing: "-0.6px" }}>
               Good morning, Recruiter 👋
             </h1>
             <p style={{ fontSize: 13.5, color: "var(--text-secondary)", margin: 0, letterSpacing: "-0.1px" }}>
@@ -169,8 +171,10 @@ export default function Dashboard() {
               <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="12" height="12"><rect x="1" y="2" width="12" height="11" rx="1.5"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="4" y1="1" x2="4" y2="4"/><line x1="1" y1="6" x2="13" y2="6"/></svg>
               Last 30 days
             </button>
-            <button style={{ padding: "7px 14px", borderRadius: 8, border: "none", background: "var(--accent)", color: "#fff", fontSize: 12.5, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 6, boxShadow: "0 2px 8px var(--accent-shadow)" }}>
-              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="12" height="12"><polyline points="1,4 5,1 9,4"/><line x1="5" y1="1" x2="5" y2="10"/><line x1="1" y1="13" x2="13" y2="13"/></svg>
+            <button
+              onClick={() => exportToCsv("recruitment-report.csv", applications as unknown as Record<string, unknown>[])}
+              style={{ padding: "7px 14px", borderRadius: 8, border: "none", background: "var(--accent)", color: "#fff", fontSize: 12.5, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 6, boxShadow: "var(--shadow-accent)" }}>
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="12" height="12"><path d="M7 1v8M4 6l3 3 3-3"/><path d="M1 10v2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-2"/></svg>
               Export Report
             </button>
           </div>
@@ -227,21 +231,21 @@ export default function Dashboard() {
             <AreaChart data={monthlyData} margin={{ top: 4, right: 4, left: -22, bottom: 0 }}>
               <defs>
                 <linearGradient id="gradApp" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.15} />
-                  <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
+                  <stop offset="0%" stopColor="#4F6EF7" stopOpacity={0.15} />
+                  <stop offset="100%" stopColor="#4F6EF7" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="gradHired" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="var(--green-mid)" stopOpacity={0.15} />
-                  <stop offset="100%" stopColor="var(--green-mid)" stopOpacity={0} />
+                  <stop offset="0%" stopColor="#10B981" stopOpacity={0.15} />
+                  <stop offset="100%" stopColor="#10B981" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="var(--chart-grid)" />
-              <XAxis dataKey="month" tick={{ fontSize: 11.5, fill: "var(--chart-tick)" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 11.5, fill: "var(--chart-tick)" }} axisLine={false} tickLine={false} />
+              <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#E5E7EB" />
+              <XAxis dataKey="month" tick={{ fontSize: 11.5, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 11.5, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
               <Tooltip contentStyle={TT} />
               <Legend iconType="circle" iconSize={7} wrapperStyle={{ fontSize: 12, paddingTop: 8 }} />
-              <Area type="monotone" dataKey="applicants" stroke="var(--accent)" strokeWidth={2} fill="url(#gradApp)" name="Applicants" dot={false} />
-              <Area type="monotone" dataKey="hired" stroke="var(--green-mid)" strokeWidth={2} fill="url(#gradHired)" name="Hired" dot={false} />
+              <Area type="monotone" dataKey="applicants" stroke="#4F6EF7" strokeWidth={2} fill="url(#gradApp)" name="Applicants" dot={false} />
+              <Area type="monotone" dataKey="hired" stroke="#10B981" strokeWidth={2} fill="url(#gradHired)" name="Hired" dot={false} />
             </AreaChart>
           </ResponsiveContainer>
         </ChartCard>
@@ -254,13 +258,13 @@ export default function Dashboard() {
           <SectionHeader title="Applicants by Department" subtitle="Applicants vs joined per team" action="Full report →" />
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={deptData} margin={{ top: 4, right: 4, left: -22, bottom: 0 }} barSize={12} barGap={3}>
-              <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="var(--chart-grid)" />
-              <XAxis dataKey="dept" tick={{ fontSize: 10.5, fill: "var(--chart-tick)" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 11, fill: "var(--chart-tick)" }} axisLine={false} tickLine={false} />
+              <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#E5E7EB" />
+              <XAxis dataKey="dept" tick={{ fontSize: 10.5, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 11, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
               <Tooltip contentStyle={TT} />
               <Legend iconType="circle" iconSize={7} wrapperStyle={{ fontSize: 12 }} />
-              <Bar dataKey="applicants" fill="var(--accent)" name="Applicants" radius={[3, 3, 0, 0]} />
-              <Bar dataKey="joined" fill="var(--green-mid)" name="Joined" radius={[3, 3, 0, 0]} />
+              <Bar dataKey="applicants" fill="#4F6EF7" name="Applicants" radius={[3, 3, 0, 0]} />
+              <Bar dataKey="joined" fill="#10B981" name="Joined" radius={[3, 3, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
@@ -307,7 +311,7 @@ export default function Dashboard() {
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
             {recentActivity.map((a, i) => (
               <div key={i} style={{ display: "flex", gap: 10, padding: "9px 0", borderBottom: i < recentActivity.length - 1 ? "1px solid var(--border-light)" : "none" }}>
-                <div style={{ width: 30, height: 30, borderRadius: 8, background: `color-mix(in srgb, ${a.color} 16%, transparent)`, color: a.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{a.avatar}</div>
+                <div style={{ width: 30, height: 30, borderRadius: 8, background: a.color + "22", color: a.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{a.avatar}</div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 12.5, color: "var(--text)", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.who}</div>
                   <div style={{ fontSize: 11.5, color: "var(--text-secondary)", marginTop: 1 }}>{a.action}</div>
