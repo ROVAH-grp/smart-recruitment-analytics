@@ -1,88 +1,323 @@
-import { useState } from "react";
-import { candidates } from "../data/mockData";
+import { useEffect, useState } from "react";
+import {
+  getCandidates,
+  createCandidate,
+  deleteCandidate,
+  type Candidate,
+} from "../api/candidates";
 import Badge from "../components/Badge";
 import GenericTable from "./GenericTable";
 import FormModal, { Toast, ConfirmDialog } from "../components/FormModal";
 import { exportToCsv } from "../utils/exportCsv";
 
 const CANDIDATE_FIELDS = [
-  { key: "name",       label: "Full Name",        placeholder: "e.g. Priya Desai" },
-  { key: "email",      label: "Email",             type: "email" as const, placeholder: "e.g. priya@gmail.com" },
-  { key: "phone",      label: "Phone",             placeholder: "+91 98765 XXXXX" },
-  { key: "location",   label: "Location",          placeholder: "e.g. Bengaluru" },
-  { key: "education",  label: "Education",         type: "select" as const, options: ["B.Tech", "MBA", "B.Sc", "M.Sc", "B.Com", "CA", "B.Des", "M.Tech"] },
-  { key: "experience", label: "Experience",        type: "select" as const, options: ["0–1 yr", "1–3 yrs", "3–5 yrs", "5–8 yrs", "8+ yrs"] },
-  { key: "skills",     label: "Skills (comma-sep)",placeholder: "e.g. React, Node.js, TypeScript" },
+  {
+    key: "candidateId",
+    label: "Candidate ID",
+    placeholder: "e.g. C1001",
+  },
+  {
+    key: "name",
+    label: "Full Name",
+    placeholder: "e.g. Priya Desai",
+  },
+  {
+    key: "education",
+    label: "Education",
+    type: "select" as const,
+    options: [
+      "B.Tech",
+      "MBA",
+      "B.Sc",
+      "M.Sc",
+      "B.Com",
+      "CA",
+      "B.Des",
+      "M.Tech",
+    ],
+  },
+  {
+    key: "experience",
+    label: "Experience (years)",
+    placeholder: "e.g. 3.5",
+  },
 ];
 
 export default function Candidates() {
-  const [list, setList] = useState(candidates);
+  const [list, setList] = useState<Candidate[]>([]);
   const [showAdd, setShowAdd] = useState(false);
-  const [toast, setToast] = useState<{ msg: string; type: "success" | "error" } | null>(null);
+  const [toast, setToast] = useState<{
+    msg: string;
+    type: "success" | "error";
+  } | null>(null);
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
-  const showToast = (msg: string, type: "success" | "error" = "success") => {
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+  const [search, setSearch] = useState("");
+
+  const showToast = (
+    msg: string,
+    type: "success" | "error" = "success",
+  ) => {
     setToast({ msg, type });
-    setTimeout(() => setToast(null), 3500);
+
+    setTimeout(() => {
+      setToast(null);
+    }, 3500);
   };
 
-  const handleAdd = (data: Record<string, string>) => {
-    const newC = {
-      id: `C${String(list.length + 1).padStart(3, "0")}`,
-      name: data.name, email: data.email, phone: data.phone,
-      location: data.location, experience: data.experience,
-      education: data.education,
-      skills: data.skills.split(",").map(s => s.trim()).filter(Boolean),
-      status: "applied",
-    };
-    setList(p => [...p, newC]);
-    showToast(`Candidate "${data.name}" added successfully!`);
+  const loadCandidates = async () => {
+    try {
+      setLoading(true);
+
+      const response = await getCandidates(page, 20, search);
+
+      setList(response.data);
+      setTotal(response.meta.total);
+      setTotalPages(response.meta.totalPages);
+    } catch (error) {
+      console.error("Failed to load candidates:", error);
+      showToast("Failed to load candidates.", "error");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleDelete = (id: string) => {
-    setList(p => p.filter(c => c.id !== id));
-    showToast("Candidate removed.", "error");
+  useEffect(() => {
+    loadCandidates();
+  }, [page, search]);
+
+  const handleAdd = async (data: Record<string, string>) => {
+    try {
+      await createCandidate({
+        candidateId: data.candidateId,
+        candidateName: data.name,
+        experienceYears: data.experience
+          ? Number(data.experience)
+          : undefined,
+        education: data.education || undefined,
+      });
+
+      setShowAdd(false);
+
+      showToast(`Candidate "${data.name}" added successfully!`);
+
+      await loadCandidates();
+    } catch (error) {
+      console.error("Failed to add candidate:", error);
+      showToast("Failed to add candidate.", "error");
+    }
   };
+
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteCandidate(id);
+
+      setDeleteId(null);
+
+      showToast("Candidate removed successfully.");
+
+      await loadCandidates();
+    } catch (error) {
+      console.error("Failed to delete candidate:", error);
+      showToast("Failed to remove candidate.", "error");
+    }
+  };
+
+  const tableData = list.map((candidate) => ({
+    id: candidate.candidateId,
+    name: candidate.candidateName,
+    experience: candidate.experienceYears
+      ? `${candidate.experienceYears} yrs`
+      : "—",
+    education: candidate.education || "—",
+    createdAt: candidate.createdAt,
+
+    email: "—",
+    location: "—",
+    skills: [] as string[],
+    status: "applied",
+  }));
 
   return (
     <>
       <GenericTable
         title="Candidates"
-        subtitle={`${list.length} total candidates`}
-        data={list as unknown as Record<string, unknown>[]}
+        subtitle={
+          loading
+            ? "Loading candidates..."
+            : `${total} total candidates`
+        }
+        data={tableData as Record<string, unknown>[]}
         addLabel="Add Candidate"
         onAddClick={() => setShowAdd(true)}
-        onExport={() => exportToCsv("candidates.csv", list as unknown as Record<string, unknown>[])}
-        searchKeys={["name", "email", "location", "education"]}
+        onExport={() =>
+          exportToCsv(
+            "candidates.csv",
+            tableData as Record<string, unknown>[],
+          )
+        }
+        searchKeys={["name", "id", "education"]}
         columns={[
-          { key: "id", label: "ID", render: r => <span style={{ fontFamily: "var(--font-mono)", color: "var(--text-tertiary)", fontSize: 11.5 }}>{String(r.id)}</span> },
-          { key: "name", label: "Candidate", render: r => {
-            const hue = (String(r.name).charCodeAt(0) * 47 + String(r.name).charCodeAt(1) * 13) % 360;
-            return (
-              <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
-                <div style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, background: `hsl(${hue},55%,92%)`, color: `hsl(${hue},55%,35%)`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700 }}>{String(r.name)[0]}</div>
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)" }}>{String(r.name)}</div>
-                  <div style={{ fontSize: 11.5, color: "var(--text-tertiary)" }}>{String(r.email)}</div>
+          {
+            key: "id",
+            label: "ID",
+            render: (r) => (
+              <span
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  color: "var(--text-tertiary)",
+                  fontSize: 11.5,
+                }}
+              >
+                {String(r.id)}
+              </span>
+            ),
+          },
+
+          {
+            key: "name",
+            label: "Candidate",
+            render: (r) => {
+              const name = String(r.name);
+
+              const hue =
+                (name.charCodeAt(0) * 47 +
+                  (name.charCodeAt(1) || 0) * 13) %
+                360;
+
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 9,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 30,
+                      height: 30,
+                      borderRadius: 8,
+                      flexShrink: 0,
+                      background: `hsl(${hue},55%,92%)`,
+                      color: `hsl(${hue},55%,35%)`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 12,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {name[0]}
+                  </div>
+
+                  <div>
+                    <div
+                      style={{
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: "var(--text)",
+                      }}
+                    >
+                      {name}
+                    </div>
+
+                    <div
+                      style={{
+                        fontSize: 11.5,
+                        color: "var(--text-tertiary)",
+                      }}
+                    >
+                      Candidate
+                    </div>
+                  </div>
                 </div>
-              </div>
-            );
-          }},
-          { key: "location",   label: "Location",   render: r => <span style={{ color: "var(--text-secondary)" }}>{String(r.location)}</span> },
-          { key: "experience", label: "Experience",  render: r => <span style={{ color: "var(--text-secondary)" }}>{String(r.experience)}</span> },
-          { key: "education",  label: "Education",   render: r => <span style={{ color: "var(--text-secondary)" }}>{String(r.education)}</span> },
-          { key: "skills", label: "Skills", render: r => (
-            <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-              {(r.skills as string[]).slice(0, 2).map((s: string) => (
-                <span key={s} style={{ fontSize: 11, padding: "2px 7px", borderRadius: 99, background: "var(--accent-light)", color: "var(--accent-text)", fontWeight: 500 }}>{s}</span>
-              ))}
-              {(r.skills as string[]).length > 2 && <span style={{ fontSize: 11, color: "var(--text-tertiary)" }}>+{(r.skills as string[]).length - 2}</span>}
-            </div>
-          )},
-          { key: "status", label: "Status", render: r => <Badge status={String(r.status)} dot /> },
-          { key: "actions", label: "", sortable: false, render: r => (
-            <button onClick={() => setDeleteId(String(r.id))} style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid var(--border)", background: "transparent", fontSize: 11.5, color: "var(--text-tertiary)", cursor: "pointer", fontFamily: "inherit" }}>Remove</button>
-          )},
+              );
+            },
+          },
+
+          {
+            key: "location",
+            label: "Location",
+            render: () => (
+              <span style={{ color: "var(--text-secondary)" }}>
+                —
+              </span>
+            ),
+          },
+
+          {
+            key: "experience",
+            label: "Experience",
+            render: (r) => (
+              <span style={{ color: "var(--text-secondary)" }}>
+                {String(r.experience)}
+              </span>
+            ),
+          },
+
+          {
+            key: "education",
+            label: "Education",
+            render: (r) => (
+              <span style={{ color: "var(--text-secondary)" }}>
+                {String(r.education)}
+              </span>
+            ),
+          },
+
+          {
+            key: "skills",
+            label: "Skills",
+            render: () => (
+              <span
+                style={{
+                  fontSize: 11.5,
+                  color: "var(--text-tertiary)",
+                }}
+              >
+                —
+              </span>
+            ),
+          },
+
+          {
+            key: "status",
+            label: "Status",
+            render: (r) => (
+              <Badge
+                status={String(r.status)}
+                dot
+              />
+            ),
+          },
+
+          {
+            key: "actions",
+            label: "",
+            sortable: false,
+            render: (r) => (
+              <button
+                onClick={() => setDeleteId(String(r.id))}
+                style={{
+                  padding: "4px 8px",
+                  borderRadius: 6,
+                  border: "1px solid var(--border)",
+                  background: "transparent",
+                  fontSize: 11.5,
+                  color: "var(--text-tertiary)",
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                }}
+              >
+                Remove
+              </button>
+            ),
+          },
         ]}
       />
 
@@ -94,14 +329,28 @@ export default function Candidates() {
           onClose={() => setShowAdd(false)}
           onSubmit={handleAdd}
           submitLabel="Add Candidate"
-          icon={<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M16 17v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>}
+          icon={
+            <svg
+              viewBox="0 0 18 18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              width="16"
+              height="16"
+            >
+              <path d="M16 17v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
+          }
         />
       )}
 
       {deleteId && (
         <ConfirmDialog
           title="Remove Candidate"
-          message={`Are you sure you want to remove this candidate? This action cannot be undone.`}
+          message="Are you sure you want to remove this candidate? This action cannot be undone."
           confirmLabel="Remove"
           danger
           onConfirm={() => handleDelete(deleteId)}
@@ -109,7 +358,13 @@ export default function Candidates() {
         />
       )}
 
-      {toast && <Toast message={toast.msg} type={toast.type} onClose={() => setToast(null)} />}
+      {toast && (
+        <Toast
+          message={toast.msg}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     </>
   );
 }

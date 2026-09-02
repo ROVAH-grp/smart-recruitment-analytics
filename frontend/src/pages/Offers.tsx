@@ -1,75 +1,384 @@
-import { useState } from "react";
-import { offers } from "../data/mockData";
+import { useEffect, useState } from "react";
 import Badge from "../components/Badge";
 import GenericTable from "./GenericTable";
-import FormModal, { Toast, ConfirmDialog } from "../components/FormModal";
+import FormModal, { Toast } from "../components/FormModal";
 import { exportToCsv } from "../utils/exportCsv";
 
+import {
+  getOffers,
+  createOffer,
+  updateOffer,
+} from "../api/offers";
+
+import type { Offer } from "../api/offers";
+
 const OFFER_FIELDS = [
-  { key: "candidate",   label: "Candidate Name",  placeholder: "e.g. Aryan Mehta" },
-  { key: "job",         label: "Job Position",     placeholder: "e.g. Senior Frontend Engineer" },
-  { key: "ctc",         label: "CTC / Package",   placeholder: "e.g. 22 LPA" },
-  { key: "offerDate",   label: "Offer Date",       type: "date" as const },
-  { key: "deadline",    label: "Acceptance Deadline", type: "date" as const },
-  { key: "joiningDate", label: "Expected Joining Date", type: "date" as const, required: false },
+  {
+    key: "applicationId",
+    label: "Application ID",
+    placeholder: "e.g. 3049",
+    required: true,
+  },
+  {
+    key: "offerDate",
+    label: "Offer Date",
+    type: "date" as const,
+    required: false,
+  },
+  {
+    key: "offerStatus",
+    label: "Offer Status",
+    type: "select" as const,
+    options: [
+      "Pending",
+      "Accepted",
+      "Declined",
+      "Withdrawn",
+    ],
+    required: false,
+  },
 ];
 
+function formatDate(date: string | null): string {
+  if (!date) return "—";
+  return date;
+}
+
 export default function Offers() {
-  const [list, setList] = useState(offers);
+  const [list, setList] = useState<Offer[]>([]);
   const [showAdd, setShowAdd] = useState(false);
-  const [toast, setToast] = useState<{ msg: string; type: "success" | "error" } | null>(null);
-  const [revokeId, setRevokeId] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const showToast = (msg: string, type: "success" | "error" = "success") => {
+  const [toast, setToast] = useState<{
+    msg: string;
+    type: "success" | "error";
+  } | null>(null);
+
+  const showToast = (
+    msg: string,
+    type: "success" | "error" = "success",
+  ) => {
     setToast({ msg, type });
-    setTimeout(() => setToast(null), 3500);
+
+    setTimeout(() => {
+      setToast(null);
+    }, 3500);
   };
 
-  const handleCreate = (data: Record<string, string>) => {
-    const newO = {
-      id: `O${String(list.length + 1).padStart(3, "0")}`,
-      candidate: data.candidate, job: data.job, ctc: data.ctc,
-      offerDate: data.offerDate, deadline: data.deadline,
-      status: "pending", joiningDate: data.joiningDate || null,
-    };
-    setList(p => [...p, newO]);
-    showToast(`Offer sent to "${data.candidate}"!`);
+  const loadOffers = async () => {
+    try {
+      setLoading(true);
+
+      const response = await getOffers(1, 100);
+
+      setList(response.data);
+    } catch (error) {
+      console.error(error);
+
+      showToast(
+        "Could not load offers.",
+        "error",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleRevoke = (id: string) => {
-    setList(p => p.filter(o => o.id !== id));
-    showToast("Offer revoked.", "error");
+  useEffect(() => {
+    loadOffers();
+  }, []);
+
+  const handleCreate = async (
+    data: Record<string, string>,
+  ) => {
+    try {
+     const created = await createOffer({
+  applicationId: data.applicationId,
+  offerDate:
+    data.offerDate || undefined,
+  offerStatus:
+    data.offerStatus || "Pending",
+});
+
+setShowAdd(false);
+
+await loadOffers();
+
+showToast(
+  `Offer created for application #${data.applicationId}.`,
+);
+
+      setShowAdd(false);
+
+      showToast(
+        `Offer created for application #${data.applicationId}.`,
+      );
+    } catch (error) {
+      console.error(error);
+
+      let message =
+        "Failed to create offer.";
+
+      if (error instanceof Error) {
+        try {
+          const parsed = JSON.parse(error.message);
+
+          if (Array.isArray(parsed?.message)) {
+            message =
+              parsed.message.join(", ");
+          } else if (
+            typeof parsed?.message === "string"
+          ) {
+            message = parsed.message;
+          }
+        } catch {
+          if (error.message) {
+            message = error.message;
+          }
+        }
+      }
+
+      showToast(message, "error");
+    }
   };
+
+  const handleRevoke = async (offer: Offer) => {
+    try {
+      const updated = await updateOffer(
+        offer.offerId,
+        {
+          offerStatus: "Withdrawn",
+        },
+      );
+
+      setList((previous) =>
+        previous.map((item) =>
+          item.offerId === updated.offerId
+            ? updated
+            : item,
+        ),
+      );
+
+      showToast(
+        `Offer #${offer.offerId} withdrawn.`,
+        "success",
+      );
+    } catch (error) {
+      console.error(error);
+
+      showToast(
+        "Failed to withdraw offer.",
+        "error",
+      );
+    }
+  };
+
+  const pendingCount = list.filter(
+    (offer) =>
+      offer.offerStatus === "Pending",
+  ).length;
 
   return (
     <>
       <GenericTable
         title="Offers"
-        subtitle={`${list.filter(o => o.status === "pending").length} pending · ${list.length} total`}
-        data={list as unknown as Record<string, unknown>[]}
+        subtitle={
+          loading
+            ? "Loading offers..."
+            : `${pendingCount} pending · ${list.length} loaded`
+        }
+        data={
+          list as unknown as Record<
+            string,
+            unknown
+          >[]
+        }
         addLabel="Create Offer"
         onAddClick={() => setShowAdd(true)}
-        onExport={() => exportToCsv("offers.csv", list as unknown as Record<string, unknown>[])}
-        searchKeys={["candidate", "job"]}
+        onExport={() =>
+          exportToCsv(
+            "offers.csv",
+            list as unknown as Record<
+              string,
+              unknown
+            >[],
+          )
+        }
+        searchKeys={[
+          "offerId",
+          "applicationId",
+          "offerStatus",
+        ]}
         columns={[
-          { key: "id",        label: "ID",        render: r => <span style={{ fontFamily: "var(--font-mono)", fontSize: 11.5, color: "var(--text-tertiary)" }}>{String(r.id)}</span> },
-          { key: "candidate", label: "Candidate", render: r => <span style={{ fontWeight: 600 }}>{String(r.candidate)}</span> },
-          { key: "job",       label: "Position",  render: r => <span style={{ color: "var(--text-secondary)", fontSize: 12.5 }}>{String(r.job)}</span> },
-          { key: "ctc",       label: "CTC",       render: r => <span style={{ fontWeight: 700, color: "var(--accent-text)" }}>{String(r.ctc)}</span> },
-          { key: "offerDate", label: "Offer Date",render: r => <span style={{ fontSize: 12.5, color: "var(--text-secondary)", fontFamily: "var(--font-mono)" }}>{String(r.offerDate)}</span> },
-          { key: "deadline",  label: "Deadline",  render: r => <span style={{ fontSize: 12.5, color: "var(--text-secondary)", fontFamily: "var(--font-mono)" }}>{String(r.deadline)}</span> },
-          { key: "status",    label: "Status",    render: r => <Badge status={String(r.status)} dot /> },
-          { key: "joiningDate", label: "Joining", render: r => <span style={{ fontSize: 12.5, color: r.joiningDate ? "var(--text)" : "var(--text-tertiary)" }}>{r.joiningDate ? String(r.joiningDate) : "—"}</span> },
-          { key: "actions", label: "", sortable: false, render: r => (
-            String(r.status) === "pending" && (
-              <button onClick={() => setRevokeId(String(r.id))} style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid var(--red-border)", background: "var(--red-light)", fontSize: 11.5, color: "var(--red)", cursor: "pointer", fontFamily: "inherit", fontWeight: 600 }}>Revoke</button>
-            )
-          )},
+          {
+            key: "offerId",
+            label: "ID",
+            render: (r) => (
+              <span
+                style={{
+                  fontFamily:
+                    "var(--font-mono)",
+                  fontSize: 11.5,
+                  color:
+                    "var(--text-tertiary)",
+                }}
+              >
+                {String(r.offerId)}
+              </span>
+            ),
+          },
+          {
+            key: "applicationId",
+            label: "Application",
+            render: (r) => (
+              <span
+                style={{
+                  fontWeight: 600,
+                }}
+              >
+                #{String(r.applicationId)}
+              </span>
+            ),
+          },
+          {
+            key: "offerDate",
+            label: "Offer Date",
+            render: (r) => (
+              <span
+                style={{
+                  fontSize: 12.5,
+                  color:
+                    "var(--text-secondary)",
+                  fontFamily:
+                    "var(--font-mono)",
+                }}
+              >
+                {formatDate(
+                  r.offerDate as
+                    | string
+                    | null,
+                )}
+              </span>
+            ),
+          },
+          {
+            key: "offerStatus",
+            label: "Status",
+            render: (r) => (
+              <Badge
+                status={String(
+                  r.offerStatus ||
+                    "Pending",
+                )}
+                dot
+              />
+            ),
+          },
+          {
+            key: "createdAt",
+            label: "Created",
+            render: (r) => (
+              <span
+                style={{
+                  fontSize: 12,
+                  color:
+                    "var(--text-secondary)",
+                  fontFamily:
+                    "var(--font-mono)",
+                }}
+              >
+                {new Date(
+                  String(r.createdAt),
+                ).toLocaleDateString()}
+              </span>
+            ),
+          },
+          {
+            key: "actions",
+            label: "",
+            sortable: false,
+            render: (r) => {
+              const offer = r as unknown as Offer;
+
+              if (
+                offer.offerStatus !==
+                "Pending"
+              ) {
+                return null;
+              }
+
+              return (
+                <button
+                  onClick={() =>
+                    handleRevoke(offer)
+                  }
+                  style={{
+                    padding: "4px 8px",
+                    borderRadius: 6,
+                    border:
+                      "1px solid var(--red-border)",
+                    background:
+                      "var(--red-light)",
+                    fontSize: 11.5,
+                    color:
+                      "var(--red)",
+                    cursor: "pointer",
+                    fontFamily:
+                      "inherit",
+                    fontWeight: 600,
+                  }}
+                >
+                  Revoke
+                </button>
+              );
+            },
+          },
         ]}
       />
-      {showAdd && <FormModal title="Create Offer" subtitle="Generate a new offer letter" fields={OFFER_FIELDS} onClose={() => setShowAdd(false)} onSubmit={handleCreate} submitLabel="Send Offer" icon={<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="18,5 9,11.5 0,5"/><rect x="0" y="3" width="18" height="13" rx="2"/></svg>} />}
-      {revokeId && <ConfirmDialog title="Revoke Offer" message="This will permanently revoke the offer. The candidate will be notified. Continue?" confirmLabel="Revoke" danger onConfirm={() => handleRevoke(revokeId)} onCancel={() => setRevokeId(null)} />}
-      {toast && <Toast message={toast.msg} type={toast.type} onClose={() => setToast(null)} />}
+
+      {showAdd && (
+        <FormModal
+          title="Create Offer"
+          subtitle="Generate a new offer"
+          fields={OFFER_FIELDS}
+          onClose={() =>
+            setShowAdd(false)
+          }
+          onSubmit={handleCreate}
+          submitLabel="Create Offer"
+          icon={
+            <svg
+              viewBox="0 0 18 18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              width="16"
+              height="16"
+            >
+              <polyline points="18,5 9,11.5 0,5" />
+              <rect
+                x="0"
+                y="3"
+                width="18"
+                height="13"
+                rx="2"
+              />
+            </svg>
+          }
+        />
+      )}
+
+      {toast && (
+        <Toast
+          message={toast.msg}
+          type={toast.type}
+          onClose={() =>
+            setToast(null)
+          }
+        />
+      )}
     </>
   );
 }
