@@ -1,5 +1,14 @@
 import Badge from "../components/Badge";
+import FormModal, { Toast } from "../components/FormModal";
+import { createInterview } from "../api/interviews";
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from "react-sparklines";
+import { useEffect, useState } from "react";
+import {
+  getInterviews,
+  type Interview,
+} from "../api/interviews";
+
+
 
 const STAGES = ["Applied", "Screened", "Shortlisted", "Interviewed", "Selected", "Offered", "Joined"];
 const STAGE_ORDER: Record<string, number> = {
@@ -24,9 +33,135 @@ function InfoTile({ label, value, mono = false }: { label: string; value: string
 }
 
 export default function ApplicationDetail({ app, onBack }: { app: App; onBack: () => void }) {
+    const [interview, setInterview] =
+    useState<Interview | null>(null);
+
+  const [interviewLoading, setInterviewLoading] =
+    useState(true);
+
+    const [showScheduleInterview, setShowScheduleInterview] =
+  useState(false);
+
+const [toast, setToast] = useState<{
+  msg: string;
+  type: "success" | "error";
+} | null>(null);
+
+
+  useEffect(() => {
+
+  
+    const loadInterview = async () => {
+      try {
+        setInterviewLoading(true);
+
+        const response = await getInterviews(
+          1,
+          1,
+          app.id,
+        );
+
+        setInterview(
+          response.data[0] ?? null,
+        );
+      } catch (error) {
+        console.error(
+          "Failed to load interview:",
+          error,
+        );
+        setInterview(null);
+      } finally {
+        setInterviewLoading(false);
+      }
+    };
+
+    loadInterview();
+  }, [app.id]);
+
+  // This must be OUTSIDE useEffect
+const handleScheduleInterview = async (
+  data: Record<string, string>,
+) => {
+  try {
+    const created = await createInterview({
+      applicationId: app.id,
+      interviewDate: data.interviewDate || undefined,
+      technicalScore: data.technicalScore
+        ? Number(data.technicalScore)
+        : undefined,
+      communicationScore: data.communicationScore
+        ? Number(data.communicationScore)
+        : undefined,
+      problemSolvingScore: data.problemSolvingScore
+        ? Number(data.problemSolvingScore)
+        : undefined,
+    });
+
+    setInterview(created);
+    setShowScheduleInterview(false);
+
+    setToast({
+      msg: "Interview scheduled successfully.",
+      type: "success",
+    });
+
+    setTimeout(() => setToast(null), 3500);
+  } catch (error) {
+    console.error(error);
+
+    let message = "Failed to schedule interview.";
+
+    if (error instanceof Error) {
+      try {
+        const parsed = JSON.parse(error.message);
+
+        if (Array.isArray(parsed?.message)) {
+          message = parsed.message.join(", ");
+        } else if (typeof parsed?.message === "string") {
+          message = parsed.message;
+        }
+      } catch {
+        if (error.message) {
+          message = error.message;
+        }
+      }
+    }
+
+    setToast({
+      msg: message,
+      type: "error",
+    });
+  }
+};
+
+    const overallScore =
+    interview?.overallScore != null
+      ? Number(interview.overallScore)
+      : null;
+
+  const technicalScore =
+    interview?.technicalScore != null
+      ? Number(interview.technicalScore)
+      : null;
+
+  const communicationScore =
+    interview?.communicationScore != null
+      ? Number(interview.communicationScore)
+      : null;
+
+  const problemSolvingScore =
+    interview?.problemSolvingScore != null
+      ? Number(interview.problemSolvingScore)
+      : null;
+
   const stageIdx = STAGE_ORDER[app.status] ?? -1;
   const hue = (app.candidate.charCodeAt(0) * 47 + app.candidate.charCodeAt(1) * 13) % 360;
-  const scoreHistory = [68, 74, 79, app.interviewScore ?? 74];
+  const scoreHistory = [
+  68,
+  74,
+  79,
+  overallScore ?? 74,
+];
   const costBreakdown = [
     { label: "Job Posting", val: Math.round(app.cost * 0.18) },
     { label: "Assessment", val: Math.round(app.cost * 0.22) },
@@ -162,34 +297,160 @@ export default function ApplicationDetail({ app, onBack }: { app: App; onBack: (
         </div>
 
         {/* Interview score */}
-        <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-md)", padding: "20px 22px", boxShadow: "var(--shadow-sm)" }}>
-          <div style={{ fontSize: 13, fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Interview Performance</div>
-          {app.interviewScore != null ? (
-            <>
-              <div style={{ fontSize: 32, fontWeight: 800, color: "var(--text)", letterSpacing: "-1px", marginBottom: 2 }}>{app.interviewScore}<span style={{ fontSize: 16, color: "var(--text-tertiary)", fontWeight: 500 }}>/100</span></div>
-              <div style={{ fontSize: 12, color: "var(--text-secondary)", marginBottom: 14 }}>
-                {app.interviewScore >= 85 ? "Outstanding" : app.interviewScore >= 75 ? "Strong" : "Satisfactory"}
-              </div>
-              <div style={{ marginBottom: 14 }}>
-                <Sparklines data={scoreHistory} width={180} height={40}>
-                  <SparklinesLine color="#4F6EF7" style={{ fill: "none", strokeWidth: 2 }} />
-                  <SparklinesReferenceLine type="avg" style={{ stroke: "#E5E7EB", strokeDasharray: "3 2", strokeWidth: 1 }} />
-                </Sparklines>
-                <div style={{ fontSize: 10.5, color: "var(--text-tertiary)", marginTop: 4 }}>Score progression across rounds</div>
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                {[["Technical", app.interviewScore + 3], ["Communication", app.interviewScore - 5], ["Problem Solving", app.interviewScore + 2], ["Cultural Fit", app.interviewScore]].map(([k, v]) => (
-                  <div key={k} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                    <span style={{ fontSize: 11.5, color: "var(--text-secondary)", flex: 1 }}>{k}</span>
-                    <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text)", width: 26, textAlign: "right" }}>{v}</span>
-                  </div>
-                ))}
-              </div>
-            </>
-          ) : (
-            <div style={{ color: "var(--text-tertiary)", fontSize: 13, paddingTop: 8 }}>No interview data yet</div>
-          )}
+<div
+  style={{
+    background: "var(--surface)",
+    border: "1px solid var(--border)",
+    borderRadius: "var(--radius-md)",
+    padding: "20px 22px",
+    boxShadow: "var(--shadow-sm)",
+  }}
+>
+  <div
+    style={{
+      fontSize: 13,
+      fontWeight: 700,
+      color: "var(--text)",
+      marginBottom: 16,
+    }}
+  >
+    Interview Performance
+  </div>
+
+  {interviewLoading ? (
+    <div
+      style={{
+        color: "var(--text-tertiary)",
+        fontSize: 13,
+        paddingTop: 8,
+      }}
+    >
+      Loading interview data...
+    </div>
+  ) : overallScore != null ? (
+    <>
+      <div
+        style={{
+          fontSize: 32,
+          fontWeight: 800,
+          color: "var(--text)",
+          letterSpacing: "-1px",
+          marginBottom: 2,
+        }}
+      >
+        {overallScore}
+        <span
+          style={{
+            fontSize: 16,
+            color: "var(--text-tertiary)",
+            fontWeight: 500,
+          }}
+        >
+          /100
+        </span>
+      </div>
+
+      <div
+        style={{
+          fontSize: 12,
+          color: "var(--text-secondary)",
+          marginBottom: 14,
+        }}
+      >
+        {overallScore >= 85
+          ? "Outstanding"
+          : overallScore >= 75
+            ? "Strong"
+            : "Satisfactory"}
+      </div>
+
+      <div style={{ marginBottom: 14 }}>
+        <Sparklines data={scoreHistory} width={180} height={40}>
+          <SparklinesLine
+            color="#4F6EF7"
+            style={{
+              fill: "none",
+              strokeWidth: 2,
+            }}
+          />
+          <SparklinesReferenceLine
+            type="avg"
+            style={{
+              stroke: "#E5E7EB",
+              strokeDasharray: "3 2",
+              strokeWidth: 1,
+            }}
+          />
+        </Sparklines>
+
+        <div
+          style={{
+            fontSize: 10.5,
+            color: "var(--text-tertiary)",
+            marginTop: 4,
+          }}
+        >
+          Interview score progression
         </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 6,
+        }}
+      >
+        {[
+          ["Technical", technicalScore],
+          ["Communication", communicationScore],
+          ["Problem Solving", problemSolvingScore],
+        ].map(([label, score]) => (
+          <div
+            key={label}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 11.5,
+                color: "var(--text-secondary)",
+                flex: 1,
+              }}
+            >
+              {label}
+            </span>
+
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                color: "var(--text)",
+                width: 26,
+                textAlign: "right",
+              }}
+            >
+              {score != null ? score : "—"}
+            </span>
+          </div>
+        ))}
+      </div>
+    </>
+  ) : (
+    <div
+      style={{
+        color: "var(--text-tertiary)",
+        fontSize: 13,
+        paddingTop: 8,
+      }}
+    >
+      No interview data yet
+    </div>
+  )}
+</div>
 
         {/* Recruitment cost */}
         <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-md)", padding: "20px 22px", boxShadow: "var(--shadow-sm)" }}>

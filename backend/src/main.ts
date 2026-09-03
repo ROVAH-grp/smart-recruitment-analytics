@@ -30,15 +30,22 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalInterceptors(new TransformInterceptor());
 
-  const swaggerConfig = new DocumentBuilder()
-    .setTitle('Smart Recruitment Analytics API')
-    .setDescription(
-      'Backend API for candidate, job, recruiter, application, interview, offer, and joining-record management, plus recruitment analytics.',
-    )
-    .setVersion('1.0')
-    .build();
-
-  const document = SwaggerModule.createDocument(app, swaggerConfig);
+ const config = new DocumentBuilder()
+  .setTitle('Smart Recruitment Analytics API')
+  .setDescription(
+    'Backend API for candidate, job, recruiter, application, interview, offer, and joining-record management, plus recruitment analytics.',
+  )
+  .setVersion('1.0')
+  .addBearerAuth(
+    {
+      type: 'http',
+      scheme: 'bearer',
+      bearerFormat: 'JWT',
+    },
+    'JWT-auth',
+  )
+  .build();
+  const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);
 
   const port = configService.get('port', { infer: true });

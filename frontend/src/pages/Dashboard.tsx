@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, Legend, PieChart, Pie, Cell, Area, AreaChart,
 } from "recharts";
+
 import { exportToCsv } from "../utils/exportCsv";
 import { applications } from "../data/mockData";
 import KPICard from "../components/KPICard";
+
+import { useAuth } from "../context/AuthContext";
+import { getCandidate } from "../api/candidates";
+import { getApplications } from "../api/applications";
+import { getInterviews } from "../api/interviews";
 
 /* ── data ── */
 const monthlyData = [
@@ -150,8 +156,367 @@ const recentActivity = [
   { who: "Sneha Kapoor", action: "application screened", job: "Data Scientist", time: "2h ago", avatar: "S", color: "#8B5CF6" },
 ];
 
+function CandidateDashboard() {
+  const { user } = useAuth();
+
+  const [candidate, setCandidate] = useState<any>(null);
+  const [applicationCount, setApplicationCount] = useState(0);
+  const [interviewCount, setInterviewCount] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadCandidateDashboard = async () => {
+      if (!user?.candidateId) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const [candidateData, applicationData, interviewData] =
+          await Promise.all([
+            getCandidate(user.candidateId),
+            getApplications(1, 100, undefined, user.candidateId),
+            getInterviews(1, 100),
+          ]);
+
+        setCandidate(candidateData);
+        setApplicationCount(applicationData.meta.total);
+setInterviewCount(interviewData.meta.total);
+      } catch (error) {
+        console.error("Failed to load candidate dashboard:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadCandidateDashboard();
+  }, [user?.candidateId]);
+
+  if (loading) {
+    return (
+      <div
+        className="fade-in"
+        style={{ padding: "40px 24px", color: "var(--text-secondary)" }}
+      >
+        Loading your dashboard...
+      </div>
+    );
+  }
+
+  return (
+    <div className="fade-in" style={{ padding: "24px 24px 48px" }}>
+      <div style={{ marginBottom: 28 }}>
+        <h1
+          style={{
+            fontSize: 22,
+            fontWeight: 800,
+            color: "var(--text)",
+            margin: "0 0 5px",
+          }}
+        >
+          Welcome back 👋
+        </h1>
+
+        <p
+          style={{
+            fontSize: 13.5,
+            color: "var(--text-secondary)",
+            margin: 0,
+          }}
+        >
+          Track your applications and recruitment progress.
+        </p>
+      </div>
+
+      {/* Profile */}
+      <ChartCard style={{ marginBottom: 16 }}>
+        <SectionHeader
+          title="My Profile"
+          subtitle="Your candidate information"
+        />
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: 16,
+          }}
+        >
+          <div>
+            <div style={{ fontSize: 11, color: "var(--text-tertiary)" }}>
+              Name
+            </div>
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--text)",
+                marginTop: 4,
+              }}
+            >
+              {candidate?.candidateName || "—"}
+            </div>
+          </div>
+
+          <div>
+            <div style={{ fontSize: 11, color: "var(--text-tertiary)" }}>
+              Candidate ID
+            </div>
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--text)",
+                marginTop: 4,
+              }}
+            >
+              {user?.candidateId || "—"}
+            </div>
+          </div>
+
+          <div>
+            <div style={{ fontSize: 11, color: "var(--text-tertiary)" }}>
+              Education
+            </div>
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--text)",
+                marginTop: 4,
+              }}
+            >
+              {candidate?.education || "—"}
+            </div>
+          </div>
+
+          <div>
+            <div style={{ fontSize: 11, color: "var(--text-tertiary)" }}>
+              Experience
+            </div>
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--text)",
+                marginTop: 4,
+              }}
+            >
+              {candidate?.experienceYears
+                ? `${candidate.experienceYears} years`
+                : "—"}
+            </div>
+          </div>
+        </div>
+      </ChartCard>
+
+      {/* Candidate KPIs */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
+          gap: 14,
+          marginBottom: 16,
+        }}
+      >
+        <ChartCard>
+          <div
+            style={{
+              fontSize: 12,
+              color: "var(--text-secondary)",
+              marginBottom: 8,
+            }}
+          >
+            My Applications
+          </div>
+          <div
+            style={{
+              fontSize: 28,
+              fontWeight: 800,
+              color: "var(--accent)",
+            }}
+          >
+            {applicationCount}
+          </div>
+          <div
+            style={{
+              fontSize: 11,
+              color: "var(--text-tertiary)",
+              marginTop: 5,
+            }}
+          >
+            Applications submitted
+          </div>
+        </ChartCard>
+
+        <ChartCard>
+          <div
+            style={{
+              fontSize: 12,
+              color: "var(--text-secondary)",
+              marginBottom: 8,
+            }}
+          >
+            My Interviews
+          </div>
+          <div
+            style={{
+              fontSize: 28,
+              fontWeight: 800,
+              color: "#10B981",
+            }}
+          >
+            {interviewCount}
+          </div>
+          <div
+            style={{
+              fontSize: 11,
+              color: "var(--text-tertiary)",
+              marginTop: 5,
+            }}
+          >
+            Interviews scheduled
+          </div>
+        </ChartCard>
+
+        <ChartCard>
+          <div
+            style={{
+              fontSize: 12,
+              color: "var(--text-secondary)",
+              marginBottom: 8,
+            }}
+          >
+            Account Role
+          </div>
+          <div
+            style={{
+              fontSize: 20,
+              fontWeight: 800,
+              color: "var(--text)",
+            }}
+          >
+            Candidate
+          </div>
+          <div
+            style={{
+              fontSize: 11,
+              color: "var(--text-tertiary)",
+              marginTop: 5,
+            }}
+          >
+            Personal recruitment portal
+          </div>
+        </ChartCard>
+      </div>
+
+      {/* Next steps */}
+      <ChartCard>
+        <SectionHeader
+          title="What you can do"
+          subtitle="Manage your recruitment journey"
+        />
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 12,
+          }}
+        >
+          <div
+            style={{
+              padding: 16,
+              border: "1px solid var(--border-light)",
+              borderRadius: 8,
+            }}
+          >
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--text)",
+                marginBottom: 5,
+              }}
+            >
+              Applications
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: "var(--text-secondary)",
+              }}
+            >
+              View the status of your submitted applications.
+            </div>
+          </div>
+
+          <div
+            style={{
+              padding: 16,
+              border: "1px solid var(--border-light)",
+              borderRadius: 8,
+            }}
+          >
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--text)",
+                marginBottom: 5,
+              }}
+            >
+              Interviews
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: "var(--text-secondary)",
+              }}
+            >
+              Review your scheduled interviews and scores.
+            </div>
+          </div>
+
+          <div
+            style={{
+              padding: 16,
+              border: "1px solid var(--border-light)",
+              borderRadius: 8,
+            }}
+          >
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--text)",
+                marginBottom: 5,
+              }}
+            >
+              Jobs
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: "var(--text-secondary)",
+              }}
+            >
+              Explore available job opportunities.
+            </div>
+          </div>
+        </div>
+      </ChartCard>
+    </div>
+  );
+}
+
 export default function Dashboard() {
+  const { user } = useAuth();
   const [activePie, setActivePie] = useState<number | null>(null);
+
+  if (user?.role === "CANDIDATE") {
+    return <CandidateDashboard />;
+  }
 
   return (
     <div className="fade-in" style={{ padding: "24px 24px 48px" }}>
@@ -323,7 +688,7 @@ export default function Dashboard() {
           </div>
           <button style={{ marginTop: 12, width: "100%", padding: "7px", border: "1px solid var(--border)", borderRadius: 7, background: "transparent", fontSize: 12.5, fontWeight: 600, color: "var(--text-secondary)", cursor: "pointer", fontFamily: "inherit" }}>
             View all activity
-          </button>
+                    </button>
         </ChartCard>
       </div>
     </div>

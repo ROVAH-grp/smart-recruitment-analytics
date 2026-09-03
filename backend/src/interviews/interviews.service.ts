@@ -1,6 +1,7 @@
 import {
   BadRequestException,
   ConflictException,
+  ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
@@ -23,35 +24,86 @@ export class InterviewsService {
     private readonly applicationRepository: Repository<Application>,
   ) {}
 
-  async findAll(query: QueryInterviewDto): Promise<PaginatedResult<Interview>> {
-    const { page = 1, limit = 20, applicationId, minScore } = query;
-    const qb = this.interviewRepository.createQueryBuilder('interview');
+  async findAll(
+  query: QueryInterviewDto,
+  candidateId?: string,
+): Promise<PaginatedResult<Interview>> {
+  const { page = 1, limit = 20, applicationId, minScore } = query;
 
-    if (applicationId) {
-      qb.andWhere('interview.applicationId = :applicationId', {
-        applicationId,
-      });
-    }
-    if (minScore !== undefined) {
-      qb.andWhere('interview.overallScore >= :minScore', { minScore });
-    }
+  const qb = this.interviewRepository.createQueryBuilder('interview');
 
-    qb.orderBy('interview.createdAt', 'DESC');
-    qb.skip((page - 1) * limit).take(limit);
-
-    const [data, total] = await qb.getManyAndCount();
-    return paginate(data, total, page, limit);
-  }
-
-  async findOne(id: string): Promise<Interview> {
-    const interview = await this.interviewRepository.findOne({
-      where: { interviewId: id },
+  if (applicationId) {
+    qb.andWhere('interview.applicationId = :applicationId', {
+      applicationId,
     });
-    if (!interview) {
-      throw new NotFoundException(`Interview with id "${id}" not found`);
-    }
-    return interview;
   }
+
+  if (minScore !== undefined) {
+    qb.andWhere('interview.overallScore >= :minScore', {
+      minScore,
+    });
+  }
+
+  // Candidate can only see interviews belonging to their own applications.
+  if (candidateId) {
+    const applications = await this.applicationRepository.find({
+      where: { candidateId },
+      select: ['applicationId'],
+    });
+
+    const applicationIds = applications.map(
+      (application) => application.applicationId,
+    );
+
+    if (applicationIds.length === 0) {
+      return paginate([], 0, page, limit);
+    }
+
+    qb.andWhere('interview.applicationId IN (:...applicationIds)', {
+      applicationIds,
+    });
+  }
+
+  qb.orderBy('interview.createdAt', 'DESC');
+  qb.skip((page - 1) * limit).take(limit);
+
+  const [data, total] = await qb.getManyAndCount();
+
+  return paginate(data, total, page, limit);
+}
+
+  async findOne(
+  id: string,
+  candidateId?: string,
+): Promise<Interview> {
+  const interview = await this.interviewRepository.findOne({
+    where: { interviewId: id },
+  });
+
+  if (!interview) {
+    throw new NotFoundException(
+      `Interview with id "${id}" not found`,
+    );
+  }
+
+  // Candidate can only access an interview linked to their own application.
+  if (candidateId) {
+    const application = await this.applicationRepository.findOne({
+      where: {
+        applicationId: interview.applicationId,
+        candidateId,
+      },
+    });
+
+    if (!application) {
+      throw new ForbiddenException(
+        'You can only access your own interviews',
+      );
+    }
+  }
+
+  return interview;
+}
 
   async create(dto: CreateInterviewDto): Promise<Interview> {
     const application = await this.applicationRepository.findOne({

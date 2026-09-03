@@ -32,11 +32,16 @@ export interface CreateInterviewData {
 export async function getInterviews(
   page = 1,
   limit = 20,
+  applicationId = "",
 ): Promise<InterviewsResponse> {
   const params = new URLSearchParams({
-    page: String(page),
-    limit: String(limit),
-  });
+  page: String(page),
+  limit: String(limit),
+});
+
+if (applicationId.trim()) {
+  params.append("applicationId", applicationId.trim());
+}
 
   return apiFetch<InterviewsResponse>(
     `/interviews?${params.toString()}`,

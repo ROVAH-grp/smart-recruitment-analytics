@@ -89,6 +89,7 @@ export async function getApplications(
   page = 1,
   limit = 7,
   search = "",
+  candidateId = "",
 ): Promise<ApplicationsResponse> {
   const params = new URLSearchParams({
     page: String(page),
@@ -96,8 +97,12 @@ export async function getApplications(
   });
 
   if (search.trim()) {
-    params.append("search", search.trim());
-  }
+  params.append("search", search.trim());
+}
+
+if (candidateId.trim()) {
+  params.append("candidateId", candidateId.trim());
+}
 
   return apiFetch<ApplicationsResponse>(
     `/applications?${params.toString()}`,

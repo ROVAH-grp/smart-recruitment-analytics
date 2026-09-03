@@ -43,7 +43,13 @@ const CANDIDATE_FIELDS = [
   },
 ];
 
-export default function Candidates() {
+interface CandidatesProps {
+  onCandidateClick: (candidateId: string) => void;
+}
+
+export default function Candidates({
+  onCandidateClick,
+}: CandidatesProps) {
   const [list, setList] = useState<Candidate[]>([]);
   const [showAdd, setShowAdd] = useState(false);
   const [toast, setToast] = useState<{
@@ -127,20 +133,21 @@ export default function Candidates() {
     }
   };
 
-  const tableData = list.map((candidate) => ({
-    id: candidate.candidateId,
-    name: candidate.candidateName,
-    experience: candidate.experienceYears
-      ? `${candidate.experienceYears} yrs`
-      : "—",
-    education: candidate.education || "—",
-    createdAt: candidate.createdAt,
+ const tableData = list.map((candidate) => ({
+  id: candidate.candidateId,
+  candidateId: candidate.candidateId,
+  name: candidate.candidateName,
+  experience: candidate.experienceYears
+    ? `${candidate.experienceYears} yrs`
+    : "—",
+  education: candidate.education || "—",
+  createdAt: candidate.createdAt,
 
-    email: "—",
-    location: "—",
-    skills: [] as string[],
-    status: "applied",
-  }));
+  email: "—",
+  location: "—",
+  skills: [] as string[],
+  status: "applied",
+}));
 
   return (
     <>
@@ -178,67 +185,75 @@ export default function Candidates() {
             ),
           },
 
-          {
-            key: "name",
-            label: "Candidate",
-            render: (r) => {
-              const name = String(r.name);
+         {
+  key: "name",
+  label: "Candidate",
+  render: (r) => {
+    const name = String(r.name);
 
-              const hue =
-                (name.charCodeAt(0) * 47 +
-                  (name.charCodeAt(1) || 0) * 13) %
-                360;
+    const hue =
+      (name.charCodeAt(0) * 47 +
+        (name.charCodeAt(1) || 0) * 13) %
+      360;
 
-              return (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 9,
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 30,
-                      height: 30,
-                      borderRadius: 8,
-                      flexShrink: 0,
-                      background: `hsl(${hue},55%,92%)`,
-                      color: `hsl(${hue},55%,35%)`,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: 12,
-                      fontWeight: 700,
-                    }}
-                  >
-                    {name[0]}
-                  </div>
+    return (
+      <button
+        type="button"
+        onClick={() => onCandidateClick(String(r.candidateId))}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 9,
+          background: "transparent",
+          border: "none",
+          padding: 0,
+          margin: 0,
+          cursor: "pointer",
+          textAlign: "left",
+        }}
+      >
+        <div
+          style={{
+            width: 30,
+            height: 30,
+            borderRadius: 8,
+            flexShrink: 0,
+            background: `hsl(${hue},55%,92%)`,
+            color: `hsl(${hue},55%,35%)`,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 12,
+            fontWeight: 700,
+          }}
+        >
+          {name[0]}
+        </div>
 
-                  <div>
-                    <div
-                      style={{
-                        fontSize: 13,
-                        fontWeight: 600,
-                        color: "var(--text)",
-                      }}
-                    >
-                      {name}
-                    </div>
+        <div>
+          <div
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: "var(--text)",
+            }}
+          >
+            {name}
+          </div>
 
-                    <div
-                      style={{
-                        fontSize: 11.5,
-                        color: "var(--text-tertiary)",
-                      }}
-                    >
-                      Candidate
-                    </div>
-                  </div>
-                </div>
-              );
-            },
-          },
+          <div
+            style={{
+              fontSize: 11.5,
+              color: "var(--text-tertiary)",
+            }}
+          >
+            View profile
+          </div>
+        </div>
+      </button>
+    );
+  },
+},
 
           {
             key: "location",

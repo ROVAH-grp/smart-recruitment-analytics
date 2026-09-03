@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+
 import configuration from './config/configuration';
 import { validationSchema } from './config/validation.schema';
+
 import { DatabaseModule } from './database/database.module';
 import { HealthModule } from './health/health.module';
+
 import { CandidatesModule } from './candidates/candidates.module';
 import { JobsModule } from './jobs/jobs.module';
 import { RecruitersModule } from './recruiters/recruiters.module';
@@ -14,6 +17,7 @@ import { OffersModule } from './offers/offers.module';
 import { JoiningRecordsModule } from './joining-records/joining-records.module';
 import { AnalyticsModule } from './analytics/analytics.module';
 import { ResumesModule } from './resumes/resumes.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,6 +26,7 @@ import { ResumesModule } from './resumes/resumes.module';
       load: [configuration],
       validationSchema,
     }),
+
     DatabaseModule,
     HealthModule,
     CandidatesModule,
@@ -34,6 +39,7 @@ import { ResumesModule } from './resumes/resumes.module';
     JoiningRecordsModule,
     AnalyticsModule,
     ResumesModule,
+    AuthModule,
   ],
 })
 export class AppModule {}

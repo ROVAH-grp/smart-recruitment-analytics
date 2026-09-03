@@ -45,7 +45,11 @@ export async function getCandidates(
 }
 
 export async function getCandidate(id: string): Promise<Candidate> {
-  return apiFetch<Candidate>(`/candidates/${id}`);
+  const response = await apiFetch<{ data: Candidate }>(
+    `/candidates/${id}`,
+  );
+
+  return response.data;
 }
 
 export async function createCandidate(

@@ -44,6 +44,10 @@ const statuses = [
   "Withdrawn",
 ];
 
+interface ApplicationsProps {
+  candidateId?: string | null;
+}
+
 interface App {
   id: string;
   candidate: string;
@@ -138,7 +142,9 @@ function toUiApplication(application: Application): App {
   };
 }
 
-export default function Applications() {
+export default function Applications({
+  candidateId,
+}: ApplicationsProps) {
   const [applications, setApplications] =
     useState<Application[]>([]);
 
@@ -193,11 +199,12 @@ export default function Applications() {
       setError("");
 
       const response =
-        await getApplications(
-          page,
-          PAGE_SIZE,
-          search,
-        );
+  await getApplications(
+    page,
+    PAGE_SIZE,
+    search,
+    candidateId ?? "",
+  );
 
       setApplications(response.data);
       setTotal(response.meta.total);
@@ -264,9 +271,9 @@ export default function Applications() {
     });
   }
 };
-  useEffect(() => {
-    loadApplications();
-  }, [page, search]);
+ useEffect(() => {
+  loadApplications();
+}, [page, search, candidateId]);
 
   useEffect(() => {
     loadFormData();
