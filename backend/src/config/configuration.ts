@@ -8,6 +8,11 @@ export interface AppConfig {
     password: string;
     database: string;
   };
+  cloudinary: {
+  cloudName: string;
+  apiKey: string;
+  apiSecret: string;
+};
 }
 
 export default () => ({
@@ -20,4 +25,10 @@ export default () => ({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
   },
+
+cloudinary: {
+  cloudName: process.env.CLOUDINARY_CLOUD_NAME || '',
+  apiKey: process.env.CLOUDINARY_API_KEY || '',
+  apiSecret: process.env.CLOUDINARY_API_SECRET || '',
+},
 });

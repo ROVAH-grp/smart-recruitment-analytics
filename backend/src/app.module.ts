@@ -13,6 +13,7 @@ import { InterviewsModule } from './interviews/interviews.module';
 import { OffersModule } from './offers/offers.module';
 import { JoiningRecordsModule } from './joining-records/joining-records.module';
 import { AnalyticsModule } from './analytics/analytics.module';
+import { ResumesModule } from './resumes/resumes.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { AnalyticsModule } from './analytics/analytics.module';
     OffersModule,
     JoiningRecordsModule,
     AnalyticsModule,
+    ResumesModule,
   ],
 })
 export class AppModule {}

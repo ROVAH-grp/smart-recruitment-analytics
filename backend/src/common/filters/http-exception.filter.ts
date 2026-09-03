@@ -8,6 +8,8 @@ import {
 } from '@nestjs/common';
 import { Response } from 'express';
 import { QueryFailedError } from 'typeorm';
+import { MulterError } from 'multer';
+
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -21,9 +23,10 @@ export class HttpExceptionFilter implements ExceptionFilter {
     let message: string | string[] = 'Internal server error';
     let error = 'Internal Server Error';
 
-    if (exception instanceof HttpException) {
+      if (exception instanceof HttpException) {
       statusCode = exception.getStatus();
       const res = exception.getResponse();
+
       if (typeof res === 'string') {
         message = res;
         error = exception.name;
@@ -32,10 +35,24 @@ export class HttpExceptionFilter implements ExceptionFilter {
         message = (resObj.message as string | string[]) ?? exception.message;
         error = (resObj.error as string) ?? exception.name;
       }
+
+    } else if (exception instanceof MulterError) {
+      if (exception.code === 'LIMIT_FILE_SIZE') {
+        statusCode = HttpStatus.PAYLOAD_TOO_LARGE;
+        error = 'Payload Too Large';
+        message = 'Uploaded file exceeds the maximum allowed size (5 MB).';
+      } else {
+        statusCode = HttpStatus.BAD_REQUEST;
+        error = 'Bad Request';
+        message = exception.message;
+      }
+
     } else if (exception instanceof QueryFailedError) {
       // Never leak raw SQL/driver errors to the client.
       statusCode = HttpStatus.BAD_REQUEST;
       error = 'Database Error';
+
+      // ...keep the rest of your existing QueryFailedError code...
 
       const driverError = (exception as any).driverError;
       const code = driverError?.code;
