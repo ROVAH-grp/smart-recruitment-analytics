@@ -19,7 +19,11 @@ interface AuthContextType {
   token: string | null;
   isAuthenticated: boolean;
   loading: boolean;
+
   login: (email: string, password: string) => Promise<AuthUser>;
+
+  updateUser: (updates: Partial<AuthUser>) => void;
+
   register: (data: {
     email: string;
     password: string;
@@ -27,7 +31,12 @@ interface AuthContextType {
     candidateId?: string;
     recruiterId?: number;
   }) => Promise<RegisterResponse>;
+
   logout: () => void;
+
+  // Used to tell components like Navbar that the profile changed
+  profileVersion: number;
+  refreshProfile: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -35,7 +44,11 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const TOKEN_KEY = "smart_recruitment_token";
 const USER_KEY = "smart_recruitment_user";
 
-export function AuthProvider({ children }: { children: ReactNode }) {
+export function AuthProvider({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const [token, setToken] = useState<string | null>(() =>
     localStorage.getItem(TOKEN_KEY),
   );
@@ -57,14 +70,51 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const [loading, setLoading] = useState(false);
 
-  const login = async (email: string, password: string) => {
+  // Changes whenever the candidate profile is updated
+  const [profileVersion, setProfileVersion] = useState(0);
+
+  const refreshProfile = () => {
+    setProfileVersion((version) => version + 1);
+  };
+
+  const updateUser = (updates: Partial<AuthUser>) => {
+    setUser((currentUser) => {
+      if (!currentUser) {
+        return null;
+      }
+
+      const updatedUser = {
+        ...currentUser,
+        ...updates,
+      };
+
+      localStorage.setItem(
+        USER_KEY,
+        JSON.stringify(updatedUser),
+      );
+
+      return updatedUser;
+    });
+  };
+
+  const login = async (
+    email: string,
+    password: string,
+  ) => {
     setLoading(true);
 
     try {
       const result = await loginApi(email, password);
 
-      localStorage.setItem(TOKEN_KEY, result.accessToken);
-      localStorage.setItem(USER_KEY, JSON.stringify(result.user));
+      localStorage.setItem(
+        TOKEN_KEY,
+        result.accessToken,
+      );
+
+      localStorage.setItem(
+        USER_KEY,
+        JSON.stringify(result.user),
+      );
 
       setToken(result.accessToken);
       setUser(result.user);
@@ -107,8 +157,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isAuthenticated: !!token && !!user,
         loading,
         login,
+        updateUser,
         register,
         logout,
+        profileVersion,
+        refreshProfile,
       }}
     >
       {children}
@@ -120,7 +173,9 @@ export function useAuth() {
   const context = useContext(AuthContext);
 
   if (!context) {
-    throw new Error("useAuth must be used inside AuthProvider");
+    throw new Error(
+      "useAuth must be used inside AuthProvider",
+    );
   }
 
   return context;

@@ -14,9 +14,12 @@ import Recruiters from "./pages/Recruiters";
 import Sources from "./pages/Sources";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
+import AccessDenied from "./pages/AccessDenied";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import { useAuth } from "./context/AuthContext";
 
 const PAGE_META: Record<string, { title: string; subtitle: string }> = {
@@ -147,6 +150,9 @@ export default function App() {
   const [applicationCandidateId, setApplicationCandidateId] =
     useState<string | null>(null);
 const [showRegister, setShowRegister] = useState(false);
+const [showForgotPassword, setShowForgotPassword] = useState(false);
+const [resetToken, setResetToken] = useState<string | null>(null);
+const [showAccessDenied, setShowAccessDenied] = useState(false);
 
   const openCandidate = (id: string) => {
     setCandidateId(id);
@@ -206,32 +212,69 @@ const canAccessPage = (pageId: string) => {
     page !== "dashboard" &&
     !canAccessPage(page)
   ) {
-    setPage("dashboard");
+    setShowAccessDenied(true);
   }
 }, [isAuthenticated, page, user]);
 
    // Not logged in → show authentication pages
   if (!isAuthenticated) {
-    if (showRegister) {
-      return (
-        <Register
-          onBackToLogin={() => setShowRegister(false)}
-          onRegistered={() => setShowRegister(false)}
-        />
-      );
-    }
-
+  if (showRegister) {
     return (
-      <Login
-        onLoginSuccess={() => {
-          setPage("dashboard");
-        }}
-        onRegisterClick={() => {
-          setShowRegister(true);
-        }}
+      <Register
+        onBackToLogin={() => setShowRegister(false)}
+        onRegistered={() => setShowRegister(false)}
       />
     );
   }
+
+  if (showForgotPassword) {
+  return (
+    <ForgotPassword
+      onBackToLogin={() => setShowForgotPassword(false)}
+      onResetPassword={(token) => {
+        setResetToken(token);
+        setShowForgotPassword(false);
+      }}
+    />
+  );
+}
+
+if (resetToken) {
+  return (
+    <ResetPassword
+      token={resetToken}
+      onBackToLogin={() => {
+        setResetToken(null);
+      }}
+    />
+  );
+}
+
+  return (
+    <Login
+  onLoginSuccess={() => {
+    setPage("dashboard");
+  }}
+  onRegisterClick={() => {
+    setShowRegister(true);
+  }}
+  onForgotPassword={() => {
+    setShowForgotPassword(true);
+  }}
+/>
+  );
+}
+
+if (showAccessDenied) {
+  return (
+    <AccessDenied
+      onBackToDashboard={() => {
+        setShowAccessDenied(false);
+        setPage("dashboard");
+      }}
+    />
+  );
+}
 
   const meta = PAGE_META[page] ?? PAGE_META.dashboard;
 

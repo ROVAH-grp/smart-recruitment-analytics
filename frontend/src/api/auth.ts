@@ -50,3 +50,30 @@ export async function register(data: {
 
   return response.data;
 }
+
+export async function forgotPassword(email: string) {
+  const response = await apiFetch<{ data: { message: string } }>(
+    "/auth/forgot-password",
+    {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    }
+  );
+
+  return response.data;
+}
+
+export async function resetPassword(token: string, newPassword: string) {
+  const response = await apiFetch<{ data: { message: string } }>(
+    "/auth/reset-password",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        token,
+        newPassword,
+      }),
+    }
+  );
+
+  return response.data;
+}

@@ -59,6 +59,21 @@ export async function createCandidate(
     method: "POST",
     body: JSON.stringify(data),
   });
+
+}
+
+export async function updateCandidate(
+  id: string,
+  data: {
+    candidateName?: string;
+    experienceYears?: number;
+    education?: string;
+  },
+): Promise<Candidate> {
+  return apiFetch<Candidate>(`/candidates/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(data),
+  });
 }
 
 export async function deleteCandidate(id: string): Promise<void> {

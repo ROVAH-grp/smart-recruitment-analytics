@@ -79,15 +79,31 @@ export class CandidatesController {
   }
 
   @Patch(':id')
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(UserRole.ADMIN, UserRole.RECRUITER)
-  @ApiOperation({ summary: 'Update a candidate' })
-  @ApiParam({ name: 'id', example: 'C0001' })
-  @ApiResponse({ status: 200, description: 'Candidate updated' })
-  @ApiResponse({ status: 404, description: 'Candidate not found' })
-  update(@Param('id') id: string, @Body() dto: UpdateCandidateDto) {
-    return this.candidatesService.update(id, dto);
+@UseGuards(JwtAuthGuard, RolesGuard)
+@Roles(UserRole.ADMIN, UserRole.RECRUITER, UserRole.CANDIDATE)
+@ApiOperation({ summary: 'Update a candidate' })
+@ApiParam({ name: 'id', example: 'C0001' })
+@ApiResponse({ status: 200, description: 'Candidate updated' })
+@ApiResponse({ status: 403, description: 'Access denied' })
+@ApiResponse({ status: 404, description: 'Candidate not found' })
+update(
+  @Param('id') id: string,
+  @Body() dto: UpdateCandidateDto,
+  @Request() request: any,
+) {
+  const user = request.user;
+
+  if (
+    user.role === UserRole.CANDIDATE &&
+    user.candidateId !== id
+  ) {
+    throw new ForbiddenException(
+      'You can only update your own candidate profile',
+    );
   }
+
+  return this.candidatesService.update(id, dto);
+}
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)

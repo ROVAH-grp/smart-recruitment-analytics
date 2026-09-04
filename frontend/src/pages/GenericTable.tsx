@@ -24,10 +24,20 @@ interface GenericTableProps<T extends Record<string, unknown>> {
   loading?: boolean;
   onAddClick?: () => void;
   onExport?: () => void;
+  showAddButton?: boolean;
 }
 
 export default function GenericTable<T extends Record<string, unknown>>({
-  title, subtitle, data, columns, addLabel, searchKeys = [], loading = false, onAddClick, onExport,
+  title,
+  subtitle,
+  data,
+  columns,
+  addLabel,
+  searchKeys = [],
+  loading = false,
+  onAddClick,
+  onExport,
+  showAddButton = true,
 }: GenericTableProps<T>) {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -74,7 +84,7 @@ export default function GenericTable<T extends Record<string, unknown>>({
               Export
             </button>
           )}
-          {addLabel && (
+          {addLabel && showAddButton && (
             <button
               onClick={onAddClick}
               style={{

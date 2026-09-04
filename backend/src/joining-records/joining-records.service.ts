@@ -1,9 +1,11 @@
 import {
   BadRequestException,
   ConflictException,
+  ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
+import { UserRole } from '../auth/entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { JoiningRecord } from './entities/joining-record.entity';
@@ -23,37 +25,104 @@ export class JoiningRecordsService {
     private readonly applicationRepository: Repository<Application>,
   ) {}
 
-  async findAll(
-    query: QueryJoiningRecordDto,
-  ): Promise<PaginatedResult<JoiningRecord>> {
-    const { page = 1, limit = 20, applicationId, joiningStatus } = query;
-    const qb = this.joiningRecordRepository.createQueryBuilder('joiningRecord');
+ async findAll(
+  query: QueryJoiningRecordDto,
+  user: any,
+): Promise<PaginatedResult<JoiningRecord>> {
+  const {
+    page = 1,
+    limit = 20,
+    applicationId,
+    joiningStatus,
+  } = query;
 
-    if (applicationId) {
-      qb.andWhere('joiningRecord.applicationId = :applicationId', {
-        applicationId,
-      });
+  const qb =
+    this.joiningRecordRepository.createQueryBuilder('joiningRecord');
+
+  // Candidates can only see joining records for their own applications
+  if (user?.role === UserRole.CANDIDATE) {
+    if (!user.candidateId) {
+      throw new ForbiddenException(
+        'Candidate account is not linked to a candidate',
+      );
     }
-    if (joiningStatus) {
-      qb.andWhere('joiningRecord.joiningStatus = :joiningStatus', {
-        joiningStatus,
-      });
+
+    const applications = await this.applicationRepository.find({
+      where: {
+        candidateId: user.candidateId,
+      },
+    });
+
+    const applicationIds = applications.map(
+      (application) => application.applicationId,
+    );
+
+    if (applicationIds.length === 0) {
+      return paginate([], 0, page, limit);
     }
 
-    qb.orderBy('joiningRecord.createdAt', 'DESC');
-    qb.skip((page - 1) * limit).take(limit);
-
-    const [data, total] = await qb.getManyAndCount();
-    return paginate(data, total, page, limit);
+    qb.andWhere(
+      'joiningRecord.applicationId IN (:...applicationIds)',
+      { applicationIds },
+    );
   }
 
-  async findOne(id: string): Promise<JoiningRecord> {
+  if (applicationId) {
+    qb.andWhere(
+      'joiningRecord.applicationId = :applicationId',
+      { applicationId },
+    );
+  }
+
+  if (joiningStatus) {
+    qb.andWhere(
+      'joiningRecord.joiningStatus = :joiningStatus',
+      { joiningStatus },
+    );
+  }
+
+  qb.orderBy('joiningRecord.createdAt', 'DESC');
+  qb.skip((page - 1) * limit).take(limit);
+
+  const [data, total] = await qb.getManyAndCount();
+
+  return paginate(data, total, page, limit);
+}
+
+  async findOne(
+  id: string,
+  user: any,
+): Promise<JoiningRecord> {
     const record = await this.joiningRecordRepository.findOne({
       where: { joiningId: id },
     });
     if (!record) {
       throw new NotFoundException(`Joining record with id "${id}" not found`);
     }
+
+    if (user?.role === UserRole.CANDIDATE) {
+  if (!user.candidateId) {
+    throw new ForbiddenException(
+      'Candidate account is not linked to a candidate',
+    );
+  }
+
+  const application = await this.applicationRepository.findOne({
+    where: {
+      applicationId: record.applicationId,
+    },
+  });
+
+  if (
+    !application ||
+    application.candidateId !== user.candidateId
+  ) {
+    throw new ForbiddenException(
+      'You are not allowed to view this joining record',
+    );
+  }
+}
+
     return record;
   }
 
@@ -89,7 +158,7 @@ export class JoiningRecordsService {
     id: string,
     dto: UpdateJoiningRecordDto,
   ): Promise<JoiningRecord> {
-    const record = await this.findOne(id);
+   const record = await this.findOne(id, null);
 
     if (dto.joiningDate !== undefined) record.joiningDate = dto.joiningDate;
     if (dto.joiningStatus !== undefined)
@@ -99,7 +168,7 @@ export class JoiningRecordsService {
   }
 
   async remove(id: string): Promise<void> {
-    const record = await this.findOne(id);
+   const record = await this.findOne(id, null);
     await this.joiningRecordRepository.remove(record);
   }
 }

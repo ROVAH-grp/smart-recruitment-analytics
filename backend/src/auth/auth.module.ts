@@ -7,9 +7,16 @@ import { User } from './entities/user.entity';
 import { AuthController } from './auth.controller';
 import { JwtStrategy } from './strategies/jwt.strategy';
 
+import { Candidate } from '../candidates/entities/candidate.entity';
+import { Recruiter } from '../recruiters/entities/recruiter.entity';
+
 @Module({
   imports: [
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([
+  User,
+  Candidate,
+  Recruiter,
+]),
 
     JwtModule.register({
       secret: process.env.JWT_SECRET || 'smart-recruitment-dev-secret',

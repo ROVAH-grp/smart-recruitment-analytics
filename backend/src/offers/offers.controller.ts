@@ -9,9 +9,16 @@ import {
   Patch,
   Post,
   Query,
+  Request,
   UseGuards,
 } from '@nestjs/common';
-import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiParam,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
 import { OffersService } from './offers.service';
 import { CreateOfferDto } from './dto/create-offer.dto';
@@ -24,6 +31,7 @@ import { Roles } from '../auth/decorators/roles.decorator';
 import { UserRole } from '../auth/entities/user.entity';
 
 @ApiTags('Offers')
+@ApiBearerAuth('JWT-auth')
 @Controller('offers')
 @UseGuards(JwtAuthGuard, RolesGuard)
 export class OffersController {
@@ -39,9 +47,12 @@ export class OffersController {
   @ApiResponse({ status: 200, description: 'Paginated list of offers' })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 403, description: 'Access denied' })
-  findAll(@Query() query: QueryOfferDto) {
-    return this.offersService.findAll(query);
-  }
+ findAll(
+  @Query() query: QueryOfferDto,
+  @Request() req: any,
+) {
+  return this.offersService.findAll(query, req.user);
+}
 
   @Get(':id')
   @Roles(
@@ -55,9 +66,12 @@ export class OffersController {
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 403, description: 'Access denied' })
   @ApiResponse({ status: 404, description: 'Offer not found' })
-  findOne(@Param('id') id: string) {
-    return this.offersService.findOne(id);
-  }
+findOne(
+  @Param('id') id: string,
+  @Request() req: any,
+) {
+  return this.offersService.findOne(id, req.user);
+}
 
   @Post()
   @Roles(

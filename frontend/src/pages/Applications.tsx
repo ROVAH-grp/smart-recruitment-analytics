@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import { Plus, Eye, Trash2 } from "lucide-react";
 
 import {
@@ -145,6 +146,8 @@ function toUiApplication(application: Application): App {
 export default function Applications({
   candidateId,
 }: ApplicationsProps) {
+  const { user } = useAuth();
+  const isCandidate = user?.role === "CANDIDATE";
   const [applications, setApplications] =
     useState<Application[]>([]);
 
@@ -276,8 +279,10 @@ export default function Applications({
 }, [page, search, candidateId]);
 
   useEffect(() => {
+  if (!isCandidate) {
     loadFormData();
-  }, []);
+  }
+}, [isCandidate]);
 
   useEffect(() => {
     if (!toast) return;
@@ -548,10 +553,11 @@ const jobId =
           </p>
         </div>
 
-        <button
-          onClick={() =>
-            setShowAddModal(true)
-          }
+       {!isCandidate && (
+  <button
+    onClick={() =>
+      setShowAddModal(true)
+    }
           style={{
             display: "flex",
             alignItems:
@@ -575,7 +581,7 @@ const jobId =
         >
           <Plus size={15} />
           Add Application
-        </button>
+        </button>)}
       </div>
 
       {/* Error */}
@@ -1033,55 +1039,35 @@ const jobId =
                                 />
                               </button>
 
-                              <button
-                                onClick={() => {
-                                  const original =
-                                    applications.find(
-                                      (
-                                        item,
-                                      ) =>
-                                        item.applicationId ===
-                                        app.id,
+                              {!isCandidate && (
+                                <button
+                                  onClick={() => {
+                                    const original = applications.find(
+                                      (item) =>
+                                        item.applicationId === app.id,
                                     );
 
-                                  if (
-                                    original
-                                  ) {
-                                    setDeleteTarget(
-                                      original,
-                                    );
-                                  }
-                                }}
-                                title="Delete application"
-                                style={{
-                                  width:
-                                    30,
-                                  height:
-                                    30,
-                                  borderRadius:
-                                    7,
-                                  border:
-                                    "1px solid var(--border)",
-                                  background:
-                                    "transparent",
-                                  color:
-                                    "var(--red)",
-                                  cursor:
-                                    "pointer",
-                                  display:
-                                    "flex",
-                                  alignItems:
-                                    "center",
-                                  justifyContent:
-                                    "center",
-                                }}
-                              >
-                                <Trash2
-                                  size={
-                                    14
-                                  }
-                                />
-                              </button>
+                                    if (original) {
+                                      setDeleteTarget(original);
+                                    }
+                                  }}
+                                  title="Delete application"
+                                  style={{
+                                    width: 30,
+                                    height: 30,
+                                    borderRadius: 7,
+                                    border: "1px solid var(--border)",
+                                    background: "transparent",
+                                    color: "var(--red)",
+                                    cursor: "pointer",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Trash2 size={14} />
+                                </button>
+                              )}
                             </div>
                           </td>
                         </tr>
@@ -1111,7 +1097,7 @@ const jobId =
 
       {/* Add Application */}
 
-      {showAddModal && (
+      {showAddModal && !isCandidate && (
         <FormModal
           title="Add Application"
           subtitle="Create a new candidate application"

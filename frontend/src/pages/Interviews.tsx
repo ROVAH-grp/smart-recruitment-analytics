@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import Badge from "../components/Badge";
 import GenericTable from "./GenericTable";
 import FormModal, { Toast } from "../components/FormModal";
@@ -58,6 +59,8 @@ function formatDate(date: string | null): string {
 }
 
 export default function Interviews() {
+  const { user } = useAuth();
+  const isCandidate = user?.role === "CANDIDATE";
   const [list, setList] = useState<Interview[]>([]);
   const [showAdd, setShowAdd] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -161,8 +164,13 @@ export default function Interviews() {
             : `${scheduledCount} scheduled · ${list.length} loaded`
         }
         data={list as unknown as Record<string, unknown>[]}
-        addLabel="Schedule Interview"
-        onAddClick={() => setShowAdd(true)}
+               addLabel={
+          !isCandidate ? "Schedule Interview" : undefined
+        }
+        onAddClick={
+          !isCandidate ? () => setShowAdd(true) : undefined
+        }
+        showAddButton={!isCandidate}
         onExport={() =>
           exportToCsv(
             "interviews.csv",
@@ -314,7 +322,7 @@ export default function Interviews() {
         
       />
 
-      {showAdd && (
+      {showAdd && !isCandidate && (
         <FormModal
           title="Schedule Interview"
           subtitle="Set up a new candidate interview"

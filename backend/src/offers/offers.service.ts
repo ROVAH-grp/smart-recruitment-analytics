@@ -1,9 +1,12 @@
 import {
   BadRequestException,
   ConflictException,
+  ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
+
+import { UserRole } from '../auth/entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Offer } from './entities/offer.entity';
@@ -23,31 +26,94 @@ export class OffersService {
     private readonly applicationRepository: Repository<Application>,
   ) {}
 
-  async findAll(query: QueryOfferDto): Promise<PaginatedResult<Offer>> {
-    const { page = 1, limit = 20, applicationId, offerStatus } = query;
-    const qb = this.offerRepository.createQueryBuilder('offer');
+ async findAll(
+  query: QueryOfferDto,
+  user: any,
+): Promise<PaginatedResult<Offer>> {
+  const {
+    page = 1,
+    limit = 20,
+    applicationId,
+    offerStatus,
+  } = query;
 
-    if (applicationId) {
-      qb.andWhere('offer.applicationId = :applicationId', { applicationId });
+  const qb = this.offerRepository.createQueryBuilder('offer');
+
+  // Candidates can only see offers for their own applications
+  if (user?.role === UserRole.CANDIDATE) {
+    if (!user.candidateId) {
+      throw new ForbiddenException(
+        'Candidate account is not linked to a candidate',
+      );
     }
-    if (offerStatus) {
-      qb.andWhere('offer.offerStatus = :offerStatus', { offerStatus });
+
+    const applications = await this.applicationRepository.find({
+      where: {
+        candidateId: user.candidateId,
+      },
+    });
+
+    const applicationIds = applications.map(
+      (application) => application.applicationId,
+    );
+
+    // Candidate has no applications, therefore no offers
+    if (applicationIds.length === 0) {
+      return paginate([], 0, page, limit);
     }
 
-    qb.orderBy('offer.createdAt', 'DESC');
-    qb.skip((page - 1) * limit).take(limit);
-
-    const [data, total] = await qb.getManyAndCount();
-    return paginate(data, total, page, limit);
+    qb.andWhere(
+      'offer.applicationId IN (:...applicationIds)',
+      { applicationIds },
+    );
   }
 
-  async findOne(id: string): Promise<Offer> {
+  if (applicationId) {
+    qb.andWhere(
+      'offer.applicationId = :applicationId',
+      { applicationId },
+    );
+  }
+
+  if (offerStatus) {
+    qb.andWhere(
+      'offer.offerStatus = :offerStatus',
+      { offerStatus },
+    );
+  }
+
+  qb.orderBy('offer.createdAt', 'DESC');
+  qb.skip((page - 1) * limit).take(limit);
+
+  const [data, total] = await qb.getManyAndCount();
+
+  return paginate(data, total, page, limit);
+}
+
+  async findOne(id: string, user: any): Promise<Offer> {
     const offer = await this.offerRepository.findOne({
       where: { offerId: id },
     });
     if (!offer) {
       throw new NotFoundException(`Offer with id "${id}" not found`);
     }
+
+    if (user?.role === UserRole.CANDIDATE) {
+  if (!user.candidateId) {
+    throw new ForbiddenException('Candidate account is not linked to a candidate');
+  }
+
+  const application = await this.applicationRepository.findOne({
+    where: {
+      applicationId: offer.applicationId,
+    },
+  });
+
+  if (!application || application.candidateId !== user.candidateId) {
+    throw new ForbiddenException('You are not allowed to view this offer');
+  }
+}
+
     return offer;
   }
 
@@ -80,7 +146,7 @@ export class OffersService {
   }
 
   async update(id: string, dto: UpdateOfferDto): Promise<Offer> {
-    const offer = await this.findOne(id);
+    const offer = await this.findOne(id, null);
 
     if (dto.offerDate !== undefined) offer.offerDate = dto.offerDate;
     if (dto.offerStatus !== undefined) offer.offerStatus = dto.offerStatus;
@@ -89,7 +155,7 @@ export class OffersService {
   }
 
   async remove(id: string): Promise<void> {
-    const offer = await this.findOne(id);
+   const offer = await this.findOne(id, null);
     await this.offerRepository.remove(offer);
   }
 }

@@ -9,6 +9,7 @@ import {
   Patch,
   Post,
   Query,
+  Request,
   UseGuards,
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
@@ -46,9 +47,12 @@ export class JoiningRecordsController {
   })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 403, description: 'Access denied' })
-  findAll(@Query() query: QueryJoiningRecordDto) {
-    return this.joiningRecordsService.findAll(query);
-  }
+ findAll(
+  @Query() query: QueryJoiningRecordDto,
+  @Request() req: any,
+) {
+  return this.joiningRecordsService.findAll(query, req.user);
+}
 
   @Get(':id')
   @Roles(
@@ -62,9 +66,12 @@ export class JoiningRecordsController {
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 403, description: 'Access denied' })
   @ApiResponse({ status: 404, description: 'Joining record not found' })
-  findOne(@Param('id') id: string) {
-    return this.joiningRecordsService.findOne(id);
-  }
+  findOne(
+  @Param('id') id: string,
+  @Request() req: any,
+) {
+  return this.joiningRecordsService.findOne(id, req.user);
+}
 
   @Post()
   @Roles(

@@ -3,6 +3,7 @@ import Badge from "../components/Badge";
 import GenericTable from "./GenericTable";
 import FormModal, { Toast, ConfirmDialog } from "../components/FormModal";
 import { exportToCsv } from "../utils/exportCsv";
+import { useAuth } from "../context/AuthContext";
 import {
   createJob,
   deleteJob,
@@ -44,6 +45,8 @@ const JOB_FIELDS = [
 ];
 
 export default function Jobs() {
+    const { user } = useAuth();
+  const isCandidate = user?.role === "CANDIDATE";
   const [list, setList] = useState<Job[]>([]);
   const [showAdd, setShowAdd] = useState(false);
   const [toast, setToast] = useState<{
@@ -151,8 +154,9 @@ export default function Jobs() {
         title="Jobs"
         subtitle={`${total} total`}
         data={tableData as Record<string, unknown>[]}
-        addLabel="Post Job"
-        onAddClick={() => setShowAdd(true)}
+       addLabel={!isCandidate ? "Post Job" : undefined}
+onAddClick={!isCandidate ? () => setShowAdd(true) : undefined}
+showAddButton={!isCandidate}
         onExport={() =>
           exportToCsv(
             "jobs.csv",
@@ -287,23 +291,29 @@ export default function Jobs() {
             key: "actions",
             label: "",
             sortable: false,
-            render: (r) => (
-              <button
-                onClick={() => setDeleteId(String(r.id))}
-                style={{
-                  padding: "4px 8px",
-                  borderRadius: 6,
-                  border: "1px solid var(--border)",
-                  background: "transparent",
-                  fontSize: 11.5,
-                  color: "var(--text-tertiary)",
-                  cursor: "pointer",
-                  fontFamily: "inherit",
-                }}
-              >
-                Delete
-              </button>
-            ),
+           render: (r) => {
+  if (isCandidate) {
+    return null;
+  }
+
+  return (
+    <button
+      onClick={() => setDeleteId(String(r.id))}
+      style={{
+        padding: "4px 8px",
+        borderRadius: 6,
+        border: "1px solid var(--border)",
+        background: "transparent",
+        fontSize: 11.5,
+        color: "var(--text-tertiary)",
+        cursor: "pointer",
+        fontFamily: "inherit",
+      }}
+    >
+      Delete
+    </button>
+  );
+},
           },
         ]}
       />
@@ -356,7 +366,7 @@ export default function Jobs() {
         </div>
       )}
 
-      {showAdd && (
+      {showAdd && !isCandidate && (
         <FormModal
           title="Post New Job"
           subtitle="Create a new job opening for your team"

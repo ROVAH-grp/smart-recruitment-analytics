@@ -11,6 +11,7 @@ import {
 } from "../api/joiningRecords";
 
 import type { JoiningRecord } from "../api/joiningRecords";
+import { useAuth } from "../context/AuthContext";
 
 const JOINING_FIELDS = [
   {
@@ -45,6 +46,8 @@ function formatDate(date: string | null): string {
 }
 
 export default function JoiningRecords() {
+    const { user } = useAuth();
+  const isCandidate = user?.role === "CANDIDATE";
   const [list, setList] = useState<JoiningRecord[]>([]);
   const [showAdd, setShowAdd] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -180,32 +183,40 @@ export default function JoiningRecords() {
       record.joiningStatus === "Joined",
   ).length;
 
-  return (
-    <>
-      <GenericTable
-        title="Joining Records"
-        subtitle={
-          loading
-            ? "Loading joining records..."
-            : `${joinedCount} employees joined · ${list.length} loaded`
-        }
-        data={
+ return (
+  <>
+    <GenericTable
+      title="Joining Records"
+      subtitle={
+        loading
+          ? "Loading joining records..."
+          : `${joinedCount} employees joined · ${list.length} loaded`
+      }
+      data={
+        list as unknown as Record<
+          string,
+          unknown
+        >[]
+      }
+      addLabel={
+        !isCandidate
+          ? "Add Joining Record"
+          : undefined
+      }
+      onAddClick={
+        !isCandidate
+          ? () => setShowAdd(true)
+          : undefined
+      }
+      onExport={() =>
+        exportToCsv(
+          "joining-records.csv",
           list as unknown as Record<
             string,
             unknown
-          >[]
-        }
-        addLabel="Add Joining Record"
-        onAddClick={() => setShowAdd(true)}
-        onExport={() =>
-          exportToCsv(
-            "joining-records.csv",
-            list as unknown as Record<
-              string,
-              unknown
-            >[],
-          )
-        }
+          >[],
+        )
+      }
         searchKeys={[
           "joiningId",
           "applicationId",
@@ -304,11 +315,11 @@ export default function JoiningRecords() {
                 r as unknown as JoiningRecord;
 
               if (
-                record.joiningStatus !==
-                "Joined"
-              ) {
-                return null;
-              }
+  isCandidate ||
+  record.joiningStatus !== "Joined"
+) {
+  return null;
+}
 
               return (
                 <button

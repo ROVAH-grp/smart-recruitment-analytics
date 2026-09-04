@@ -11,6 +11,7 @@ import {
 } from "../api/offers";
 
 import type { Offer } from "../api/offers";
+import { useAuth } from "../context/AuthContext";
 
 const OFFER_FIELDS = [
   {
@@ -45,6 +46,7 @@ function formatDate(date: string | null): string {
 }
 
 export default function Offers() {
+  const { user } = useAuth();
   const [list, setList] = useState<Offer[]>([]);
   const [showAdd, setShowAdd] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -195,6 +197,7 @@ showToast(
         }
         addLabel="Create Offer"
         onAddClick={() => setShowAdd(true)}
+        showAddButton={user?.role !== "CANDIDATE"}
         onExport={() =>
           exportToCsv(
             "offers.csv",
@@ -336,7 +339,7 @@ showToast(
         ]}
       />
 
-      {showAdd && (
+      {showAdd && user?.role !== "CANDIDATE" && (
         <FormModal
           title="Create Offer"
           subtitle="Generate a new offer"

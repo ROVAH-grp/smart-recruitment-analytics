@@ -3,6 +3,7 @@ import FormModal, { Toast } from "../components/FormModal";
 import { createInterview } from "../api/interviews";
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from "react-sparklines";
 import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import {
   getInterviews,
   type Interview,
@@ -33,7 +34,10 @@ function InfoTile({ label, value, mono = false }: { label: string; value: string
 }
 
 export default function ApplicationDetail({ app, onBack }: { app: App; onBack: () => void }) {
-    const [interview, setInterview] =
+  const { user } = useAuth();
+  const isCandidate = user?.role === "CANDIDATE";
+
+  const [interview, setInterview] =
     useState<Interview | null>(null);
 
   const [interviewLoading, setInterviewLoading] =
@@ -194,10 +198,41 @@ const handleScheduleInterview = async (
           </div>
           <p style={{ fontSize: 13, color: "var(--text-secondary)", margin: "4px 0 0", letterSpacing: "-0.1px" }}>{app.job} · {app.dept}</p>
         </div>
-        <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
-          <button style={{ padding: "7px 14px", borderRadius: 8, border: "1px solid var(--border)", background: "transparent", fontSize: 13, fontWeight: 600, color: "var(--text-secondary)", cursor: "pointer", fontFamily: "inherit" }}>Edit</button>
-          <button style={{ padding: "7px 14px", borderRadius: 8, border: "none", background: "var(--accent)", color: "#fff", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", boxShadow: "0 2px 8px rgba(79,110,247,0.3)" }}>Send Offer</button>
-        </div>
+        {!isCandidate && (
+          <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+            <button
+              style={{
+                padding: "7px 14px",
+                borderRadius: 8,
+                border: "1px solid var(--border)",
+                background: "transparent",
+                fontSize: 13,
+                fontWeight: 600,
+                color: "var(--text-secondary)",
+                cursor: "pointer",
+                fontFamily: "inherit",
+              }}
+            >
+              Edit
+            </button>
+            <button
+              style={{
+                padding: "7px 14px",
+                borderRadius: 8,
+                border: "none",
+                background: "var(--accent)",
+                color: "#fff",
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: "pointer",
+                fontFamily: "inherit",
+                boxShadow: "0 2px 8px rgba(79,110,247,0.3)",
+              }}
+            >
+              Send Offer
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Timeline */}

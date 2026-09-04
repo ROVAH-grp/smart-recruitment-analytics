@@ -43,6 +43,21 @@ export class User {
   })
   recruiterId!: number | null;
 
+  @Column({
+    name: 'reset_token',
+    type: 'varchar',
+    length: 255,
+    nullable: true,
+  })
+  resetToken!: string | null;
+
+  @Column({
+    name: 'reset_token_expires_at',
+    type: 'datetime',
+    nullable: true,
+  })
+  resetTokenExpiresAt!: Date | null;
+
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 }
