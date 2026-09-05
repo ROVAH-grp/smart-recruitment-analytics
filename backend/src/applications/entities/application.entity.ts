@@ -7,6 +7,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { ResumeAnalysis } from './resume-analysis.entity';
 import { Candidate } from '../../candidates/entities/candidate.entity';
 import { Job } from '../../jobs/entities/job.entity';
 import { Recruiter } from '../../recruiters/entities/recruiter.entity';
@@ -30,43 +31,43 @@ export enum ApplicationStatus {
 @Entity('applications')
 export class Application {
   @PrimaryGeneratedColumn({ name: 'application_id', type: 'bigint' })
-  applicationId: string;
+  applicationId!: string;
 
   @Column({ name: 'candidate_id', type: 'varchar', length: 50 })
-  candidateId: string;
+ candidateId!: string;
 
   @Column({ name: 'job_id', type: 'varchar', length: 50 })
-  jobId: string;
+  jobId!: string;
 
   @Column({ name: 'recruiter_id', type: 'int', nullable: true })
-  recruiterId: number | null;
+  recruiterId!: number | null;
 
   @Column({ name: 'source_id', type: 'int', nullable: true })
-  sourceId: number | null;
+  sourceId!: number | null;
 
   @Column({ name: 'application_date', type: 'date', nullable: true })
-  applicationDate: string | null;
+  applicationDate!: string | null;
 
   @Column({ name: 'screening_date', type: 'date', nullable: true })
-  screeningDate: string | null;
+  screeningDate!: string | null;
 
   @Column({ name: 'shortlist_date', type: 'date', nullable: true })
-  shortlistDate: string | null;
+  shortlistDate!: string | null;
 
   @Column({ name: 'interview_date', type: 'date', nullable: true })
-  interviewDate: string | null;
+  interviewDate!: string | null;
 
   @Column({ name: 'selection_date', type: 'date', nullable: true })
-  selectionDate: string | null;
+  selectionDate!: string | null;
 
   @Column({ name: 'offer_date', type: 'date', nullable: true })
-  offerDate: string | null;
+  offerDate!: string | null;
 
   @Column({ name: 'joining_date', type: 'date', nullable: true })
-  joiningDate: string | null;
+  joiningDate!: string | null;
 
   @Column({ name: 'status', type: 'varchar', length: 50, nullable: true })
-  status: string | null;
+  status!: string | null;
 
   @Column({
     name: 'match_score',
@@ -75,50 +76,79 @@ export class Application {
     scale: 2,
     nullable: true,
   })
-  matchScore: string | null;
+  matchScore!: string | null;
 
-  @Column({
-    name: 'recruitment_cost',
-    type: 'decimal',
-    precision: 12,
-    scale: 2,
-    nullable: true,
-  })
-  recruitmentCost: string | null;
+ @Column({
+  name: 'recruitment_cost',
+  type: 'decimal',
+  precision: 12,
+  scale: 2,
+  nullable: true,
+})
+recruitmentCost!: string | null;
 
-  @CreateDateColumn({ name: 'created_at' })
-  createdAt: Date;
+@Column({
+  name: 'resume_filename',
+  type: 'varchar',
+  length: 255,
+  nullable: true,
+})
+resumeFilename!: string | null;
+
+@Column({
+  name: 'resume_url',
+  type: 'text',
+  nullable: true,
+})
+resumeUrl!: string | null;
+
+@Column({
+  name: 'resume_public_id',
+  type: 'varchar',
+  length: 500,
+  nullable: true,
+})
+resumePublicId!: string | null;
+
+@CreateDateColumn({ name: 'created_at' })
+createdAt!: Date;
 
   @ManyToOne(() => Candidate, (candidate) => candidate.applications, {
     onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'candidate_id' })
-  candidate: Candidate;
+  candidate!: Candidate;
 
   @ManyToOne(() => Job, (job) => job.applications, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'job_id' })
-  job: Job;
+  job!: Job;
 
   @ManyToOne(() => Recruiter, (recruiter) => recruiter.applications, {
     nullable: true,
     onDelete: 'SET NULL',
   })
   @JoinColumn({ name: 'recruiter_id' })
-  recruiter: Recruiter | null;
+  recruiter!: Recruiter | null;
 
   @ManyToOne(() => Source, (source) => source.applications, {
     nullable: true,
     onDelete: 'SET NULL',
   })
   @JoinColumn({ name: 'source_id' })
-  source: Source | null;
+  source!: Source | null;
 
   @OneToOne(() => Interview, (interview) => interview.application)
-  interview: Interview;
+  interview!: Interview;
 
   @OneToOne(() => Offer, (offer) => offer.application)
-  offer: Offer;
+  offer!: Offer;
 
   @OneToOne(() => JoiningRecord, (joiningRecord) => joiningRecord.application)
-  joiningRecord: JoiningRecord;
+  joiningRecord!: JoiningRecord;
+
+  @OneToOne(
+  () => ResumeAnalysis,
+  (resumeAnalysis) => resumeAnalysis.application,
+)
+resumeAnalysis!: ResumeAnalysis;
 }

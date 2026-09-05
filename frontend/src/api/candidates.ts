@@ -25,6 +25,13 @@ export interface CreateCandidateData {
   education?: string;
 }
 
+export interface CandidateResume {
+  fileName: string;
+  fileUrl: string;
+  publicId?: string;
+  uploadedAt?: string;
+}
+
 export async function getCandidates(
   page = 1,
   limit = 20,
@@ -59,7 +66,6 @@ export async function createCandidate(
     method: "POST",
     body: JSON.stringify(data),
   });
-
 }
 
 export async function updateCandidate(
@@ -78,6 +84,51 @@ export async function updateCandidate(
 
 export async function deleteCandidate(id: string): Promise<void> {
   await apiFetch(`/candidates/${id}`, {
+    method: "DELETE",
+  });
+}
+
+/* ─────────────────────────────────────────────
+   Resume APIs
+───────────────────────────────────────────── */
+
+export async function getCandidateResume(
+  candidateId: string,
+): Promise<CandidateResume | null> {
+  try {
+    return await apiFetch<CandidateResume>(
+      `/candidates/${candidateId}/resume`,
+    );
+  } catch (error: any) {
+    // No resume uploaded yet
+    if (error?.status === 404) {
+      return null;
+    }
+
+    throw error;
+  }
+}
+
+export async function uploadCandidateResume(
+  candidateId: string,
+  file: File,
+): Promise<CandidateResume> {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  return apiFetch<CandidateResume>(
+    `/candidates/${candidateId}/resume`,
+    {
+      method: "POST",
+      body: formData,
+    },
+  );
+}
+
+export async function deleteCandidateResume(
+  candidateId: string,
+): Promise<void> {
+  await apiFetch(`/candidates/${candidateId}/resume`, {
     method: "DELETE",
   });
 }

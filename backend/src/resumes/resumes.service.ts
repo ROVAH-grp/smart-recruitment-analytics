@@ -10,8 +10,10 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Readable } from 'stream';
 import { UploadApiResponse, v2 as CloudinarySdk } from 'cloudinary';
+
 import { Resume } from './entities/resume.entity';
 import { Candidate } from '../candidates/entities/candidate.entity';
+import { Application } from '../applications/entities/application.entity';
 import { CLOUDINARY } from '../common/cloudinary/cloudinary.provider';
 
 const CLOUDINARY_FOLDER = 'smart-recruitment-analytics/resumes';
@@ -23,10 +25,13 @@ export class ResumesService {
   constructor(
     @InjectRepository(Resume)
     private readonly resumeRepository: Repository<Resume>,
-    // Existing Candidate repository is reused only to check existence -
-    // the candidates module itself is not modified by this feature.
+
     @InjectRepository(Candidate)
     private readonly candidateRepository: Repository<Candidate>,
+
+    @InjectRepository(Application)
+    private readonly applicationRepository: Repository<Application>,
+
     @Inject(CLOUDINARY)
     private readonly cloudinary: typeof CloudinarySdk,
   ) {}
@@ -35,6 +40,7 @@ export class ResumesService {
     const candidate = await this.candidateRepository.findOneBy({
       candidateId,
     });
+
     if (!candidate) {
       throw new NotFoundException(
         `Candidate with id '${candidateId}' not found.`,
@@ -42,6 +48,12 @@ export class ResumesService {
     }
   }
 
+  /**
+   * Legacy candidate-level resume upload.
+   *
+   * Kept for backward compatibility.
+   * New applications should use uploadForApplication().
+   */
   async upload(
     candidateId: string,
     file: Express.Multer.File,
@@ -54,7 +66,10 @@ export class ResumesService {
       );
     }
 
-    const existing = await this.resumeRepository.findOneBy({ candidateId });
+    const existing = await this.resumeRepository.findOne({
+      where: { candidateId },
+      order: { updatedAt: 'DESC' },
+    });
 
     const uploadResult = await this.uploadToCloudinary(file, candidateId);
 
@@ -70,10 +85,6 @@ export class ResumesService {
 
         const saved = await this.resumeRepository.save(existing);
 
-        // Remove the old asset only after the new metadata is safely
-        // persisted. A failure here is logged, not thrown, so the
-        // candidate ends up with a working new resume even if cleanup
-        // of the stale Cloudinary asset needs manual follow-up.
         if (oldPublicId !== uploadResult.public_id) {
           this.deleteFromCloudinary(oldPublicId).catch((err) =>
             this.logger.warn(
@@ -87,38 +98,181 @@ export class ResumesService {
 
       const resume = this.resumeRepository.create({
         candidateId,
+        applicationId: null,
         originalFilename: file.originalname,
         cloudinaryPublicId: uploadResult.public_id,
         mimeType: file.mimetype,
         fileSize: file.size,
         cloudinaryUrl: uploadResult.secure_url,
       });
+
       return await this.resumeRepository.save(resume);
     } catch (err) {
-      // DB write failed after a successful Cloudinary upload of a NEW
-      // asset - remove it so Cloudinary doesn't accumulate orphaned files.
-      await this.deleteFromCloudinary(uploadResult.public_id).catch((cleanupErr) =>
-        this.logger.error(
-          `Orphaned Cloudinary asset '${uploadResult.public_id}' could not be cleaned up: ${cleanupErr.message}`,
-        ),
+      await this.deleteFromCloudinary(uploadResult.public_id).catch(
+        (cleanupErr) =>
+          this.logger.error(
+            `Orphaned Cloudinary asset '${uploadResult.public_id}' could not be cleaned up: ${cleanupErr.message}`,
+          ),
       );
+
+      throw err;
+    }
+  }
+
+  /**
+   * New application-specific resume upload.
+   *
+   * A candidate can have different resumes for different applications.
+   */
+  async uploadForApplication(
+    applicationId: string,
+    candidateId: string,
+    file: Express.Multer.File,
+  ): Promise<Resume> {
+    await this.assertCandidateExists(candidateId);
+
+    if (!file) {
+      throw new BadRequestException(
+        'No file was provided. Attach the resume under the "file" form field.',
+      );
+    }
+
+    const application = await this.applicationRepository.findOneBy({
+      applicationId,
+    });
+
+    if (!application) {
+      throw new NotFoundException(
+        `Application with id '${applicationId}' not found.`,
+      );
+    }
+
+    // Security check: candidate can only upload a resume
+    // for their own application.
+    if (application.candidateId !== candidateId) {
+      throw new BadRequestException(
+        'You can only upload a resume for your own application.',
+      );
+    }
+
+    // One resume per application.
+    const existing = await this.resumeRepository.findOneBy({
+      applicationId,
+    });
+
+    const uploadResult = await this.uploadToCloudinary(file, candidateId);
+
+    try {
+      let resume: Resume;
+
+      if (existing) {
+        const oldPublicId = existing.cloudinaryPublicId;
+
+        existing.originalFilename = file.originalname;
+        existing.cloudinaryPublicId = uploadResult.public_id;
+        existing.mimeType = file.mimetype;
+        existing.fileSize = file.size;
+        existing.cloudinaryUrl = uploadResult.secure_url;
+
+        resume = await this.resumeRepository.save(existing);
+
+        if (oldPublicId !== uploadResult.public_id) {
+          this.deleteFromCloudinary(oldPublicId).catch((err) =>
+            this.logger.warn(
+              `Failed to remove old Cloudinary asset '${oldPublicId}' after replacement: ${err.message}`,
+            ),
+          );
+        }
+      } else {
+        resume = this.resumeRepository.create({
+          candidateId,
+          applicationId,
+          originalFilename: file.originalname,
+          cloudinaryPublicId: uploadResult.public_id,
+          mimeType: file.mimetype,
+          fileSize: file.size,
+          cloudinaryUrl: uploadResult.secure_url,
+        });
+
+        resume = await this.resumeRepository.save(resume);
+      }
+
+      // Keep the application table synchronized with the uploaded resume.
+      application.resumeFilename = file.originalname;
+      application.resumeUrl = uploadResult.secure_url;
+      application.resumePublicId = uploadResult.public_id;
+
+      await this.applicationRepository.save(application);
+
+      return resume;
+    } catch (err) {
+      await this.deleteFromCloudinary(uploadResult.public_id).catch(
+        (cleanupErr) =>
+          this.logger.error(
+            `Orphaned Cloudinary asset '${uploadResult.public_id}' could not be cleaned up: ${cleanupErr.message}`,
+          ),
+      );
+
       throw err;
     }
   }
 
   async findOne(candidateId: string): Promise<Resume> {
     await this.assertCandidateExists(candidateId);
-    const resume = await this.resumeRepository.findOneBy({ candidateId });
+
+    const resume = await this.resumeRepository.findOne({
+      where: { candidateId },
+      order: { updatedAt: 'DESC' },
+    });
+
     if (!resume) {
       throw new NotFoundException(
         `No resume found for candidate '${candidateId}'.`,
       );
     }
+
+    return resume;
+  }
+
+  /**
+   * Get the resume belonging to a specific application.
+   */
+  async findByApplication(
+    applicationId: string,
+    candidateId?: string,
+  ): Promise<Resume> {
+    const application = await this.applicationRepository.findOneBy({
+      applicationId,
+    });
+
+    if (!application) {
+      throw new NotFoundException(
+        `Application with id '${applicationId}' not found.`,
+      );
+    }
+
+    if (candidateId && application.candidateId !== candidateId) {
+      throw new BadRequestException(
+        'You can only access your own application resume.',
+      );
+    }
+
+    const resume = await this.resumeRepository.findOneBy({
+      applicationId,
+    });
+
+    if (!resume) {
+      throw new NotFoundException(
+        `No resume found for application '${applicationId}'.`,
+      );
+    }
+
     return resume;
   }
 
   async remove(candidateId: string): Promise<void> {
     const resume = await this.findOne(candidateId);
+
     await this.deleteFromCloudinary(resume.cloudinaryPublicId);
     await this.resumeRepository.remove(resume);
   }
@@ -127,9 +281,11 @@ export class ResumesService {
     file: Express.Multer.File,
     candidateId: string,
   ): Promise<UploadApiResponse> {
-    // Never trust the original filename for storage - generate a safe,
-    // unique public_id instead.
-    const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
+    // Never trust the original filename for storage.
+    const uniqueSuffix = `${Date.now()}-${Math.round(
+      Math.random() * 1e9,
+    )}`;
+
     const publicId = `${candidateId}_${uniqueSuffix}`;
 
     return new Promise((resolve, reject) => {
@@ -137,8 +293,6 @@ export class ResumesService {
         {
           folder: CLOUDINARY_FOLDER,
           public_id: publicId,
-          // PDFs/DOCX are documents, not images - "raw" is the correct
-          // Cloudinary resource type for non-image/video files.
           resource_type: 'raw',
           use_filename: false,
           unique_filename: false,
@@ -154,9 +308,11 @@ export class ResumesService {
               ),
             );
           }
+
           resolve(result);
         },
       );
+
       Readable.from(file.buffer).pipe(uploadStream);
     });
   }
@@ -168,7 +324,9 @@ export class ResumesService {
       });
     } catch (error) {
       throw new InternalServerErrorException(
-        `Failed to delete resume from Cloudinary: ${(error as Error).message}`,
+        `Failed to delete resume from Cloudinary: ${
+          (error as Error).message
+        }`,
       );
     }
   }

@@ -4,6 +4,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { ResumeAnalysis } from './entities/resume-analysis.entity';
 import { Repository } from 'typeorm';
 import { Application } from './entities/application.entity';
 import { Candidate } from '../candidates/entities/candidate.entity';
@@ -20,19 +21,25 @@ const SORTABLE_FIELDS = ['applicationDate', 'matchScore', 'createdAt'];
 
 @Injectable()
 export class ApplicationsService {
-  constructor(
-    @InjectRepository(Application)
-    private readonly applicationRepository: Repository<Application>,
-    @InjectRepository(Candidate)
-    private readonly candidateRepository: Repository<Candidate>,
-    @InjectRepository(Job)
-    private readonly jobRepository: Repository<Job>,
-    @InjectRepository(Recruiter)
-    private readonly recruiterRepository: Repository<Recruiter>,
-    @InjectRepository(Source)
-    private readonly sourceRepository: Repository<Source>,
-  ) {}
+constructor(
+  @InjectRepository(Application)
+  private readonly applicationRepository: Repository<Application>,
 
+  @InjectRepository(Candidate)
+  private readonly candidateRepository: Repository<Candidate>,
+
+  @InjectRepository(Job)
+  private readonly jobRepository: Repository<Job>,
+
+  @InjectRepository(Recruiter)
+  private readonly recruiterRepository: Repository<Recruiter>,
+
+  @InjectRepository(Source)
+  private readonly sourceRepository: Repository<Source>,
+
+  @InjectRepository(ResumeAnalysis)
+  private readonly resumeAnalysisRepository: Repository<ResumeAnalysis>,
+) {}
   async findAll(
     query: QueryApplicationDto,
   ): Promise<PaginatedResult<Application>> {

@@ -2,44 +2,84 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-/**
- * One resume per candidate. Deliberately has NO TypeORM relation decorator
- * back to Candidate — the existing Candidate entity/module is not modified
- * by this feature. The link is candidate_id (enforced at the DB level by a
- * FOREIGN KEY in resume_schema.sql) plus explicit lookups in the service.
- *
- * The actual file lives in Cloudinary; only metadata + URL are stored here.
- */
+import { Application } from '../../applications/entities/application.entity';
+
 @Entity('resumes')
 export class Resume {
   @PrimaryGeneratedColumn({ name: 'resume_id', type: 'bigint' })
-  resumeId: string;
+  resumeId!: string;
 
-  @Column({ name: 'candidate_id', type: 'varchar', length: 50, unique: true })
-  candidateId: string;
+  @Column({
+    name: 'candidate_id',
+    type: 'varchar',
+    length: 50,
+  })
+  candidateId!: string;
 
-  @Column({ name: 'original_filename', type: 'varchar', length: 255 })
-  originalFilename: string;
+  @Column({
+    name: 'application_id',
+    type: 'bigint',
+    nullable: true,
+    unique: true,
+  })
+  applicationId!: string | null;
 
-  @Column({ name: 'cloudinary_public_id', type: 'varchar', length: 255 })
-  cloudinaryPublicId: string;
+  @Column({
+    name: 'original_filename',
+    type: 'varchar',
+    length: 255,
+  })
+  originalFilename!: string;
 
-  @Column({ name: 'mime_type', type: 'varchar', length: 100 })
-  mimeType: string;
+  @Column({
+    name: 'cloudinary_public_id',
+    type: 'varchar',
+    length: 255,
+  })
+  cloudinaryPublicId!: string;
 
-  @Column({ name: 'file_size', type: 'int' })
-  fileSize: number;
+  @Column({
+    name: 'mime_type',
+    type: 'varchar',
+    length: 100,
+  })
+  mimeType!: string;
 
-  @Column({ name: 'cloudinary_url', type: 'varchar', length: 500 })
-  cloudinaryUrl: string;
+  @Column({
+    name: 'file_size',
+    type: 'int',
+  })
+  fileSize!: number;
 
-  @CreateDateColumn({ name: 'uploaded_at', type: 'timestamp' })
-  uploadedAt: Date;
+  @Column({
+    name: 'cloudinary_url',
+    type: 'varchar',
+    length: 500,
+  })
+  cloudinaryUrl!: string;
 
-  @UpdateDateColumn({ name: 'updated_at', type: 'timestamp' })
-  updatedAt: Date;
+  @CreateDateColumn({
+    name: 'uploaded_at',
+    type: 'timestamp',
+  })
+  uploadedAt!: Date;
+
+  @UpdateDateColumn({
+    name: 'updated_at',
+    type: 'timestamp',
+  })
+  updatedAt!: Date;
+
+  @ManyToOne(() => Application, {
+    nullable: true,
+    onDelete: 'CASCADE',
+  })
+  @JoinColumn({ name: 'application_id' })
+  application!: Application | null;
 }

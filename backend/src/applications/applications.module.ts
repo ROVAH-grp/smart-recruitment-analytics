@@ -7,10 +7,18 @@ import { Recruiter } from '../recruiters/entities/recruiter.entity';
 import { Source } from '../sources/entities/source.entity';
 import { ApplicationsService } from './applications.service';
 import { ApplicationsController } from './applications.controller';
+import { ResumeAnalysis } from './entities/resume-analysis.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Application, Candidate, Job, Recruiter, Source]),
+    TypeOrmModule.forFeature([
+  Application,
+  ResumeAnalysis,
+  Candidate,
+  Job,
+  Recruiter,
+  Source,
+]),
   ],
   controllers: [ApplicationsController],
   providers: [ApplicationsService],

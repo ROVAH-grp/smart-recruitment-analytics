@@ -7,11 +7,16 @@ import {
   HttpStatus,
   Param,
   Post,
+  Request,
   UploadedFile,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
+
 import { FileInterceptor } from '@nestjs/platform-express';
+
 import {
+  ApiBearerAuth,
   ApiBody,
   ApiConsumes,
   ApiOperation,
@@ -19,9 +24,16 @@ import {
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
+
 import { memoryStorage } from 'multer';
+
 import { ResumesService } from './resumes.service';
 import { ResumeResponseDto } from './dto/resume-response.dto';
+
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { RolesGuard } from '../auth/guards/roles.guard';
+import { Roles } from '../auth/decorators/roles.decorator';
+import { UserRole } from '../auth/entities/user.entity';
 
 const ALLOWED_MIME_TYPES = [
   'application/pdf',
@@ -29,6 +41,7 @@ const ALLOWED_MIME_TYPES = [
 ];
 
 const ALLOWED_EXTENSIONS = ['.pdf', '.docx'];
+
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
 
 function resumeFileFilter(
@@ -37,6 +50,7 @@ function resumeFileFilter(
   callback: (error: Error | null, acceptFile: boolean) => void,
 ) {
   const dotIndex = file.originalname.lastIndexOf('.');
+
   const extension =
     dotIndex >= 0 ? file.originalname.slice(dotIndex).toLowerCase() : '';
 
@@ -49,24 +63,137 @@ function resumeFileFilter(
       false,
     );
   }
+
   callback(null, true);
 }
 
 @ApiTags('Resumes')
-@Controller('candidates/:candidateId/resume')
+@Controller('candidates/:candidateId')
 export class ResumesController {
   constructor(private readonly resumesService: ResumesService) {}
 
-  @Post()
+  /*
+   * ============================================================
+   * NEW: APPLICATION-SPECIFIC RESUME UPLOAD
+   * ============================================================
+   *
+   * POST /candidates/:candidateId/applications/:applicationId/resume
+   *
+   * Used by the candidate application flow.
+   */
+  @Post('applications/:applicationId/resume')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(UserRole.CANDIDATE)
   @UseInterceptors(
     FileInterceptor('file', {
-      storage: memoryStorage(), // never written to disk/repo
+      storage: memoryStorage(),
+      limits: { fileSize: MAX_FILE_SIZE_BYTES },
+      fileFilter: resumeFileFilter,
+    }),
+  )
+  @ApiBearerAuth('JWT-auth')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'candidateId',
+    example: 'C0001',
+  })
+  @ApiParam({
+    name: 'applicationId',
+    example: '1',
+  })
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+          description: 'PDF or DOCX resume file, max 5 MB.',
+        },
+      },
+      required: ['file'],
+    },
+  })
+  @ApiOperation({
+    summary: 'Upload a resume for a job application',
+    description:
+      'Uploads a candidate resume to Cloudinary and links it to the specified application. ' +
+      'A candidate can only upload a resume for their own application. ' +
+      'Uploading another resume for the same application replaces the previous resume.',
+  })
+  @ApiResponse({
+    status: 201,
+    description: 'Application resume uploaded and stored.',
+    type: ResumeResponseDto,
+  })
+  @ApiResponse({
+    status: 400,
+    description: 'Invalid file type, no file, or application ownership error.',
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Authentication required.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Only candidates can use this endpoint.',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Candidate or application not found.',
+  })
+  @ApiResponse({
+    status: 413,
+    description: 'File exceeds the 5 MB limit.',
+  })
+  uploadForApplication(
+    @Param('candidateId') candidateId: string,
+    @Param('applicationId') applicationId: string,
+    @UploadedFile() file: Express.Multer.File,
+    @Request() request: any,
+  ) {
+    /*
+     * Extra ownership check at controller level.
+     * The service also verifies application ownership.
+     */
+    if (
+      request.user.role === UserRole.CANDIDATE &&
+      request.user.candidateId !== candidateId
+    ) {
+      throw new BadRequestException(
+        'You can only upload a resume for your own candidate profile.',
+      );
+    }
+
+    return this.resumesService.uploadForApplication(
+      applicationId,
+      candidateId,
+      file,
+    );
+  }
+
+  /*
+   * ============================================================
+   * LEGACY: CANDIDATE-LEVEL RESUME UPLOAD
+   * ============================================================
+   *
+   * POST /candidates/:candidateId/resume
+   *
+   * Kept for backward compatibility.
+   */
+  @Post('resume')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: memoryStorage(),
       limits: { fileSize: MAX_FILE_SIZE_BYTES },
       fileFilter: resumeFileFilter,
     }),
   )
   @ApiConsumes('multipart/form-data')
-  @ApiParam({ name: 'candidateId', example: 'C0001' })
+  @ApiParam({
+    name: 'candidateId',
+    example: 'C0001',
+  })
   @ApiBody({
     schema: {
       type: 'object',
@@ -82,10 +209,7 @@ export class ResumesController {
   @ApiOperation({
     summary: 'Upload (or replace) a candidate resume',
     description:
-      'Uploads a PDF or DOCX resume to Cloudinary and stores its metadata ' +
-      'in MySQL. If the candidate already has a resume, it is replaced: ' +
-      'the old Cloudinary asset is removed and the metadata row is updated ' +
-      'in place rather than creating a second record.',
+      'Legacy candidate-level resume upload. New applications should use the application-specific resume endpoint.',
   })
   @ApiResponse({
     status: 201,
@@ -96,8 +220,14 @@ export class ResumesController {
     status: 400,
     description: 'Invalid file type, or no file provided.',
   })
-  @ApiResponse({ status: 404, description: 'Candidate not found.' })
-  @ApiResponse({ status: 413, description: 'File exceeds the 5 MB limit.' })
+  @ApiResponse({
+    status: 404,
+    description: 'Candidate not found.',
+  })
+  @ApiResponse({
+    status: 413,
+    description: 'File exceeds the 5 MB limit.',
+  })
   upload(
     @Param('candidateId') candidateId: string,
     @UploadedFile() file: Express.Multer.File,
@@ -105,9 +235,21 @@ export class ResumesController {
     return this.resumesService.upload(candidateId, file);
   }
 
-  @Get()
-  @ApiOperation({ summary: "Get a candidate's resume metadata and URL" })
-  @ApiParam({ name: 'candidateId', example: 'C0001' })
+  /*
+   * ============================================================
+   * GET CANDIDATE RESUME
+   * ============================================================
+   *
+   * GET /candidates/:candidateId/resume
+   */
+  @Get('resume')
+  @ApiOperation({
+    summary: "Get a candidate's resume metadata and URL",
+  })
+  @ApiParam({
+    name: 'candidateId',
+    example: 'C0001',
+  })
   @ApiResponse({
     status: 200,
     description: 'Resume metadata.',
@@ -121,11 +263,26 @@ export class ResumesController {
     return this.resumesService.findOne(candidateId);
   }
 
-  @Delete()
+  /*
+   * ============================================================
+   * DELETE CANDIDATE RESUME
+   * ============================================================
+   *
+   * DELETE /candidates/:candidateId/resume
+   */
+  @Delete('resume')
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiOperation({ summary: "Delete a candidate's resume" })
-  @ApiParam({ name: 'candidateId', example: 'C0001' })
-  @ApiResponse({ status: 204, description: 'Resume deleted.' })
+  @ApiOperation({
+    summary: "Delete a candidate's resume",
+  })
+  @ApiParam({
+    name: 'candidateId',
+    example: 'C0001',
+  })
+  @ApiResponse({
+    status: 204,
+    description: 'Resume deleted.',
+  })
   @ApiResponse({
     status: 404,
     description: 'Candidate not found, or candidate has no resume.',
