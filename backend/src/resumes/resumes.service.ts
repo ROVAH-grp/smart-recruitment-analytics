@@ -11,6 +11,10 @@ import { Repository } from 'typeorm';
 import { Readable } from 'stream';
 import { UploadApiResponse, v2 as CloudinarySdk } from 'cloudinary';
 
+import { AiService } from '../ai/ai.service';
+import { ResumeAnalysis } from '../applications/entities/resume-analysis.entity';
+import { Job } from '../jobs/entities/job.entity';
+
 import { Resume } from './entities/resume.entity';
 import { Candidate } from '../candidates/entities/candidate.entity';
 import { Application } from '../applications/entities/application.entity';
@@ -22,19 +26,21 @@ const CLOUDINARY_FOLDER = 'smart-recruitment-analytics/resumes';
 export class ResumesService {
   private readonly logger = new Logger(ResumesService.name);
 
-  constructor(
-    @InjectRepository(Resume)
-    private readonly resumeRepository: Repository<Resume>,
-
-    @InjectRepository(Candidate)
-    private readonly candidateRepository: Repository<Candidate>,
-
-    @InjectRepository(Application)
-    private readonly applicationRepository: Repository<Application>,
-
-    @Inject(CLOUDINARY)
-    private readonly cloudinary: typeof CloudinarySdk,
-  ) {}
+constructor(
+  @InjectRepository(Resume)
+  private readonly resumeRepository: Repository<Resume>,
+  @InjectRepository(Candidate)
+  private readonly candidateRepository: Repository<Candidate>,
+  @InjectRepository(Job)
+private readonly jobRepository: Repository<Job>,
+  @InjectRepository(Application)
+  private readonly applicationRepository: Repository<Application>,
+  @InjectRepository(ResumeAnalysis)
+  private readonly resumeAnalysisRepository: Repository<ResumeAnalysis>,
+  @Inject(CLOUDINARY)
+  private readonly cloudinary: typeof CloudinarySdk,
+  private readonly aiService: AiService,
+) {}
 
   private async assertCandidateExists(candidateId: string): Promise<void> {
     const candidate = await this.candidateRepository.findOneBy({
@@ -146,14 +152,36 @@ export class ResumesService {
         `Application with id '${applicationId}' not found.`,
       );
     }
+   
 
     // Security check: candidate can only upload a resume
     // for their own application.
-    if (application.candidateId !== candidateId) {
-      throw new BadRequestException(
-        'You can only upload a resume for your own application.',
-      );
-    }
+   if (application.candidateId !== candidateId) {
+  throw new BadRequestException(
+    'You can only upload a resume for your own application.',
+  );
+}
+
+const job = await this.jobRepository.findOne({
+  where: { jobId: application.jobId },
+});
+
+if (!job) {
+  throw new NotFoundException(
+    `Job with id '${application.jobId}' not found.`,
+  );
+}
+
+const parsedResume = await this.aiService.parseResume(file);
+
+const ranking = await this.aiService.rankResume(file, {
+  job_title: job.jobTitle,
+  required_skills: job.requiredSkills ?? [],
+  required_experience_years: job.requiredExperienceYears ?? 0,
+  required_education: job.requiredEducation ?? [],
+  required_certifications: job.requiredCertifications ?? [],
+  preferred_projects_keywords: job.preferredProjectsKeywords ?? [],
+});
 
     // One resume per application.
     const existing = await this.resumeRepository.findOneBy({
@@ -199,10 +227,33 @@ export class ResumesService {
 
       // Keep the application table synchronized with the uploaded resume.
       application.resumeFilename = file.originalname;
-      application.resumeUrl = uploadResult.secure_url;
-      application.resumePublicId = uploadResult.public_id;
+application.resumeUrl = uploadResult.secure_url;
+application.resumePublicId = uploadResult.public_id;
+application.matchScore = String(ranking.overall_score);
 
-      await this.applicationRepository.save(application);
+await this.applicationRepository.save(application);
+
+      const existingAnalysis = await this.resumeAnalysisRepository.findOne({
+  where: { applicationId },
+});
+
+await this.resumeAnalysisRepository.save({
+  ...(existingAnalysis ?? {}),
+  applicationId,
+  atsScore: String(ranking.overall_score),
+  skills: JSON.stringify(parsedResume.skills ?? []),
+  education: JSON.stringify(parsedResume.education ?? []),
+  experience: null,
+  projects: JSON.stringify(parsedResume.projects ?? []),
+  certifications: null,
+  parsedData: {
+    ...parsedResume,
+    ranking: {
+      overallScore: ranking.overall_score,
+      breakdown: ranking.breakdown,
+    },
+  },
+});
 
       return resume;
     } catch (err) {

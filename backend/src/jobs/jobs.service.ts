@@ -70,25 +70,57 @@ export class JobsService {
       throw new ConflictException(`Job with id "${dto.jobId}" already exists`);
     }
 
-    const job = this.jobRepository.create({
-      jobId: dto.jobId,
-      jobTitle: dto.jobTitle,
-      department: dto.department ?? null,
-      jobPostedDate: dto.jobPostedDate ?? null,
-    });
+   const job = this.jobRepository.create({
+  jobId: dto.jobId,
+  jobTitle: dto.jobTitle,
+  department: dto.department ?? null,
+  jobPostedDate: dto.jobPostedDate ?? null,
+  requiredSkills: dto.requiredSkills ?? null,
+  requiredExperienceYears: dto.requiredExperienceYears ?? null,
+  requiredEducation: dto.requiredEducation ?? null,
+  requiredCertifications: dto.requiredCertifications ?? null,
+  preferredProjectsKeywords: dto.preferredProjectsKeywords ?? null,
+});
     return this.jobRepository.save(job);
   }
 
   async update(jobId: string, dto: UpdateJobDto): Promise<Job> {
-    const job = await this.findOne(jobId);
+  const job = await this.findOne(jobId);
 
-    if (dto.jobTitle !== undefined) job.jobTitle = dto.jobTitle;
-    if (dto.department !== undefined) job.department = dto.department;
-    if (dto.jobPostedDate !== undefined)
-      job.jobPostedDate = dto.jobPostedDate;
-
-    return this.jobRepository.save(job);
+  if (dto.jobTitle !== undefined) {
+    job.jobTitle = dto.jobTitle;
   }
+
+  if (dto.department !== undefined) {
+    job.department = dto.department;
+  }
+
+  if (dto.jobPostedDate !== undefined) {
+    job.jobPostedDate = dto.jobPostedDate;
+  }
+
+  if (dto.requiredSkills !== undefined) {
+    job.requiredSkills = dto.requiredSkills;
+  }
+
+  if (dto.requiredExperienceYears !== undefined) {
+    job.requiredExperienceYears = dto.requiredExperienceYears;
+  }
+
+  if (dto.requiredEducation !== undefined) {
+    job.requiredEducation = dto.requiredEducation;
+  }
+
+  if (dto.requiredCertifications !== undefined) {
+    job.requiredCertifications = dto.requiredCertifications;
+  }
+
+  if (dto.preferredProjectsKeywords !== undefined) {
+    job.preferredProjectsKeywords = dto.preferredProjectsKeywords;
+  }
+
+  return this.jobRepository.save(job);
+}
 
   async remove(jobId: string): Promise<void> {
     const job = await this.findOne(jobId);
