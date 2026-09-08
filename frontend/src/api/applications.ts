@@ -109,12 +109,18 @@ if (candidateId.trim()) {
   );
 }
 
+interface ApplicationResponse {
+  data: Application;
+}
+
 export async function getApplication(
   id: string,
 ): Promise<Application> {
-  return apiFetch<Application>(
+  const response = await apiFetch<ApplicationResponse>(
     `/applications/${id}`,
   );
+
+  return response.data;
 }
 
 export async function createApplication(

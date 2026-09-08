@@ -1,6 +1,13 @@
 import Badge from "../components/Badge";
 import FormModal, { Toast } from "../components/FormModal";
 import { createInterview } from "../api/interviews";
+import {
+  uploadApplicationResume,
+} from "../api/resumes";
+
+import {
+  getApplication,
+} from "../api/applications";
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from "react-sparklines";
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
@@ -50,6 +57,14 @@ const [toast, setToast] = useState<{
   msg: string;
   type: "success" | "error";
 } | null>(null);
+
+const [matchScore, setMatchScore] = useState(0);
+
+const [resumeUploading, setResumeUploading] =
+  useState(false);
+
+const [resumeFile, setResumeFile] =
+  useState<File | null>(null);
 
 
   useEffect(() => {
@@ -137,6 +152,56 @@ const handleScheduleInterview = async (
     });
   }
 };
+
+const handleResumeUpload = async () => {
+  if (!resumeFile) {
+    setToast({
+      msg: "Please select a resume first.",
+      type: "error",
+    });
+    return;
+  }
+
+  try {
+    setResumeUploading(true);
+
+    await uploadApplicationResume(
+  app.candidateId,
+  app.id,
+  resumeFile,
+);
+
+    const updatedApplication =
+      await getApplication(app.id);
+
+    setMatchScore(
+      Number(updatedApplication.matchScore ?? 0),
+    );
+
+    setResumeFile(null);
+
+    setToast({
+      msg: "Resume uploaded and ATS score generated successfully.",
+      type: "success",
+    });
+
+    setTimeout(() => setToast(null), 3500);
+  } catch (error) {
+    console.error(error);
+
+    setToast({
+      msg:
+        error instanceof Error
+          ? error.message
+          : "Failed to upload resume.",
+      type: "error",
+    });
+  } finally {
+    setResumeUploading(false);
+  }
+};
+
+
 
     const overallScore =
     interview?.overallScore != null
@@ -293,31 +358,126 @@ const handleScheduleInterview = async (
         {/* Match score ring */}
         <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-md)", padding: "20px 22px", boxShadow: "var(--shadow-sm)" }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Match Score</div>
+
+           {isCandidate && (
+  <div
+    style={{
+      marginBottom: 18,
+      padding: 12,
+      border: "1px dashed var(--border)",
+      borderRadius: 10,
+      background: "var(--surface-secondary)",
+    }}
+  >
+    <div
+      style={{
+        fontSize: 12,
+        fontWeight: 700,
+        color: "var(--text)",
+        marginBottom: 8,
+      }}
+    >
+      Upload Resume
+    </div>
+
+    <label
+      style={{
+        display: "block",
+        width: "100%",
+        boxSizing: "border-box",
+        padding: "10px 12px",
+        border: "1px solid var(--border)",
+        borderRadius: 8,
+        background: "var(--surface)",
+        color: "var(--text)",
+        fontSize: 12,
+        fontWeight: 600,
+        cursor: "pointer",
+        marginBottom: 10,
+      }}
+    >
+      📄 Choose PDF or DOCX
+
+      <input
+        type="file"
+        accept=".pdf,.docx"
+        onChange={(e) => {
+          const file = e.target.files?.[0] ?? null;
+          setResumeFile(file);
+        }}
+        style={{
+          display: "none",
+        }}
+      />
+    </label>
+
+    {resumeFile && (
+      <div
+        style={{
+          fontSize: 11,
+          color: "var(--text-secondary)",
+          marginBottom: 10,
+        }}
+      >
+        Selected: <strong>{resumeFile.name}</strong>
+      </div>
+    )}
+
+    <button
+      type="button"
+      onClick={handleResumeUpload}
+      disabled={!resumeFile || resumeUploading}
+      style={{
+        width: "100%",
+        padding: "8px 12px",
+        borderRadius: 8,
+        border: "none",
+        background:
+          !resumeFile || resumeUploading
+            ? "var(--border)"
+            : "var(--accent)",
+        color: "#fff",
+        fontSize: 12,
+        fontWeight: 700,
+        cursor:
+          !resumeFile || resumeUploading
+            ? "not-allowed"
+            : "pointer",
+        fontFamily: "inherit",
+      }}
+    >
+      {resumeUploading
+        ? "Analyzing Resume..."
+        : "Upload & Analyze Resume"}
+    </button>
+  </div>
+)}
+
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
             <div style={{ position: "relative", flexShrink: 0 }}>
               <svg viewBox="0 0 80 80" width="80" height="80">
                 <circle cx="40" cy="40" r="30" fill="none" stroke="var(--border-light)" strokeWidth="8"/>
                 <circle
                   cx="40" cy="40" r="30" fill="none"
-                  stroke={app.matchScore >= 85 ? "#059669" : app.matchScore >= 70 ? "#D97706" : "#DC2626"}
+                  stroke={matchScore >= 85 ? "#059669" : matchScore >= 70 ? "#D97706" : "#DC2626"}
                   strokeWidth="8"
-                  strokeDasharray={`${app.matchScore * 1.885} 188.5`}
+                  strokeDasharray={`${matchScore * 1.885} 188.5`}
                   strokeLinecap="round"
                   transform="rotate(-90 40 40)"
                   style={{ transition: "stroke-dasharray 0.8s ease" }}
                 />
               </svg>
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
-                <span style={{ fontSize: 18, fontWeight: 800, color: "var(--text)", letterSpacing: "-1px" }}>{app.matchScore}</span>
+                <span style={{ fontSize: 18, fontWeight: 800, color: "var(--text)", letterSpacing: "-1px" }}>{matchScore}</span>
               </div>
             </div>
             <div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: "var(--text)", letterSpacing: "-0.8px" }}>{app.matchScore}%</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: "var(--text)", letterSpacing: "-0.8px" }}>{matchScore}%</div>
               <div style={{ fontSize: 12, color: "var(--text-secondary)", marginTop: 2 }}>
-                {app.matchScore >= 85 ? "Excellent fit" : app.matchScore >= 70 ? "Good fit" : "Below threshold"}
+                {matchScore >= 85 ? "Excellent fit" : matchScore >= 70 ? "Good fit" : "Below threshold"}
               </div>
               <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 4 }}>
-                {[["Skills", app.matchScore + 2], ["Experience", app.matchScore - 4], ["Culture", app.matchScore + 1]].map(([k, v]) => (
+                {[["Skills", matchScore + 2], ["Experience", matchScore - 4], ["Culture", matchScore + 1]].map(([k, v]) => (
                   <div key={k} style={{ display: "flex", alignItems: "center", gap: 6 }}>
                     <span style={{ fontSize: 11.5, color: "var(--text-secondary)", width: 64 }}>{k}</span>
                     <div style={{ flex: 1, height: 4, background: "var(--border-light)", borderRadius: 99 }}>
@@ -330,6 +490,7 @@ const handleScheduleInterview = async (
             </div>
           </div>
         </div>
+              
 
         {/* Interview score */}
 <div
@@ -507,6 +668,14 @@ const handleScheduleInterview = async (
           </div>
         </div>
       </div>
+            {toast && (
+  <Toast
+    message={toast.msg}
+    type={toast.type}
+    onClose={() => setToast(null)}
+  />
+)}
+
     </div>
   );
 }

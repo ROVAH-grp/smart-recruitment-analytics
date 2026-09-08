@@ -69,3 +69,23 @@ export async function deleteResume(
     },
   );
 }
+
+export async function uploadApplicationResume(
+  candidateId: string,
+  applicationId: string,
+  file: File,
+): Promise<Resume> {
+  const formData = new FormData();
+
+  formData.append("file", file);
+
+  const response = await apiFetch<ResumeResponse>(
+    `/candidates/${candidateId}/applications/${applicationId}/resume`,
+    {
+      method: "POST",
+      body: formData,
+    },
+  );
+
+  return response.data;
+}

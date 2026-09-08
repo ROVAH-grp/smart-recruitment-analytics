@@ -74,7 +74,7 @@ export class ResumesController {
 
   /*
    * ============================================================
-   * NEW: APPLICATION-SPECIFIC RESUME UPLOAD
+   * APPLICATION-SPECIFIC RESUME UPLOAD
    * ============================================================
    *
    * POST /candidates/:candidateId/applications/:applicationId/resume
@@ -123,12 +123,13 @@ export class ResumesController {
   })
   @ApiResponse({
     status: 201,
-    description: 'Application resume uploaded and stored.',
+    description: 'Application resume uploaded and ATS score generated.',
     type: ResumeResponseDto,
   })
   @ApiResponse({
     status: 400,
-    description: 'Invalid file type, no file, or application ownership error.',
+    description:
+      'Invalid file type, no file, or application ownership error.',
   })
   @ApiResponse({
     status: 401,
@@ -152,10 +153,6 @@ export class ResumesController {
     @UploadedFile() file: Express.Multer.File,
     @Request() request: any,
   ) {
-    /*
-     * Extra ownership check at controller level.
-     * The service also verifies application ownership.
-     */
     if (
       request.user.role === UserRole.CANDIDATE &&
       request.user.candidateId !== candidateId
