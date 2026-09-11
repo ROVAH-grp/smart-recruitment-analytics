@@ -10,11 +10,14 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "parser"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "nlp"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "matching"))
 
+from fastapi.openapi.utils import get_openapi
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from pdf_parser import extract_text_from_pdf
 from docx_parser import extract_text_from_docx
 from profile_builder import build_candidate_profile
 from matcher import calculate_match_score
+from typing import List
+from typing import Annotated, List
 
 app = FastAPI(title="Smart Recruitment Analytics - AI Service")
 
@@ -50,8 +53,8 @@ async def parse_resume(file: UploadFile = File(...)):
 
 @app.post("/rank-candidates")
 async def rank_candidates_endpoint(
-    files: List[UploadFile] = File(...),
-    job_requirement: str = Form(...)
+    files: Annotated[List[UploadFile], File(...)],
+    job_requirement: Annotated[str, Form(...)]
 ):
     """
     Accepts multiple resume files plus a job_requirement JSON string
@@ -95,3 +98,48 @@ async def rank_candidates_endpoint(
 
     results.sort(key=lambda r: r["overall_score"], reverse=True)
     return results
+
+
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+
+    schema = get_openapi(
+        title=app.title,
+        version=app.version,
+        routes=app.routes,
+    )
+
+    schema["openapi"] = "3.0.3"
+
+    components = schema.get("components", {}).get("schemas", {})
+
+    for schema_data in components.values():
+        properties = schema_data.get("properties", {})
+
+        for prop in properties.values():
+            # Multiple file upload
+            if (
+                prop.get("type") == "array"
+                and isinstance(prop.get("items"), dict)
+            ):
+                items = prop["items"]
+
+                if "contentMediaType" in items:
+                    items.pop("contentMediaType", None)
+                    items["type"] = "string"
+                    items["format"] = "binary"
+
+            # Single file upload
+            if (
+                prop.get("type") == "string"
+                and "contentMediaType" in prop
+            ):
+                prop.pop("contentMediaType", None)
+                prop["format"] = "binary"
+
+    app.openapi_schema = schema
+    return app.openapi_schema
+
+
+app.openapi = custom_openapi
