@@ -49,7 +49,7 @@ async function bootstrap() {
   SwaggerModule.setup('api/docs', app, document);
 
   const port = configService.get('port', { infer: true });
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
   // eslint-disable-next-line no-console
   console.log(`Application is running on: http://localhost:${port}/api`);
   // eslint-disable-next-line no-console
