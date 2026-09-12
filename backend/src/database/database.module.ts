@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
+
 import { ConfigModule, ConfigService } from '@nestjs/config';
+
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { AppConfig } from '../config/configuration';
 
 @Module({
@@ -15,10 +18,18 @@ import { AppConfig } from '../config/configuration';
         username: configService.get('database.username', { infer: true }),
         password: configService.get('database.password', { infer: true }),
         database: configService.get('database.database', { infer: true }),
+
+        // TiDB Cloud requires a secure TLS connection
+        ssl: {
+          rejectUnauthorized: false,
+        },
+
         autoLoadEntities: true,
-        // CRITICAL: never set this to true. The database already exists
-        // and is populated. TypeORM must never alter the existing schema.
+
+        // CRITICAL: never set this to true.
+        // The database already exists and is populated.
         synchronize: false,
+
         // Keep query logging useful in dev without leaking to prod logs.
         logging:
           configService.get('nodeEnv', { infer: true }) === 'development'
