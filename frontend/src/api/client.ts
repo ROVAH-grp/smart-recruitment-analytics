@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://smart-recruitment-backend-q04j.onrender.com/api";
+const API_BASE_URL = "https://smart-recruitment-backend-new.onrender.com/api";
 export async function apiFetch<T>(
   endpoint: string,
   options?: RequestInit,
