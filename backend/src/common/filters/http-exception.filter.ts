@@ -72,11 +72,21 @@ export class HttpExceptionFilter implements ExceptionFilter {
       } else {
         message = 'A database error occurred while processing the request.';
       }
-
-      this.logger.error(
+          this.logger.error(
         `QueryFailedError: ${exception.message}`,
         exception.stack,
       );
+      this.logger.error(
+        `QueryFailedError DETAIL: ${JSON.stringify({
+          code: driverError?.code,
+          errno: driverError?.errno,
+          sqlMessage: driverError?.sqlMessage,
+          sqlState: driverError?.sqlState,
+          query: (exception as any).query,
+          parameters: (exception as any).parameters,
+        })}`,
+      );
+
     } else if (exception instanceof Error) {
       this.logger.error(exception.message, exception.stack);
     }
