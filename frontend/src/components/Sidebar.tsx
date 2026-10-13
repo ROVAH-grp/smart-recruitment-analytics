@@ -25,6 +25,31 @@ const sections = [
     ],
   },
   {
+    label: "HIRING AUTOMATION",
+    items: [
+      {
+        id: "pipeline",
+        label: "Hiring Pipeline",
+        icon: <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M3 4h14M5 9h10M7 14h6"/><circle cx="10" cy="17.5" r="0.8" fill="currentColor" stroke="none"/></svg>,
+      },
+      {
+        id: "journey",
+        label: "My Journey",
+        icon: <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><circle cx="4" cy="15" r="1.6"/><circle cx="16" cy="5" r="1.6"/><path d="M5.5 14C9 14 8 6 14.4 5.4"/></svg>,
+      },
+      {
+        id: "employee",
+        label: "My Dashboard",
+        icon: <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10l2 2 4-4"/></svg>,
+      },
+      {
+        id: "staff",
+        label: "Staff Accounts",
+        icon: <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><circle cx="8" cy="6" r="3"/><path d="M2 17c0-3 2.7-5 6-5"/><path d="M15 11v6M12 14h6"/></svg>,
+      },
+    ],
+  },
+  {
     label: "PIPELINE",
     items: [
       {
@@ -106,16 +131,21 @@ export default function Sidebar({
 
   const canSee = (id: string) => {
     if (role === "ADMIN") {
-      return true;
+      return id !== "journey" && id !== "employee";
     }
 
     if (role === "RECRUITER") {
-      return id !== "recruiters";
+      return !["recruiters", "staff", "journey", "employee"].includes(id);
+    }
+
+    if (role === "EMPLOYEE") {
+      return id === "employee";
     }
 
     if (role === "CANDIDATE") {
       return [
         "dashboard",
+        "journey",
         "jobs",
         "applications",
         "interviews",
@@ -143,7 +173,9 @@ export default function Sidebar({
       ? "Administrator"
       : role === "RECRUITER"
         ? "Recruiter"
-        : "Candidate";
+        : role === "EMPLOYEE"
+          ? "Employee"
+          : "Candidate";
 
   return (
     <aside

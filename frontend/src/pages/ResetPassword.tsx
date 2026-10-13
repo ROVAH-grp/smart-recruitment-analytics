@@ -1,15 +1,23 @@
 import { FormEvent, useState } from "react";
 import { resetPassword } from "../api/auth";
+import { errorMessage } from "../components/ui";
+
+const PASSWORD_RULE = /^(?=.*[A-Za-z])(?=.*\d).{8,72}$/;
 
 interface ResetPasswordProps {
-  token: string;
+  /** From the emailed link. When missing, the person can paste it from the email. */
+  token: string | null;
+  /** "activate" is used for new recruiter and employee accounts. */
+  mode?: "reset" | "activate";
   onBackToLogin: () => void;
 }
 
 export default function ResetPassword({
   token,
+  mode = "reset",
   onBackToLogin,
 }: ResetPasswordProps) {
+  const [pastedToken, setPastedToken] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -24,8 +32,17 @@ export default function ResetPassword({
       return;
     }
 
-    if (newPassword.length < 6) {
-      setMessage("Password must be at least 6 characters.");
+    if (!PASSWORD_RULE.test(newPassword)) {
+      setMessage(
+        "Password must be 8 to 72 characters and contain at least one letter and one number.",
+      );
+      return;
+    }
+
+    const activeToken = token ?? pastedToken.trim();
+
+    if (!activeToken) {
+      setMessage("Please paste the token from your email.");
       return;
     }
 
@@ -33,18 +50,14 @@ export default function ResetPassword({
     setLoading(true);
 
     try {
-      const response = await resetPassword(token, newPassword);
+      const response = await resetPassword(activeToken, newPassword);
 
       setMessage(response.message);
       setSuccess(true);
       setNewPassword("");
       setConfirmPassword("");
     } catch (error) {
-      setMessage(
-        error instanceof Error
-          ? error.message
-          : "Failed to reset password."
-      );
+      setMessage(errorMessage(error, "Failed to reset password."));
     } finally {
       setLoading(false);
     }
@@ -71,14 +84,41 @@ export default function ResetPassword({
           boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
         }}
       >
-        <h1 style={{ marginBottom: 8 }}>Reset Password</h1>
+        <h1 style={{ marginBottom: 8 }}>
+          {mode === "activate" ? "Activate Your Account" : "Reset Password"}
+        </h1>
 
         <p style={{ color: "#64748b", marginBottom: 24 }}>
-          Enter your new password below.
+          {mode === "activate"
+            ? "Choose your own password to finish setting up your account."
+            : "Enter your new password below."}
+          {" "}Use at least 8 characters with a letter and a number.
         </p>
 
         {!success && (
           <form onSubmit={handleSubmit}>
+            {token === null && (
+              <>
+                <label>Token from your email</label>
+
+                <input
+                  type="text"
+                  value={pastedToken}
+                  onChange={(e) => setPastedToken(e.target.value)}
+                  required
+                  style={{
+                    width: "100%",
+                    padding: "12px 14px",
+                    marginTop: 8,
+                    marginBottom: 16,
+                    border: "1px solid #cbd5e1",
+                    borderRadius: 8,
+                    boxSizing: "border-box",
+                  }}
+                />
+              </>
+            )}
+
             <label>New Password</label>
 
             <input
@@ -86,7 +126,7 @@ export default function ResetPassword({
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               required
-              minLength={6}
+              minLength={8}
               style={{
                 width: "100%",
                 padding: "12px 14px",
@@ -105,7 +145,7 @@ export default function ResetPassword({
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
-              minLength={6}
+              minLength={8}
               style={{
                 width: "100%",
                 padding: "12px 14px",
@@ -128,7 +168,11 @@ export default function ResetPassword({
                 cursor: loading ? "not-allowed" : "pointer",
               }}
             >
-              {loading ? "Resetting..." : "Reset Password"}
+              {loading
+                ? "Saving..."
+                : mode === "activate"
+                  ? "Activate Account"
+                  : "Reset Password"}
             </button>
           </form>
         )}

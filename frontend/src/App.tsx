@@ -15,6 +15,11 @@ import Sources from "./pages/Sources";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import AccessDenied from "./pages/AccessDenied";
+import MyJourney from "./pages/MyJourney";
+import type { JourneyFocus } from "./pages/MyJourney";
+import Pipeline from "./pages/Pipeline";
+import EmployeeDashboard from "./pages/EmployeeDashboard";
+import StaffAccounts from "./pages/StaffAccounts";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -22,7 +27,51 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import { useAuth } from "./context/AuthContext";
 
+/**
+ * Links in our emails open the app with an address such as
+ * /reset-password?token=..., /activate?token=..., /offers/<token>,
+ * /interviews/<id> or /invitations/<token>. There is no router in this app,
+ * so the address is read once when the app starts.
+ */
+type DeepLink =
+  | { kind: "reset" | "activate"; token: string }
+  | { kind: "focus"; focus: JourneyFocus }
+  | null;
+
+function readDeepLink(): DeepLink {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const token = new URLSearchParams(window.location.search).get("token");
+
+  if ((path === "/reset-password" || path === "/activate") && token) {
+    return { kind: path === "/activate" ? "activate" : "reset", token };
+  }
+
+  const match = path.match(/^\/(invitations|offers|interviews)\/([^/]+)$/);
+  if (match) {
+    const kinds = { invitations: "invitation", offers: "offer", interviews: "interview" } as const;
+    return { kind: "focus", focus: { kind: kinds[match[1] as keyof typeof kinds], id: decodeURIComponent(match[2]) } };
+  }
+
+  return null;
+}
+
 const PAGE_META: Record<string, { title: string; subtitle: string }> = {
+  pipeline: {
+    title: "Hiring Pipeline",
+    subtitle: "Overview, applications, interviews, offers and automation",
+  },
+  journey: {
+    title: "My Hiring Journey",
+    subtitle: "Apply, choose interview times and answer offers",
+  },
+  employee: {
+    title: "My Dashboard",
+    subtitle: "Your onboarding and employee details",
+  },
+  staff: {
+    title: "Staff Accounts",
+    subtitle: "Create logins for recruiters",
+  },
   dashboard: {
     title: "Dashboard",
     subtitle: "Recruitment pipeline at a glance",
@@ -80,6 +129,8 @@ interface PageContentProps {
   onCandidateClick: (candidateId: string) => void;
   onCandidateBack: () => void;
   onCandidateApplications: (candidateId: string) => void;
+  journeyFocus: JourneyFocus | null;
+  onJourneyFocusUsed: () => void;
 }
 
 function PageContent({
@@ -89,8 +140,22 @@ function PageContent({
   onCandidateClick,
   onCandidateBack,
   onCandidateApplications,
+  journeyFocus,
+  onJourneyFocusUsed,
 }: PageContentProps) {
   switch (page) {
+    case "pipeline":
+      return <Pipeline />;
+
+    case "journey":
+      return <MyJourney focus={journeyFocus} onFocusUsed={onJourneyFocusUsed} />;
+
+    case "employee":
+      return <EmployeeDashboard />;
+
+    case "staff":
+      return <StaffAccounts />;
+
     case "dashboard":
       return <Dashboard />;
 
@@ -145,13 +210,23 @@ function PageContent({
 export default function App() {
   const { user, isAuthenticated } = useAuth();
 
-  const [page, setPage] = useState("dashboard");
+  const [selectedPage, setPage] = useState("dashboard");
+  const page = user?.role === "EMPLOYEE" ? "employee" : selectedPage;
   const [candidateId, setCandidateId] = useState<string | null>(null);
   const [applicationCandidateId, setApplicationCandidateId] =
     useState<string | null>(null);
 const [showRegister, setShowRegister] = useState(false);
 const [showForgotPassword, setShowForgotPassword] = useState(false);
-const [resetToken, setResetToken] = useState<string | null>(null);
+const [deepLink] = useState<DeepLink>(readDeepLink);
+const [resetToken, setResetToken] = useState<string | null>(
+  deepLink && deepLink.kind !== "focus" ? deepLink.token : null,
+);
+const [resetMode, setResetMode] = useState<"reset" | "activate">(
+  deepLink?.kind === "activate" ? "activate" : "reset",
+);
+const [journeyFocus, setJourneyFocus] = useState<JourneyFocus | null>(
+  deepLink?.kind === "focus" ? deepLink.focus : null,
+);
 const [showAccessDenied, setShowAccessDenied] = useState(false);
 
   const openCandidate = (id: string) => {
@@ -174,11 +249,16 @@ const canAccessPage = (pageId: string) => {
   if (!user) return false;
 
   if (user.role === "ADMIN") {
-    return true;
+    return pageId !== "journey" && pageId !== "employee";
+  }
+
+  if (user.role === "EMPLOYEE") {
+    return pageId === "employee";
   }
 
   if (user.role === "RECRUITER") {
     return [
+      "pipeline",
       "dashboard",
       "candidates",
       "jobs",
@@ -193,6 +273,7 @@ const canAccessPage = (pageId: string) => {
 
   if (user.role === "CANDIDATE") {
     return [
+      "journey",
       "dashboard",
       "jobs",
       "applications",
@@ -205,6 +286,24 @@ const canAccessPage = (pageId: string) => {
 
   return false;
 };
+
+ useEffect(() => {
+  if (deepLink) {
+    window.history.replaceState(null, "", "/");
+  }
+}, [deepLink]);
+
+ // Where each kind of user lands after signing in.
+ useEffect(() => {
+  if (!user) return;
+
+  if (user.role === "EMPLOYEE") {
+    setPage("employee");
+  } else if (user.role === "CANDIDATE" && journeyFocus) {
+    setPage("journey");
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [user?.userId]);
 
  useEffect(() => {
   if (
@@ -233,6 +332,7 @@ const canAccessPage = (pageId: string) => {
       onBackToLogin={() => setShowForgotPassword(false)}
       onResetPassword={(token) => {
         setResetToken(token);
+        setResetMode("reset");
         setShowForgotPassword(false);
       }}
     />
@@ -243,8 +343,10 @@ if (resetToken) {
   return (
     <ResetPassword
       token={resetToken}
+      mode={resetMode}
       onBackToLogin={() => {
         setResetToken(null);
+        setResetMode("reset");
       }}
     />
   );
@@ -325,6 +427,8 @@ if (showAccessDenied) {
             onCandidateClick={openCandidate}
             onCandidateBack={closeCandidate}
             onCandidateApplications={openCandidateApplications}
+            journeyFocus={journeyFocus}
+            onJourneyFocusUsed={() => setJourneyFocus(null)}
           />
         </main>
       </div>

@@ -30,6 +30,13 @@ export default function Register({
     setError("");
     setSuccess("");
 
+    if (!/^(?=.*[A-Za-z])(?=.*\d).{8,72}$/.test(password)) {
+      setError(
+        "Password must be 8 to 72 characters and contain at least one letter and one number.",
+      );
+      return;
+    }
+
     try {
       await register({
         email,
@@ -161,8 +168,12 @@ export default function Register({
             style={inputStyle}
           >
             <option value="CANDIDATE">Candidate</option>
-            <option value="RECRUITER">Recruiter</option>
           </select>
+
+          <p style={hintStyle}>
+            Recruiter accounts are created by an administrator. You will get
+            an email with a link to activate yours.
+          </p>
 
           <label style={labelStyle}>Email</label>
 
@@ -180,10 +191,10 @@ export default function Register({
           <input
             type="password"
             required
-            minLength={6}
+            minLength={8}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Minimum 6 characters"
+            placeholder="At least 8 characters, with a letter and a number"
             style={inputStyle}
           />
 

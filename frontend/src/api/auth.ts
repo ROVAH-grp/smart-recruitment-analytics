@@ -1,6 +1,6 @@
 import { apiFetch } from "./client";
 
-export type UserRole = "ADMIN" | "RECRUITER" | "CANDIDATE";
+export type UserRole = "ADMIN" | "RECRUITER" | "CANDIDATE" | "EMPLOYEE";
 
 export interface AuthUser {
   userId: number;

@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { forgotPassword } from "../api/auth";
+import { errorMessage } from "../components/ui";
 
 interface ForgotPasswordProps {
   onBackToLogin: () => void;
@@ -32,11 +33,7 @@ export default function ForgotPassword({
         setToken(resetToken);
       }
     } catch (error) {
-      setMessage(
-        error instanceof Error
-          ? error.message
-          : "Failed to request password reset.",
-      );
+      setMessage(errorMessage(error, "Failed to request password reset."));
     } finally {
       setLoading(false);
     }
@@ -82,7 +79,8 @@ export default function ForgotPassword({
             marginBottom: 24,
           }}
         >
-          Enter your email address to request a password reset.
+          Enter your email address. We will email you a link to choose a new
+          password. The link works once and expires in 30 minutes.
         </p>
 
         <form onSubmit={handleSubmit}>
@@ -157,7 +155,7 @@ export default function ForgotPassword({
                 marginBottom: 8,
               }}
             >
-              Local development reset token:
+              Local development shortcut (the server returned the reset token):
             </p>
 
             <div

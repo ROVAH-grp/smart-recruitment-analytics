@@ -11,6 +11,10 @@ interface NavbarProps {
 
 const BREADCRUMBS: Record<string, string[]> = {
   dashboard: ["Home", "Dashboard"],
+  pipeline: ["Home", "Hiring Pipeline"],
+  journey: ["Home", "My Journey"],
+  employee: ["Home", "My Dashboard"],
+  staff: ["Home", "Staff Accounts"],
   candidates: ["Home", "Candidates"],
   jobs: ["Home", "Jobs"],
   applications: ["Home", "Applications"],
