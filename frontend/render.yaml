@@ -1,0 +1,82 @@
+# Render "Blueprint": creates the backend and the front end in one go.
+# Put this file in the ROOT of your repository (next to the backend and frontend folders).
+# Render asks you for every value marked "sync: false" when you create the Blueprint.
+services:
+  # ------------------------------------------------------------------ backend (NestJS)
+  - type: web
+    name: recruitflow-api
+    runtime: node
+    plan: free
+    region: singapore            # closest free region to India
+    rootDir: backend
+    # NODE_ENV=production would skip the build tools, so dev packages are installed explicitly.
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: node dist/main
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: "production"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: JWT_SECRET
+        generateValue: true       # Render creates a long random secret for you
+      - key: JWT_EXPIRES_IN
+        value: "1d"  # --- database (see the guide, step 1)
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_SSL
+        value: "true"  # --- addresses (fill in after the front end exists, see the guide, step 5)
+      - key: APP_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      # --- email (step 3)
+      - key: MAIL_HOST
+        sync: false
+      - key: MAIL_PORT
+        value: "587"
+      - key: MAIL_USER
+        sync: false
+      - key: MAIL_PASS
+        sync: false
+      - key: MAIL_FROM
+        sync: false
+      - key: MAIL_MIN_INTERVAL_MS
+        value: "0"  # --- resume files and AI service
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: AI_SERVICE_URL
+        sync: false
+      # --- company details printed on offer letters and emails
+      - key: COMPANY_NAME
+        value: "Nexoraa"
+      - key: APP_TIMEZONE
+        value: "Asia/Kolkata"  # ------------------------------------------------------------------ front end (React)
+  - type: web
+    name: recruitflow-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install --include=dev && npx vite build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite            # links like /offers/<token> must open the app, not a 404
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        sync: false              # for example https://recruitflow-api.onrender.com/api
