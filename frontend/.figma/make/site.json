@@ -1,0 +1,10 @@
+{
+  "description": "Streamline your recruitment process with a data-driven dashboard that offers real-time analytics, KPI tracking, and intuitive management for HR professionals.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

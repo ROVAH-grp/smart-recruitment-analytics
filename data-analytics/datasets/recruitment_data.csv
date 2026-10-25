@@ -1,0 +1,1001 @@
+candidate_id,candidate_name,job_id,job_title,department,source,recruiter,job_posted_date,application_date,screening_date,shortlist_date,interview_date,selection_date,offer_date,joining_date,status,match_score,technical_score,communication_score,problem_solving_score,experience_years,education,offer_status,joining_status,recruitment_cost
+C0001,Rahul Joshi,J002,Data Scientist,AI & ML,Naukri,Priya,2026-02-24,2026-03-04,2026-03-09,2026-03-10,2026-03-16,2026-03-20,,,Selected,58,61,81,68,3.0,MBA,Not Applicable,Not Applicable,2520
+C0002,Sneha Kulkarni,J001,Data Analyst,Data & Analytics,Career Website,Priya,2026-02-12,2026-03-01,2026-03-06,,,,,,Screened,67,72,72,62,5.7,MCA,Not Applicable,Not Applicable,8873
+C0003,Pooja Jadhav,J004,Python Developer,Software Development,LinkedIn,Rahul,2026-02-15,2026-03-13,2026-03-16,2026-03-18,,,,,Shortlisted,40,49,87,40,2.4,MBA,Not Applicable,Not Applicable,5527
+C0004,Sneha Patil,J006,ML Engineer,AI & ML,Indeed,Sneha,2026-04-04,2026-04-08,2026-04-09,,,,,,Screened,61,46,95,58,1.1,MCA,Not Applicable,Not Applicable,13955
+C0005,Ananya Patil,J008,Web Developer,IT,Career Website,Sneha,2026-04-04,2026-04-07,2026-04-10,2026-04-15,2026-04-18,,,,Interviewed,99,100,79,93,1.6,MBA,Not Applicable,Not Applicable,13543
+C0006,Rahul Kulkarni,J002,Data Scientist,AI & ML,LinkedIn,Rahul,2026-07-07,2026-07-17,2026-07-21,2026-07-24,,,,,Shortlisted,65,62,70,83,1.4,B.Tech,Not Applicable,Not Applicable,4664
+C0007,Rohan Kulkarni,J006,ML Engineer,AI & ML,Campus Hiring,Priya,2026-06-12,2026-06-21,2026-06-26,2026-06-28,2026-07-01,,,,Interviewed,66,65,75,69,1.0,MCA,Not Applicable,Not Applicable,9573
+C0008,Neha Pawar,J007,Business Analyst,Business,Indeed,Priya,2026-02-04,2026-02-26,2026-03-01,2026-03-05,2026-03-09,2026-03-10,2026-03-12,,Offered,78,58,62,79,5.3,B.E.,Rejected,Not Applicable,11292
+C0009,Priya Singh,J006,ML Engineer,AI & ML,Campus Hiring,Amit,2026-03-14,2026-04-12,2026-04-14,,,,,,Screened,78,86,65,62,7.8,B.E.,Not Applicable,Not Applicable,14205
+C0010,Shreya Jadhav,J005,Java Developer,Software Development,Career Website,Amit,2026-03-22,2026-04-20,2026-04-22,,,,,,Screened,68,78,82,50,2.2,B.Sc,Not Applicable,Not Applicable,10348
+C0011,Sneha Sharma,J008,Web Developer,IT,Naukri,Rahul,2026-08-05,2026-08-09,2026-08-10,2026-08-14,,,,,Shortlisted,83,91,88,90,1.1,MBA,Not Applicable,Not Applicable,8252
+C0012,Ananya Joshi,J008,Web Developer,IT,LinkedIn,Priya,2026-04-24,2026-05-22,2026-05-25,2026-05-28,2026-05-30,2026-06-02,2026-06-06,2026-06-16,Joined,62,58,81,71,0.6,MBA,Accepted,Joined,9433
+C0013,Shreya Joshi,J001,Data Analyst,Data & Analytics,Naukri,Neha,2026-04-14,2026-05-09,2026-05-12,2026-05-17,2026-05-23,2026-05-25,2026-05-27,,Offered,72,67,92,63,2.6,B.Tech,Accepted,Pending,4646
+C0014,Vikram Mehta,J001,Data Analyst,Data & Analytics,LinkedIn,Sneha,2026-05-05,2026-05-06,2026-05-08,,,,,,Screened,73,83,82,66,5.1,B.Sc,Not Applicable,Not Applicable,11295
+C0015,Sneha Singh,J002,Data Scientist,AI & ML,Career Website,Rahul,2026-07-25,2026-07-28,2026-08-02,2026-08-04,2026-08-08,2026-08-13,,,Selected,97,100,100,87,6.1,B.E.,Not Applicable,Not Applicable,11938
+C0016,Priya Pawar,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-06-19,2026-07-13,2026-07-16,,,,,,Screened,76,73,79,56,3.4,MBA,Not Applicable,Not Applicable,9177
+C0017,Sneha Kulkarni,J008,Web Developer,IT,Indeed,Priya,2026-02-24,2026-02-27,2026-03-04,2026-03-06,2026-03-08,,,,Interviewed,66,51,68,73,7.3,MCA,Not Applicable,Not Applicable,3163
+C0018,Priya Patil,J001,Data Analyst,Data & Analytics,Indeed,Priya,2025-12-12,2026-01-09,2026-01-13,,,,,,Screened,62,56,88,65,0.6,MCA,Not Applicable,Not Applicable,5510
+C0019,Shreya Jadhav,J003,Software Developer,Software Development,Naukri,Amit,2026-05-12,2026-05-28,2026-05-29,,,,,,Screened,95,96,74,100,6.4,M.Tech,Not Applicable,Not Applicable,12796
+C0020,Rohan Verma,J007,Business Analyst,Business,Campus Hiring,Priya,2026-04-01,2026-04-16,2026-04-17,2026-04-18,2026-04-23,2026-04-26,,,Selected,69,54,81,71,0.9,MBA,Not Applicable,Not Applicable,3790
+C0021,Priya Kulkarni,J004,Python Developer,Software Development,Naukri,Amit,2026-05-03,2026-05-18,2026-05-20,,,,,,Screened,40,43,73,40,0.1,B.E.,Not Applicable,Not Applicable,3235
+C0022,Akash Pawar,J008,Web Developer,IT,Campus Hiring,Neha,2026-01-24,2026-01-26,2026-01-28,2026-01-30,2026-02-04,2026-02-08,2026-02-12,2026-02-23,Joined,72,76,100,73,2.7,B.Tech,Accepted,Joined,8570
+C0023,Amit Verma,J001,Data Analyst,Data & Analytics,Indeed,Amit,2025-12-19,2026-01-01,2026-01-06,2026-01-10,,,,,Shortlisted,74,57,65,64,2.9,B.Sc,Not Applicable,Not Applicable,4536
+C0024,Neha Kulkarni,J004,Python Developer,Software Development,Campus Hiring,Neha,2025-12-27,2026-01-15,2026-01-16,2026-01-17,2026-01-23,2026-01-27,,,Selected,75,99,75,78,0.3,B.Tech,Not Applicable,Not Applicable,10238
+C0025,Rahul Pawar,J003,Software Developer,Software Development,Naukri,Priya,2025-12-24,2026-01-21,,,,,,,Applied,80,79,87,68,1.2,MCA,Not Applicable,Not Applicable,5853
+C0026,Sneha Jadhav,J007,Business Analyst,Business,Career Website,Priya,2026-02-14,2026-03-05,,,,,,,Applied,86,76,94,71,6.1,MCA,Not Applicable,Not Applicable,12770
+C0027,Arjun Joshi,J006,ML Engineer,AI & ML,Campus Hiring,Sneha,2026-01-31,2026-02-22,2026-02-24,,,,,,Screened,61,61,72,70,5.1,B.E.,Not Applicable,Not Applicable,13004
+C0028,Pooja Mehta,J005,Java Developer,Software Development,LinkedIn,Priya,2026-06-12,2026-07-12,2026-07-17,2026-07-18,2026-07-20,,,,Interviewed,76,70,59,76,1.5,M.Tech,Not Applicable,Not Applicable,10808
+C0029,Ananya Joshi,J004,Python Developer,Software Development,Indeed,Priya,2026-01-04,2026-02-03,2026-02-05,2026-02-09,,,,,Shortlisted,83,73,85,81,5.2,B.E.,Not Applicable,Not Applicable,10900
+C0030,Vikram Pawar,J005,Java Developer,Software Development,Career Website,Sneha,2025-12-12,2026-01-03,,,,,,,Applied,63,59,87,50,1.1,MBA,Not Applicable,Not Applicable,4200
+C0031,Sneha Patil,J005,Java Developer,Software Development,Naukri,Sneha,2026-06-22,2026-07-10,2026-07-13,2026-07-15,2026-07-22,,,,Interviewed,95,100,74,92,6.5,B.Sc,Not Applicable,Not Applicable,12391
+C0032,Ananya Singh,J005,Java Developer,Software Development,LinkedIn,Priya,2026-02-05,2026-03-06,2026-03-09,2026-03-10,,,,,Shortlisted,78,85,63,64,7.2,MBA,Not Applicable,Not Applicable,2058
+C0033,Akash Deshmukh,J006,ML Engineer,AI & ML,Naukri,Amit,2026-06-04,2026-06-13,2026-06-18,2026-06-19,2026-06-21,2026-06-22,,,Selected,84,96,80,92,5.8,MCA,Not Applicable,Not Applicable,13321
+C0034,Ananya Sharma,J003,Software Developer,Software Development,Career Website,Neha,2026-07-21,2026-08-02,2026-08-03,2026-08-06,,,,,Shortlisted,79,71,100,83,0.1,B.E.,Not Applicable,Not Applicable,7974
+C0035,Arjun Mehta,J001,Data Analyst,Data & Analytics,Naukri,Priya,2026-02-01,2026-02-23,2026-02-27,2026-03-04,2026-03-11,2026-03-13,2026-03-15,,Offered,86,76,68,74,5.2,B.Sc,Rejected,Not Applicable,4900
+C0036,Rahul Deshmukh,J007,Business Analyst,Business,Indeed,Amit,2026-06-08,2026-07-08,2026-07-10,2026-07-13,2026-07-16,2026-07-17,2026-07-21,,Offered,89,93,87,100,6.0,MBA,Rejected,Not Applicable,9711
+C0037,Priya Singh,J004,Python Developer,Software Development,Naukri,Rahul,2026-03-21,2026-03-31,2026-04-04,2026-04-07,2026-04-11,2026-04-12,,,Selected,54,46,88,51,0.7,B.Tech,Not Applicable,Not Applicable,14670
+C0038,Rohan Pawar,J005,Java Developer,Software Development,Career Website,Sneha,2026-03-22,2026-04-13,,,,,,,Applied,75,89,74,100,5.0,B.Tech,Not Applicable,Not Applicable,6279
+C0039,Vikram Joshi,J003,Software Developer,Software Development,Career Website,Amit,2026-01-06,2026-01-10,2026-01-13,2026-01-17,2026-01-23,2026-01-28,,,Selected,60,69,78,58,1.6,B.Sc,Not Applicable,Not Applicable,3894
+C0040,Arjun Jadhav,J007,Business Analyst,Business,LinkedIn,Amit,2026-02-09,2026-02-18,2026-02-23,2026-02-25,2026-03-01,,,,Interviewed,71,78,83,70,1.4,B.Tech,Not Applicable,Not Applicable,9066
+C0041,Aditya Mehta,J002,Data Scientist,AI & ML,Campus Hiring,Priya,2026-05-29,2026-06-09,2026-06-14,2026-06-17,2026-06-24,2026-06-28,2026-07-01,2026-07-18,Joined,68,75,90,64,7.7,MBA,Accepted,Joined,13423
+C0042,Ananya Deshmukh,J005,Java Developer,Software Development,Campus Hiring,Amit,2026-02-05,2026-02-19,2026-02-21,2026-02-26,2026-03-04,2026-03-07,,,Selected,78,65,80,81,2.5,MBA,Not Applicable,Not Applicable,8653
+C0043,Neha Joshi,J001,Data Analyst,Data & Analytics,Career Website,Neha,2026-02-09,2026-02-23,2026-02-27,,,,,,Screened,78,69,90,78,4.6,MBA,Not Applicable,Not Applicable,9244
+C0044,Ananya Singh,J004,Python Developer,Software Development,Campus Hiring,Rahul,2026-06-24,2026-07-23,,,,,,,Applied,91,100,61,81,5.9,MBA,Not Applicable,Not Applicable,10445
+C0045,Sneha Kulkarni,J006,ML Engineer,AI & ML,Naukri,Rahul,2026-06-12,2026-06-22,,,,,,,Applied,79,81,78,87,6.5,B.E.,Not Applicable,Not Applicable,6011
+C0046,Vikram Patil,J008,Web Developer,IT,Campus Hiring,Neha,2026-04-13,2026-04-27,2026-05-01,2026-05-05,2026-05-10,2026-05-12,,,Selected,83,94,89,89,4.0,B.E.,Not Applicable,Not Applicable,4417
+C0047,Arjun Patil,J001,Data Analyst,Data & Analytics,Naukri,Rahul,2026-07-05,2026-07-19,2026-07-20,2026-07-25,2026-07-28,,,,Interviewed,57,41,79,48,7.1,MBA,Not Applicable,Not Applicable,3988
+C0048,Amit Singh,J008,Web Developer,IT,Career Website,Neha,2026-06-03,2026-06-20,2026-06-24,2026-06-29,2026-07-06,2026-07-11,2026-07-15,2026-08-03,Joined,99,80,86,82,0.3,B.Sc,Accepted,Joined,4607
+C0049,Pooja Joshi,J008,Web Developer,IT,Campus Hiring,Sneha,2026-07-04,2026-07-12,2026-07-14,2026-07-17,2026-07-22,,,,Interviewed,61,57,96,62,0.2,MCA,Not Applicable,Not Applicable,3269
+C0050,Priya Joshi,J005,Java Developer,Software Development,Career Website,Priya,2026-03-16,2026-03-27,,,,,,,Applied,64,66,78,57,1.7,B.E.,Not Applicable,Not Applicable,8275
+C0051,Shreya Kulkarni,J003,Software Developer,Software Development,Referral,Sneha,2026-01-03,2026-01-17,2026-01-18,2026-01-20,,,,,Shortlisted,95,100,78,99,4.3,MCA,Not Applicable,Not Applicable,8883
+C0052,Arjun Jadhav,J007,Business Analyst,Business,Career Website,Amit,2026-06-27,2026-06-28,,,,,,,Applied,65,73,68,63,2.6,M.Tech,Not Applicable,Not Applicable,7763
+C0053,Akash Verma,J005,Java Developer,Software Development,Referral,Neha,2026-07-09,2026-08-07,2026-08-12,2026-08-14,2026-08-19,2026-08-21,,,Selected,63,79,73,59,0.2,MBA,Not Applicable,Not Applicable,6471
+C0054,Pooja Sharma,J007,Business Analyst,Business,Campus Hiring,Amit,2026-03-30,2026-04-10,,,,,,,Applied,99,100,62,100,2.0,MBA,Not Applicable,Not Applicable,9657
+C0055,Vikram Pawar,J003,Software Developer,Software Development,Referral,Neha,2025-12-08,2026-01-07,2026-01-08,2026-01-12,2026-01-15,2026-01-19,,,Selected,80,96,62,98,7.6,MCA,Not Applicable,Not Applicable,4977
+C0056,Neha Verma,J001,Data Analyst,Data & Analytics,Referral,Sneha,2026-03-18,2026-03-25,2026-03-29,2026-04-01,2026-04-06,2026-04-09,,,Selected,94,86,83,100,2.0,B.Sc,Not Applicable,Not Applicable,3341
+C0057,Rahul Pawar,J008,Web Developer,IT,Naukri,Priya,2026-01-02,2026-01-14,,,,,,,Applied,74,64,62,72,3.8,MBA,Not Applicable,Not Applicable,2508
+C0058,Priya Sharma,J004,Python Developer,Software Development,Naukri,Rahul,2026-06-04,2026-06-09,2026-06-14,2026-06-16,2026-06-21,2026-06-24,,,Selected,99,84,72,100,3.5,M.Tech,Not Applicable,Not Applicable,14564
+C0059,Amit Jadhav,J006,ML Engineer,AI & ML,Campus Hiring,Priya,2026-05-12,2026-06-05,2026-06-06,2026-06-11,2026-06-13,2026-06-16,2026-06-20,2026-07-07,Joined,75,98,82,84,3.0,B.E.,Accepted,Joined,13714
+C0060,Sneha Jadhav,J004,Python Developer,Software Development,Campus Hiring,Rahul,2026-05-30,2026-06-26,2026-06-29,2026-07-04,2026-07-06,2026-07-11,,,Selected,77,70,78,73,1.3,B.Tech,Not Applicable,Not Applicable,14822
+C0061,Rohan Pawar,J001,Data Analyst,Data & Analytics,Indeed,Priya,2026-03-29,2026-04-20,2026-04-21,2026-04-25,2026-04-30,,,,Interviewed,46,58,70,67,7.5,MCA,Not Applicable,Not Applicable,3729
+C0062,Rohan Singh,J007,Business Analyst,Business,Referral,Rahul,2026-06-26,2026-07-01,2026-07-04,2026-07-09,2026-07-15,,,,Interviewed,72,77,81,65,4.4,MBA,Not Applicable,Not Applicable,14691
+C0063,Pooja Verma,J008,Web Developer,IT,Career Website,Sneha,2026-07-07,2026-07-31,2026-08-01,2026-08-04,2026-08-09,2026-08-11,2026-08-15,,Offered,88,83,70,84,0.6,B.Sc,Accepted,Pending,12947
+C0064,Rohan Sharma,J007,Business Analyst,Business,Indeed,Rahul,2026-04-09,2026-05-07,2026-05-10,,,,,,Screened,88,91,87,94,5.6,M.Tech,Not Applicable,Not Applicable,7576
+C0065,Arjun Jadhav,J005,Java Developer,Software Development,Indeed,Neha,2026-05-31,2026-06-29,2026-07-01,2026-07-02,2026-07-05,,,,Interviewed,83,75,56,70,2.3,B.Tech,Not Applicable,Not Applicable,13797
+C0066,Pooja Pawar,J007,Business Analyst,Business,Campus Hiring,Amit,2026-07-06,2026-07-14,2026-07-18,2026-07-19,2026-07-21,2026-07-24,,,Selected,83,80,75,93,6.2,MBA,Not Applicable,Not Applicable,5630
+C0067,Shreya Kulkarni,J007,Business Analyst,Business,Career Website,Sneha,2026-02-26,2026-03-20,2026-03-23,2026-03-27,2026-04-03,,,,Interviewed,68,70,78,77,6.0,M.Tech,Not Applicable,Not Applicable,11017
+C0068,Rohan Singh,J006,ML Engineer,AI & ML,Indeed,Rahul,2026-03-01,2026-03-11,2026-03-14,2026-03-15,2026-03-22,2026-03-27,,,Selected,85,81,81,83,6.6,B.Tech,Not Applicable,Not Applicable,14487
+C0069,Priya Kulkarni,J003,Software Developer,Software Development,Indeed,Neha,2026-06-23,2026-07-09,2026-07-10,2026-07-12,2026-07-16,,,,Interviewed,99,100,56,94,7.6,MCA,Not Applicable,Not Applicable,5727
+C0070,Amit Joshi,J006,ML Engineer,AI & ML,Career Website,Rahul,2025-12-12,2026-01-04,,,,,,,Applied,92,99,85,98,2.6,B.Sc,Not Applicable,Not Applicable,2893
+C0071,Shreya Deshmukh,J005,Java Developer,Software Development,Referral,Priya,2026-05-16,2026-06-13,2026-06-17,2026-06-21,2026-06-26,,,,Interviewed,64,63,52,81,0.7,B.Tech,Not Applicable,Not Applicable,7582
+C0072,Rahul Joshi,J003,Software Developer,Software Development,LinkedIn,Priya,2026-07-24,2026-08-09,2026-08-14,2026-08-15,2026-08-18,,,,Interviewed,62,58,82,56,7.1,M.Tech,Not Applicable,Not Applicable,4444
+C0073,Sneha Kulkarni,J005,Java Developer,Software Development,Referral,Neha,2026-01-13,2026-01-31,2026-02-02,2026-02-07,2026-02-12,2026-02-16,2026-02-20,,Offered,68,70,84,76,4.9,MCA,Accepted,Pending,11642
+C0074,Neha Jadhav,J007,Business Analyst,Business,Career Website,Priya,2026-06-06,2026-06-08,2026-06-11,2026-06-12,2026-06-15,,,,Interviewed,53,40,69,50,0.7,B.E.,Not Applicable,Not Applicable,5929
+C0075,Ananya Patil,J003,Software Developer,Software Development,Referral,Amit,2026-02-09,2026-02-10,2026-02-13,2026-02-14,2026-02-17,,,,Interviewed,44,59,74,43,6.2,MBA,Not Applicable,Not Applicable,6720
+C0076,Shreya Singh,J005,Java Developer,Software Development,Naukri,Sneha,2025-12-28,2026-01-19,2026-01-21,2026-01-25,2026-01-27,,,,Interviewed,79,70,84,94,3.7,MBA,Not Applicable,Not Applicable,10922
+C0077,Aditya Deshmukh,J004,Python Developer,Software Development,Naukri,Priya,2026-02-11,2026-03-10,,,,,,,Applied,53,44,73,57,7.7,B.Tech,Not Applicable,Not Applicable,7039
+C0078,Pooja Patil,J005,Java Developer,Software Development,Indeed,Amit,2026-04-07,2026-04-30,2026-05-04,2026-05-08,2026-05-10,,,,Interviewed,78,78,79,70,7.7,B.Sc,Not Applicable,Not Applicable,11798
+C0079,Arjun Verma,J001,Data Analyst,Data & Analytics,Career Website,Sneha,2026-06-27,2026-07-08,,,,,,,Applied,99,100,72,100,7.8,B.Tech,Not Applicable,Not Applicable,13047
+C0080,Akash Joshi,J001,Data Analyst,Data & Analytics,Naukri,Amit,2026-05-26,2026-05-28,2026-05-31,2026-06-02,2026-06-08,2026-06-12,,,Selected,88,89,100,79,5.0,MCA,Not Applicable,Not Applicable,12400
+C0081,Sneha Singh,J008,Web Developer,IT,Indeed,Sneha,2026-03-17,2026-03-31,,,,,,,Applied,72,58,90,53,2.2,MBA,Not Applicable,Not Applicable,4634
+C0082,Karan Singh,J006,ML Engineer,AI & ML,Referral,Neha,2026-02-21,2026-03-15,2026-03-18,2026-03-21,,,,,Shortlisted,80,98,89,74,0.6,B.Tech,Not Applicable,Not Applicable,7296
+C0083,Akash Verma,J002,Data Scientist,AI & ML,LinkedIn,Neha,2026-07-24,2026-08-10,2026-08-12,2026-08-17,,,,,Shortlisted,86,100,86,84,5.5,M.Tech,Not Applicable,Not Applicable,7927
+C0084,Aditya Singh,J008,Web Developer,IT,Naukri,Sneha,2026-07-12,2026-07-14,,,,,,,Applied,92,87,57,100,6.9,MCA,Not Applicable,Not Applicable,6719
+C0085,Arjun Singh,J008,Web Developer,IT,Campus Hiring,Neha,2026-01-31,2026-02-01,2026-02-04,2026-02-09,2026-02-11,2026-02-16,,,Selected,79,81,48,69,7.8,B.E.,Not Applicable,Not Applicable,8684
+C0086,Priya Patil,J002,Data Scientist,AI & ML,Campus Hiring,Rahul,2026-04-25,2026-04-29,2026-05-02,2026-05-07,2026-05-14,2026-05-17,2026-05-21,2026-06-10,Joined,75,75,72,81,2.2,M.Tech,Accepted,Joined,9736
+C0087,Pooja Pawar,J004,Python Developer,Software Development,Naukri,Neha,2026-01-25,2026-02-07,2026-02-09,2026-02-10,2026-02-14,2026-02-18,,,Selected,54,59,90,69,3.6,MCA,Not Applicable,Not Applicable,7568
+C0088,Isha Sharma,J005,Java Developer,Software Development,Indeed,Neha,2026-02-18,2026-03-14,2026-03-18,2026-03-20,2026-03-25,2026-03-30,2026-04-03,2026-04-19,Joined,79,71,96,80,2.9,MCA,Accepted,Joined,7446
+C0089,Pooja Mehta,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-08-04,2026-08-11,2026-08-15,2026-08-16,,,,,Shortlisted,77,88,90,78,4.2,MCA,Not Applicable,Not Applicable,7213
+C0090,Shreya Verma,J008,Web Developer,IT,Campus Hiring,Rahul,2026-03-18,2026-04-09,2026-04-11,2026-04-16,2026-04-22,2026-04-25,2026-04-26,2026-05-15,Joined,84,97,66,90,3.2,M.Tech,Accepted,Joined,3633
+C0091,Rahul Deshmukh,J008,Web Developer,IT,Campus Hiring,Rahul,2026-03-18,2026-04-15,2026-04-18,2026-04-21,,,,,Shortlisted,49,63,88,47,1.1,B.Tech,Not Applicable,Not Applicable,12211
+C0092,Aditya Patil,J007,Business Analyst,Business,Campus Hiring,Neha,2026-07-27,2026-08-07,2026-08-11,2026-08-16,2026-08-18,2026-08-23,2026-08-24,2026-09-05,Joined,97,97,97,83,2.8,M.Tech,Accepted,Joined,12340
+C0093,Priya Patil,J005,Java Developer,Software Development,Campus Hiring,Priya,2026-04-18,2026-04-22,,,,,,,Applied,74,81,74,57,6.9,M.Tech,Not Applicable,Not Applicable,6906
+C0094,Rahul Mehta,J001,Data Analyst,Data & Analytics,Indeed,Sneha,2026-07-21,2026-07-23,2026-07-25,2026-07-30,,,,,Shortlisted,43,42,62,49,7.8,B.Sc,Not Applicable,Not Applicable,8751
+C0095,Amit Deshmukh,J003,Software Developer,Software Development,Referral,Neha,2026-01-01,2026-01-21,2026-01-26,,,,,,Screened,58,62,86,55,0.6,MBA,Not Applicable,Not Applicable,4344
+C0096,Pooja Joshi,J004,Python Developer,Software Development,Campus Hiring,Priya,2026-04-19,2026-04-28,2026-05-03,2026-05-05,2026-05-07,2026-05-11,2026-05-14,2026-05-28,Joined,60,65,71,52,3.8,M.Tech,Accepted,Joined,12468
+C0097,Shreya Joshi,J007,Business Analyst,Business,Indeed,Rahul,2026-03-30,2026-04-27,2026-04-28,2026-04-30,2026-05-05,2026-05-10,2026-05-13,,Offered,53,51,78,40,1.4,M.Tech,Accepted,Pending,13456
+C0098,Rahul Verma,J005,Java Developer,Software Development,Career Website,Priya,2026-03-11,2026-03-12,2026-03-15,2026-03-17,2026-03-23,2026-03-26,,,Selected,64,66,76,61,5.5,MCA,Not Applicable,Not Applicable,5588
+C0099,Vikram Joshi,J004,Python Developer,Software Development,Campus Hiring,Rahul,2026-05-29,2026-06-23,,,,,,,Applied,63,68,71,50,6.4,MBA,Not Applicable,Not Applicable,12280
+C0100,Neha Singh,J001,Data Analyst,Data & Analytics,Indeed,Rahul,2025-12-21,2026-01-09,2026-01-12,2026-01-16,2026-01-19,2026-01-21,2026-01-23,2026-02-08,Joined,52,65,97,49,3.9,B.Tech,Accepted,Joined,10697
+C0101,Isha Deshmukh,J005,Java Developer,Software Development,Referral,Sneha,2026-02-05,2026-03-07,2026-03-08,2026-03-12,2026-03-14,2026-03-16,2026-03-18,,Offered,87,77,78,96,0.3,MBA,Rejected,Not Applicable,13865
+C0102,Isha Pawar,J007,Business Analyst,Business,Referral,Priya,2026-04-01,2026-04-04,2026-04-08,2026-04-11,2026-04-18,,,,Interviewed,73,63,58,75,4.3,B.Sc,Not Applicable,Not Applicable,14271
+C0103,Vikram Verma,J005,Java Developer,Software Development,Indeed,Priya,2026-07-09,2026-07-30,2026-07-31,,,,,,Screened,72,71,65,65,2.2,MBA,Not Applicable,Not Applicable,12150
+C0104,Arjun Jadhav,J006,ML Engineer,AI & ML,LinkedIn,Amit,2026-02-05,2026-02-26,2026-03-02,,,,,,Screened,99,100,77,100,2.6,MBA,Not Applicable,Not Applicable,3911
+C0105,Rahul Sharma,J003,Software Developer,Software Development,LinkedIn,Priya,2026-03-03,2026-03-19,2026-03-21,2026-03-25,2026-03-30,2026-04-02,2026-04-06,2026-04-15,Joined,99,100,72,100,0.7,B.E.,Accepted,Joined,8797
+C0106,Isha Singh,J002,Data Scientist,AI & ML,Indeed,Priya,2026-05-24,2026-06-07,2026-06-11,2026-06-15,,,,,Shortlisted,61,47,89,80,1.0,MBA,Not Applicable,Not Applicable,5868
+C0107,Sneha Mehta,J006,ML Engineer,AI & ML,Campus Hiring,Sneha,2026-04-21,2026-05-20,2026-05-22,2026-05-23,,,,,Shortlisted,75,76,73,72,2.8,B.Tech,Not Applicable,Not Applicable,9450
+C0108,Aditya Kulkarni,J002,Data Scientist,AI & ML,Career Website,Priya,2026-05-24,2026-06-14,2026-06-16,2026-06-18,2026-06-24,2026-06-26,2026-06-27,,Offered,65,60,70,56,1.2,B.Tech,Rejected,Not Applicable,11080
+C0109,Vikram Kulkarni,J004,Python Developer,Software Development,Naukri,Sneha,2026-06-30,2026-07-28,2026-08-02,2026-08-03,2026-08-07,2026-08-09,2026-08-11,,Offered,40,46,82,40,1.4,B.E.,Accepted,Pending,4858
+C0110,Aditya Sharma,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-02-02,2026-02-03,2026-02-05,,,,,,Screened,66,73,84,56,6.9,MCA,Not Applicable,Not Applicable,6347
+C0111,Amit Verma,J001,Data Analyst,Data & Analytics,Campus Hiring,Priya,2026-05-11,2026-05-15,2026-05-18,2026-05-23,,,,,Shortlisted,99,100,89,91,7.4,M.Tech,Not Applicable,Not Applicable,11726
+C0112,Pooja Pawar,J002,Data Scientist,AI & ML,LinkedIn,Neha,2026-02-06,2026-02-26,2026-02-27,2026-02-28,,,,,Shortlisted,63,44,58,63,1.5,B.Sc,Not Applicable,Not Applicable,9847
+C0113,Karan Patil,J007,Business Analyst,Business,Referral,Priya,2026-04-13,2026-05-06,2026-05-08,,,,,,Screened,52,59,64,54,0.9,B.Tech,Not Applicable,Not Applicable,3076
+C0114,Neha Jadhav,J003,Software Developer,Software Development,Career Website,Sneha,2026-05-24,2026-06-12,2026-06-17,2026-06-20,2026-06-25,2026-06-30,2026-07-04,2026-07-12,Joined,65,65,67,61,3.8,M.Tech,Accepted,Joined,14994
+C0115,Isha Pawar,J002,Data Scientist,AI & ML,Naukri,Amit,2026-06-06,2026-07-04,2026-07-08,2026-07-11,2026-07-16,2026-07-20,2026-07-24,2026-08-01,Joined,65,72,91,72,0.5,M.Tech,Accepted,Joined,7120
+C0116,Rohan Joshi,J007,Business Analyst,Business,Campus Hiring,Amit,2026-04-01,2026-04-06,,,,,,,Applied,40,40,84,40,4.8,B.Tech,Not Applicable,Not Applicable,3398
+C0117,Karan Patil,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-06-16,2026-07-10,,,,,,,Applied,77,77,83,92,6.6,MCA,Not Applicable,Not Applicable,11201
+C0118,Aditya Patil,J006,ML Engineer,AI & ML,Campus Hiring,Amit,2026-04-04,2026-04-16,,,,,,,Applied,80,75,72,75,6.7,MBA,Not Applicable,Not Applicable,6712
+C0119,Rohan Patil,J005,Java Developer,Software Development,Naukri,Rahul,2026-05-11,2026-05-28,2026-05-29,2026-06-01,2026-06-07,,,,Interviewed,83,93,51,86,1.3,MBA,Not Applicable,Not Applicable,8022
+C0120,Akash Joshi,J002,Data Scientist,AI & ML,Referral,Neha,2026-05-19,2026-05-27,2026-06-01,2026-06-02,2026-06-08,,,,Interviewed,93,88,53,82,7.0,MCA,Not Applicable,Not Applicable,12777
+C0121,Rahul Deshmukh,J005,Java Developer,Software Development,Indeed,Sneha,2026-02-16,2026-03-11,,,,,,,Applied,90,81,59,90,3.7,B.Sc,Not Applicable,Not Applicable,4347
+C0122,Sneha Deshmukh,J007,Business Analyst,Business,LinkedIn,Priya,2026-06-18,2026-07-09,2026-07-13,2026-07-17,2026-07-22,,,,Interviewed,87,64,80,94,7.2,MBA,Not Applicable,Not Applicable,7585
+C0123,Rohan Joshi,J003,Software Developer,Software Development,Career Website,Neha,2026-06-23,2026-07-04,2026-07-06,2026-07-08,2026-07-14,2026-07-15,2026-07-16,2026-07-29,Joined,77,82,67,72,0.9,B.Tech,Accepted,Joined,9259
+C0124,Pooja Jadhav,J007,Business Analyst,Business,Indeed,Rahul,2026-04-10,2026-04-24,,,,,,,Applied,84,100,80,86,6.4,MCA,Not Applicable,Not Applicable,9043
+C0125,Neha Jadhav,J002,Data Scientist,AI & ML,Campus Hiring,Sneha,2026-04-18,2026-05-05,2026-05-10,,,,,,Screened,58,49,96,62,1.2,B.Tech,Not Applicable,Not Applicable,2897
+C0126,Priya Joshi,J001,Data Analyst,Data & Analytics,Naukri,Sneha,2026-01-30,2026-02-24,2026-02-25,,,,,,Screened,90,84,74,80,7.0,B.Sc,Not Applicable,Not Applicable,10149
+C0127,Amit Deshmukh,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-03-21,2026-04-08,2026-04-11,2026-04-12,2026-04-17,,,,Interviewed,68,62,89,77,6.4,MCA,Not Applicable,Not Applicable,14157
+C0128,Karan Sharma,J001,Data Analyst,Data & Analytics,LinkedIn,Sneha,2026-03-29,2026-04-28,2026-05-02,2026-05-06,,,,,Shortlisted,81,99,68,68,5.1,MCA,Not Applicable,Not Applicable,6743
+C0129,Karan Sharma,J002,Data Scientist,AI & ML,Career Website,Amit,2026-03-19,2026-03-25,2026-03-26,2026-03-30,2026-04-01,2026-04-03,2026-04-07,2026-04-24,Joined,77,85,67,53,1.5,MBA,Accepted,Joined,10584
+C0130,Karan Joshi,J002,Data Scientist,AI & ML,Naukri,Sneha,2026-06-29,2026-07-10,,,,,,,Applied,79,67,100,80,7.6,B.E.,Not Applicable,Not Applicable,12374
+C0131,Ananya Pawar,J002,Data Scientist,AI & ML,Indeed,Sneha,2026-01-21,2026-02-19,2026-02-21,2026-02-23,2026-02-25,2026-02-27,2026-03-02,2026-03-13,Joined,99,100,80,100,0.1,MBA,Accepted,Joined,4842
+C0132,Akash Patil,J003,Software Developer,Software Development,Campus Hiring,Amit,2026-01-21,2026-02-15,2026-02-20,2026-02-24,2026-03-03,2026-03-08,,,Selected,99,100,97,93,1.2,M.Tech,Not Applicable,Not Applicable,12534
+C0133,Isha Mehta,J006,ML Engineer,AI & ML,LinkedIn,Amit,2026-01-24,2026-02-08,2026-02-11,2026-02-16,2026-02-18,,,,Interviewed,73,80,100,78,7.5,M.Tech,Not Applicable,Not Applicable,7766
+C0134,Neha Singh,J002,Data Scientist,AI & ML,LinkedIn,Sneha,2026-04-24,2026-04-26,,,,,,,Applied,72,67,65,55,3.2,B.Sc,Not Applicable,Not Applicable,3479
+C0135,Pooja Jadhav,J007,Business Analyst,Business,Campus Hiring,Priya,2026-04-26,2026-05-22,2026-05-27,2026-05-29,2026-06-02,2026-06-07,2026-06-11,2026-06-20,Joined,71,77,93,62,4.3,M.Tech,Accepted,Joined,3013
+C0136,Sneha Mehta,J008,Web Developer,IT,Career Website,Rahul,2026-06-29,2026-07-02,2026-07-06,,,,,,Screened,71,55,75,68,3.6,B.Tech,Not Applicable,Not Applicable,9199
+C0137,Rohan Mehta,J003,Software Developer,Software Development,Referral,Sneha,2026-03-01,2026-03-14,2026-03-17,2026-03-18,2026-03-22,,,,Interviewed,87,85,90,68,4.0,MBA,Not Applicable,Not Applicable,3548
+C0138,Neha Joshi,J007,Business Analyst,Business,Campus Hiring,Neha,2026-06-07,2026-07-05,2026-07-10,2026-07-12,,,,,Shortlisted,70,58,100,70,5.1,B.E.,Not Applicable,Not Applicable,7731
+C0139,Aditya Verma,J005,Java Developer,Software Development,Campus Hiring,Priya,2026-01-14,2026-02-03,2026-02-06,2026-02-08,2026-02-15,,,,Interviewed,63,69,76,64,0.5,B.Sc,Not Applicable,Not Applicable,13515
+C0140,Aditya Verma,J002,Data Scientist,AI & ML,LinkedIn,Sneha,2026-04-29,2026-05-11,2026-05-13,,,,,,Screened,74,68,69,75,1.5,B.Sc,Not Applicable,Not Applicable,7598
+C0141,Priya Kulkarni,J008,Web Developer,IT,LinkedIn,Sneha,2026-01-31,2026-02-05,2026-02-10,2026-02-15,2026-02-17,,,,Interviewed,95,68,53,82,6.2,B.Tech,Not Applicable,Not Applicable,12845
+C0142,Arjun Jadhav,J006,ML Engineer,AI & ML,Referral,Rahul,2026-01-14,2026-02-03,2026-02-08,,,,,,Screened,69,65,61,61,4.5,B.E.,Not Applicable,Not Applicable,4712
+C0143,Rahul Verma,J008,Web Developer,IT,Campus Hiring,Rahul,2026-03-13,2026-04-04,2026-04-08,2026-04-10,2026-04-16,,,,Interviewed,69,68,83,61,5.2,M.Tech,Not Applicable,Not Applicable,5918
+C0144,Akash Singh,J005,Java Developer,Software Development,Indeed,Neha,2026-07-26,2026-08-02,2026-08-05,2026-08-09,,,,,Shortlisted,85,73,71,89,5.3,M.Tech,Not Applicable,Not Applicable,10239
+C0145,Amit Kulkarni,J007,Business Analyst,Business,Naukri,Sneha,2026-07-05,2026-07-25,2026-07-28,2026-08-02,2026-08-04,,,,Interviewed,69,66,87,59,5.2,B.Tech,Not Applicable,Not Applicable,13655
+C0146,Neha Patil,J002,Data Scientist,AI & ML,Indeed,Amit,2026-07-09,2026-07-15,,,,,,,Applied,69,80,65,75,6.8,MCA,Not Applicable,Not Applicable,9167
+C0147,Arjun Kulkarni,J002,Data Scientist,AI & ML,Indeed,Priya,2026-07-14,2026-07-29,,,,,,,Applied,49,66,63,40,2.3,M.Tech,Not Applicable,Not Applicable,10224
+C0148,Priya Verma,J006,ML Engineer,AI & ML,Naukri,Priya,2026-01-09,2026-01-21,2026-01-24,2026-01-26,2026-01-29,2026-01-30,2026-02-02,2026-02-22,Joined,51,57,62,68,3.0,B.Sc,Accepted,Joined,13404
+C0149,Akash Singh,J003,Software Developer,Software Development,LinkedIn,Priya,2026-04-05,2026-04-25,2026-04-27,,,,,,Screened,48,42,89,47,4.4,B.Tech,Not Applicable,Not Applicable,10991
+C0150,Sneha Joshi,J007,Business Analyst,Business,LinkedIn,Priya,2026-02-20,2026-03-02,2026-03-07,2026-03-11,,,,,Shortlisted,69,68,81,51,6.4,B.E.,Not Applicable,Not Applicable,3029
+C0151,Isha Singh,J002,Data Scientist,AI & ML,LinkedIn,Neha,2026-05-15,2026-06-02,2026-06-04,,,,,,Screened,65,60,62,66,5.1,MCA,Not Applicable,Not Applicable,6772
+C0152,Rahul Jadhav,J007,Business Analyst,Business,Career Website,Amit,2026-03-24,2026-04-01,2026-04-02,2026-04-07,2026-04-11,2026-04-12,,,Selected,77,67,82,59,2.2,B.E.,Not Applicable,Not Applicable,10618
+C0153,Karan Singh,J001,Data Analyst,Data & Analytics,Referral,Sneha,2025-12-22,2026-01-12,2026-01-15,2026-01-16,2026-01-20,2026-01-22,,,Selected,67,72,97,82,5.2,B.Sc,Not Applicable,Not Applicable,14008
+C0154,Akash Jadhav,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-06-13,2026-07-08,2026-07-11,2026-07-13,,,,,Shortlisted,47,40,70,47,5.3,B.Tech,Not Applicable,Not Applicable,14765
+C0155,Shreya Singh,J008,Web Developer,IT,Naukri,Priya,2026-06-05,2026-06-11,2026-06-15,2026-06-16,2026-06-20,2026-06-22,,,Selected,69,70,60,74,1.3,MBA,Not Applicable,Not Applicable,2717
+C0156,Arjun Sharma,J004,Python Developer,Software Development,Indeed,Neha,2026-02-20,2026-03-22,2026-03-27,2026-03-31,2026-04-04,2026-04-05,2026-04-07,2026-04-21,Joined,61,47,66,71,3.1,M.Tech,Accepted,Joined,7848
+C0157,Isha Mehta,J001,Data Analyst,Data & Analytics,Indeed,Amit,2026-03-07,2026-03-11,2026-03-15,2026-03-18,2026-03-21,2026-03-25,,,Selected,99,95,79,100,4.5,M.Tech,Not Applicable,Not Applicable,13338
+C0158,Rohan Pawar,J008,Web Developer,IT,LinkedIn,Amit,2026-02-12,2026-03-10,2026-03-12,2026-03-17,,,,,Shortlisted,66,67,100,65,1.7,B.Tech,Not Applicable,Not Applicable,6813
+C0159,Sneha Patil,J006,ML Engineer,AI & ML,Indeed,Sneha,2026-03-03,2026-03-25,2026-03-29,2026-03-31,2026-04-07,,,,Interviewed,69,71,80,65,2.7,M.Tech,Not Applicable,Not Applicable,9272
+C0160,Pooja Sharma,J006,ML Engineer,AI & ML,Indeed,Neha,2026-06-08,2026-07-06,2026-07-07,,,,,,Screened,65,83,86,59,4.0,M.Tech,Not Applicable,Not Applicable,3229
+C0161,Rohan Pawar,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-07-01,2026-07-25,,,,,,,Applied,58,67,56,69,6.4,B.Tech,Not Applicable,Not Applicable,11954
+C0162,Rahul Deshmukh,J008,Web Developer,IT,Campus Hiring,Sneha,2026-01-10,2026-01-18,2026-01-23,2026-01-24,,,,,Shortlisted,73,79,80,59,0.7,B.Sc,Not Applicable,Not Applicable,11913
+C0163,Aditya Singh,J003,Software Developer,Software Development,Referral,Priya,2026-03-24,2026-04-05,,,,,,,Applied,87,93,93,97,7.0,MCA,Not Applicable,Not Applicable,8012
+C0164,Rohan Joshi,J007,Business Analyst,Business,LinkedIn,Rahul,2026-03-01,2026-03-05,2026-03-10,2026-03-11,2026-03-15,,,,Interviewed,73,56,83,75,6.8,M.Tech,Not Applicable,Not Applicable,14697
+C0165,Shreya Singh,J005,Java Developer,Software Development,Indeed,Amit,2026-02-04,2026-02-24,,,,,,,Applied,87,88,83,84,1.4,B.E.,Not Applicable,Not Applicable,3213
+C0166,Amit Singh,J008,Web Developer,IT,Campus Hiring,Sneha,2025-12-28,2026-01-23,2026-01-24,2026-01-29,,,,,Shortlisted,74,80,78,74,7.8,MBA,Not Applicable,Not Applicable,10882
+C0167,Arjun Joshi,J005,Java Developer,Software Development,Campus Hiring,Rahul,2026-07-31,2026-08-06,2026-08-07,2026-08-09,2026-08-12,,,,Interviewed,53,58,65,65,2.6,B.Sc,Not Applicable,Not Applicable,5878
+C0168,Rahul Mehta,J008,Web Developer,IT,Indeed,Amit,2026-05-03,2026-05-22,,,,,,,Applied,72,67,95,73,5.8,MCA,Not Applicable,Not Applicable,3412
+C0169,Neha Verma,J002,Data Scientist,AI & ML,Referral,Neha,2026-06-09,2026-07-03,2026-07-08,2026-07-09,2026-07-12,2026-07-15,,,Selected,88,90,61,93,2.6,M.Tech,Not Applicable,Not Applicable,12524
+C0170,Pooja Singh,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-06-07,2026-06-24,2026-06-26,2026-06-28,2026-07-03,,,,Interviewed,76,86,71,90,0.2,MCA,Not Applicable,Not Applicable,10238
+C0171,Isha Patil,J001,Data Analyst,Data & Analytics,Indeed,Rahul,2026-05-08,2026-05-13,2026-05-15,,,,,,Screened,88,91,57,70,3.8,B.E.,Not Applicable,Not Applicable,7669
+C0172,Isha Patil,J005,Java Developer,Software Development,Campus Hiring,Neha,2026-02-27,2026-03-06,,,,,,,Applied,68,65,61,58,5.9,B.Sc,Not Applicable,Not Applicable,6961
+C0173,Ananya Deshmukh,J002,Data Scientist,AI & ML,Naukri,Rahul,2026-05-13,2026-06-01,2026-06-06,2026-06-09,2026-06-15,,,,Interviewed,45,40,65,51,2.4,MBA,Not Applicable,Not Applicable,2674
+C0174,Sneha Sharma,J001,Data Analyst,Data & Analytics,Career Website,Sneha,2026-05-20,2026-06-14,2026-06-19,,,,,,Screened,89,86,77,95,7.6,MBA,Not Applicable,Not Applicable,8825
+C0175,Pooja Pawar,J001,Data Analyst,Data & Analytics,Indeed,Amit,2026-02-23,2026-03-16,2026-03-20,2026-03-23,2026-03-28,2026-03-29,2026-03-30,,Offered,92,100,59,92,4.9,B.E.,Accepted,Pending,8809
+C0176,Pooja Kulkarni,J008,Web Developer,IT,Naukri,Sneha,2026-03-09,2026-03-29,2026-04-01,,,,,,Screened,65,59,70,76,1.4,MBA,Not Applicable,Not Applicable,8532
+C0177,Akash Mehta,J003,Software Developer,Software Development,LinkedIn,Sneha,2026-04-24,2026-05-12,2026-05-15,2026-05-19,,,,,Shortlisted,69,57,87,79,0.5,B.E.,Not Applicable,Not Applicable,6061
+C0178,Sneha Sharma,J003,Software Developer,Software Development,Career Website,Amit,2026-03-03,2026-03-16,2026-03-18,2026-03-21,2026-03-27,2026-03-30,2026-04-01,2026-04-11,Joined,66,72,80,50,1.2,B.E.,Accepted,Joined,10163
+C0179,Pooja Joshi,J008,Web Developer,IT,LinkedIn,Amit,2026-05-07,2026-05-08,2026-05-10,2026-05-12,,,,,Shortlisted,62,63,73,67,4.7,MCA,Not Applicable,Not Applicable,11557
+C0180,Rahul Sharma,J006,ML Engineer,AI & ML,Career Website,Amit,2026-02-26,2026-03-14,2026-03-15,2026-03-19,2026-03-22,,,,Interviewed,79,82,85,99,1.0,B.Sc,Not Applicable,Not Applicable,6333
+C0181,Akash Verma,J006,ML Engineer,AI & ML,Referral,Priya,2026-04-02,2026-04-04,2026-04-07,2026-04-12,2026-04-16,,,,Interviewed,48,40,88,40,0.7,MCA,Not Applicable,Not Applicable,3204
+C0182,Ananya Singh,J007,Business Analyst,Business,Indeed,Neha,2026-06-27,2026-07-15,2026-07-17,2026-07-18,2026-07-23,,,,Interviewed,67,69,77,78,4.0,MBA,Not Applicable,Not Applicable,8114
+C0183,Ananya Mehta,J006,ML Engineer,AI & ML,Naukri,Neha,2026-07-08,2026-07-13,2026-07-14,2026-07-15,,,,,Shortlisted,93,96,93,81,3.8,MCA,Not Applicable,Not Applicable,2637
+C0184,Shreya Mehta,J003,Software Developer,Software Development,Career Website,Amit,2026-07-09,2026-07-25,2026-07-30,2026-08-01,2026-08-05,,,,Interviewed,83,79,85,94,4.5,B.E.,Not Applicable,Not Applicable,12044
+C0185,Amit Verma,J006,ML Engineer,AI & ML,Indeed,Neha,2026-05-14,2026-06-07,2026-06-12,2026-06-17,2026-06-22,,,,Interviewed,81,88,84,89,6.8,B.Sc,Not Applicable,Not Applicable,13611
+C0186,Pooja Sharma,J005,Java Developer,Software Development,Campus Hiring,Priya,2026-03-25,2026-04-05,2026-04-06,2026-04-11,2026-04-16,,,,Interviewed,95,100,75,96,5.4,M.Tech,Not Applicable,Not Applicable,6350
+C0187,Shreya Sharma,J004,Python Developer,Software Development,Naukri,Neha,2026-05-14,2026-05-30,2026-06-03,2026-06-05,2026-06-12,2026-06-14,,,Selected,64,68,83,68,2.7,MBA,Not Applicable,Not Applicable,2517
+C0188,Priya Sharma,J002,Data Scientist,AI & ML,Referral,Rahul,2026-04-12,2026-04-23,2026-04-27,2026-05-02,2026-05-08,2026-05-12,,,Selected,77,77,61,84,4.1,M.Tech,Not Applicable,Not Applicable,14055
+C0189,Shreya Deshmukh,J001,Data Analyst,Data & Analytics,Career Website,Sneha,2026-05-06,2026-05-13,2026-05-17,2026-05-20,,,,,Shortlisted,97,99,81,92,5.1,MBA,Not Applicable,Not Applicable,4837
+C0190,Arjun Pawar,J008,Web Developer,IT,Indeed,Sneha,2026-03-11,2026-03-29,2026-03-31,2026-04-03,2026-04-09,,,,Interviewed,73,75,85,74,4.3,MCA,Not Applicable,Not Applicable,6890
+C0191,Neha Joshi,J004,Python Developer,Software Development,Campus Hiring,Amit,2026-06-23,2026-06-30,2026-07-05,2026-07-08,,,,,Shortlisted,77,81,75,72,0.8,B.Sc,Not Applicable,Not Applicable,6715
+C0192,Vikram Pawar,J002,Data Scientist,AI & ML,Referral,Sneha,2026-03-10,2026-04-08,2026-04-11,,,,,,Screened,76,68,92,60,5.7,B.E.,Not Applicable,Not Applicable,13700
+C0193,Rohan Singh,J002,Data Scientist,AI & ML,Campus Hiring,Amit,2026-06-08,2026-06-17,2026-06-22,,,,,,Screened,80,74,76,59,0.4,B.E.,Not Applicable,Not Applicable,6442
+C0194,Amit Patil,J005,Java Developer,Software Development,Career Website,Rahul,2026-05-14,2026-06-07,,,,,,,Applied,66,84,60,44,6.2,B.E.,Not Applicable,Not Applicable,10700
+C0195,Aditya Kulkarni,J004,Python Developer,Software Development,Referral,Sneha,2026-01-10,2026-01-14,2026-01-16,2026-01-17,,,,,Shortlisted,84,93,91,97,1.3,MBA,Not Applicable,Not Applicable,11016
+C0196,Karan Singh,J003,Software Developer,Software Development,Naukri,Sneha,2026-04-12,2026-05-03,2026-05-04,,,,,,Screened,84,83,100,73,2.2,B.Sc,Not Applicable,Not Applicable,14594
+C0197,Aditya Jadhav,J002,Data Scientist,AI & ML,Campus Hiring,Priya,2026-02-11,2026-03-01,2026-03-03,2026-03-04,,,,,Shortlisted,88,85,69,81,3.2,B.E.,Not Applicable,Not Applicable,8504
+C0198,Amit Joshi,J008,Web Developer,IT,LinkedIn,Sneha,2026-08-11,2026-08-13,2026-08-16,2026-08-19,2026-08-24,,,,Interviewed,56,70,77,67,0.2,MCA,Not Applicable,Not Applicable,12507
+C0199,Arjun Deshmukh,J008,Web Developer,IT,Referral,Sneha,2026-07-20,2026-08-06,2026-08-09,2026-08-11,2026-08-18,2026-08-22,2026-08-25,,Offered,79,76,86,86,7.7,B.E.,Accepted,Pending,2230
+C0200,Akash Joshi,J006,ML Engineer,AI & ML,Naukri,Rahul,2026-05-04,2026-05-26,2026-05-30,2026-06-03,2026-06-09,2026-06-12,2026-06-13,,Offered,84,97,80,91,6.8,MCA,Accepted,Pending,3562
+C0201,Amit Singh,J003,Software Developer,Software Development,Naukri,Priya,2026-02-22,2026-03-24,2026-03-28,2026-03-31,,,,,Shortlisted,59,58,82,51,6.4,B.Sc,Not Applicable,Not Applicable,7400
+C0202,Vikram Jadhav,J005,Java Developer,Software Development,Campus Hiring,Sneha,2025-12-25,2026-01-03,2026-01-04,,,,,,Screened,74,59,79,67,3.4,MBA,Not Applicable,Not Applicable,9625
+C0203,Amit Verma,J005,Java Developer,Software Development,Campus Hiring,Sneha,2026-06-08,2026-06-25,,,,,,,Applied,65,74,74,64,2.2,MBA,Not Applicable,Not Applicable,6833
+C0204,Vikram Kulkarni,J006,ML Engineer,AI & ML,Referral,Rahul,2026-02-21,2026-02-26,2026-03-03,2026-03-06,2026-03-11,2026-03-16,,,Selected,68,43,58,75,0.6,M.Tech,Not Applicable,Not Applicable,9714
+C0205,Akash Kulkarni,J004,Python Developer,Software Development,Career Website,Priya,2026-05-30,2026-06-24,2026-06-27,2026-06-28,,,,,Shortlisted,80,84,77,74,5.6,MCA,Not Applicable,Not Applicable,11243
+C0206,Rahul Pawar,J002,Data Scientist,AI & ML,Career Website,Neha,2026-05-03,2026-05-10,,,,,,,Applied,74,62,96,82,0.8,B.E.,Not Applicable,Not Applicable,10525
+C0207,Sneha Kulkarni,J008,Web Developer,IT,Referral,Priya,2026-06-14,2026-07-03,2026-07-04,2026-07-08,,,,,Shortlisted,61,61,74,60,4.5,MCA,Not Applicable,Not Applicable,4161
+C0208,Pooja Jadhav,J007,Business Analyst,Business,Referral,Sneha,2025-12-28,2026-01-15,,,,,,,Applied,59,56,99,65,0.6,MBA,Not Applicable,Not Applicable,6169
+C0209,Shreya Kulkarni,J001,Data Analyst,Data & Analytics,LinkedIn,Amit,2026-05-26,2026-05-29,2026-06-03,2026-06-04,2026-06-06,2026-06-10,,,Selected,67,62,81,59,6.4,B.Sc,Not Applicable,Not Applicable,2519
+C0210,Karan Deshmukh,J005,Java Developer,Software Development,Campus Hiring,Amit,2026-07-11,2026-07-16,2026-07-20,2026-07-24,2026-07-29,2026-08-02,2026-08-03,2026-08-12,Joined,75,68,86,78,5.7,B.Sc,Accepted,Joined,12707
+C0211,Sneha Deshmukh,J006,ML Engineer,AI & ML,Career Website,Rahul,2026-05-05,2026-05-18,2026-05-19,2026-05-20,2026-05-24,2026-05-28,2026-06-01,2026-06-18,Joined,66,76,79,75,5.7,MBA,Accepted,Joined,5762
+C0212,Pooja Mehta,J004,Python Developer,Software Development,Naukri,Priya,2026-01-31,2026-02-09,2026-02-13,2026-02-18,2026-02-20,2026-02-22,2026-02-24,,Offered,99,92,98,100,6.5,B.Tech,Accepted,Pending,11731
+C0213,Pooja Jadhav,J001,Data Analyst,Data & Analytics,LinkedIn,Rahul,2026-05-30,2026-06-22,,,,,,,Applied,59,53,85,70,0.7,MBA,Not Applicable,Not Applicable,9191
+C0214,Ananya Kulkarni,J004,Python Developer,Software Development,LinkedIn,Rahul,2026-06-15,2026-07-13,2026-07-15,2026-07-20,2026-07-24,2026-07-29,2026-08-01,2026-08-13,Joined,99,100,78,100,4.0,MCA,Accepted,Joined,6944
+C0215,Aditya Pawar,J003,Software Developer,Software Development,Indeed,Sneha,2026-02-12,2026-02-26,2026-03-03,2026-03-05,2026-03-12,,,,Interviewed,67,69,91,65,1.6,B.Tech,Not Applicable,Not Applicable,13120
+C0216,Ananya Singh,J007,Business Analyst,Business,Campus Hiring,Amit,2026-01-01,2026-01-13,2026-01-17,,,,,,Screened,67,82,63,52,5.8,MCA,Not Applicable,Not Applicable,8688
+C0217,Neha Verma,J003,Software Developer,Software Development,Career Website,Amit,2026-01-23,2026-02-17,2026-02-20,2026-02-22,2026-02-27,2026-02-28,2026-03-04,,Offered,51,71,76,68,7.9,B.E.,Rejected,Not Applicable,11130
+C0218,Karan Kulkarni,J003,Software Developer,Software Development,Indeed,Priya,2026-02-28,2026-03-07,2026-03-08,2026-03-13,2026-03-20,2026-03-22,2026-03-23,,Offered,72,80,85,56,7.0,M.Tech,Accepted,Pending,13037
+C0219,Isha Patil,J001,Data Analyst,Data & Analytics,Career Website,Neha,2026-01-23,2026-02-18,2026-02-21,2026-02-24,,,,,Shortlisted,82,69,94,89,7.3,B.E.,Not Applicable,Not Applicable,2251
+C0220,Arjun Kulkarni,J004,Python Developer,Software Development,Campus Hiring,Amit,2026-07-05,2026-07-09,2026-07-11,2026-07-15,2026-07-18,2026-07-23,,,Selected,82,84,71,75,1.1,B.E.,Not Applicable,Not Applicable,7269
+C0221,Karan Singh,J005,Java Developer,Software Development,Indeed,Sneha,2026-04-26,2026-05-17,2026-05-21,2026-05-25,,,,,Shortlisted,79,76,58,78,7.8,B.Sc,Not Applicable,Not Applicable,3615
+C0222,Akash Mehta,J008,Web Developer,IT,Indeed,Amit,2026-02-10,2026-02-22,2026-02-24,2026-02-26,2026-02-28,,,,Interviewed,86,57,91,68,7.0,B.Tech,Not Applicable,Not Applicable,6272
+C0223,Neha Deshmukh,J007,Business Analyst,Business,Naukri,Amit,2026-02-09,2026-02-20,2026-02-24,2026-03-01,2026-03-08,2026-03-11,2026-03-14,,Offered,80,79,87,67,1.3,MCA,Accepted,Pending,10005
+C0224,Pooja Deshmukh,J008,Web Developer,IT,Indeed,Rahul,2026-06-11,2026-07-07,2026-07-11,2026-07-13,2026-07-19,2026-07-20,,,Selected,67,70,77,71,2.6,B.E.,Not Applicable,Not Applicable,10584
+C0225,Isha Patil,J001,Data Analyst,Data & Analytics,LinkedIn,Priya,2026-07-07,2026-07-29,,,,,,,Applied,43,45,74,55,1.9,M.Tech,Not Applicable,Not Applicable,12333
+C0226,Sneha Deshmukh,J004,Python Developer,Software Development,Career Website,Amit,2025-12-27,2026-01-03,,,,,,,Applied,97,100,73,93,2.0,B.Sc,Not Applicable,Not Applicable,12448
+C0227,Aditya Singh,J008,Web Developer,IT,Career Website,Neha,2026-01-04,2026-01-05,,,,,,,Applied,87,99,92,86,0.3,M.Tech,Not Applicable,Not Applicable,10673
+C0228,Ananya Joshi,J005,Java Developer,Software Development,Campus Hiring,Amit,2025-12-19,2026-01-05,,,,,,,Applied,90,92,74,88,6.4,B.E.,Not Applicable,Not Applicable,3578
+C0229,Priya Kulkarni,J003,Software Developer,Software Development,Indeed,Sneha,2026-05-22,2026-06-08,2026-06-09,2026-06-12,2026-06-17,2026-06-21,2026-06-23,,Offered,75,68,76,64,2.2,B.Sc,Rejected,Not Applicable,5700
+C0230,Aditya Patil,J005,Java Developer,Software Development,Campus Hiring,Priya,2026-05-20,2026-06-17,2026-06-21,2026-06-26,,,,,Shortlisted,76,56,88,79,7.5,B.Tech,Not Applicable,Not Applicable,9798
+C0231,Aditya Sharma,J001,Data Analyst,Data & Analytics,LinkedIn,Amit,2026-06-23,2026-06-29,2026-07-02,2026-07-07,2026-07-09,,,,Interviewed,43,72,67,47,3.6,M.Tech,Not Applicable,Not Applicable,10653
+C0232,Priya Kulkarni,J001,Data Analyst,Data & Analytics,Career Website,Amit,2026-07-19,2026-08-11,,,,,,,Applied,91,80,85,80,0.2,B.Sc,Not Applicable,Not Applicable,3218
+C0233,Arjun Pawar,J005,Java Developer,Software Development,LinkedIn,Rahul,2026-05-03,2026-05-25,,,,,,,Applied,79,72,90,77,7.8,B.Sc,Not Applicable,Not Applicable,5394
+C0234,Akash Verma,J003,Software Developer,Software Development,Naukri,Neha,2026-01-10,2026-01-20,2026-01-24,2026-01-29,2026-02-02,,,,Interviewed,88,92,79,91,1.4,B.E.,Not Applicable,Not Applicable,8288
+C0235,Akash Patil,J003,Software Developer,Software Development,Indeed,Priya,2026-04-15,2026-05-09,2026-05-10,2026-05-13,,,,,Shortlisted,89,92,72,89,4.0,B.Tech,Not Applicable,Not Applicable,11915
+C0236,Akash Mehta,J007,Business Analyst,Business,Indeed,Amit,2025-12-18,2026-01-08,2026-01-13,,,,,,Screened,91,100,85,79,7.4,M.Tech,Not Applicable,Not Applicable,8150
+C0237,Amit Jadhav,J007,Business Analyst,Business,LinkedIn,Neha,2026-06-06,2026-06-19,2026-06-20,2026-06-21,2026-06-25,2026-06-27,2026-07-01,,Offered,63,65,90,60,3.2,B.Sc,Accepted,Pending,12385
+C0238,Shreya Verma,J003,Software Developer,Software Development,LinkedIn,Priya,2026-03-11,2026-03-23,2026-03-27,2026-03-30,2026-04-03,2026-04-04,2026-04-06,2026-04-13,Joined,99,100,75,100,6.3,B.Tech,Accepted,Joined,5070
+C0239,Pooja Pawar,J007,Business Analyst,Business,Referral,Priya,2026-05-06,2026-05-23,,,,,,,Applied,90,95,86,96,2.6,B.Tech,Not Applicable,Not Applicable,11080
+C0240,Vikram Jadhav,J002,Data Scientist,AI & ML,Referral,Priya,2026-07-09,2026-07-20,2026-07-21,2026-07-26,,,,,Shortlisted,72,73,75,72,3.5,B.Sc,Not Applicable,Not Applicable,5977
+C0241,Aditya Verma,J003,Software Developer,Software Development,Indeed,Sneha,2026-02-08,2026-02-13,2026-02-14,2026-02-16,2026-02-21,,,,Interviewed,55,40,67,70,2.6,B.Sc,Not Applicable,Not Applicable,6521
+C0242,Neha Singh,J007,Business Analyst,Business,Indeed,Sneha,2026-07-17,2026-07-20,2026-07-24,2026-07-29,2026-08-04,2026-08-06,,,Selected,65,51,97,75,3.6,B.E.,Not Applicable,Not Applicable,9501
+C0243,Amit Joshi,J002,Data Scientist,AI & ML,Indeed,Neha,2025-12-20,2026-01-02,2026-01-05,2026-01-09,2026-01-13,2026-01-17,2026-01-19,,Offered,41,40,78,52,5.0,M.Tech,Accepted,Pending,11883
+C0244,Pooja Mehta,J004,Python Developer,Software Development,Indeed,Sneha,2026-02-02,2026-02-15,2026-02-19,2026-02-24,2026-02-27,2026-03-02,,,Selected,54,40,90,78,3.8,MBA,Not Applicable,Not Applicable,8161
+C0245,Isha Verma,J005,Java Developer,Software Development,Career Website,Rahul,2026-03-31,2026-04-04,2026-04-06,2026-04-11,2026-04-13,2026-04-17,2026-04-19,2026-05-08,Joined,85,90,74,88,4.9,MCA,Accepted,Joined,6773
+C0246,Isha Verma,J002,Data Scientist,AI & ML,Naukri,Sneha,2026-06-06,2026-06-22,2026-06-24,,,,,,Screened,63,60,57,62,7.4,B.E.,Not Applicable,Not Applicable,13718
+C0247,Akash Verma,J007,Business Analyst,Business,Career Website,Amit,2026-01-04,2026-01-19,2026-01-24,2026-01-28,,,,,Shortlisted,89,82,55,92,2.3,MCA,Not Applicable,Not Applicable,10907
+C0248,Akash Mehta,J001,Data Analyst,Data & Analytics,Career Website,Neha,2026-05-31,2026-06-29,2026-06-30,2026-07-02,2026-07-09,2026-07-12,2026-07-14,2026-07-20,Joined,60,69,66,57,4.9,MBA,Accepted,Joined,11227
+C0249,Akash Mehta,J007,Business Analyst,Business,LinkedIn,Priya,2026-07-09,2026-07-23,2026-07-28,,,,,,Screened,60,65,100,62,1.4,B.Tech,Not Applicable,Not Applicable,14236
+C0250,Pooja Mehta,J004,Python Developer,Software Development,Campus Hiring,Neha,2026-03-27,2026-04-11,2026-04-14,2026-04-15,2026-04-20,,,,Interviewed,51,55,77,56,0.9,MBA,Not Applicable,Not Applicable,3712
+C0251,Karan Patil,J005,Java Developer,Software Development,Campus Hiring,Rahul,2026-01-03,2026-01-30,2026-02-03,,,,,,Screened,66,66,83,67,6.4,B.Sc,Not Applicable,Not Applicable,14849
+C0252,Ananya Singh,J004,Python Developer,Software Development,LinkedIn,Amit,2026-03-15,2026-03-31,2026-04-03,2026-04-04,2026-04-08,2026-04-09,,,Selected,75,75,69,68,4.8,MBA,Not Applicable,Not Applicable,13645
+C0253,Rahul Mehta,J002,Data Scientist,AI & ML,Campus Hiring,Rahul,2026-06-11,2026-06-15,2026-06-17,,,,,,Screened,92,88,74,99,4.9,MBA,Not Applicable,Not Applicable,11042
+C0254,Rohan Pawar,J003,Software Developer,Software Development,Naukri,Amit,2026-04-05,2026-04-20,2026-04-24,,,,,,Screened,64,72,74,76,1.9,MBA,Not Applicable,Not Applicable,8481
+C0255,Shreya Jadhav,J001,Data Analyst,Data & Analytics,Referral,Neha,2026-08-08,2026-08-15,2026-08-17,2026-08-19,,,,,Shortlisted,78,70,100,65,5.3,M.Tech,Not Applicable,Not Applicable,6560
+C0256,Vikram Patil,J002,Data Scientist,AI & ML,Career Website,Rahul,2026-06-26,2026-07-24,2026-07-28,,,,,,Screened,84,88,75,82,1.3,B.Sc,Not Applicable,Not Applicable,3867
+C0257,Aditya Singh,J005,Java Developer,Software Development,Indeed,Neha,2026-04-25,2026-05-16,2026-05-21,2026-05-22,2026-05-26,,,,Interviewed,93,100,59,95,0.2,M.Tech,Not Applicable,Not Applicable,7766
+C0258,Vikram Deshmukh,J008,Web Developer,IT,Campus Hiring,Sneha,2026-07-06,2026-07-28,2026-07-30,2026-08-02,2026-08-04,,,,Interviewed,73,98,68,89,3.1,MCA,Not Applicable,Not Applicable,5908
+C0259,Sneha Deshmukh,J005,Java Developer,Software Development,Naukri,Neha,2026-03-14,2026-04-06,2026-04-08,2026-04-13,,,,,Shortlisted,89,100,81,83,3.4,M.Tech,Not Applicable,Not Applicable,8286
+C0260,Amit Singh,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-05-25,2026-06-12,,,,,,,Applied,69,66,71,58,4.6,MCA,Not Applicable,Not Applicable,6732
+C0261,Amit Mehta,J003,Software Developer,Software Development,Career Website,Priya,2026-07-20,2026-08-04,2026-08-08,2026-08-10,2026-08-13,2026-08-17,2026-08-21,2026-09-08,Joined,66,64,68,66,1.8,B.Sc,Accepted,Joined,13218
+C0262,Karan Singh,J008,Web Developer,IT,LinkedIn,Neha,2026-04-30,2026-05-06,2026-05-08,2026-05-11,2026-05-13,2026-05-16,2026-05-18,,Offered,78,62,81,86,6.4,B.Tech,Accepted,Pending,4755
+C0263,Vikram Singh,J008,Web Developer,IT,LinkedIn,Neha,2026-05-04,2026-05-21,2026-05-26,,,,,,Screened,57,44,86,76,4.3,B.Tech,Not Applicable,Not Applicable,8010
+C0264,Akash Singh,J001,Data Analyst,Data & Analytics,Referral,Priya,2026-05-13,2026-05-20,2026-05-22,2026-05-25,2026-05-27,2026-05-31,2026-06-03,,Offered,64,63,84,64,5.8,MBA,Accepted,Pending,3425
+C0265,Isha Patil,J008,Web Developer,IT,Naukri,Rahul,2026-06-22,2026-07-18,2026-07-21,2026-07-26,2026-08-02,,,,Interviewed,60,66,67,60,1.4,MBA,Not Applicable,Not Applicable,9015
+C0266,Vikram Deshmukh,J003,Software Developer,Software Development,Naukri,Priya,2026-07-13,2026-07-20,2026-07-23,2026-07-28,,,,,Shortlisted,63,75,91,69,3.6,MCA,Not Applicable,Not Applicable,10827
+C0267,Rohan Joshi,J003,Software Developer,Software Development,Indeed,Neha,2026-02-25,2026-03-16,2026-03-18,2026-03-22,2026-03-24,2026-03-27,2026-03-29,,Offered,66,51,78,73,7.4,MBA,Accepted,Pending,4174
+C0268,Amit Mehta,J004,Python Developer,Software Development,Campus Hiring,Amit,2026-07-24,2026-08-01,,,,,,,Applied,99,100,80,95,6.7,M.Tech,Not Applicable,Not Applicable,12361
+C0269,Aditya Verma,J005,Java Developer,Software Development,LinkedIn,Priya,2026-03-23,2026-04-07,2026-04-10,2026-04-13,2026-04-18,,,,Interviewed,82,87,65,73,1.0,M.Tech,Not Applicable,Not Applicable,9996
+C0270,Vikram Sharma,J006,ML Engineer,AI & ML,Campus Hiring,Priya,2026-07-17,2026-08-11,2026-08-14,2026-08-15,2026-08-21,2026-08-25,2026-08-27,2026-09-14,Joined,47,52,64,40,2.9,MBA,Accepted,Joined,5470
+C0271,Neha Mehta,J008,Web Developer,IT,Indeed,Neha,2026-07-22,2026-08-01,,,,,,,Applied,87,87,81,86,4.8,MCA,Not Applicable,Not Applicable,9951
+C0272,Arjun Sharma,J006,ML Engineer,AI & ML,Campus Hiring,Amit,2026-01-08,2026-01-12,,,,,,,Applied,76,75,89,73,6.8,B.Tech,Not Applicable,Not Applicable,4588
+C0273,Pooja Sharma,J008,Web Developer,IT,Campus Hiring,Rahul,2026-04-13,2026-04-20,2026-04-23,,,,,,Screened,83,88,71,80,6.9,MBA,Not Applicable,Not Applicable,3529
+C0274,Neha Patil,J006,ML Engineer,AI & ML,Campus Hiring,Rahul,2026-03-15,2026-04-06,2026-04-09,2026-04-11,,,,,Shortlisted,83,74,78,82,3.2,B.Tech,Not Applicable,Not Applicable,9032
+C0275,Shreya Patil,J002,Data Scientist,AI & ML,Referral,Priya,2025-12-25,2026-01-01,2026-01-06,2026-01-10,2026-01-12,,,,Interviewed,71,72,100,67,5.1,B.E.,Not Applicable,Not Applicable,2132
+C0276,Isha Patil,J006,ML Engineer,AI & ML,Campus Hiring,Rahul,2026-07-26,2026-08-09,,,,,,,Applied,75,61,65,71,6.1,M.Tech,Not Applicable,Not Applicable,8276
+C0277,Shreya Patil,J002,Data Scientist,AI & ML,Indeed,Sneha,2026-01-16,2026-01-27,2026-01-29,2026-01-31,,,,,Shortlisted,82,82,56,75,2.9,B.E.,Not Applicable,Not Applicable,3120
+C0278,Vikram Deshmukh,J001,Data Analyst,Data & Analytics,Campus Hiring,Rahul,2026-04-11,2026-04-23,2026-04-27,2026-05-02,2026-05-09,2026-05-13,,,Selected,60,58,63,65,4.0,MBA,Not Applicable,Not Applicable,5559
+C0279,Arjun Patil,J002,Data Scientist,AI & ML,LinkedIn,Neha,2026-01-11,2026-02-05,2026-02-09,2026-02-12,,,,,Shortlisted,60,64,69,59,5.0,MBA,Not Applicable,Not Applicable,14961
+C0280,Priya Joshi,J003,Software Developer,Software Development,Naukri,Neha,2026-06-12,2026-06-15,2026-06-20,2026-06-23,2026-06-30,,,,Interviewed,77,73,70,73,8.0,MCA,Not Applicable,Not Applicable,2439
+C0281,Priya Pawar,J005,Java Developer,Software Development,Naukri,Amit,2026-05-19,2026-06-05,2026-06-07,2026-06-11,2026-06-16,,,,Interviewed,75,67,59,84,5.5,B.Sc,Not Applicable,Not Applicable,3847
+C0282,Pooja Jadhav,J004,Python Developer,Software Development,LinkedIn,Sneha,2026-01-02,2026-01-19,,,,,,,Applied,40,49,61,40,5.0,B.Sc,Not Applicable,Not Applicable,11312
+C0283,Rohan Pawar,J007,Business Analyst,Business,Referral,Priya,2026-06-18,2026-06-24,2026-06-25,2026-06-28,2026-07-01,,,,Interviewed,93,89,88,100,2.9,B.Tech,Not Applicable,Not Applicable,2652
+C0284,Akash Verma,J001,Data Analyst,Data & Analytics,Campus Hiring,Neha,2026-04-30,2026-05-10,2026-05-14,2026-05-15,,,,,Shortlisted,66,40,71,69,0.1,M.Tech,Not Applicable,Not Applicable,12494
+C0285,Neha Patil,J003,Software Developer,Software Development,Career Website,Rahul,2026-03-18,2026-03-21,2026-03-25,2026-03-30,2026-04-06,,,,Interviewed,60,59,54,80,4.3,B.E.,Not Applicable,Not Applicable,14504
+C0286,Neha Verma,J002,Data Scientist,AI & ML,Naukri,Priya,2026-06-08,2026-07-06,,,,,,,Applied,74,64,72,65,6.8,B.E.,Not Applicable,Not Applicable,9118
+C0287,Pooja Jadhav,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-06-03,2026-06-05,,,,,,,Applied,40,40,67,40,5.9,B.Tech,Not Applicable,Not Applicable,4248
+C0288,Amit Singh,J001,Data Analyst,Data & Analytics,Career Website,Sneha,2026-03-13,2026-03-30,2026-04-02,2026-04-03,,,,,Shortlisted,64,74,70,82,6.3,B.E.,Not Applicable,Not Applicable,14639
+C0289,Rohan Verma,J001,Data Analyst,Data & Analytics,LinkedIn,Sneha,2026-02-22,2026-03-11,2026-03-12,2026-03-16,2026-03-21,2026-03-26,2026-03-29,2026-04-04,Joined,73,82,94,85,2.0,MBA,Accepted,Joined,10185
+C0290,Rohan Deshmukh,J003,Software Developer,Software Development,LinkedIn,Neha,2026-02-10,2026-03-07,2026-03-09,2026-03-14,2026-03-16,2026-03-17,,,Selected,94,100,78,86,7.2,MBA,Not Applicable,Not Applicable,2201
+C0291,Rahul Singh,J004,Python Developer,Software Development,Naukri,Rahul,2026-03-22,2026-04-04,2026-04-08,2026-04-10,2026-04-14,,,,Interviewed,76,93,75,76,1.2,B.Tech,Not Applicable,Not Applicable,6067
+C0292,Arjun Mehta,J007,Business Analyst,Business,LinkedIn,Neha,2026-02-12,2026-03-11,,,,,,,Applied,69,70,61,59,0.7,B.Sc,Not Applicable,Not Applicable,13031
+C0293,Amit Kulkarni,J001,Data Analyst,Data & Analytics,LinkedIn,Amit,2026-07-08,2026-07-25,2026-07-28,2026-07-31,2026-08-04,2026-08-05,2026-08-09,,Offered,85,96,72,80,2.8,B.Tech,Accepted,Pending,5287
+C0294,Vikram Joshi,J005,Java Developer,Software Development,Naukri,Amit,2026-06-19,2026-07-09,2026-07-13,2026-07-15,2026-07-22,,,,Interviewed,92,99,89,84,0.8,B.Sc,Not Applicable,Not Applicable,10954
+C0295,Amit Sharma,J004,Python Developer,Software Development,Naukri,Neha,2026-04-14,2026-04-15,2026-04-16,2026-04-19,2026-04-21,,,,Interviewed,56,50,81,46,5.0,B.Sc,Not Applicable,Not Applicable,14434
+C0296,Isha Joshi,J007,Business Analyst,Business,Career Website,Rahul,2026-01-20,2026-01-27,2026-01-28,2026-01-30,2026-02-06,,,,Interviewed,81,100,70,90,6.2,M.Tech,Not Applicable,Not Applicable,6584
+C0297,Rahul Kulkarni,J002,Data Scientist,AI & ML,Referral,Sneha,2026-07-19,2026-08-05,2026-08-06,2026-08-11,2026-08-13,2026-08-18,2026-08-20,2026-09-06,Joined,96,100,86,100,7.8,M.Tech,Accepted,Joined,3226
+C0298,Karan Deshmukh,J001,Data Analyst,Data & Analytics,Indeed,Sneha,2026-02-20,2026-03-02,2026-03-05,2026-03-08,2026-03-13,2026-03-16,,,Selected,69,60,65,49,5.3,M.Tech,Not Applicable,Not Applicable,5827
+C0299,Priya Deshmukh,J002,Data Scientist,AI & ML,Career Website,Priya,2026-06-24,2026-07-19,,,,,,,Applied,83,84,72,79,3.5,B.E.,Not Applicable,Not Applicable,9365
+C0300,Rohan Verma,J008,Web Developer,IT,Indeed,Rahul,2026-01-13,2026-01-31,2026-02-03,,,,,,Screened,79,87,88,73,1.6,M.Tech,Not Applicable,Not Applicable,3964
+C0301,Amit Joshi,J002,Data Scientist,AI & ML,Campus Hiring,Neha,2026-07-08,2026-07-31,2026-08-03,,,,,,Screened,87,78,92,85,6.9,B.Tech,Not Applicable,Not Applicable,4430
+C0302,Shreya Kulkarni,J002,Data Scientist,AI & ML,Career Website,Priya,2026-03-20,2026-04-02,2026-04-04,,,,,,Screened,84,95,80,71,5.8,MBA,Not Applicable,Not Applicable,2509
+C0303,Isha Singh,J007,Business Analyst,Business,Career Website,Rahul,2026-04-29,2026-05-23,2026-05-25,2026-05-26,,,,,Shortlisted,73,72,87,78,7.9,B.Tech,Not Applicable,Not Applicable,2195
+C0304,Isha Kulkarni,J001,Data Analyst,Data & Analytics,Referral,Sneha,2026-01-27,2026-02-03,2026-02-04,2026-02-09,2026-02-15,,,,Interviewed,93,93,81,100,1.7,MBA,Not Applicable,Not Applicable,6240
+C0305,Rahul Patil,J002,Data Scientist,AI & ML,Campus Hiring,Amit,2026-01-22,2026-02-20,,,,,,,Applied,46,46,99,52,4.7,B.E.,Not Applicable,Not Applicable,7432
+C0306,Rahul Singh,J002,Data Scientist,AI & ML,Career Website,Amit,2026-01-07,2026-01-13,2026-01-14,2026-01-18,,,,,Shortlisted,94,100,76,81,7.0,MBA,Not Applicable,Not Applicable,13193
+C0307,Amit Mehta,J007,Business Analyst,Business,Naukri,Sneha,2026-01-25,2026-02-24,2026-02-26,2026-02-27,,,,,Shortlisted,87,77,93,82,0.1,B.Sc,Not Applicable,Not Applicable,12061
+C0308,Aditya Joshi,J004,Python Developer,Software Development,Career Website,Amit,2026-04-24,2026-05-08,,,,,,,Applied,99,100,63,100,1.6,B.Tech,Not Applicable,Not Applicable,8275
+C0309,Karan Kulkarni,J003,Software Developer,Software Development,Career Website,Rahul,2026-05-16,2026-06-14,2026-06-19,2026-06-20,2026-06-25,2026-06-28,2026-07-02,2026-07-22,Joined,79,93,60,67,2.8,MBA,Accepted,Joined,7636
+C0310,Karan Joshi,J006,ML Engineer,AI & ML,Indeed,Neha,2026-02-15,2026-02-16,,,,,,,Applied,85,81,98,81,1.2,B.E.,Not Applicable,Not Applicable,14755
+C0311,Rahul Singh,J005,Java Developer,Software Development,Career Website,Rahul,2026-05-04,2026-05-16,,,,,,,Applied,49,63,98,41,7.1,B.E.,Not Applicable,Not Applicable,12762
+C0312,Neha Pawar,J004,Python Developer,Software Development,Campus Hiring,Priya,2026-07-02,2026-07-28,2026-08-01,2026-08-04,2026-08-07,,,,Interviewed,52,64,71,77,0.0,B.E.,Not Applicable,Not Applicable,4885
+C0313,Vikram Mehta,J004,Python Developer,Software Development,Campus Hiring,Sneha,2026-07-02,2026-07-26,,,,,,,Applied,76,69,100,94,5.1,MCA,Not Applicable,Not Applicable,13477
+C0314,Vikram Jadhav,J006,ML Engineer,AI & ML,Naukri,Amit,2026-01-18,2026-02-06,2026-02-10,,,,,,Screened,90,95,87,84,4.8,MCA,Not Applicable,Not Applicable,2621
+C0315,Rahul Kulkarni,J002,Data Scientist,AI & ML,LinkedIn,Neha,2026-05-27,2026-06-04,,,,,,,Applied,91,84,89,97,4.0,M.Tech,Not Applicable,Not Applicable,12061
+C0316,Akash Deshmukh,J004,Python Developer,Software Development,Naukri,Sneha,2026-03-06,2026-03-29,,,,,,,Applied,57,55,69,40,4.1,B.Tech,Not Applicable,Not Applicable,11611
+C0317,Akash Patil,J003,Software Developer,Software Development,Indeed,Priya,2026-07-19,2026-08-05,2026-08-09,2026-08-14,2026-08-16,2026-08-19,,,Selected,82,68,80,87,0.7,B.Sc,Not Applicable,Not Applicable,6944
+C0318,Amit Deshmukh,J006,ML Engineer,AI & ML,Campus Hiring,Amit,2026-06-23,2026-07-07,2026-07-12,,,,,,Screened,93,98,75,83,3.4,MBA,Not Applicable,Not Applicable,13363
+C0319,Priya Jadhav,J006,ML Engineer,AI & ML,Referral,Sneha,2026-07-22,2026-07-28,2026-07-30,2026-08-01,2026-08-08,2026-08-09,,,Selected,92,72,62,95,6.7,MBA,Not Applicable,Not Applicable,13501
+C0320,Isha Jadhav,J007,Business Analyst,Business,Career Website,Sneha,2026-01-03,2026-01-09,2026-01-14,,,,,,Screened,77,59,81,75,2.9,MCA,Not Applicable,Not Applicable,3705
+C0321,Amit Mehta,J008,Web Developer,IT,Naukri,Sneha,2026-07-07,2026-07-10,,,,,,,Applied,90,88,73,94,2.1,B.Sc,Not Applicable,Not Applicable,3453
+C0322,Pooja Sharma,J006,ML Engineer,AI & ML,Naukri,Priya,2026-03-02,2026-03-09,2026-03-10,,,,,,Screened,57,40,77,74,6.4,B.Sc,Not Applicable,Not Applicable,13803
+C0323,Rahul Verma,J001,Data Analyst,Data & Analytics,Referral,Rahul,2026-03-30,2026-04-23,2026-04-27,2026-04-30,2026-05-06,,,,Interviewed,88,95,82,77,3.5,M.Tech,Not Applicable,Not Applicable,8149
+C0324,Isha Singh,J002,Data Scientist,AI & ML,Career Website,Rahul,2026-06-23,2026-07-21,2026-07-22,2026-07-25,,,,,Shortlisted,86,98,76,83,1.1,B.E.,Not Applicable,Not Applicable,2328
+C0325,Neha Patil,J006,ML Engineer,AI & ML,Naukri,Amit,2026-01-08,2026-01-19,2026-01-24,2026-01-25,2026-01-29,2026-02-03,,,Selected,80,77,67,70,2.1,B.E.,Not Applicable,Not Applicable,12053
+C0326,Shreya Sharma,J008,Web Developer,IT,Naukri,Neha,2026-03-31,2026-04-21,,,,,,,Applied,97,94,77,89,6.1,M.Tech,Not Applicable,Not Applicable,3659
+C0327,Priya Kulkarni,J006,ML Engineer,AI & ML,Career Website,Neha,2026-03-23,2026-04-15,2026-04-18,2026-04-20,2026-04-22,2026-04-23,,,Selected,76,64,56,65,0.3,B.Sc,Not Applicable,Not Applicable,8437
+C0328,Amit Sharma,J008,Web Developer,IT,Referral,Priya,2026-04-02,2026-04-03,2026-04-08,2026-04-12,2026-04-15,2026-04-16,2026-04-17,,Offered,76,81,59,70,7.2,B.Sc,Accepted,Pending,12456
+C0329,Sneha Singh,J005,Java Developer,Software Development,Indeed,Amit,2026-08-01,2026-08-05,2026-08-08,2026-08-09,2026-08-16,,,,Interviewed,58,63,62,82,5.8,M.Tech,Not Applicable,Not Applicable,10914
+C0330,Amit Mehta,J007,Business Analyst,Business,Indeed,Rahul,2026-08-02,2026-08-15,,,,,,,Applied,50,61,69,41,7.8,M.Tech,Not Applicable,Not Applicable,9204
+C0331,Neha Kulkarni,J008,Web Developer,IT,Career Website,Priya,2026-07-25,2026-08-03,2026-08-04,2026-08-05,2026-08-12,2026-08-15,,,Selected,90,100,74,91,6.8,B.E.,Not Applicable,Not Applicable,10871
+C0332,Akash Jadhav,J007,Business Analyst,Business,LinkedIn,Amit,2026-02-10,2026-02-28,2026-03-05,2026-03-09,,,,,Shortlisted,62,62,65,40,5.7,MCA,Not Applicable,Not Applicable,11383
+C0333,Pooja Joshi,J004,Python Developer,Software Development,Campus Hiring,Priya,2026-01-08,2026-01-21,2026-01-26,2026-01-31,2026-02-07,,,,Interviewed,68,88,99,57,1.3,MCA,Not Applicable,Not Applicable,12162
+C0334,Sneha Singh,J003,Software Developer,Software Development,Naukri,Rahul,2026-02-08,2026-02-14,,,,,,,Applied,75,67,75,88,4.4,B.E.,Not Applicable,Not Applicable,3283
+C0335,Priya Deshmukh,J007,Business Analyst,Business,Indeed,Sneha,2026-07-13,2026-08-02,2026-08-03,2026-08-04,2026-08-09,2026-08-14,2026-08-18,2026-09-02,Joined,65,71,69,59,0.4,MBA,Accepted,Joined,6525
+C0336,Arjun Sharma,J008,Web Developer,IT,Career Website,Neha,2026-06-28,2026-07-21,2026-07-22,2026-07-26,2026-07-29,2026-07-31,2026-08-01,,Offered,76,92,81,73,2.6,MCA,Rejected,Not Applicable,11219
+C0337,Akash Joshi,J002,Data Scientist,AI & ML,Indeed,Amit,2026-07-24,2026-08-11,2026-08-15,2026-08-20,,,,,Shortlisted,69,74,81,68,7.0,B.Sc,Not Applicable,Not Applicable,11977
+C0338,Rahul Deshmukh,J008,Web Developer,IT,Naukri,Neha,2026-02-27,2026-03-12,2026-03-16,2026-03-17,2026-03-22,2026-03-25,,,Selected,88,87,75,100,6.2,MCA,Not Applicable,Not Applicable,13313
+C0339,Rahul Singh,J004,Python Developer,Software Development,Indeed,Priya,2026-02-09,2026-03-10,2026-03-13,2026-03-16,2026-03-20,2026-03-24,2026-03-25,,Offered,90,95,93,84,0.8,B.Sc,Rejected,Not Applicable,5734
+C0340,Neha Singh,J003,Software Developer,Software Development,Indeed,Sneha,2026-06-21,2026-07-18,2026-07-19,2026-07-21,,,,,Shortlisted,76,61,89,69,7.7,MBA,Not Applicable,Not Applicable,9237
+C0341,Arjun Verma,J004,Python Developer,Software Development,Career Website,Sneha,2026-06-23,2026-07-09,2026-07-11,2026-07-12,2026-07-16,,,,Interviewed,92,97,87,90,4.6,B.Tech,Not Applicable,Not Applicable,13625
+C0342,Amit Pawar,J007,Business Analyst,Business,LinkedIn,Rahul,2026-07-26,2026-08-14,2026-08-16,2026-08-17,2026-08-20,2026-08-21,2026-08-25,,Offered,82,73,70,92,4.3,B.E.,Accepted,Pending,7904
+C0343,Neha Mehta,J004,Python Developer,Software Development,Career Website,Amit,2026-07-15,2026-07-30,2026-07-31,2026-08-02,2026-08-06,2026-08-10,2026-08-14,2026-08-24,Joined,71,75,71,65,6.9,MBA,Accepted,Joined,9775
+C0344,Rohan Deshmukh,J006,ML Engineer,AI & ML,Indeed,Priya,2026-07-05,2026-08-03,,,,,,,Applied,60,64,100,49,7.2,B.Sc,Not Applicable,Not Applicable,2813
+C0345,Isha Jadhav,J003,Software Developer,Software Development,Naukri,Rahul,2026-07-12,2026-07-19,2026-07-23,,,,,,Screened,77,79,84,77,0.7,MBA,Not Applicable,Not Applicable,10409
+C0346,Isha Sharma,J001,Data Analyst,Data & Analytics,Naukri,Rahul,2026-04-02,2026-05-02,2026-05-04,2026-05-07,2026-05-13,2026-05-16,2026-05-19,,Offered,59,63,75,68,3.3,MCA,Accepted,Pending,8168
+C0347,Pooja Joshi,J006,ML Engineer,AI & ML,Indeed,Neha,2026-02-10,2026-02-25,2026-02-26,2026-02-27,,,,,Shortlisted,75,72,99,77,1.3,MCA,Not Applicable,Not Applicable,10380
+C0348,Ananya Jadhav,J006,ML Engineer,AI & ML,Indeed,Priya,2026-05-26,2026-06-05,,,,,,,Applied,77,73,82,74,7.1,M.Tech,Not Applicable,Not Applicable,6529
+C0349,Isha Joshi,J006,ML Engineer,AI & ML,Campus Hiring,Sneha,2026-02-15,2026-03-08,,,,,,,Applied,99,100,74,79,6.6,B.E.,Not Applicable,Not Applicable,14541
+C0350,Arjun Sharma,J004,Python Developer,Software Development,Career Website,Amit,2026-06-28,2026-07-26,2026-07-28,,,,,,Screened,43,40,93,42,6.6,MBA,Not Applicable,Not Applicable,13817
+C0351,Aditya Singh,J001,Data Analyst,Data & Analytics,Referral,Amit,2026-03-08,2026-03-17,2026-03-22,2026-03-27,2026-03-30,2026-04-02,,,Selected,83,74,71,78,2.7,M.Tech,Not Applicable,Not Applicable,13903
+C0352,Aditya Pawar,J004,Python Developer,Software Development,Referral,Sneha,2026-05-18,2026-06-13,2026-06-15,,,,,,Screened,99,95,92,100,2.8,MCA,Not Applicable,Not Applicable,12774
+C0353,Neha Patil,J003,Software Developer,Software Development,Campus Hiring,Sneha,2026-04-26,2026-05-01,2026-05-03,2026-05-06,2026-05-13,2026-05-14,2026-05-16,,Offered,73,85,78,74,2.8,MBA,Accepted,Pending,14193
+C0354,Karan Mehta,J005,Java Developer,Software Development,Career Website,Sneha,2026-03-28,2026-04-06,2026-04-10,2026-04-11,2026-04-18,2026-04-23,2026-04-24,,Offered,57,68,72,59,1.0,M.Tech,Accepted,Pending,5187
+C0355,Isha Verma,J002,Data Scientist,AI & ML,Referral,Priya,2026-05-06,2026-05-16,,,,,,,Applied,68,73,71,75,1.4,B.E.,Not Applicable,Not Applicable,5281
+C0356,Karan Jadhav,J006,ML Engineer,AI & ML,Indeed,Rahul,2026-04-23,2026-04-28,2026-04-30,2026-05-03,2026-05-10,,,,Interviewed,76,95,65,69,5.1,B.Tech,Not Applicable,Not Applicable,2950
+C0357,Pooja Joshi,J001,Data Analyst,Data & Analytics,Naukri,Neha,2026-01-29,2026-02-23,2026-02-24,2026-02-26,2026-03-04,,,,Interviewed,90,76,86,96,0.3,B.E.,Not Applicable,Not Applicable,9105
+C0358,Karan Verma,J007,Business Analyst,Business,LinkedIn,Priya,2026-04-20,2026-05-03,2026-05-06,,,,,,Screened,81,78,86,99,5.3,MCA,Not Applicable,Not Applicable,2230
+C0359,Akash Pawar,J006,ML Engineer,AI & ML,Campus Hiring,Priya,2026-02-17,2026-02-18,2026-02-20,2026-02-23,2026-02-27,2026-03-01,,,Selected,49,40,79,60,0.9,MBA,Not Applicable,Not Applicable,3682
+C0360,Ananya Jadhav,J007,Business Analyst,Business,LinkedIn,Priya,2026-03-14,2026-03-20,2026-03-24,2026-03-29,2026-04-04,2026-04-09,2026-04-12,2026-04-30,Joined,66,65,81,67,3.0,B.Sc,Accepted,Joined,13252
+C0361,Rohan Singh,J003,Software Developer,Software Development,Naukri,Rahul,2026-03-08,2026-04-02,,,,,,,Applied,68,75,80,71,2.2,M.Tech,Not Applicable,Not Applicable,5675
+C0362,Priya Sharma,J003,Software Developer,Software Development,Naukri,Priya,2026-05-14,2026-05-31,2026-06-01,2026-06-05,2026-06-12,2026-06-15,,,Selected,60,70,71,68,6.4,B.Sc,Not Applicable,Not Applicable,14636
+C0363,Vikram Sharma,J001,Data Analyst,Data & Analytics,Campus Hiring,Priya,2026-06-15,2026-06-19,2026-06-23,2026-06-27,2026-07-02,2026-07-03,,,Selected,80,73,67,80,7.0,B.Tech,Not Applicable,Not Applicable,10966
+C0364,Pooja Deshmukh,J005,Java Developer,Software Development,Campus Hiring,Priya,2026-01-30,2026-02-22,2026-02-23,2026-02-28,,,,,Shortlisted,74,70,87,57,1.9,B.Sc,Not Applicable,Not Applicable,6423
+C0365,Karan Patil,J003,Software Developer,Software Development,Career Website,Priya,2026-04-17,2026-05-11,,,,,,,Applied,90,81,83,98,2.4,B.Sc,Not Applicable,Not Applicable,3741
+C0366,Priya Jadhav,J008,Web Developer,IT,Indeed,Neha,2026-01-27,2026-02-21,2026-02-25,2026-02-28,,,,,Shortlisted,73,71,78,84,4.7,B.E.,Not Applicable,Not Applicable,4627
+C0367,Ananya Singh,J001,Data Analyst,Data & Analytics,Referral,Sneha,2026-01-31,2026-02-23,,,,,,,Applied,80,91,81,86,0.5,B.E.,Not Applicable,Not Applicable,13004
+C0368,Arjun Patil,J002,Data Scientist,AI & ML,Campus Hiring,Amit,2026-07-14,2026-08-02,2026-08-07,2026-08-08,2026-08-15,2026-08-16,2026-08-19,2026-08-31,Joined,77,87,45,83,6.6,B.E.,Accepted,Joined,9483
+C0369,Neha Singh,J005,Java Developer,Software Development,Naukri,Priya,2026-01-09,2026-01-13,2026-01-16,2026-01-20,,,,,Shortlisted,97,93,88,99,2.5,B.Sc,Not Applicable,Not Applicable,14100
+C0370,Sneha Sharma,J002,Data Scientist,AI & ML,Naukri,Rahul,2025-12-06,2026-01-03,2026-01-07,2026-01-12,,,,,Shortlisted,99,100,97,100,3.5,B.Sc,Not Applicable,Not Applicable,6395
+C0371,Rohan Mehta,J002,Data Scientist,AI & ML,Referral,Amit,2026-02-12,2026-02-16,2026-02-20,,,,,,Screened,60,60,74,40,1.9,M.Tech,Not Applicable,Not Applicable,13303
+C0372,Akash Verma,J008,Web Developer,IT,Naukri,Priya,2026-05-18,2026-06-16,2026-06-17,2026-06-19,2026-06-21,2026-06-25,,,Selected,76,81,78,92,5.2,B.E.,Not Applicable,Not Applicable,11678
+C0373,Akash Jadhav,J008,Web Developer,IT,Naukri,Neha,2026-06-08,2026-06-23,2026-06-28,2026-06-29,2026-07-06,2026-07-08,,,Selected,73,71,72,50,5.1,M.Tech,Not Applicable,Not Applicable,9914
+C0374,Sneha Verma,J008,Web Developer,IT,LinkedIn,Sneha,2026-04-21,2026-04-23,2026-04-28,,,,,,Screened,68,61,61,67,0.4,MBA,Not Applicable,Not Applicable,14575
+C0375,Aditya Mehta,J004,Python Developer,Software Development,Campus Hiring,Neha,2026-04-26,2026-05-13,2026-05-15,2026-05-19,,,,,Shortlisted,61,54,75,61,4.9,B.Tech,Not Applicable,Not Applicable,7664
+C0376,Amit Pawar,J007,Business Analyst,Business,LinkedIn,Rahul,2026-06-04,2026-06-06,2026-06-10,2026-06-12,2026-06-14,2026-06-18,2026-06-21,,Offered,70,62,81,83,0.1,MCA,Accepted,Pending,6557
+C0377,Ananya Kulkarni,J001,Data Analyst,Data & Analytics,Referral,Amit,2026-04-30,2026-05-21,,,,,,,Applied,80,78,68,78,4.1,B.E.,Not Applicable,Not Applicable,9277
+C0378,Sneha Singh,J008,Web Developer,IT,LinkedIn,Amit,2026-04-14,2026-04-25,2026-04-26,2026-04-30,2026-05-05,2026-05-06,,,Selected,70,62,90,70,4.9,MBA,Not Applicable,Not Applicable,11128
+C0379,Isha Patil,J001,Data Analyst,Data & Analytics,Career Website,Sneha,2026-07-02,2026-07-22,2026-07-26,2026-07-29,2026-08-02,,,,Interviewed,69,62,61,50,3.9,MCA,Not Applicable,Not Applicable,2889
+C0380,Isha Singh,J004,Python Developer,Software Development,Career Website,Neha,2026-03-08,2026-03-26,2026-03-29,2026-04-02,2026-04-04,2026-04-05,,,Selected,79,84,59,87,3.3,M.Tech,Not Applicable,Not Applicable,14440
+C0381,Rahul Mehta,J004,Python Developer,Software Development,Campus Hiring,Sneha,2026-03-05,2026-04-01,2026-04-02,2026-04-03,2026-04-06,,,,Interviewed,77,70,69,80,6.6,MCA,Not Applicable,Not Applicable,10067
+C0382,Isha Verma,J003,Software Developer,Software Development,Career Website,Rahul,2026-01-19,2026-01-28,,,,,,,Applied,42,40,75,40,3.1,B.E.,Not Applicable,Not Applicable,8437
+C0383,Pooja Kulkarni,J004,Python Developer,Software Development,LinkedIn,Amit,2026-06-22,2026-07-03,2026-07-08,2026-07-09,2026-07-14,2026-07-18,2026-07-20,2026-08-09,Joined,82,80,92,93,6.0,B.Tech,Accepted,Joined,2071
+C0384,Ananya Verma,J001,Data Analyst,Data & Analytics,Referral,Neha,2026-07-15,2026-08-03,2026-08-05,2026-08-07,2026-08-09,2026-08-13,,,Selected,73,73,86,75,2.9,B.E.,Not Applicable,Not Applicable,12772
+C0385,Ananya Verma,J006,ML Engineer,AI & ML,Campus Hiring,Rahul,2026-03-29,2026-04-18,2026-04-21,2026-04-24,,,,,Shortlisted,80,86,78,72,4.9,B.Sc,Not Applicable,Not Applicable,9419
+C0386,Amit Verma,J003,Software Developer,Software Development,Campus Hiring,Neha,2026-05-12,2026-06-04,2026-06-09,2026-06-12,2026-06-19,2026-06-24,2026-06-26,,Offered,74,71,76,55,1.1,B.Sc,Accepted,Pending,12226
+C0387,Aditya Mehta,J005,Java Developer,Software Development,Campus Hiring,Rahul,2026-06-17,2026-06-22,2026-06-25,2026-06-26,2026-06-30,,,,Interviewed,45,52,88,57,4.6,MCA,Not Applicable,Not Applicable,11212
+C0388,Vikram Jadhav,J008,Web Developer,IT,Referral,Neha,2026-05-28,2026-06-20,2026-06-24,2026-06-25,2026-07-01,2026-07-02,2026-07-03,,Offered,65,82,63,74,6.8,B.Sc,Accepted,Pending,2869
+C0389,Priya Joshi,J001,Data Analyst,Data & Analytics,Naukri,Sneha,2026-06-16,2026-07-12,2026-07-13,,,,,,Screened,71,85,84,75,2.5,MBA,Not Applicable,Not Applicable,13314
+C0390,Priya Pawar,J005,Java Developer,Software Development,Referral,Priya,2025-12-28,2026-01-09,2026-01-14,2026-01-16,2026-01-23,2026-01-28,2026-02-01,,Offered,72,80,87,54,6.9,MCA,Accepted,Pending,14850
+C0391,Shreya Sharma,J005,Java Developer,Software Development,Referral,Sneha,2026-03-26,2026-04-08,,,,,,,Applied,98,100,66,100,3.0,MCA,Not Applicable,Not Applicable,14184
+C0392,Priya Jadhav,J005,Java Developer,Software Development,Referral,Rahul,2026-07-17,2026-08-11,2026-08-14,2026-08-19,2026-08-25,2026-08-30,,,Selected,58,55,74,65,1.3,MBA,Not Applicable,Not Applicable,5218
+C0393,Neha Singh,J004,Python Developer,Software Development,LinkedIn,Rahul,2026-01-24,2026-02-15,2026-02-16,2026-02-20,2026-02-22,2026-02-26,,,Selected,75,73,61,87,1.2,B.E.,Not Applicable,Not Applicable,6572
+C0394,Amit Deshmukh,J005,Java Developer,Software Development,Indeed,Priya,2026-05-02,2026-05-30,2026-06-01,2026-06-02,,,,,Shortlisted,49,40,89,65,0.6,B.Sc,Not Applicable,Not Applicable,4518
+C0395,Vikram Sharma,J006,ML Engineer,AI & ML,Campus Hiring,Neha,2026-06-18,2026-07-18,2026-07-23,,,,,,Screened,99,94,77,87,2.9,MBA,Not Applicable,Not Applicable,11013
+C0396,Sneha Mehta,J006,ML Engineer,AI & ML,Naukri,Neha,2026-05-07,2026-05-15,2026-05-17,2026-05-21,2026-05-27,2026-06-01,2026-06-05,,Offered,83,83,72,81,0.2,B.Tech,Accepted,Pending,5624
+C0397,Aditya Mehta,J004,Python Developer,Software Development,Indeed,Rahul,2026-03-14,2026-03-26,2026-03-31,2026-04-01,2026-04-03,,,,Interviewed,58,54,56,54,0.2,MCA,Not Applicable,Not Applicable,12959
+C0398,Pooja Kulkarni,J006,ML Engineer,AI & ML,Career Website,Rahul,2026-05-25,2026-06-14,2026-06-17,2026-06-21,2026-06-23,2026-06-27,,,Selected,85,81,92,88,7.2,B.Tech,Not Applicable,Not Applicable,6203
+C0399,Rahul Pawar,J005,Java Developer,Software Development,Indeed,Neha,2026-07-05,2026-07-30,2026-07-31,2026-08-03,,,,,Shortlisted,51,40,84,40,7.9,MCA,Not Applicable,Not Applicable,12674
+C0400,Rohan Pawar,J004,Python Developer,Software Development,Naukri,Neha,2026-01-18,2026-01-22,,,,,,,Applied,99,100,85,100,1.2,MCA,Not Applicable,Not Applicable,3072
+C0401,Aditya Kulkarni,J004,Python Developer,Software Development,Referral,Priya,2026-07-19,2026-08-10,2026-08-14,2026-08-15,2026-08-22,,,,Interviewed,59,50,62,50,3.5,B.E.,Not Applicable,Not Applicable,13240
+C0402,Rahul Singh,J003,Software Developer,Software Development,LinkedIn,Priya,2026-06-22,2026-07-03,,,,,,,Applied,45,52,65,47,7.7,B.Tech,Not Applicable,Not Applicable,6127
+C0403,Vikram Kulkarni,J002,Data Scientist,AI & ML,Referral,Amit,2026-02-22,2026-03-08,2026-03-11,2026-03-12,,,,,Shortlisted,71,94,81,79,3.6,MBA,Not Applicable,Not Applicable,8381
+C0404,Ananya Sharma,J002,Data Scientist,AI & ML,Career Website,Priya,2026-05-21,2026-06-14,2026-06-15,2026-06-18,2026-06-24,,,,Interviewed,56,60,72,54,4.6,MBA,Not Applicable,Not Applicable,3738
+C0405,Akash Joshi,J005,Java Developer,Software Development,Indeed,Amit,2026-06-02,2026-06-05,2026-06-06,2026-06-10,,,,,Shortlisted,52,54,81,69,3.8,M.Tech,Not Applicable,Not Applicable,4561
+C0406,Amit Verma,J004,Python Developer,Software Development,Career Website,Sneha,2026-06-27,2026-07-23,,,,,,,Applied,79,75,81,75,7.0,MBA,Not Applicable,Not Applicable,13096
+C0407,Rahul Pawar,J006,ML Engineer,AI & ML,Naukri,Priya,2026-07-25,2026-08-12,,,,,,,Applied,73,61,77,76,2.2,B.Tech,Not Applicable,Not Applicable,11775
+C0408,Ananya Pawar,J007,Business Analyst,Business,Naukri,Sneha,2026-01-12,2026-01-22,2026-01-27,2026-01-29,,,,,Shortlisted,48,60,67,41,6.9,B.E.,Not Applicable,Not Applicable,4637
+C0409,Priya Jadhav,J003,Software Developer,Software Development,Naukri,Priya,2026-07-24,2026-08-02,2026-08-07,2026-08-08,2026-08-14,2026-08-18,,,Selected,78,53,100,75,6.1,B.E.,Not Applicable,Not Applicable,12562
+C0410,Neha Patil,J002,Data Scientist,AI & ML,Naukri,Neha,2026-03-02,2026-03-06,2026-03-09,2026-03-11,2026-03-18,2026-03-20,2026-03-21,2026-04-04,Joined,74,76,84,80,6.9,M.Tech,Accepted,Joined,12150
+C0411,Arjun Kulkarni,J002,Data Scientist,AI & ML,Referral,Sneha,2026-03-07,2026-03-23,2026-03-28,2026-03-30,2026-04-05,2026-04-10,,,Selected,92,89,76,100,4.6,MCA,Not Applicable,Not Applicable,7971
+C0412,Karan Deshmukh,J006,ML Engineer,AI & ML,Naukri,Rahul,2025-12-22,2026-01-02,2026-01-06,2026-01-09,2026-01-13,2026-01-15,,,Selected,84,85,77,80,4.1,MBA,Not Applicable,Not Applicable,13134
+C0413,Arjun Singh,J006,ML Engineer,AI & ML,Indeed,Sneha,2026-04-14,2026-04-29,2026-05-01,2026-05-06,2026-05-08,,,,Interviewed,89,100,73,81,5.5,M.Tech,Not Applicable,Not Applicable,6597
+C0414,Arjun Pawar,J003,Software Developer,Software Development,Campus Hiring,Priya,2026-02-11,2026-02-20,,,,,,,Applied,65,73,89,70,2.9,MBA,Not Applicable,Not Applicable,2305
+C0415,Isha Jadhav,J001,Data Analyst,Data & Analytics,Career Website,Rahul,2026-05-16,2026-05-29,2026-06-03,2026-06-08,2026-06-13,,,,Interviewed,82,89,83,76,2.4,B.Tech,Not Applicable,Not Applicable,12713
+C0416,Rohan Verma,J003,Software Developer,Software Development,Career Website,Sneha,2026-01-29,2026-02-27,2026-03-04,2026-03-05,,,,,Shortlisted,92,99,82,100,6.2,B.E.,Not Applicable,Not Applicable,8500
+C0417,Ananya Sharma,J006,ML Engineer,AI & ML,Career Website,Rahul,2026-06-11,2026-06-19,,,,,,,Applied,62,61,58,45,0.7,MCA,Not Applicable,Not Applicable,4608
+C0418,Vikram Jadhav,J003,Software Developer,Software Development,Naukri,Amit,2026-05-21,2026-06-18,,,,,,,Applied,63,59,55,65,0.5,B.Sc,Not Applicable,Not Applicable,14475
+C0419,Priya Patil,J008,Web Developer,IT,Naukri,Priya,2026-02-25,2026-03-09,2026-03-12,,,,,,Screened,96,96,75,96,0.6,MBA,Not Applicable,Not Applicable,8358
+C0420,Arjun Singh,J008,Web Developer,IT,LinkedIn,Sneha,2026-08-12,2026-08-14,2026-08-19,2026-08-22,2026-08-29,2026-09-01,,,Selected,50,42,68,40,0.6,B.Tech,Not Applicable,Not Applicable,11480
+C0421,Karan Verma,J003,Software Developer,Software Development,Campus Hiring,Priya,2026-03-16,2026-04-04,2026-04-06,,,,,,Screened,72,79,74,78,6.4,MCA,Not Applicable,Not Applicable,10460
+C0422,Rohan Mehta,J007,Business Analyst,Business,Referral,Neha,2026-04-09,2026-05-05,2026-05-07,2026-05-11,2026-05-14,,,,Interviewed,84,71,78,86,3.8,B.Tech,Not Applicable,Not Applicable,5768
+C0423,Ananya Joshi,J002,Data Scientist,AI & ML,Naukri,Rahul,2026-02-19,2026-02-24,2026-02-25,2026-02-27,2026-03-04,,,,Interviewed,62,65,78,72,2.9,B.Sc,Not Applicable,Not Applicable,7410
+C0424,Pooja Singh,J002,Data Scientist,AI & ML,Career Website,Rahul,2026-04-26,2026-05-03,2026-05-04,2026-05-06,2026-05-08,2026-05-10,2026-05-12,,Offered,99,100,80,94,3.6,MBA,Accepted,Pending,10399
+C0425,Arjun Jadhav,J001,Data Analyst,Data & Analytics,Naukri,Sneha,2026-02-05,2026-02-07,2026-02-11,2026-02-16,2026-02-22,,,,Interviewed,87,92,80,100,1.9,B.E.,Not Applicable,Not Applicable,12446
+C0426,Arjun Joshi,J001,Data Analyst,Data & Analytics,Referral,Neha,2026-01-15,2026-01-22,2026-01-24,2026-01-26,2026-01-31,2026-02-05,2026-02-07,,Offered,80,74,77,62,4.2,M.Tech,Accepted,Pending,14574
+C0427,Vikram Pawar,J003,Software Developer,Software Development,Campus Hiring,Sneha,2026-03-03,2026-03-09,2026-03-10,2026-03-12,2026-03-17,,,,Interviewed,80,70,70,80,2.3,M.Tech,Not Applicable,Not Applicable,8315
+C0428,Sneha Sharma,J003,Software Developer,Software Development,Career Website,Amit,2026-02-04,2026-02-21,2026-02-23,2026-02-27,2026-03-05,,,,Interviewed,70,71,87,61,2.2,B.E.,Not Applicable,Not Applicable,11827
+C0429,Arjun Pawar,J001,Data Analyst,Data & Analytics,LinkedIn,Priya,2026-04-14,2026-05-09,2026-05-14,2026-05-19,2026-05-21,2026-05-25,,,Selected,70,62,86,65,2.5,M.Tech,Not Applicable,Not Applicable,10553
+C0430,Rohan Sharma,J007,Business Analyst,Business,Referral,Rahul,2026-06-11,2026-06-28,2026-07-02,2026-07-05,2026-07-11,2026-07-16,2026-07-17,,Offered,78,79,88,76,2.5,M.Tech,Accepted,Pending,6170
+C0431,Akash Kulkarni,J008,Web Developer,IT,Indeed,Neha,2026-08-05,2026-08-08,2026-08-10,2026-08-11,,,,,Shortlisted,74,93,96,60,3.0,MCA,Not Applicable,Not Applicable,13618
+C0432,Vikram Pawar,J001,Data Analyst,Data & Analytics,LinkedIn,Amit,2026-01-14,2026-01-31,2026-02-03,,,,,,Screened,89,100,79,90,5.6,MBA,Not Applicable,Not Applicable,8698
+C0433,Sneha Deshmukh,J006,ML Engineer,AI & ML,Career Website,Sneha,2026-03-30,2026-04-20,2026-04-24,2026-04-29,2026-05-03,2026-05-08,2026-05-11,,Offered,78,75,72,79,2.4,B.Sc,Rejected,Not Applicable,8511
+C0434,Karan Pawar,J004,Python Developer,Software Development,Referral,Rahul,2026-07-02,2026-07-20,2026-07-24,2026-07-27,2026-07-31,,,,Interviewed,75,81,60,52,2.9,B.Sc,Not Applicable,Not Applicable,11464
+C0435,Akash Verma,J006,ML Engineer,AI & ML,Campus Hiring,Priya,2026-07-03,2026-07-08,2026-07-10,,,,,,Screened,53,40,92,49,1.7,MBA,Not Applicable,Not Applicable,3642
+C0436,Ananya Verma,J004,Python Developer,Software Development,Career Website,Neha,2026-07-10,2026-07-21,2026-07-22,2026-07-24,2026-07-29,2026-07-30,,,Selected,84,72,90,83,6.8,MBA,Not Applicable,Not Applicable,3492
+C0437,Pooja Jadhav,J003,Software Developer,Software Development,LinkedIn,Sneha,2026-04-19,2026-04-22,2026-04-27,2026-04-28,,,,,Shortlisted,89,100,69,84,1.7,B.E.,Not Applicable,Not Applicable,13870
+C0438,Arjun Verma,J007,Business Analyst,Business,Career Website,Sneha,2026-05-17,2026-06-07,2026-06-08,2026-06-10,2026-06-17,2026-06-21,2026-06-25,2026-06-30,Joined,61,72,63,77,5.2,MBA,Accepted,Joined,5304
+C0439,Priya Sharma,J005,Java Developer,Software Development,Career Website,Neha,2026-06-30,2026-07-20,2026-07-22,,,,,,Screened,77,75,67,62,5.7,MBA,Not Applicable,Not Applicable,13043
+C0440,Rohan Kulkarni,J001,Data Analyst,Data & Analytics,Naukri,Priya,2026-06-16,2026-06-17,2026-06-20,2026-06-24,2026-06-29,2026-07-04,,,Selected,75,64,86,69,0.5,B.Sc,Not Applicable,Not Applicable,5281
+C0441,Shreya Patil,J001,Data Analyst,Data & Analytics,Indeed,Neha,2026-01-06,2026-01-24,2026-01-27,2026-01-29,,,,,Shortlisted,52,40,75,40,0.1,MCA,Not Applicable,Not Applicable,11934
+C0442,Pooja Verma,J004,Python Developer,Software Development,Indeed,Rahul,2026-05-27,2026-05-28,2026-06-02,2026-06-03,2026-06-09,,,,Interviewed,99,100,77,96,3.2,M.Tech,Not Applicable,Not Applicable,6821
+C0443,Sneha Pawar,J006,ML Engineer,AI & ML,Career Website,Neha,2026-02-06,2026-03-07,2026-03-11,2026-03-16,2026-03-21,2026-03-23,,,Selected,99,100,90,91,7.7,B.Sc,Not Applicable,Not Applicable,14410
+C0444,Akash Singh,J006,ML Engineer,AI & ML,Career Website,Priya,2026-06-09,2026-06-24,,,,,,,Applied,81,81,86,86,6.2,M.Tech,Not Applicable,Not Applicable,3106
+C0445,Aditya Kulkarni,J007,Business Analyst,Business,Naukri,Sneha,2026-05-31,2026-06-23,2026-06-28,2026-07-03,2026-07-05,2026-07-08,2026-07-10,2026-07-24,Joined,89,81,52,91,1.0,M.Tech,Accepted,Joined,3523
+C0446,Aditya Mehta,J007,Business Analyst,Business,Naukri,Amit,2026-01-02,2026-01-20,2026-01-25,2026-01-28,,,,,Shortlisted,77,77,80,79,3.0,B.Sc,Not Applicable,Not Applicable,4994
+C0447,Pooja Kulkarni,J004,Python Developer,Software Development,Naukri,Sneha,2026-02-06,2026-03-02,2026-03-04,,,,,,Screened,40,40,73,40,6.2,B.E.,Not Applicable,Not Applicable,12135
+C0448,Amit Patil,J006,ML Engineer,AI & ML,LinkedIn,Amit,2026-01-01,2026-01-31,,,,,,,Applied,73,56,75,89,1.8,MCA,Not Applicable,Not Applicable,10871
+C0449,Isha Singh,J001,Data Analyst,Data & Analytics,Indeed,Amit,2026-03-17,2026-04-06,2026-04-10,2026-04-12,2026-04-18,2026-04-21,2026-04-25,,Offered,83,83,75,76,0.5,MCA,Accepted,Pending,11448
+C0450,Rahul Pawar,J003,Software Developer,Software Development,Referral,Neha,2026-07-10,2026-07-24,2026-07-28,2026-07-30,2026-08-04,,,,Interviewed,69,65,93,74,1.8,B.Tech,Not Applicable,Not Applicable,3972
+C0451,Rohan Sharma,J008,Web Developer,IT,Naukri,Amit,2025-12-13,2026-01-04,,,,,,,Applied,79,75,62,94,4.6,MCA,Not Applicable,Not Applicable,7924
+C0452,Amit Pawar,J005,Java Developer,Software Development,Indeed,Amit,2026-03-01,2026-03-09,2026-03-11,2026-03-15,,,,,Shortlisted,62,49,75,66,5.4,MCA,Not Applicable,Not Applicable,8945
+C0453,Karan Mehta,J004,Python Developer,Software Development,Referral,Sneha,2026-03-07,2026-04-04,,,,,,,Applied,79,85,64,77,3.8,M.Tech,Not Applicable,Not Applicable,4148
+C0454,Isha Patil,J004,Python Developer,Software Development,Naukri,Neha,2026-06-25,2026-07-04,2026-07-06,2026-07-08,2026-07-15,2026-07-17,2026-07-21,,Offered,50,51,100,50,7.7,M.Tech,Rejected,Not Applicable,4893
+C0455,Pooja Deshmukh,J007,Business Analyst,Business,Career Website,Neha,2026-07-16,2026-08-06,2026-08-10,,,,,,Screened,87,80,100,68,0.6,MBA,Not Applicable,Not Applicable,6915
+C0456,Ananya Jadhav,J005,Java Developer,Software Development,LinkedIn,Rahul,2025-12-31,2026-01-13,2026-01-16,,,,,,Screened,53,50,72,58,3.5,B.Tech,Not Applicable,Not Applicable,9807
+C0457,Pooja Mehta,J002,Data Scientist,AI & ML,Indeed,Neha,2026-02-24,2026-03-08,2026-03-11,2026-03-14,2026-03-16,2026-03-20,2026-03-21,2026-04-06,Joined,75,78,72,58,7.7,MCA,Accepted,Joined,13134
+C0458,Vikram Jadhav,J004,Python Developer,Software Development,Career Website,Rahul,2026-05-26,2026-06-16,2026-06-21,2026-06-25,,,,,Shortlisted,77,70,83,77,4.7,B.Sc,Not Applicable,Not Applicable,14693
+C0459,Arjun Patil,J008,Web Developer,IT,Indeed,Amit,2026-03-19,2026-04-08,2026-04-10,2026-04-13,2026-04-18,2026-04-23,2026-04-27,2026-05-04,Joined,73,60,66,81,6.1,MBA,Accepted,Joined,3296
+C0460,Rohan Kulkarni,J003,Software Developer,Software Development,Campus Hiring,Sneha,2026-03-11,2026-03-22,2026-03-26,,,,,,Screened,60,64,95,63,5.1,MBA,Not Applicable,Not Applicable,6444
+C0461,Akash Mehta,J008,Web Developer,IT,Career Website,Amit,2026-06-22,2026-07-11,,,,,,,Applied,84,81,85,71,4.0,M.Tech,Not Applicable,Not Applicable,2378
+C0462,Shreya Kulkarni,J003,Software Developer,Software Development,Campus Hiring,Priya,2026-06-10,2026-06-19,,,,,,,Applied,88,83,72,90,1.8,B.E.,Not Applicable,Not Applicable,3687
+C0463,Sneha Singh,J002,Data Scientist,AI & ML,LinkedIn,Amit,2026-05-19,2026-05-21,2026-05-22,2026-05-23,2026-05-27,2026-06-01,,,Selected,74,69,68,77,3.4,MCA,Not Applicable,Not Applicable,4544
+C0464,Aditya Verma,J002,Data Scientist,AI & ML,Naukri,Sneha,2026-03-13,2026-03-21,2026-03-23,2026-03-28,2026-03-31,,,,Interviewed,86,84,70,99,2.3,M.Tech,Not Applicable,Not Applicable,2468
+C0465,Aditya Mehta,J001,Data Analyst,Data & Analytics,Indeed,Amit,2026-07-10,2026-08-09,2026-08-14,2026-08-17,2026-08-23,2026-08-27,2026-08-29,2026-09-08,Joined,78,79,79,83,3.1,M.Tech,Accepted,Joined,11680
+C0466,Aditya Jadhav,J008,Web Developer,IT,Campus Hiring,Neha,2026-04-05,2026-04-22,2026-04-26,2026-05-01,2026-05-04,2026-05-05,2026-05-09,2026-05-23,Joined,64,71,54,72,2.9,B.Sc,Accepted,Joined,7992
+C0467,Neha Deshmukh,J007,Business Analyst,Business,LinkedIn,Neha,2026-03-18,2026-03-19,2026-03-23,2026-03-28,,,,,Shortlisted,64,58,59,64,5.3,B.E.,Not Applicable,Not Applicable,2136
+C0468,Akash Singh,J008,Web Developer,IT,Referral,Sneha,2026-03-17,2026-03-18,2026-03-19,,,,,,Screened,68,74,79,73,0.3,MCA,Not Applicable,Not Applicable,10981
+C0469,Priya Verma,J006,ML Engineer,AI & ML,Referral,Amit,2026-07-27,2026-08-14,,,,,,,Applied,83,100,68,92,3.5,B.E.,Not Applicable,Not Applicable,14076
+C0470,Isha Verma,J007,Business Analyst,Business,LinkedIn,Amit,2026-02-17,2026-02-26,2026-03-03,,,,,,Screened,72,81,76,87,2.8,MBA,Not Applicable,Not Applicable,13369
+C0471,Neha Pawar,J005,Java Developer,Software Development,Referral,Rahul,2026-07-18,2026-07-27,2026-07-30,,,,,,Screened,81,67,71,70,4.0,B.Tech,Not Applicable,Not Applicable,3808
+C0472,Vikram Singh,J008,Web Developer,IT,Career Website,Amit,2026-02-16,2026-03-11,2026-03-13,,,,,,Screened,40,41,83,44,6.8,B.E.,Not Applicable,Not Applicable,2813
+C0473,Amit Patil,J001,Data Analyst,Data & Analytics,Naukri,Amit,2026-03-05,2026-03-14,,,,,,,Applied,90,97,66,94,2.7,MBA,Not Applicable,Not Applicable,3477
+C0474,Rahul Singh,J003,Software Developer,Software Development,Referral,Sneha,2026-02-14,2026-02-25,2026-03-01,2026-03-02,2026-03-06,2026-03-07,2026-03-09,2026-03-15,Joined,48,51,71,47,7.0,M.Tech,Accepted,Joined,6366
+C0475,Sneha Pawar,J007,Business Analyst,Business,Naukri,Sneha,2026-04-25,2026-05-01,2026-05-02,2026-05-04,2026-05-09,2026-05-13,2026-05-15,,Offered,85,59,69,74,1.0,M.Tech,Accepted,Pending,2549
+C0476,Pooja Patil,J004,Python Developer,Software Development,Naukri,Amit,2026-04-22,2026-05-14,2026-05-17,2026-05-20,2026-05-23,2026-05-24,,,Selected,85,73,85,89,2.4,M.Tech,Not Applicable,Not Applicable,14201
+C0477,Neha Singh,J002,Data Scientist,AI & ML,Naukri,Sneha,2026-06-03,2026-06-13,2026-06-15,2026-06-16,2026-06-19,2026-06-23,2026-06-26,,Offered,59,47,88,64,3.4,B.Tech,Accepted,Pending,6523
+C0478,Karan Kulkarni,J002,Data Scientist,AI & ML,Career Website,Amit,2026-01-01,2026-01-03,2026-01-06,2026-01-07,2026-01-10,,,,Interviewed,86,83,70,100,1.5,MBA,Not Applicable,Not Applicable,4583
+C0479,Sneha Jadhav,J008,Web Developer,IT,Campus Hiring,Priya,2026-02-26,2026-03-28,2026-03-30,2026-04-04,,,,,Shortlisted,66,68,99,69,4.7,B.Tech,Not Applicable,Not Applicable,14967
+C0480,Amit Singh,J002,Data Scientist,AI & ML,Career Website,Sneha,2026-02-18,2026-03-01,2026-03-02,2026-03-06,2026-03-10,2026-03-12,,,Selected,81,95,85,65,1.3,M.Tech,Not Applicable,Not Applicable,6107
+C0481,Pooja Singh,J001,Data Analyst,Data & Analytics,Career Website,Amit,2026-05-14,2026-05-24,2026-05-29,2026-06-01,2026-06-05,,,,Interviewed,89,97,78,79,2.4,B.E.,Not Applicable,Not Applicable,13999
+C0482,Neha Jadhav,J008,Web Developer,IT,Naukri,Priya,2026-07-22,2026-08-09,,,,,,,Applied,84,82,84,92,4.1,MCA,Not Applicable,Not Applicable,6844
+C0483,Ananya Mehta,J005,Java Developer,Software Development,Campus Hiring,Neha,2026-04-26,2026-04-27,2026-04-28,2026-05-03,2026-05-07,2026-05-12,,,Selected,87,86,91,96,5.7,M.Tech,Not Applicable,Not Applicable,5912
+C0484,Shreya Patil,J006,ML Engineer,AI & ML,Referral,Rahul,2026-05-31,2026-06-18,2026-06-23,2026-06-25,2026-07-01,2026-07-04,,,Selected,87,80,71,75,6.9,MCA,Not Applicable,Not Applicable,7285
+C0485,Aditya Mehta,J007,Business Analyst,Business,Career Website,Priya,2026-01-25,2026-01-29,2026-01-31,2026-02-02,2026-02-04,2026-02-06,2026-02-07,,Offered,90,99,85,90,2.7,B.Tech,Accepted,Pending,3617
+C0486,Vikram Verma,J001,Data Analyst,Data & Analytics,Career Website,Neha,2026-06-02,2026-06-18,2026-06-19,2026-06-22,2026-06-25,,,,Interviewed,58,54,86,66,4.0,MBA,Not Applicable,Not Applicable,11927
+C0487,Rahul Kulkarni,J002,Data Scientist,AI & ML,LinkedIn,Amit,2026-06-01,2026-06-17,,,,,,,Applied,74,78,87,63,3.1,MBA,Not Applicable,Not Applicable,11142
+C0488,Isha Mehta,J007,Business Analyst,Business,LinkedIn,Neha,2026-06-30,2026-07-23,2026-07-24,2026-07-27,2026-07-29,,,,Interviewed,82,82,78,75,6.5,B.Sc,Not Applicable,Not Applicable,5537
+C0489,Sneha Kulkarni,J002,Data Scientist,AI & ML,Naukri,Rahul,2026-05-04,2026-05-17,2026-05-22,2026-05-24,2026-05-30,2026-06-04,,,Selected,71,73,80,84,5.7,MCA,Not Applicable,Not Applicable,8802
+C0490,Akash Jadhav,J002,Data Scientist,AI & ML,Referral,Amit,2026-03-11,2026-04-02,,,,,,,Applied,67,58,86,63,3.2,B.Tech,Not Applicable,Not Applicable,4955
+C0491,Ananya Mehta,J007,Business Analyst,Business,Career Website,Neha,2026-06-12,2026-06-18,2026-06-21,2026-06-26,2026-06-30,2026-07-03,2026-07-07,2026-07-25,Joined,65,72,91,84,5.4,M.Tech,Accepted,Joined,13892
+C0492,Vikram Kulkarni,J006,ML Engineer,AI & ML,Naukri,Amit,2026-05-07,2026-05-25,2026-05-28,2026-05-31,2026-06-05,2026-06-09,2026-06-13,2026-06-18,Joined,69,70,56,73,6.7,MCA,Accepted,Joined,13899
+C0493,Neha Jadhav,J001,Data Analyst,Data & Analytics,Naukri,Sneha,2025-12-19,2026-01-05,2026-01-07,,,,,,Screened,93,77,92,84,2.5,B.Tech,Not Applicable,Not Applicable,5519
+C0494,Rahul Joshi,J006,ML Engineer,AI & ML,Career Website,Neha,2026-05-05,2026-05-22,,,,,,,Applied,66,48,64,78,3.2,MCA,Not Applicable,Not Applicable,2618
+C0495,Rohan Deshmukh,J008,Web Developer,IT,Indeed,Neha,2026-01-27,2026-02-05,2026-02-08,,,,,,Screened,83,81,94,94,0.5,B.E.,Not Applicable,Not Applicable,3505
+C0496,Vikram Kulkarni,J007,Business Analyst,Business,Campus Hiring,Sneha,2026-07-04,2026-07-07,,,,,,,Applied,69,55,73,71,5.1,M.Tech,Not Applicable,Not Applicable,13298
+C0497,Vikram Joshi,J002,Data Scientist,AI & ML,Career Website,Amit,2025-12-17,2026-01-10,2026-01-13,2026-01-16,2026-01-21,2026-01-25,2026-01-26,,Offered,67,50,62,67,2.2,B.Tech,Rejected,Not Applicable,5714
+C0498,Aditya Verma,J001,Data Analyst,Data & Analytics,Career Website,Priya,2026-01-04,2026-01-14,2026-01-16,2026-01-19,2026-01-25,,,,Interviewed,71,61,88,81,7.8,B.Sc,Not Applicable,Not Applicable,13432
+C0499,Amit Sharma,J004,Python Developer,Software Development,Referral,Amit,2026-05-29,2026-06-22,2026-06-23,2026-06-25,2026-06-30,,,,Interviewed,58,41,68,51,3.4,MCA,Not Applicable,Not Applicable,6747
+C0500,Amit Deshmukh,J007,Business Analyst,Business,Referral,Neha,2026-03-25,2026-03-28,,,,,,,Applied,61,50,80,61,3.9,MBA,Not Applicable,Not Applicable,8540
+C0501,Sneha Verma,J005,Java Developer,Software Development,Campus Hiring,Rahul,2026-04-25,2026-05-09,2026-05-11,2026-05-15,2026-05-20,,,,Interviewed,73,74,80,64,4.8,B.E.,Not Applicable,Not Applicable,12686
+C0502,Ananya Jadhav,J004,Python Developer,Software Development,Naukri,Rahul,2026-06-21,2026-07-08,2026-07-12,,,,,,Screened,55,63,87,43,5.0,B.Tech,Not Applicable,Not Applicable,7298
+C0503,Sneha Verma,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-04-07,2026-04-19,2026-04-20,2026-04-23,,,,,Shortlisted,51,60,85,40,5.7,B.Sc,Not Applicable,Not Applicable,4773
+C0504,Vikram Singh,J006,ML Engineer,AI & ML,Referral,Priya,2026-06-04,2026-06-09,2026-06-12,,,,,,Screened,83,86,82,69,6.9,B.E.,Not Applicable,Not Applicable,4555
+C0505,Sneha Sharma,J002,Data Scientist,AI & ML,Naukri,Sneha,2026-02-12,2026-03-04,2026-03-05,2026-03-08,,,,,Shortlisted,62,78,78,59,5.6,B.Tech,Not Applicable,Not Applicable,9373
+C0506,Rahul Mehta,J008,Web Developer,IT,Career Website,Rahul,2026-01-30,2026-02-23,2026-02-26,2026-03-03,2026-03-08,,,,Interviewed,83,82,91,79,2.0,B.E.,Not Applicable,Not Applicable,12207
+C0507,Shreya Sharma,J003,Software Developer,Software Development,Campus Hiring,Neha,2026-03-19,2026-04-07,2026-04-08,,,,,,Screened,62,60,81,63,1.5,B.Tech,Not Applicable,Not Applicable,6653
+C0508,Akash Jadhav,J004,Python Developer,Software Development,Referral,Priya,2026-03-09,2026-03-11,2026-03-14,2026-03-17,,,,,Shortlisted,68,51,98,81,3.5,B.Tech,Not Applicable,Not Applicable,3767
+C0509,Neha Verma,J001,Data Analyst,Data & Analytics,Career Website,Priya,2026-02-16,2026-03-01,2026-03-06,2026-03-11,2026-03-13,,,,Interviewed,87,77,82,92,5.1,B.Sc,Not Applicable,Not Applicable,5054
+C0510,Ananya Singh,J004,Python Developer,Software Development,Campus Hiring,Priya,2026-04-24,2026-05-24,2026-05-29,,,,,,Screened,63,56,67,54,0.1,B.Tech,Not Applicable,Not Applicable,6995
+C0511,Pooja Verma,J006,ML Engineer,AI & ML,LinkedIn,Sneha,2026-07-04,2026-07-10,2026-07-13,2026-07-15,,,,,Shortlisted,99,95,97,100,0.5,MBA,Not Applicable,Not Applicable,10212
+C0512,Akash Sharma,J005,Java Developer,Software Development,Referral,Priya,2026-06-01,2026-06-10,2026-06-12,2026-06-14,2026-06-18,2026-06-22,2026-06-24,2026-07-01,Joined,82,86,78,89,0.6,MCA,Accepted,Joined,13958
+C0513,Ananya Jadhav,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-07-22,2026-08-12,2026-08-14,,,,,,Screened,96,100,79,100,1.6,M.Tech,Not Applicable,Not Applicable,8987
+C0514,Arjun Jadhav,J005,Java Developer,Software Development,Career Website,Rahul,2026-03-11,2026-03-26,2026-03-31,2026-04-05,2026-04-12,2026-04-14,,,Selected,85,82,90,100,0.5,B.E.,Not Applicable,Not Applicable,4262
+C0515,Shreya Pawar,J005,Java Developer,Software Development,Naukri,Neha,2026-01-21,2026-02-04,2026-02-09,,,,,,Screened,87,84,91,93,2.2,B.E.,Not Applicable,Not Applicable,10732
+C0516,Amit Mehta,J002,Data Scientist,AI & ML,Naukri,Priya,2026-07-05,2026-08-03,2026-08-07,2026-08-11,2026-08-15,2026-08-19,2026-08-22,2026-08-31,Joined,54,60,70,71,3.6,B.Sc,Accepted,Joined,14764
+C0517,Sneha Deshmukh,J004,Python Developer,Software Development,Career Website,Neha,2026-02-16,2026-02-17,2026-02-22,2026-02-24,2026-03-02,,,,Interviewed,83,84,72,65,3.5,B.Sc,Not Applicable,Not Applicable,5804
+C0518,Aditya Sharma,J004,Python Developer,Software Development,Campus Hiring,Amit,2026-03-30,2026-04-02,2026-04-07,2026-04-11,2026-04-18,,,,Interviewed,75,55,77,68,0.2,B.E.,Not Applicable,Not Applicable,12642
+C0519,Amit Verma,J006,ML Engineer,AI & ML,Naukri,Rahul,2026-04-20,2026-05-06,2026-05-10,,,,,,Screened,78,74,98,67,7.4,B.E.,Not Applicable,Not Applicable,14526
+C0520,Arjun Joshi,J001,Data Analyst,Data & Analytics,Campus Hiring,Rahul,2026-04-08,2026-04-16,,,,,,,Applied,70,67,87,73,2.1,B.E.,Not Applicable,Not Applicable,9197
+C0521,Shreya Mehta,J008,Web Developer,IT,Naukri,Amit,2026-07-26,2026-08-10,2026-08-15,2026-08-19,2026-08-26,2026-08-29,,,Selected,64,67,65,52,6.5,M.Tech,Not Applicable,Not Applicable,8457
+C0522,Ananya Patil,J001,Data Analyst,Data & Analytics,LinkedIn,Rahul,2026-04-11,2026-04-26,2026-04-27,2026-05-02,2026-05-07,,,,Interviewed,99,100,61,85,2.0,MCA,Not Applicable,Not Applicable,10456
+C0523,Priya Joshi,J001,Data Analyst,Data & Analytics,Indeed,Sneha,2026-04-10,2026-04-23,,,,,,,Applied,64,74,64,50,6.6,M.Tech,Not Applicable,Not Applicable,6823
+C0524,Shreya Pawar,J001,Data Analyst,Data & Analytics,Campus Hiring,Amit,2026-01-22,2026-02-06,2026-02-07,2026-02-09,2026-02-15,2026-02-20,,,Selected,71,62,80,100,4.0,B.Tech,Not Applicable,Not Applicable,4216
+C0525,Karan Mehta,J007,Business Analyst,Business,Naukri,Amit,2026-04-25,2026-04-26,2026-04-28,2026-05-02,2026-05-04,2026-05-07,2026-05-10,2026-05-20,Joined,81,89,80,82,1.6,MCA,Accepted,Joined,13769
+C0526,Sneha Patil,J002,Data Scientist,AI & ML,Campus Hiring,Sneha,2026-06-15,2026-06-30,2026-07-04,2026-07-09,2026-07-15,,,,Interviewed,99,87,83,89,6.0,B.Tech,Not Applicable,Not Applicable,4619
+C0527,Ananya Verma,J007,Business Analyst,Business,Naukri,Sneha,2025-12-18,2026-01-12,2026-01-14,2026-01-16,2026-01-19,2026-01-21,2026-01-22,,Offered,59,66,79,76,1.4,MCA,Accepted,Pending,7071
+C0528,Neha Deshmukh,J008,Web Developer,IT,Naukri,Rahul,2026-01-02,2026-01-31,2026-02-03,2026-02-04,2026-02-09,,,,Interviewed,64,51,75,60,1.3,B.Tech,Not Applicable,Not Applicable,10153
+C0529,Ananya Sharma,J008,Web Developer,IT,Referral,Rahul,2026-05-07,2026-06-05,2026-06-09,2026-06-13,2026-06-18,,,,Interviewed,53,58,76,47,4.2,B.E.,Not Applicable,Not Applicable,9239
+C0530,Vikram Jadhav,J002,Data Scientist,AI & ML,Career Website,Sneha,2025-12-25,2026-01-02,2026-01-04,2026-01-05,2026-01-08,,,,Interviewed,90,100,58,71,1.9,MCA,Not Applicable,Not Applicable,4429
+C0531,Aditya Mehta,J001,Data Analyst,Data & Analytics,LinkedIn,Neha,2026-01-05,2026-01-10,2026-01-11,,,,,,Screened,91,100,78,78,4.3,MCA,Not Applicable,Not Applicable,2803
+C0532,Karan Deshmukh,J002,Data Scientist,AI & ML,Indeed,Neha,2026-01-20,2026-02-11,2026-02-16,2026-02-21,2026-02-27,2026-03-01,,,Selected,79,88,65,79,3.3,MBA,Not Applicable,Not Applicable,9460
+C0533,Arjun Sharma,J006,ML Engineer,AI & ML,Indeed,Sneha,2025-12-30,2026-01-24,2026-01-25,2026-01-29,2026-02-04,2026-02-05,2026-02-08,2026-02-28,Joined,69,61,83,60,4.8,B.Sc,Accepted,Joined,4204
+C0534,Shreya Joshi,J002,Data Scientist,AI & ML,Referral,Neha,2026-03-09,2026-03-26,2026-03-31,2026-04-01,2026-04-03,2026-04-08,,,Selected,87,84,78,72,1.7,B.E.,Not Applicable,Not Applicable,13955
+C0535,Pooja Jadhav,J002,Data Scientist,AI & ML,Indeed,Amit,2026-06-28,2026-07-21,2026-07-24,2026-07-29,2026-08-04,2026-08-09,2026-08-12,,Offered,74,66,100,83,3.4,MCA,Rejected,Not Applicable,12064
+C0536,Ananya Singh,J008,Web Developer,IT,Naukri,Neha,2026-04-11,2026-05-07,2026-05-09,2026-05-10,2026-05-12,2026-05-13,,,Selected,79,96,82,82,5.5,B.E.,Not Applicable,Not Applicable,9616
+C0537,Shreya Kulkarni,J002,Data Scientist,AI & ML,Referral,Amit,2026-07-04,2026-07-24,2026-07-29,2026-07-31,,,,,Shortlisted,43,41,75,57,6.7,B.Tech,Not Applicable,Not Applicable,2185
+C0538,Shreya Joshi,J004,Python Developer,Software Development,LinkedIn,Sneha,2026-02-09,2026-03-07,2026-03-10,2026-03-11,2026-03-13,,,,Interviewed,62,61,92,57,1.5,B.Sc,Not Applicable,Not Applicable,13236
+C0539,Rohan Verma,J006,ML Engineer,AI & ML,Career Website,Priya,2026-06-16,2026-07-05,2026-07-08,,,,,,Screened,70,79,83,70,7.2,B.E.,Not Applicable,Not Applicable,13017
+C0540,Arjun Singh,J008,Web Developer,IT,Campus Hiring,Rahul,2026-07-22,2026-07-24,,,,,,,Applied,65,67,92,60,0.5,M.Tech,Not Applicable,Not Applicable,9546
+C0541,Pooja Verma,J006,ML Engineer,AI & ML,Career Website,Sneha,2026-07-08,2026-07-10,2026-07-13,2026-07-18,2026-07-24,2026-07-25,,,Selected,58,51,62,43,3.5,MCA,Not Applicable,Not Applicable,5412
+C0542,Akash Mehta,J006,ML Engineer,AI & ML,Indeed,Priya,2026-01-12,2026-01-17,2026-01-22,2026-01-24,2026-01-30,2026-02-04,2026-02-08,2026-02-18,Joined,65,42,88,77,0.5,B.Sc,Accepted,Joined,11751
+C0543,Isha Joshi,J002,Data Scientist,AI & ML,Indeed,Priya,2026-06-02,2026-06-30,2026-07-04,2026-07-06,,,,,Shortlisted,71,92,81,86,5.7,B.Sc,Not Applicable,Not Applicable,8088
+C0544,Isha Joshi,J008,Web Developer,IT,Indeed,Rahul,2026-02-08,2026-02-25,2026-02-26,2026-02-28,,,,,Shortlisted,81,95,86,88,0.5,B.Tech,Not Applicable,Not Applicable,3517
+C0545,Ananya Sharma,J008,Web Developer,IT,Career Website,Rahul,2026-07-08,2026-07-24,2026-07-28,2026-08-02,,,,,Shortlisted,57,57,90,72,6.4,B.E.,Not Applicable,Not Applicable,7084
+C0546,Amit Patil,J006,ML Engineer,AI & ML,Campus Hiring,Rahul,2026-07-13,2026-07-30,2026-08-03,2026-08-07,2026-08-14,2026-08-19,,,Selected,68,63,81,72,5.9,B.E.,Not Applicable,Not Applicable,3897
+C0547,Neha Sharma,J001,Data Analyst,Data & Analytics,Career Website,Priya,2026-05-28,2026-06-25,2026-06-26,2026-06-27,,,,,Shortlisted,83,97,87,86,7.3,B.Sc,Not Applicable,Not Applicable,10529
+C0548,Rahul Jadhav,J005,Java Developer,Software Development,Campus Hiring,Rahul,2026-07-04,2026-07-14,2026-07-17,,,,,,Screened,59,62,99,56,4.6,B.Sc,Not Applicable,Not Applicable,6532
+C0549,Akash Singh,J006,ML Engineer,AI & ML,Indeed,Rahul,2026-06-17,2026-06-21,2026-06-22,,,,,,Screened,65,54,68,58,2.2,B.E.,Not Applicable,Not Applicable,12206
+C0550,Priya Pawar,J002,Data Scientist,AI & ML,Indeed,Sneha,2026-03-13,2026-03-31,2026-04-03,2026-04-08,2026-04-11,2026-04-13,2026-04-14,2026-04-28,Joined,75,84,67,90,3.4,B.E.,Accepted,Joined,12047
+C0551,Ananya Singh,J006,ML Engineer,AI & ML,LinkedIn,Amit,2026-01-08,2026-01-13,,,,,,,Applied,91,96,89,80,6.6,MBA,Not Applicable,Not Applicable,8284
+C0552,Sneha Verma,J001,Data Analyst,Data & Analytics,Campus Hiring,Neha,2026-04-05,2026-04-11,2026-04-15,2026-04-20,2026-04-24,,,,Interviewed,77,82,63,68,2.1,MCA,Not Applicable,Not Applicable,7119
+C0553,Isha Kulkarni,J006,ML Engineer,AI & ML,Campus Hiring,Neha,2026-06-07,2026-07-02,2026-07-06,2026-07-11,2026-07-14,2026-07-15,2026-07-19,2026-07-27,Joined,59,66,59,65,1.5,B.Tech,Accepted,Joined,9464
+C0554,Aditya Singh,J005,Java Developer,Software Development,Naukri,Rahul,2026-04-23,2026-05-01,2026-05-04,,,,,,Screened,83,89,69,88,5.3,MCA,Not Applicable,Not Applicable,8423
+C0555,Shreya Mehta,J003,Software Developer,Software Development,Indeed,Amit,2026-06-23,2026-07-21,,,,,,,Applied,60,74,72,59,0.7,M.Tech,Not Applicable,Not Applicable,9787
+C0556,Rohan Singh,J002,Data Scientist,AI & ML,Naukri,Sneha,2026-04-01,2026-04-29,2026-05-01,2026-05-06,2026-05-08,,,,Interviewed,80,64,79,77,2.1,B.Sc,Not Applicable,Not Applicable,8646
+C0557,Rohan Pawar,J002,Data Scientist,AI & ML,Indeed,Neha,2026-06-13,2026-06-16,2026-06-20,2026-06-22,,,,,Shortlisted,85,82,72,91,2.6,M.Tech,Not Applicable,Not Applicable,12172
+C0558,Ananya Deshmukh,J004,Python Developer,Software Development,LinkedIn,Sneha,2026-04-21,2026-05-04,2026-05-09,2026-05-13,2026-05-18,2026-05-23,2026-05-26,,Offered,86,92,65,83,4.6,B.E.,Accepted,Pending,5869
+C0559,Aditya Patil,J003,Software Developer,Software Development,Campus Hiring,Neha,2026-06-09,2026-07-09,,,,,,,Applied,93,87,56,99,0.2,M.Tech,Not Applicable,Not Applicable,11766
+C0560,Rohan Pawar,J008,Web Developer,IT,Referral,Rahul,2025-12-29,2026-01-25,2026-01-26,2026-01-31,2026-02-02,2026-02-07,2026-02-11,2026-02-26,Joined,84,97,82,94,5.2,B.Sc,Accepted,Joined,10098
+C0561,Sneha Kulkarni,J001,Data Analyst,Data & Analytics,Career Website,Priya,2026-07-24,2026-07-29,2026-08-02,2026-08-07,2026-08-11,2026-08-15,,,Selected,89,92,97,100,4.5,B.E.,Not Applicable,Not Applicable,12085
+C0562,Priya Kulkarni,J008,Web Developer,IT,Indeed,Sneha,2026-05-26,2026-06-24,2026-06-27,2026-07-01,2026-07-08,2026-07-11,2026-07-12,,Offered,69,84,68,84,7.9,MCA,Accepted,Pending,12018
+C0563,Isha Deshmukh,J007,Business Analyst,Business,LinkedIn,Sneha,2026-07-28,2026-08-07,2026-08-08,2026-08-13,2026-08-17,2026-08-18,2026-08-21,2026-08-26,Joined,85,86,75,90,1.8,MCA,Accepted,Joined,5854
+C0564,Shreya Jadhav,J007,Business Analyst,Business,Indeed,Amit,2026-03-21,2026-04-11,2026-04-16,2026-04-18,,,,,Shortlisted,84,92,70,85,4.2,M.Tech,Not Applicable,Not Applicable,12854
+C0565,Pooja Deshmukh,J003,Software Developer,Software Development,Referral,Sneha,2026-01-31,2026-02-18,,,,,,,Applied,92,100,84,90,3.6,M.Tech,Not Applicable,Not Applicable,12978
+C0566,Amit Sharma,J003,Software Developer,Software Development,LinkedIn,Rahul,2025-12-29,2026-01-19,2026-01-23,2026-01-25,2026-01-27,2026-01-29,2026-02-02,2026-02-21,Joined,99,99,90,100,1.3,MBA,Accepted,Joined,14925
+C0567,Vikram Deshmukh,J007,Business Analyst,Business,Referral,Neha,2026-04-10,2026-04-27,2026-04-29,2026-05-01,,,,,Shortlisted,81,70,63,84,2.2,M.Tech,Not Applicable,Not Applicable,8959
+C0568,Vikram Singh,J001,Data Analyst,Data & Analytics,Naukri,Neha,2026-07-12,2026-08-05,2026-08-10,2026-08-15,,,,,Shortlisted,99,93,73,100,5.6,B.Sc,Not Applicable,Not Applicable,8012
+C0569,Rahul Jadhav,J001,Data Analyst,Data & Analytics,Indeed,Priya,2026-04-11,2026-05-04,2026-05-05,2026-05-07,2026-05-14,,,,Interviewed,82,95,88,86,0.2,MCA,Not Applicable,Not Applicable,13981
+C0570,Pooja Pawar,J005,Java Developer,Software Development,Career Website,Priya,2026-01-04,2026-01-21,2026-01-22,2026-01-27,,,,,Shortlisted,75,80,47,72,6.4,B.E.,Not Applicable,Not Applicable,11496
+C0571,Vikram Sharma,J005,Java Developer,Software Development,LinkedIn,Amit,2026-03-11,2026-03-29,2026-04-02,2026-04-07,2026-04-14,,,,Interviewed,50,55,79,57,1.2,M.Tech,Not Applicable,Not Applicable,7431
+C0572,Rohan Joshi,J007,Business Analyst,Business,LinkedIn,Neha,2026-03-10,2026-03-16,2026-03-21,,,,,,Screened,68,66,77,63,4.7,MBA,Not Applicable,Not Applicable,6267
+C0573,Aditya Singh,J001,Data Analyst,Data & Analytics,Career Website,Priya,2026-05-23,2026-05-29,2026-06-03,2026-06-04,2026-06-08,2026-06-12,2026-06-13,2026-06-22,Joined,88,90,81,95,0.7,MBA,Accepted,Joined,10283
+C0574,Isha Joshi,J002,Data Scientist,AI & ML,Career Website,Sneha,2026-03-01,2026-03-06,2026-03-07,2026-03-08,2026-03-14,2026-03-16,2026-03-18,,Offered,84,75,88,77,1.7,B.Sc,Accepted,Pending,8058
+C0575,Neha Kulkarni,J003,Software Developer,Software Development,Career Website,Priya,2026-04-29,2026-05-05,2026-05-07,2026-05-12,2026-05-15,2026-05-19,2026-05-23,2026-06-09,Joined,79,79,92,77,8.0,B.Sc,Accepted,Joined,5898
+C0576,Shreya Deshmukh,J008,Web Developer,IT,Campus Hiring,Sneha,2026-02-04,2026-02-23,2026-02-24,2026-02-25,2026-02-28,,,,Interviewed,67,65,75,59,0.5,B.Tech,Not Applicable,Not Applicable,9602
+C0577,Pooja Joshi,J007,Business Analyst,Business,Career Website,Rahul,2026-04-08,2026-05-02,2026-05-06,2026-05-10,2026-05-14,2026-05-16,,,Selected,65,57,57,62,0.6,M.Tech,Not Applicable,Not Applicable,10690
+C0578,Rahul Joshi,J007,Business Analyst,Business,Referral,Sneha,2026-07-09,2026-07-24,2026-07-25,2026-07-26,2026-08-01,2026-08-04,,,Selected,71,68,77,75,0.8,MCA,Not Applicable,Not Applicable,9074
+C0579,Rohan Joshi,J005,Java Developer,Software Development,LinkedIn,Sneha,2026-02-12,2026-03-10,2026-03-14,2026-03-16,2026-03-23,,,,Interviewed,65,75,65,57,2.2,MBA,Not Applicable,Not Applicable,13008
+C0580,Ananya Mehta,J004,Python Developer,Software Development,Naukri,Sneha,2026-05-31,2026-06-23,,,,,,,Applied,63,50,72,64,1.0,MCA,Not Applicable,Not Applicable,2138
+C0581,Rahul Verma,J002,Data Scientist,AI & ML,LinkedIn,Amit,2026-01-09,2026-01-26,2026-01-29,,,,,,Screened,69,72,88,65,1.7,B.Sc,Not Applicable,Not Applicable,6127
+C0582,Rahul Sharma,J004,Python Developer,Software Development,LinkedIn,Neha,2026-06-05,2026-06-08,2026-06-10,2026-06-15,2026-06-22,2026-06-23,2026-06-24,2026-07-01,Joined,74,65,84,56,1.2,MBA,Accepted,Joined,11907
+C0583,Karan Jadhav,J003,Software Developer,Software Development,LinkedIn,Rahul,2026-07-19,2026-07-25,2026-07-26,,,,,,Screened,78,67,64,78,6.4,B.Sc,Not Applicable,Not Applicable,12465
+C0584,Arjun Joshi,J008,Web Developer,IT,Campus Hiring,Sneha,2026-07-02,2026-07-16,,,,,,,Applied,73,55,77,64,5.0,B.Sc,Not Applicable,Not Applicable,3212
+C0585,Akash Sharma,J005,Java Developer,Software Development,Indeed,Priya,2026-03-26,2026-04-08,2026-04-11,2026-04-13,2026-04-18,2026-04-19,2026-04-23,2026-05-04,Joined,57,40,84,73,2.5,B.Sc,Accepted,Joined,11999
+C0586,Amit Singh,J007,Business Analyst,Business,Career Website,Amit,2026-01-23,2026-01-28,2026-01-29,2026-02-02,2026-02-09,,,,Interviewed,82,85,82,62,5.3,B.E.,Not Applicable,Not Applicable,6243
+C0587,Rahul Patil,J002,Data Scientist,AI & ML,Campus Hiring,Sneha,2025-12-31,2026-01-19,,,,,,,Applied,57,52,98,56,6.7,M.Tech,Not Applicable,Not Applicable,10154
+C0588,Aditya Sharma,J003,Software Developer,Software Development,Referral,Sneha,2025-12-19,2026-01-10,2026-01-14,2026-01-19,2026-01-21,2026-01-26,,,Selected,93,92,89,89,3.9,B.E.,Not Applicable,Not Applicable,13593
+C0589,Pooja Verma,J008,Web Developer,IT,Campus Hiring,Priya,2026-03-17,2026-04-14,2026-04-18,,,,,,Screened,67,47,72,70,3.3,MCA,Not Applicable,Not Applicable,13292
+C0590,Sneha Jadhav,J008,Web Developer,IT,Indeed,Sneha,2026-04-18,2026-05-18,2026-05-19,,,,,,Screened,99,100,100,97,1.6,MBA,Not Applicable,Not Applicable,12359
+C0591,Rohan Pawar,J002,Data Scientist,AI & ML,LinkedIn,Amit,2026-07-27,2026-08-07,2026-08-09,2026-08-14,2026-08-16,,,,Interviewed,43,51,67,47,1.8,B.Sc,Not Applicable,Not Applicable,8294
+C0592,Neha Verma,J004,Python Developer,Software Development,Campus Hiring,Sneha,2026-01-07,2026-01-28,,,,,,,Applied,66,57,70,60,4.6,M.Tech,Not Applicable,Not Applicable,12367
+C0593,Shreya Kulkarni,J008,Web Developer,IT,Naukri,Priya,2026-02-03,2026-02-05,2026-02-07,2026-02-11,2026-02-16,2026-02-17,2026-02-20,2026-03-12,Joined,80,78,78,84,6.6,MBA,Accepted,Joined,10748
+C0594,Rahul Sharma,J008,Web Developer,IT,Indeed,Priya,2026-03-26,2026-03-28,,,,,,,Applied,93,87,69,90,1.1,M.Tech,Not Applicable,Not Applicable,12712
+C0595,Aditya Pawar,J008,Web Developer,IT,Career Website,Rahul,2026-01-15,2026-02-08,,,,,,,Applied,81,85,84,71,4.5,B.Tech,Not Applicable,Not Applicable,4319
+C0596,Aditya Sharma,J008,Web Developer,IT,Career Website,Priya,2026-04-01,2026-05-01,2026-05-03,2026-05-04,2026-05-07,2026-05-08,,,Selected,81,77,67,72,1.8,B.E.,Not Applicable,Not Applicable,7035
+C0597,Pooja Jadhav,J002,Data Scientist,AI & ML,Career Website,Priya,2026-01-17,2026-02-13,,,,,,,Applied,79,82,94,85,0.0,B.Tech,Not Applicable,Not Applicable,11748
+C0598,Sneha Kulkarni,J004,Python Developer,Software Development,Campus Hiring,Amit,2026-04-09,2026-04-20,,,,,,,Applied,43,40,77,40,1.2,B.Sc,Not Applicable,Not Applicable,13208
+C0599,Rohan Kulkarni,J003,Software Developer,Software Development,Career Website,Rahul,2026-07-13,2026-07-15,,,,,,,Applied,65,57,77,73,7.4,B.Sc,Not Applicable,Not Applicable,6487
+C0600,Akash Verma,J003,Software Developer,Software Development,Indeed,Neha,2026-01-21,2026-02-13,2026-02-18,2026-02-19,,,,,Shortlisted,65,69,45,60,3.7,B.E.,Not Applicable,Not Applicable,4185
+C0601,Akash Jadhav,J002,Data Scientist,AI & ML,Naukri,Priya,2026-03-13,2026-04-07,,,,,,,Applied,92,88,70,80,4.8,M.Tech,Not Applicable,Not Applicable,2118
+C0602,Arjun Patil,J003,Software Developer,Software Development,Career Website,Sneha,2026-06-09,2026-06-30,2026-07-04,2026-07-06,2026-07-09,2026-07-11,,,Selected,86,88,84,100,4.1,M.Tech,Not Applicable,Not Applicable,12482
+C0603,Ananya Singh,J005,Java Developer,Software Development,Naukri,Neha,2026-04-08,2026-04-16,,,,,,,Applied,75,69,92,72,0.4,MBA,Not Applicable,Not Applicable,4949
+C0604,Vikram Patil,J008,Web Developer,IT,Indeed,Sneha,2026-05-14,2026-06-10,,,,,,,Applied,74,69,71,77,1.3,M.Tech,Not Applicable,Not Applicable,5860
+C0605,Sneha Pawar,J004,Python Developer,Software Development,Indeed,Neha,2026-01-05,2026-01-25,2026-01-27,,,,,,Screened,62,56,92,57,4.9,MCA,Not Applicable,Not Applicable,6528
+C0606,Priya Patil,J001,Data Analyst,Data & Analytics,Campus Hiring,Amit,2026-07-18,2026-07-23,,,,,,,Applied,66,69,69,73,3.1,M.Tech,Not Applicable,Not Applicable,12979
+C0607,Rahul Mehta,J001,Data Analyst,Data & Analytics,Referral,Sneha,2026-03-07,2026-03-14,2026-03-18,2026-03-19,2026-03-21,,,,Interviewed,86,87,70,84,5.4,B.Sc,Not Applicable,Not Applicable,14130
+C0608,Arjun Pawar,J001,Data Analyst,Data & Analytics,LinkedIn,Amit,2026-02-09,2026-02-15,,,,,,,Applied,76,88,69,83,0.2,MCA,Not Applicable,Not Applicable,5855
+C0609,Vikram Jadhav,J008,Web Developer,IT,Naukri,Sneha,2026-03-11,2026-03-25,2026-03-28,2026-03-30,2026-04-01,2026-04-03,,,Selected,82,83,86,67,2.8,B.E.,Not Applicable,Not Applicable,14087
+C0610,Isha Kulkarni,J007,Business Analyst,Business,Naukri,Priya,2026-03-09,2026-04-07,2026-04-08,2026-04-12,2026-04-15,,,,Interviewed,88,83,67,97,5.4,M.Tech,Not Applicable,Not Applicable,5541
+C0611,Amit Verma,J008,Web Developer,IT,Referral,Rahul,2026-04-01,2026-04-06,2026-04-09,2026-04-11,,,,,Shortlisted,89,99,64,76,2.3,MBA,Not Applicable,Not Applicable,7503
+C0612,Rahul Jadhav,J003,Software Developer,Software Development,Naukri,Priya,2026-01-07,2026-01-16,2026-01-18,2026-01-21,,,,,Shortlisted,50,46,89,45,0.6,M.Tech,Not Applicable,Not Applicable,5602
+C0613,Vikram Deshmukh,J005,Java Developer,Software Development,Campus Hiring,Neha,2026-06-26,2026-07-22,2026-07-27,2026-07-29,2026-07-31,,,,Interviewed,67,55,64,69,7.5,B.E.,Not Applicable,Not Applicable,8745
+C0614,Isha Kulkarni,J008,Web Developer,IT,Referral,Sneha,2026-05-16,2026-06-01,2026-06-03,2026-06-05,2026-06-09,2026-06-13,,,Selected,76,46,75,59,7.7,B.Tech,Not Applicable,Not Applicable,11493
+C0615,Arjun Jadhav,J004,Python Developer,Software Development,Career Website,Priya,2026-01-09,2026-02-08,2026-02-09,2026-02-13,2026-02-20,2026-02-25,2026-02-26,2026-03-16,Joined,87,95,88,88,5.3,M.Tech,Accepted,Joined,10701
+C0616,Pooja Patil,J007,Business Analyst,Business,Naukri,Priya,2026-04-10,2026-04-26,2026-04-30,2026-05-02,2026-05-05,2026-05-08,,,Selected,60,77,89,57,6.5,MCA,Not Applicable,Not Applicable,6846
+C0617,Aditya Patil,J004,Python Developer,Software Development,Campus Hiring,Sneha,2025-12-20,2026-01-05,2026-01-10,2026-01-15,2026-01-17,2026-01-21,,,Selected,70,75,64,79,7.2,B.E.,Not Applicable,Not Applicable,9598
+C0618,Isha Verma,J003,Software Developer,Software Development,Indeed,Amit,2026-01-22,2026-02-17,2026-02-18,2026-02-22,2026-03-01,,,,Interviewed,67,56,92,64,1.5,MBA,Not Applicable,Not Applicable,7454
+C0619,Neha Verma,J001,Data Analyst,Data & Analytics,Campus Hiring,Neha,2026-07-03,2026-07-12,2026-07-14,2026-07-15,2026-07-21,,,,Interviewed,78,95,77,59,1.0,MCA,Not Applicable,Not Applicable,7500
+C0620,Ananya Mehta,J001,Data Analyst,Data & Analytics,Referral,Sneha,2026-01-10,2026-01-14,2026-01-17,2026-01-20,2026-01-23,,,,Interviewed,54,73,88,55,2.4,M.Tech,Not Applicable,Not Applicable,12619
+C0621,Ananya Kulkarni,J002,Data Scientist,AI & ML,Naukri,Neha,2026-01-25,2026-02-05,2026-02-10,2026-02-12,2026-02-19,,,,Interviewed,87,99,100,95,2.8,B.Tech,Not Applicable,Not Applicable,14466
+C0622,Rohan Mehta,J004,Python Developer,Software Development,Campus Hiring,Amit,2026-02-21,2026-03-10,,,,,,,Applied,50,40,76,50,7.2,B.Sc,Not Applicable,Not Applicable,8108
+C0623,Pooja Singh,J006,ML Engineer,AI & ML,LinkedIn,Amit,2026-04-22,2026-05-09,2026-05-14,2026-05-17,2026-05-22,,,,Interviewed,59,58,79,52,4.6,MBA,Not Applicable,Not Applicable,12173
+C0624,Akash Patil,J006,ML Engineer,AI & ML,Referral,Priya,2026-01-20,2026-02-18,2026-02-20,2026-02-23,,,,,Shortlisted,76,73,66,76,5.9,B.Tech,Not Applicable,Not Applicable,3260
+C0625,Amit Joshi,J002,Data Scientist,AI & ML,Naukri,Amit,2026-01-06,2026-01-29,2026-02-03,2026-02-04,2026-02-08,2026-02-12,2026-02-14,,Offered,48,53,77,52,1.4,B.E.,Accepted,Pending,8883
+C0626,Shreya Sharma,J008,Web Developer,IT,LinkedIn,Priya,2026-03-09,2026-03-16,2026-03-21,2026-03-24,2026-03-29,2026-04-03,2026-04-06,,Offered,68,86,84,54,2.8,B.E.,Accepted,Pending,14891
+C0627,Pooja Jadhav,J006,ML Engineer,AI & ML,Career Website,Neha,2026-05-28,2026-06-20,2026-06-25,2026-06-27,,,,,Shortlisted,47,57,83,51,2.0,M.Tech,Not Applicable,Not Applicable,14932
+C0628,Amit Joshi,J005,Java Developer,Software Development,Indeed,Sneha,2026-02-12,2026-02-28,,,,,,,Applied,55,41,70,65,3.8,B.Tech,Not Applicable,Not Applicable,6659
+C0629,Amit Jadhav,J008,Web Developer,IT,Career Website,Sneha,2026-01-19,2026-02-11,2026-02-13,2026-02-15,2026-02-18,2026-02-19,2026-02-20,2026-03-07,Joined,73,64,92,72,1.7,B.E.,Accepted,Joined,11413
+C0630,Pooja Joshi,J003,Software Developer,Software Development,Naukri,Neha,2026-03-30,2026-04-05,,,,,,,Applied,93,88,73,100,1.8,MBA,Not Applicable,Not Applicable,7192
+C0631,Amit Mehta,J006,ML Engineer,AI & ML,Naukri,Neha,2026-04-07,2026-04-25,,,,,,,Applied,81,79,82,100,3.7,B.Sc,Not Applicable,Not Applicable,2408
+C0632,Arjun Singh,J007,Business Analyst,Business,Referral,Sneha,2026-07-11,2026-07-16,,,,,,,Applied,40,40,83,40,0.3,B.E.,Not Applicable,Not Applicable,14099
+C0633,Aditya Joshi,J006,ML Engineer,AI & ML,Indeed,Neha,2026-04-03,2026-05-02,,,,,,,Applied,99,100,76,91,7.8,MBA,Not Applicable,Not Applicable,11260
+C0634,Rohan Patil,J008,Web Developer,IT,LinkedIn,Rahul,2026-06-21,2026-07-07,2026-07-10,2026-07-11,2026-07-16,,,,Interviewed,84,85,70,86,0.9,MBA,Not Applicable,Not Applicable,12117
+C0635,Pooja Mehta,J004,Python Developer,Software Development,LinkedIn,Neha,2026-01-13,2026-01-24,2026-01-29,,,,,,Screened,42,53,82,46,2.8,MBA,Not Applicable,Not Applicable,5639
+C0636,Priya Sharma,J005,Java Developer,Software Development,Referral,Priya,2026-01-04,2026-01-22,2026-01-26,2026-01-29,,,,,Shortlisted,54,46,74,46,4.9,MCA,Not Applicable,Not Applicable,11882
+C0637,Arjun Mehta,J001,Data Analyst,Data & Analytics,Campus Hiring,Amit,2026-04-07,2026-04-12,2026-04-13,2026-04-16,,,,,Shortlisted,92,100,76,85,3.3,B.Sc,Not Applicable,Not Applicable,7651
+C0638,Neha Singh,J006,ML Engineer,AI & ML,LinkedIn,Rahul,2026-07-25,2026-08-12,2026-08-16,2026-08-20,2026-08-24,2026-08-26,2026-08-30,2026-09-17,Joined,79,75,76,73,1.5,MBA,Accepted,Joined,4286
+C0639,Amit Kulkarni,J002,Data Scientist,AI & ML,Career Website,Sneha,2026-03-03,2026-03-19,2026-03-24,2026-03-28,2026-03-30,2026-03-31,2026-04-04,2026-04-17,Joined,77,87,78,61,1.3,B.Tech,Accepted,Joined,8791
+C0640,Ananya Singh,J003,Software Developer,Software Development,Naukri,Rahul,2026-06-12,2026-07-01,2026-07-04,2026-07-09,2026-07-14,2026-07-15,2026-07-18,,Offered,78,84,62,95,5.9,B.E.,Rejected,Not Applicable,6979
+C0641,Ananya Singh,J008,Web Developer,IT,LinkedIn,Rahul,2026-02-26,2026-02-27,2026-03-03,,,,,,Screened,99,100,97,93,6.0,B.Sc,Not Applicable,Not Applicable,4034
+C0642,Karan Deshmukh,J005,Java Developer,Software Development,Campus Hiring,Rahul,2026-04-06,2026-05-06,,,,,,,Applied,78,75,92,79,6.6,B.Tech,Not Applicable,Not Applicable,6541
+C0643,Sneha Jadhav,J008,Web Developer,IT,Career Website,Amit,2026-06-28,2026-07-10,2026-07-13,2026-07-17,,,,,Shortlisted,85,82,85,80,3.5,MCA,Not Applicable,Not Applicable,13374
+C0644,Rohan Pawar,J002,Data Scientist,AI & ML,LinkedIn,Sneha,2026-06-18,2026-07-07,2026-07-09,2026-07-12,2026-07-17,,,,Interviewed,45,46,56,52,3.9,B.E.,Not Applicable,Not Applicable,13358
+C0645,Rohan Deshmukh,J003,Software Developer,Software Development,Indeed,Amit,2026-01-05,2026-01-14,2026-01-17,2026-01-18,2026-01-22,2026-01-25,2026-01-26,2026-02-06,Joined,97,90,93,85,0.3,MBA,Accepted,Joined,14557
+C0646,Akash Patil,J003,Software Developer,Software Development,Naukri,Neha,2026-05-09,2026-06-03,2026-06-06,2026-06-09,2026-06-16,2026-06-19,2026-06-20,,Offered,73,78,69,81,6.4,B.Sc,Accepted,Pending,7761
+C0647,Rahul Deshmukh,J003,Software Developer,Software Development,Indeed,Amit,2026-05-03,2026-05-13,2026-05-15,2026-05-16,,,,,Shortlisted,76,72,93,86,7.9,M.Tech,Not Applicable,Not Applicable,5569
+C0648,Ananya Kulkarni,J003,Software Developer,Software Development,Career Website,Neha,2026-07-25,2026-08-01,2026-08-06,2026-08-11,2026-08-18,2026-08-23,2026-08-24,,Offered,55,60,83,40,1.0,MBA,Accepted,Pending,3251
+C0649,Isha Deshmukh,J002,Data Scientist,AI & ML,Indeed,Sneha,2025-12-20,2026-01-05,2026-01-09,2026-01-14,,,,,Shortlisted,70,66,95,65,3.3,MBA,Not Applicable,Not Applicable,10570
+C0650,Amit Joshi,J006,ML Engineer,AI & ML,LinkedIn,Rahul,2025-12-15,2026-01-08,2026-01-10,2026-01-12,2026-01-16,2026-01-18,2026-01-20,,Offered,72,64,90,88,7.2,B.E.,Accepted,Pending,3287
+C0651,Shreya Patil,J007,Business Analyst,Business,Referral,Amit,2026-01-19,2026-01-20,2026-01-21,,,,,,Screened,69,63,70,67,1.3,B.Tech,Not Applicable,Not Applicable,14993
+C0652,Pooja Patil,J001,Data Analyst,Data & Analytics,LinkedIn,Sneha,2026-03-04,2026-03-06,,,,,,,Applied,46,59,78,41,0.3,MBA,Not Applicable,Not Applicable,3581
+C0653,Arjun Jadhav,J002,Data Scientist,AI & ML,Naukri,Rahul,2026-02-03,2026-02-22,2026-02-23,2026-02-25,,,,,Shortlisted,64,74,79,58,0.1,MBA,Not Applicable,Not Applicable,14225
+C0654,Vikram Mehta,J005,Java Developer,Software Development,Career Website,Neha,2026-03-26,2026-04-01,2026-04-02,2026-04-03,2026-04-09,,,,Interviewed,75,79,89,64,3.2,B.E.,Not Applicable,Not Applicable,14504
+C0655,Ananya Kulkarni,J001,Data Analyst,Data & Analytics,Indeed,Rahul,2026-06-26,2026-07-03,,,,,,,Applied,71,78,70,71,2.2,MCA,Not Applicable,Not Applicable,13884
+C0656,Arjun Kulkarni,J002,Data Scientist,AI & ML,Campus Hiring,Amit,2026-04-12,2026-05-10,2026-05-12,2026-05-16,2026-05-23,2026-05-24,,,Selected,81,85,69,73,3.4,B.Sc,Not Applicable,Not Applicable,4963
+C0657,Karan Verma,J006,ML Engineer,AI & ML,Naukri,Amit,2026-02-07,2026-02-24,2026-02-27,2026-02-28,2026-03-05,2026-03-06,,,Selected,45,40,86,40,6.5,B.Tech,Not Applicable,Not Applicable,10515
+C0658,Pooja Mehta,J003,Software Developer,Software Development,Career Website,Priya,2026-06-20,2026-06-30,2026-07-01,,,,,,Screened,40,40,65,40,0.4,B.Tech,Not Applicable,Not Applicable,8304
+C0659,Pooja Jadhav,J005,Java Developer,Software Development,Campus Hiring,Amit,2026-06-28,2026-07-08,2026-07-11,2026-07-15,2026-07-18,,,,Interviewed,78,66,85,85,4.2,B.E.,Not Applicable,Not Applicable,3140
+C0660,Aditya Mehta,J008,Web Developer,IT,Campus Hiring,Amit,2026-02-14,2026-02-15,,,,,,,Applied,68,61,64,50,1.2,MBA,Not Applicable,Not Applicable,9177
+C0661,Sneha Deshmukh,J002,Data Scientist,AI & ML,Campus Hiring,Neha,2026-03-30,2026-04-12,2026-04-14,2026-04-15,2026-04-19,2026-04-21,,,Selected,98,89,84,86,5.4,B.Tech,Not Applicable,Not Applicable,7548
+C0662,Vikram Verma,J004,Python Developer,Software Development,Referral,Amit,2026-01-24,2026-02-01,2026-02-06,2026-02-11,2026-02-15,2026-02-19,,,Selected,59,51,60,53,2.1,B.Sc,Not Applicable,Not Applicable,7834
+C0663,Aditya Jadhav,J008,Web Developer,IT,Career Website,Sneha,2026-03-29,2026-04-14,2026-04-15,2026-04-16,2026-04-20,2026-04-24,,,Selected,82,91,73,93,5.4,B.E.,Not Applicable,Not Applicable,10147
+C0664,Aditya Deshmukh,J004,Python Developer,Software Development,Campus Hiring,Priya,2026-01-04,2026-01-08,2026-01-09,2026-01-11,2026-01-16,,,,Interviewed,63,76,63,71,1.3,B.Tech,Not Applicable,Not Applicable,11905
+C0665,Amit Joshi,J006,ML Engineer,AI & ML,LinkedIn,Priya,2026-05-20,2026-06-09,2026-06-13,2026-06-17,2026-06-20,2026-06-23,,,Selected,84,95,90,86,0.6,MBA,Not Applicable,Not Applicable,12847
+C0666,Pooja Pawar,J008,Web Developer,IT,Indeed,Neha,2026-02-18,2026-03-08,,,,,,,Applied,99,92,59,80,2.3,MCA,Not Applicable,Not Applicable,14516
+C0667,Karan Patil,J001,Data Analyst,Data & Analytics,Indeed,Amit,2026-03-25,2026-04-09,2026-04-10,2026-04-12,,,,,Shortlisted,92,94,89,97,2.6,M.Tech,Not Applicable,Not Applicable,11120
+C0668,Arjun Deshmukh,J005,Java Developer,Software Development,Naukri,Sneha,2026-04-22,2026-05-06,2026-05-07,2026-05-12,,,,,Shortlisted,60,53,68,68,4.4,MBA,Not Applicable,Not Applicable,13059
+C0669,Aditya Pawar,J008,Web Developer,IT,Career Website,Amit,2026-06-07,2026-06-25,2026-06-27,2026-07-02,2026-07-04,,,,Interviewed,68,76,88,84,6.9,M.Tech,Not Applicable,Not Applicable,8412
+C0670,Pooja Jadhav,J005,Java Developer,Software Development,Campus Hiring,Sneha,2026-03-18,2026-04-07,2026-04-08,,,,,,Screened,86,100,58,80,4.8,B.Sc,Not Applicable,Not Applicable,11674
+C0671,Amit Mehta,J001,Data Analyst,Data & Analytics,Campus Hiring,Neha,2026-03-05,2026-03-31,2026-04-03,2026-04-07,2026-04-09,2026-04-13,,,Selected,85,74,85,71,6.1,B.Tech,Not Applicable,Not Applicable,7654
+C0672,Karan Mehta,J006,ML Engineer,AI & ML,Naukri,Rahul,2025-12-24,2026-01-15,2026-01-20,2026-01-21,2026-01-28,,,,Interviewed,79,69,67,91,6.0,B.E.,Not Applicable,Not Applicable,3073
+C0673,Sneha Mehta,J005,Java Developer,Software Development,Career Website,Sneha,2026-02-12,2026-02-13,2026-02-17,2026-02-22,,,,,Shortlisted,71,76,74,70,3.8,B.Tech,Not Applicable,Not Applicable,10433
+C0674,Neha Sharma,J007,Business Analyst,Business,Career Website,Priya,2026-06-12,2026-06-28,2026-07-02,2026-07-05,,,,,Shortlisted,58,77,62,59,0.7,B.Sc,Not Applicable,Not Applicable,11380
+C0675,Akash Singh,J002,Data Scientist,AI & ML,Campus Hiring,Rahul,2026-01-03,2026-01-26,2026-01-29,2026-01-31,2026-02-06,,,,Interviewed,78,78,97,97,2.4,B.Sc,Not Applicable,Not Applicable,6907
+C0676,Karan Kulkarni,J006,ML Engineer,AI & ML,LinkedIn,Neha,2026-04-17,2026-05-08,2026-05-09,,,,,,Screened,49,59,75,56,4.0,B.E.,Not Applicable,Not Applicable,6871
+C0677,Akash Kulkarni,J007,Business Analyst,Business,LinkedIn,Neha,2026-05-16,2026-06-09,2026-06-12,2026-06-13,2026-06-19,,,,Interviewed,60,70,100,62,1.1,B.Tech,Not Applicable,Not Applicable,10700
+C0678,Karan Kulkarni,J008,Web Developer,IT,LinkedIn,Sneha,2026-03-04,2026-03-30,2026-04-03,2026-04-08,2026-04-12,2026-04-14,2026-04-18,,Offered,84,94,82,85,7.2,MCA,Accepted,Pending,12239
+C0679,Aditya Pawar,J008,Web Developer,IT,LinkedIn,Neha,2026-01-18,2026-02-16,2026-02-18,2026-02-22,2026-02-26,,,,Interviewed,84,72,92,100,2.4,B.E.,Not Applicable,Not Applicable,12451
+C0680,Arjun Jadhav,J007,Business Analyst,Business,LinkedIn,Neha,2026-06-15,2026-07-06,2026-07-08,2026-07-10,,,,,Shortlisted,61,72,85,80,0.1,B.E.,Not Applicable,Not Applicable,4465
+C0681,Isha Verma,J005,Java Developer,Software Development,LinkedIn,Rahul,2026-04-05,2026-04-16,2026-04-19,,,,,,Screened,63,65,96,56,2.7,M.Tech,Not Applicable,Not Applicable,12584
+C0682,Neha Jadhav,J003,Software Developer,Software Development,Naukri,Priya,2026-02-17,2026-03-02,2026-03-04,,,,,,Screened,61,74,92,62,6.2,B.E.,Not Applicable,Not Applicable,7087
+C0683,Pooja Pawar,J008,Web Developer,IT,Campus Hiring,Priya,2026-04-08,2026-04-22,,,,,,,Applied,84,100,79,75,7.7,B.E.,Not Applicable,Not Applicable,4235
+C0684,Neha Joshi,J001,Data Analyst,Data & Analytics,Naukri,Priya,2026-05-31,2026-06-18,2026-06-19,2026-06-20,2026-06-22,,,,Interviewed,51,66,74,48,3.0,MBA,Not Applicable,Not Applicable,7143
+C0685,Isha Patil,J005,Java Developer,Software Development,Indeed,Priya,2026-03-17,2026-04-15,2026-04-17,2026-04-19,2026-04-21,2026-04-26,2026-04-27,2026-05-10,Joined,74,76,90,74,2.5,M.Tech,Accepted,Joined,10133
+C0686,Priya Jadhav,J002,Data Scientist,AI & ML,Indeed,Sneha,2026-01-07,2026-02-01,2026-02-03,2026-02-07,2026-02-10,2026-02-12,,,Selected,94,97,63,83,8.0,MCA,Not Applicable,Not Applicable,3750
+C0687,Priya Joshi,J003,Software Developer,Software Development,Indeed,Neha,2026-04-09,2026-04-23,2026-04-26,2026-04-27,2026-05-01,,,,Interviewed,93,100,68,89,3.2,B.Tech,Not Applicable,Not Applicable,10941
+C0688,Pooja Kulkarni,J007,Business Analyst,Business,Naukri,Sneha,2026-02-12,2026-03-13,2026-03-16,2026-03-17,2026-03-24,2026-03-29,,,Selected,78,67,91,88,5.1,M.Tech,Not Applicable,Not Applicable,2570
+C0689,Shreya Kulkarni,J001,Data Analyst,Data & Analytics,Referral,Sneha,2026-02-16,2026-03-06,2026-03-09,2026-03-10,2026-03-16,2026-03-18,2026-03-22,2026-04-08,Joined,74,84,86,88,6.0,MBA,Accepted,Joined,2128
+C0690,Arjun Joshi,J007,Business Analyst,Business,Naukri,Sneha,2026-03-16,2026-03-19,2026-03-21,2026-03-25,2026-04-01,2026-04-04,2026-04-08,,Offered,99,88,73,100,1.5,B.E.,Accepted,Pending,6489
+C0691,Isha Singh,J002,Data Scientist,AI & ML,Referral,Sneha,2026-04-07,2026-05-01,2026-05-02,2026-05-04,,,,,Shortlisted,99,92,67,99,1.0,MBA,Not Applicable,Not Applicable,13443
+C0692,Ananya Patil,J005,Java Developer,Software Development,Career Website,Neha,2026-03-18,2026-04-01,2026-04-02,,,,,,Screened,77,67,59,79,0.5,MBA,Not Applicable,Not Applicable,14484
+C0693,Aditya Deshmukh,J001,Data Analyst,Data & Analytics,Campus Hiring,Rahul,2026-05-27,2026-06-11,2026-06-14,2026-06-17,,,,,Shortlisted,99,98,67,88,5.1,B.Tech,Not Applicable,Not Applicable,11434
+C0694,Sneha Deshmukh,J002,Data Scientist,AI & ML,Campus Hiring,Rahul,2026-02-16,2026-03-05,2026-03-08,2026-03-12,2026-03-17,2026-03-19,,,Selected,98,100,94,84,4.9,MCA,Not Applicable,Not Applicable,6270
+C0695,Aditya Jadhav,J003,Software Developer,Software Development,Indeed,Rahul,2026-07-20,2026-07-31,2026-08-02,2026-08-06,,,,,Shortlisted,83,73,53,91,3.7,B.Tech,Not Applicable,Not Applicable,8182
+C0696,Rahul Sharma,J004,Python Developer,Software Development,Career Website,Rahul,2026-05-02,2026-05-23,2026-05-25,2026-05-28,2026-06-04,2026-06-06,2026-06-07,2026-06-24,Joined,59,71,66,75,7.3,B.Tech,Accepted,Joined,12125
+C0697,Vikram Joshi,J007,Business Analyst,Business,Indeed,Rahul,2026-02-05,2026-02-08,,,,,,,Applied,41,40,80,40,6.1,MCA,Not Applicable,Not Applicable,13773
+C0698,Akash Singh,J007,Business Analyst,Business,Referral,Priya,2026-07-09,2026-07-31,2026-08-02,2026-08-05,2026-08-09,2026-08-13,,,Selected,66,64,78,44,7.8,B.E.,Not Applicable,Not Applicable,8259
+C0699,Karan Kulkarni,J003,Software Developer,Software Development,Indeed,Rahul,2026-05-27,2026-06-03,2026-06-05,,,,,,Screened,44,40,66,41,1.3,M.Tech,Not Applicable,Not Applicable,2471
+C0700,Neha Kulkarni,J005,Java Developer,Software Development,Naukri,Sneha,2026-05-24,2026-06-08,2026-06-12,2026-06-13,2026-06-15,2026-06-19,,,Selected,48,40,69,67,7.1,MCA,Not Applicable,Not Applicable,4182
+C0701,Shreya Verma,J006,ML Engineer,AI & ML,Campus Hiring,Amit,2026-06-18,2026-06-25,2026-06-30,2026-07-03,,,,,Shortlisted,77,82,100,71,5.2,MBA,Not Applicable,Not Applicable,3196
+C0702,Ananya Sharma,J002,Data Scientist,AI & ML,Naukri,Amit,2026-01-03,2026-01-14,2026-01-19,2026-01-20,2026-01-22,2026-01-25,2026-01-29,2026-02-12,Joined,49,40,74,40,4.7,B.Sc,Accepted,Joined,8466
+C0703,Amit Pawar,J006,ML Engineer,AI & ML,Naukri,Sneha,2025-12-23,2026-01-11,2026-01-14,2026-01-18,2026-01-21,,,,Interviewed,62,68,78,55,1.3,B.E.,Not Applicable,Not Applicable,3468
+C0704,Shreya Pawar,J006,ML Engineer,AI & ML,Indeed,Priya,2026-04-16,2026-04-21,,,,,,,Applied,78,88,91,72,4.8,B.Sc,Not Applicable,Not Applicable,4095
+C0705,Isha Joshi,J008,Web Developer,IT,Referral,Sneha,2026-06-29,2026-07-11,2026-07-14,2026-07-19,2026-07-23,,,,Interviewed,76,68,75,84,4.3,B.Sc,Not Applicable,Not Applicable,9139
+C0706,Rohan Singh,J003,Software Developer,Software Development,Career Website,Amit,2026-07-10,2026-07-15,2026-07-16,,,,,,Screened,73,72,100,59,2.4,B.Tech,Not Applicable,Not Applicable,5766
+C0707,Rahul Singh,J003,Software Developer,Software Development,Campus Hiring,Amit,2026-03-02,2026-03-08,,,,,,,Applied,93,96,77,84,0.6,M.Tech,Not Applicable,Not Applicable,10108
+C0708,Pooja Mehta,J001,Data Analyst,Data & Analytics,Referral,Amit,2026-06-13,2026-07-01,,,,,,,Applied,82,87,80,81,5.0,M.Tech,Not Applicable,Not Applicable,13792
+C0709,Sneha Mehta,J003,Software Developer,Software Development,Indeed,Rahul,2026-01-17,2026-01-24,2026-01-27,2026-02-01,2026-02-08,2026-02-13,,,Selected,83,74,76,78,1.0,B.E.,Not Applicable,Not Applicable,5479
+C0710,Ananya Jadhav,J001,Data Analyst,Data & Analytics,LinkedIn,Rahul,2026-02-02,2026-02-16,2026-02-19,2026-02-20,2026-02-24,2026-02-25,,,Selected,85,86,75,100,4.1,M.Tech,Not Applicable,Not Applicable,8458
+C0711,Vikram Patil,J006,ML Engineer,AI & ML,Naukri,Priya,2026-07-23,2026-08-03,2026-08-07,2026-08-11,,,,,Shortlisted,66,74,75,55,6.5,B.Tech,Not Applicable,Not Applicable,12294
+C0712,Vikram Sharma,J005,Java Developer,Software Development,Campus Hiring,Neha,2026-03-24,2026-03-26,2026-03-31,,,,,,Screened,66,64,88,68,5.2,M.Tech,Not Applicable,Not Applicable,4118
+C0713,Isha Sharma,J004,Python Developer,Software Development,Indeed,Sneha,2026-07-04,2026-07-25,2026-07-30,2026-08-04,2026-08-09,2026-08-10,,,Selected,70,55,81,82,3.1,B.Tech,Not Applicable,Not Applicable,8534
+C0714,Amit Kulkarni,J005,Java Developer,Software Development,Referral,Priya,2026-06-19,2026-07-17,2026-07-19,2026-07-23,2026-07-28,2026-07-31,2026-08-02,,Offered,78,91,83,89,2.8,B.Tech,Accepted,Pending,10042
+C0715,Shreya Joshi,J007,Business Analyst,Business,Naukri,Sneha,2026-06-05,2026-06-25,,,,,,,Applied,52,69,78,57,6.3,MBA,Not Applicable,Not Applicable,8020
+C0716,Pooja Singh,J004,Python Developer,Software Development,Referral,Sneha,2026-08-02,2026-08-15,2026-08-16,2026-08-20,2026-08-24,,,,Interviewed,83,70,62,85,4.8,MCA,Not Applicable,Not Applicable,12057
+C0717,Karan Verma,J003,Software Developer,Software Development,Career Website,Sneha,2026-01-22,2026-01-24,2026-01-26,2026-01-30,2026-02-05,2026-02-10,,,Selected,96,100,59,97,0.5,M.Tech,Not Applicable,Not Applicable,3375
+C0718,Pooja Verma,J005,Java Developer,Software Development,Referral,Sneha,2025-12-22,2026-01-21,2026-01-24,2026-01-26,2026-02-01,2026-02-05,2026-02-08,2026-02-14,Joined,73,64,73,68,5.3,B.E.,Accepted,Joined,11027
+C0719,Arjun Sharma,J002,Data Scientist,AI & ML,Career Website,Amit,2026-05-08,2026-05-12,,,,,,,Applied,66,64,81,41,1.6,M.Tech,Not Applicable,Not Applicable,12827
+C0720,Rohan Joshi,J005,Java Developer,Software Development,Career Website,Priya,2026-05-27,2026-05-30,2026-06-03,2026-06-05,2026-06-08,2026-06-12,,,Selected,91,87,78,79,3.9,B.Tech,Not Applicable,Not Applicable,2741
+C0721,Karan Joshi,J002,Data Scientist,AI & ML,Campus Hiring,Amit,2026-03-03,2026-03-22,2026-03-25,2026-03-28,,,,,Shortlisted,76,68,90,77,0.5,MBA,Not Applicable,Not Applicable,5066
+C0722,Amit Patil,J004,Python Developer,Software Development,Indeed,Priya,2026-06-21,2026-07-11,2026-07-12,2026-07-16,2026-07-18,,,,Interviewed,77,63,73,78,4.5,M.Tech,Not Applicable,Not Applicable,2217
+C0723,Aditya Singh,J003,Software Developer,Software Development,Referral,Neha,2026-04-05,2026-04-28,2026-05-03,2026-05-08,2026-05-12,,,,Interviewed,67,75,58,68,7.6,MBA,Not Applicable,Not Applicable,13315
+C0724,Akash Joshi,J007,Business Analyst,Business,Naukri,Priya,2026-01-18,2026-01-23,,,,,,,Applied,89,67,91,100,2.9,B.E.,Not Applicable,Not Applicable,2260
+C0725,Isha Sharma,J004,Python Developer,Software Development,Campus Hiring,Rahul,2026-02-07,2026-02-23,2026-02-28,,,,,,Screened,40,40,79,45,3.3,MBA,Not Applicable,Not Applicable,5127
+C0726,Neha Singh,J002,Data Scientist,AI & ML,Referral,Priya,2026-01-22,2026-02-07,,,,,,,Applied,61,45,74,58,5.8,B.Tech,Not Applicable,Not Applicable,4497
+C0727,Pooja Singh,J008,Web Developer,IT,Referral,Neha,2025-12-09,2026-01-06,2026-01-11,,,,,,Screened,84,94,61,100,1.4,B.E.,Not Applicable,Not Applicable,8418
+C0728,Rohan Sharma,J001,Data Analyst,Data & Analytics,Campus Hiring,Amit,2026-01-06,2026-01-27,2026-02-01,2026-02-06,2026-02-13,2026-02-18,2026-02-21,,Offered,72,68,92,65,7.4,M.Tech,Accepted,Pending,8548
+C0729,Ananya Jadhav,J008,Web Developer,IT,Campus Hiring,Amit,2026-06-15,2026-07-05,2026-07-10,2026-07-11,2026-07-16,2026-07-21,,,Selected,82,78,72,87,7.9,B.E.,Not Applicable,Not Applicable,7174
+C0730,Neha Verma,J002,Data Scientist,AI & ML,Referral,Neha,2026-04-28,2026-05-02,2026-05-06,2026-05-07,,,,,Shortlisted,79,78,84,73,3.2,MBA,Not Applicable,Not Applicable,4643
+C0731,Shreya Kulkarni,J005,Java Developer,Software Development,Referral,Rahul,2026-04-19,2026-05-01,2026-05-04,,,,,,Screened,66,81,92,68,2.7,MCA,Not Applicable,Not Applicable,11864
+C0732,Amit Joshi,J008,Web Developer,IT,Referral,Amit,2026-06-12,2026-07-05,2026-07-08,2026-07-12,2026-07-15,2026-07-20,,,Selected,63,67,93,40,6.4,MBA,Not Applicable,Not Applicable,5394
+C0733,Shreya Patil,J005,Java Developer,Software Development,Naukri,Rahul,2026-06-04,2026-06-20,,,,,,,Applied,77,77,82,68,3.2,B.E.,Not Applicable,Not Applicable,10063
+C0734,Akash Verma,J002,Data Scientist,AI & ML,Naukri,Rahul,2026-04-27,2026-05-07,,,,,,,Applied,66,54,75,86,3.2,MCA,Not Applicable,Not Applicable,2297
+C0735,Arjun Joshi,J006,ML Engineer,AI & ML,Naukri,Rahul,2026-03-11,2026-04-02,,,,,,,Applied,92,74,63,94,3.3,MCA,Not Applicable,Not Applicable,3043
+C0736,Karan Patil,J006,ML Engineer,AI & ML,LinkedIn,Neha,2026-05-31,2026-06-08,2026-06-11,2026-06-14,2026-06-16,,,,Interviewed,99,100,86,90,3.8,B.E.,Not Applicable,Not Applicable,14617
+C0737,Arjun Deshmukh,J005,Java Developer,Software Development,Career Website,Neha,2026-07-15,2026-08-07,,,,,,,Applied,93,86,58,97,0.2,MBA,Not Applicable,Not Applicable,2826
+C0738,Akash Singh,J008,Web Developer,IT,LinkedIn,Priya,2026-07-10,2026-08-04,2026-08-05,2026-08-10,2026-08-12,,,,Interviewed,95,98,86,100,5.6,MCA,Not Applicable,Not Applicable,10311
+C0739,Amit Patil,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-08-04,2026-08-11,2026-08-15,,,,,,Screened,69,62,99,54,3.9,MBA,Not Applicable,Not Applicable,14484
+C0740,Shreya Patil,J008,Web Developer,IT,Indeed,Sneha,2026-01-19,2026-02-09,,,,,,,Applied,47,46,85,48,4.1,B.E.,Not Applicable,Not Applicable,5307
+C0741,Karan Sharma,J008,Web Developer,IT,Referral,Sneha,2026-02-05,2026-03-04,2026-03-05,2026-03-08,2026-03-12,,,,Interviewed,61,60,88,82,1.4,B.Sc,Not Applicable,Not Applicable,13717
+C0742,Rohan Kulkarni,J007,Business Analyst,Business,Career Website,Amit,2026-01-14,2026-02-08,,,,,,,Applied,89,89,80,99,3.3,B.E.,Not Applicable,Not Applicable,9025
+C0743,Arjun Verma,J007,Business Analyst,Business,Career Website,Sneha,2026-03-31,2026-04-28,2026-04-29,2026-05-04,,,,,Shortlisted,93,96,96,88,7.1,B.Tech,Not Applicable,Not Applicable,3140
+C0744,Rohan Mehta,J002,Data Scientist,AI & ML,Naukri,Amit,2026-03-19,2026-04-13,2026-04-14,2026-04-16,,,,,Shortlisted,55,57,68,48,7.3,B.Tech,Not Applicable,Not Applicable,11413
+C0745,Aditya Pawar,J001,Data Analyst,Data & Analytics,Referral,Neha,2026-03-03,2026-03-17,2026-03-20,2026-03-23,2026-03-25,2026-03-28,,,Selected,82,63,59,100,2.0,B.Sc,Not Applicable,Not Applicable,10647
+C0746,Shreya Verma,J003,Software Developer,Software Development,Naukri,Neha,2026-04-04,2026-04-25,2026-04-29,2026-05-02,2026-05-09,2026-05-13,2026-05-15,,Offered,76,63,69,66,4.9,MCA,Rejected,Not Applicable,3380
+C0747,Ananya Mehta,J001,Data Analyst,Data & Analytics,Campus Hiring,Rahul,2026-03-17,2026-04-10,2026-04-13,2026-04-15,2026-04-17,2026-04-22,2026-04-25,2026-05-10,Joined,95,100,76,100,3.2,MCA,Accepted,Joined,14403
+C0748,Rahul Sharma,J003,Software Developer,Software Development,Career Website,Sneha,2026-07-05,2026-07-23,2026-07-26,2026-07-30,2026-08-05,2026-08-06,2026-08-07,,Offered,93,100,66,100,4.5,B.E.,Rejected,Not Applicable,6255
+C0749,Sneha Sharma,J006,ML Engineer,AI & ML,LinkedIn,Amit,2026-06-22,2026-07-13,2026-07-14,2026-07-18,2026-07-22,,,,Interviewed,70,74,72,66,7.0,B.Sc,Not Applicable,Not Applicable,5868
+C0750,Rohan Joshi,J004,Python Developer,Software Development,Campus Hiring,Neha,2026-02-20,2026-03-14,,,,,,,Applied,99,99,87,91,6.9,MBA,Not Applicable,Not Applicable,8187
+C0751,Sneha Mehta,J004,Python Developer,Software Development,Naukri,Sneha,2026-04-24,2026-05-13,,,,,,,Applied,62,45,84,63,6.1,M.Tech,Not Applicable,Not Applicable,13659
+C0752,Isha Verma,J007,Business Analyst,Business,LinkedIn,Amit,2026-01-18,2026-01-21,2026-01-25,2026-01-26,,,,,Shortlisted,85,92,66,82,2.4,B.E.,Not Applicable,Not Applicable,8050
+C0753,Vikram Pawar,J007,Business Analyst,Business,Referral,Sneha,2026-04-18,2026-05-13,2026-05-17,2026-05-21,2026-05-28,,,,Interviewed,82,98,78,67,5.4,MCA,Not Applicable,Not Applicable,10020
+C0754,Isha Deshmukh,J007,Business Analyst,Business,Naukri,Amit,2026-01-20,2026-02-06,2026-02-11,2026-02-16,,,,,Shortlisted,99,89,67,100,2.5,MBA,Not Applicable,Not Applicable,3934
+C0755,Pooja Singh,J004,Python Developer,Software Development,Naukri,Neha,2025-12-16,2026-01-09,2026-01-10,2026-01-15,2026-01-20,2026-01-21,2026-01-22,2026-02-07,Joined,62,55,79,62,3.2,B.Sc,Accepted,Joined,11367
+C0756,Rahul Pawar,J005,Java Developer,Software Development,Indeed,Sneha,2026-02-05,2026-02-09,2026-02-13,,,,,,Screened,81,83,73,84,3.0,B.Sc,Not Applicable,Not Applicable,2458
+C0757,Amit Jadhav,J003,Software Developer,Software Development,Indeed,Sneha,2026-04-16,2026-04-18,2026-04-22,,,,,,Screened,52,40,77,44,7.7,B.E.,Not Applicable,Not Applicable,2034
+C0758,Ananya Mehta,J002,Data Scientist,AI & ML,LinkedIn,Amit,2025-12-21,2026-01-18,2026-01-23,2026-01-27,2026-01-31,,,,Interviewed,62,50,81,64,0.9,M.Tech,Not Applicable,Not Applicable,14801
+C0759,Pooja Jadhav,J007,Business Analyst,Business,Naukri,Neha,2026-01-09,2026-02-03,2026-02-07,2026-02-11,,,,,Shortlisted,66,70,81,67,2.4,MBA,Not Applicable,Not Applicable,4440
+C0760,Sneha Jadhav,J006,ML Engineer,AI & ML,Referral,Amit,2026-05-31,2026-06-20,2026-06-23,2026-06-28,2026-06-30,2026-07-04,2026-07-07,2026-07-14,Joined,75,54,79,97,5.5,B.E.,Accepted,Joined,4713
+C0761,Vikram Joshi,J001,Data Analyst,Data & Analytics,LinkedIn,Neha,2026-05-03,2026-05-24,2026-05-29,,,,,,Screened,89,82,76,92,1.0,B.Tech,Not Applicable,Not Applicable,10877
+C0762,Vikram Pawar,J001,Data Analyst,Data & Analytics,Referral,Neha,2026-01-24,2026-02-18,,,,,,,Applied,85,90,76,88,5.3,B.Tech,Not Applicable,Not Applicable,10713
+C0763,Rahul Joshi,J003,Software Developer,Software Development,Naukri,Neha,2026-07-14,2026-07-21,,,,,,,Applied,81,73,88,92,6.9,M.Tech,Not Applicable,Not Applicable,10741
+C0764,Karan Jadhav,J006,ML Engineer,AI & ML,LinkedIn,Sneha,2025-12-27,2026-01-12,2026-01-13,,,,,,Screened,74,74,78,72,2.0,M.Tech,Not Applicable,Not Applicable,10649
+C0765,Karan Joshi,J006,ML Engineer,AI & ML,LinkedIn,Neha,2026-01-20,2026-01-24,2026-01-26,,,,,,Screened,69,79,82,65,3.8,B.E.,Not Applicable,Not Applicable,6187
+C0766,Amit Joshi,J002,Data Scientist,AI & ML,Naukri,Priya,2026-03-24,2026-04-15,2026-04-17,2026-04-18,2026-04-25,2026-04-26,2026-04-29,2026-05-16,Joined,84,75,100,86,4.4,MCA,Accepted,Joined,3617
+C0767,Amit Verma,J006,ML Engineer,AI & ML,Referral,Priya,2026-03-15,2026-03-24,2026-03-29,,,,,,Screened,80,83,70,83,3.7,B.Tech,Not Applicable,Not Applicable,11601
+C0768,Pooja Pawar,J004,Python Developer,Software Development,Referral,Priya,2026-06-25,2026-07-12,,,,,,,Applied,93,100,88,89,6.7,B.Sc,Not Applicable,Not Applicable,9615
+C0769,Sneha Singh,J007,Business Analyst,Business,Campus Hiring,Rahul,2025-12-25,2026-01-08,2026-01-13,,,,,,Screened,71,61,78,72,5.8,B.Tech,Not Applicable,Not Applicable,13060
+C0770,Priya Pawar,J002,Data Scientist,AI & ML,Naukri,Sneha,2026-05-21,2026-06-16,2026-06-17,2026-06-22,,,,,Shortlisted,61,52,76,64,5.1,MCA,Not Applicable,Not Applicable,5333
+C0771,Rohan Pawar,J003,Software Developer,Software Development,Naukri,Neha,2026-01-18,2026-02-13,2026-02-18,2026-02-22,2026-02-24,2026-02-25,2026-03-01,2026-03-15,Joined,59,55,78,56,6.2,M.Tech,Accepted,Joined,12699
+C0772,Rahul Sharma,J003,Software Developer,Software Development,Career Website,Sneha,2026-04-25,2026-05-04,2026-05-07,2026-05-09,,,,,Shortlisted,53,40,81,40,7.8,MBA,Not Applicable,Not Applicable,11587
+C0773,Rahul Deshmukh,J005,Java Developer,Software Development,Career Website,Priya,2026-06-21,2026-07-09,,,,,,,Applied,75,85,64,75,3.5,B.Sc,Not Applicable,Not Applicable,13443
+C0774,Isha Deshmukh,J002,Data Scientist,AI & ML,Indeed,Amit,2026-06-17,2026-07-05,2026-07-08,2026-07-11,2026-07-18,,,,Interviewed,72,70,89,89,7.9,B.E.,Not Applicable,Not Applicable,6282
+C0775,Neha Kulkarni,J008,Web Developer,IT,Indeed,Rahul,2026-06-08,2026-06-19,2026-06-22,2026-06-23,2026-06-30,2026-07-02,2026-07-03,2026-07-23,Joined,95,91,84,90,3.3,M.Tech,Accepted,Joined,2070
+C0776,Aditya Deshmukh,J001,Data Analyst,Data & Analytics,Campus Hiring,Amit,2026-03-29,2026-04-16,2026-04-17,2026-04-22,2026-04-24,,,,Interviewed,57,40,88,48,5.2,M.Tech,Not Applicable,Not Applicable,13003
+C0777,Aditya Patil,J008,Web Developer,IT,Referral,Neha,2026-03-05,2026-04-01,2026-04-02,2026-04-03,,,,,Shortlisted,88,71,77,88,4.1,B.Sc,Not Applicable,Not Applicable,9580
+C0778,Arjun Kulkarni,J006,ML Engineer,AI & ML,Naukri,Priya,2026-04-23,2026-04-24,2026-04-27,2026-04-29,2026-05-01,2026-05-06,,,Selected,68,66,73,54,7.4,B.Sc,Not Applicable,Not Applicable,12243
+C0779,Akash Kulkarni,J005,Java Developer,Software Development,Indeed,Priya,2026-02-13,2026-03-01,2026-03-06,2026-03-08,2026-03-10,,,,Interviewed,82,88,79,79,1.8,B.Sc,Not Applicable,Not Applicable,5212
+C0780,Sneha Joshi,J007,Business Analyst,Business,Referral,Rahul,2026-05-09,2026-05-26,2026-05-31,,,,,,Screened,60,58,51,61,7.4,MCA,Not Applicable,Not Applicable,13012
+C0781,Sneha Jadhav,J003,Software Developer,Software Development,LinkedIn,Rahul,2026-01-09,2026-02-02,2026-02-04,2026-02-09,2026-02-16,2026-02-19,2026-02-21,2026-02-26,Joined,96,100,76,91,3.0,B.Sc,Accepted,Joined,13353
+C0782,Aditya Pawar,J005,Java Developer,Software Development,LinkedIn,Amit,2026-07-31,2026-08-15,2026-08-16,2026-08-19,2026-08-24,2026-08-28,,,Selected,64,44,79,84,6.4,MBA,Not Applicable,Not Applicable,6489
+C0783,Aditya Pawar,J002,Data Scientist,AI & ML,Indeed,Neha,2026-04-14,2026-04-30,2026-05-02,2026-05-03,2026-05-07,2026-05-11,2026-05-15,2026-05-30,Joined,71,86,77,73,6.9,B.Tech,Accepted,Joined,2084
+C0784,Priya Mehta,J007,Business Analyst,Business,Career Website,Priya,2025-12-23,2026-01-21,2026-01-25,,,,,,Screened,62,70,80,62,7.9,MBA,Not Applicable,Not Applicable,3219
+C0785,Priya Deshmukh,J004,Python Developer,Software Development,LinkedIn,Priya,2026-03-16,2026-03-26,2026-03-27,2026-04-01,,,,,Shortlisted,79,73,60,73,6.9,B.Tech,Not Applicable,Not Applicable,12261
+C0786,Isha Joshi,J006,ML Engineer,AI & ML,Referral,Rahul,2026-03-01,2026-03-05,2026-03-08,2026-03-13,2026-03-16,2026-03-17,2026-03-21,,Offered,90,85,68,82,6.6,B.Sc,Accepted,Pending,12245
+C0787,Vikram Patil,J008,Web Developer,IT,LinkedIn,Amit,2026-01-20,2026-01-22,2026-01-23,2026-01-25,2026-01-27,2026-01-31,2026-02-01,2026-02-15,Joined,78,64,70,61,0.5,B.Sc,Accepted,Joined,12006
+C0788,Sneha Patil,J007,Business Analyst,Business,Career Website,Priya,2026-06-21,2026-06-23,2026-06-27,2026-06-28,2026-07-04,2026-07-08,2026-07-10,,Offered,43,42,76,40,3.0,B.Sc,Rejected,Not Applicable,14901
+C0789,Pooja Verma,J001,Data Analyst,Data & Analytics,Referral,Neha,2026-04-03,2026-04-29,,,,,,,Applied,61,56,73,63,2.4,MCA,Not Applicable,Not Applicable,12664
+C0790,Pooja Pawar,J001,Data Analyst,Data & Analytics,Naukri,Priya,2026-03-07,2026-03-26,,,,,,,Applied,77,90,85,72,5.1,B.Tech,Not Applicable,Not Applicable,13686
+C0791,Vikram Kulkarni,J002,Data Scientist,AI & ML,Campus Hiring,Neha,2026-05-22,2026-05-27,2026-05-31,2026-06-05,,,,,Shortlisted,98,98,70,89,1.4,B.Sc,Not Applicable,Not Applicable,9284
+C0792,Priya Deshmukh,J003,Software Developer,Software Development,LinkedIn,Rahul,2026-07-22,2026-07-24,2026-07-29,2026-08-01,2026-08-05,,,,Interviewed,54,40,63,55,2.3,B.Sc,Not Applicable,Not Applicable,11562
+C0793,Amit Singh,J003,Software Developer,Software Development,Indeed,Sneha,2026-03-01,2026-03-21,2026-03-26,2026-03-31,2026-04-07,2026-04-09,2026-04-10,2026-04-22,Joined,67,58,95,67,5.5,B.Sc,Accepted,Joined,10308
+C0794,Karan Mehta,J001,Data Analyst,Data & Analytics,Campus Hiring,Rahul,2026-02-13,2026-02-20,2026-02-24,2026-02-28,,,,,Shortlisted,60,64,67,60,5.9,B.Tech,Not Applicable,Not Applicable,11826
+C0795,Isha Jadhav,J006,ML Engineer,AI & ML,Career Website,Sneha,2026-05-14,2026-05-25,2026-05-26,,,,,,Screened,67,66,76,71,3.0,M.Tech,Not Applicable,Not Applicable,9443
+C0796,Pooja Kulkarni,J001,Data Analyst,Data & Analytics,Naukri,Rahul,2025-12-11,2026-01-01,2026-01-03,2026-01-07,2026-01-14,,,,Interviewed,69,57,73,71,0.3,M.Tech,Not Applicable,Not Applicable,14588
+C0797,Akash Verma,J006,ML Engineer,AI & ML,Naukri,Priya,2026-02-09,2026-02-22,,,,,,,Applied,94,88,92,79,7.9,B.Sc,Not Applicable,Not Applicable,7863
+C0798,Ananya Patil,J001,Data Analyst,Data & Analytics,Referral,Rahul,2026-01-27,2026-02-06,2026-02-09,2026-02-10,2026-02-12,,,,Interviewed,92,96,75,86,1.5,MBA,Not Applicable,Not Applicable,5262
+C0799,Neha Deshmukh,J004,Python Developer,Software Development,Indeed,Rahul,2026-01-28,2026-02-26,2026-02-28,2026-03-02,2026-03-05,2026-03-06,2026-03-08,,Offered,53,66,81,42,2.5,B.Sc,Rejected,Not Applicable,3657
+C0800,Isha Deshmukh,J001,Data Analyst,Data & Analytics,LinkedIn,Sneha,2026-03-18,2026-04-08,2026-04-10,,,,,,Screened,60,56,70,52,6.5,B.E.,Not Applicable,Not Applicable,8056
+C0801,Aditya Deshmukh,J006,ML Engineer,AI & ML,Career Website,Amit,2026-04-19,2026-05-15,,,,,,,Applied,92,100,66,100,2.4,MBA,Not Applicable,Not Applicable,4366
+C0802,Akash Kulkarni,J003,Software Developer,Software Development,Referral,Sneha,2026-02-01,2026-02-19,2026-02-21,2026-02-22,2026-02-28,,,,Interviewed,72,57,71,76,6.6,B.Sc,Not Applicable,Not Applicable,11622
+C0803,Isha Pawar,J004,Python Developer,Software Development,Naukri,Sneha,2026-02-19,2026-03-17,,,,,,,Applied,70,78,64,81,0.9,B.E.,Not Applicable,Not Applicable,6588
+C0804,Isha Pawar,J003,Software Developer,Software Development,Referral,Rahul,2026-05-01,2026-05-30,,,,,,,Applied,54,59,69,52,0.4,MBA,Not Applicable,Not Applicable,9711
+C0805,Amit Pawar,J002,Data Scientist,AI & ML,Campus Hiring,Neha,2026-03-16,2026-04-10,2026-04-14,2026-04-16,2026-04-20,,,,Interviewed,66,63,65,65,1.2,B.Sc,Not Applicable,Not Applicable,13673
+C0806,Ananya Singh,J006,ML Engineer,AI & ML,Referral,Sneha,2026-06-17,2026-07-03,2026-07-08,2026-07-09,,,,,Shortlisted,79,95,79,88,2.5,MCA,Not Applicable,Not Applicable,5394
+C0807,Arjun Kulkarni,J004,Python Developer,Software Development,Naukri,Amit,2026-03-29,2026-04-26,2026-04-30,,,,,,Screened,67,62,75,72,4.3,B.E.,Not Applicable,Not Applicable,11361
+C0808,Arjun Mehta,J003,Software Developer,Software Development,LinkedIn,Rahul,2026-02-17,2026-03-07,2026-03-12,,,,,,Screened,63,74,89,65,3.0,B.Tech,Not Applicable,Not Applicable,7760
+C0809,Vikram Sharma,J004,Python Developer,Software Development,Career Website,Sneha,2026-04-13,2026-04-30,2026-05-04,2026-05-08,,,,,Shortlisted,71,54,86,62,0.4,M.Tech,Not Applicable,Not Applicable,8021
+C0810,Rohan Joshi,J008,Web Developer,IT,Naukri,Amit,2026-04-07,2026-04-08,2026-04-09,,,,,,Screened,47,40,77,52,7.4,B.E.,Not Applicable,Not Applicable,7883
+C0811,Neha Pawar,J002,Data Scientist,AI & ML,Campus Hiring,Priya,2026-04-24,2026-05-12,2026-05-13,2026-05-14,2026-05-16,2026-05-19,2026-05-20,2026-05-31,Joined,85,82,96,88,3.9,B.Sc,Accepted,Joined,7468
+C0812,Aditya Mehta,J004,Python Developer,Software Development,Campus Hiring,Sneha,2026-02-24,2026-03-06,2026-03-08,2026-03-13,2026-03-17,2026-03-18,,,Selected,63,43,73,73,6.5,B.E.,Not Applicable,Not Applicable,14616
+C0813,Neha Mehta,J005,Java Developer,Software Development,Referral,Neha,2026-07-07,2026-07-20,,,,,,,Applied,77,82,87,83,6.4,MBA,Not Applicable,Not Applicable,12716
+C0814,Isha Verma,J003,Software Developer,Software Development,Campus Hiring,Rahul,2026-02-20,2026-02-28,2026-03-05,,,,,,Screened,66,64,98,56,6.8,M.Tech,Not Applicable,Not Applicable,14877
+C0815,Shreya Singh,J008,Web Developer,IT,LinkedIn,Sneha,2026-03-03,2026-03-29,2026-04-02,2026-04-04,,,,,Shortlisted,63,75,64,67,3.6,B.E.,Not Applicable,Not Applicable,9187
+C0816,Isha Pawar,J008,Web Developer,IT,Naukri,Neha,2025-12-27,2026-01-08,2026-01-09,,,,,,Screened,53,55,90,44,6.0,B.E.,Not Applicable,Not Applicable,10188
+C0817,Rohan Kulkarni,J006,ML Engineer,AI & ML,Campus Hiring,Amit,2026-04-04,2026-04-18,2026-04-21,2026-04-26,2026-04-28,,,,Interviewed,61,40,78,70,3.9,MBA,Not Applicable,Not Applicable,11299
+C0818,Arjun Deshmukh,J001,Data Analyst,Data & Analytics,Career Website,Neha,2026-01-29,2026-02-09,2026-02-13,2026-02-17,2026-02-20,,,,Interviewed,69,52,74,65,5.7,MCA,Not Applicable,Not Applicable,8400
+C0819,Ananya Verma,J002,Data Scientist,AI & ML,LinkedIn,Sneha,2026-02-02,2026-02-18,2026-02-21,2026-02-22,2026-02-25,2026-02-26,2026-02-28,2026-03-06,Joined,86,74,80,98,0.0,MCA,Accepted,Joined,13288
+C0820,Rahul Deshmukh,J008,Web Developer,IT,Referral,Sneha,2026-02-17,2026-02-20,2026-02-25,,,,,,Screened,85,100,88,92,1.2,B.E.,Not Applicable,Not Applicable,3146
+C0821,Rahul Mehta,J008,Web Developer,IT,Naukri,Sneha,2026-05-12,2026-05-13,2026-05-14,2026-05-16,,,,,Shortlisted,47,55,71,48,7.8,M.Tech,Not Applicable,Not Applicable,10789
+C0822,Pooja Patil,J007,Business Analyst,Business,Naukri,Rahul,2026-03-12,2026-04-10,2026-04-14,,,,,,Screened,69,61,82,81,7.2,B.E.,Not Applicable,Not Applicable,4601
+C0823,Vikram Kulkarni,J005,Java Developer,Software Development,Campus Hiring,Amit,2026-04-16,2026-05-09,2026-05-11,,,,,,Screened,92,91,88,88,3.1,B.Sc,Not Applicable,Not Applicable,9302
+C0824,Isha Verma,J002,Data Scientist,AI & ML,Naukri,Neha,2026-05-09,2026-06-04,2026-06-08,2026-06-12,2026-06-17,2026-06-22,2026-06-23,2026-06-30,Joined,83,87,74,70,0.7,B.Sc,Accepted,Joined,6717
+C0825,Rohan Joshi,J008,Web Developer,IT,Naukri,Amit,2026-03-22,2026-04-11,,,,,,,Applied,79,97,63,84,1.3,B.E.,Not Applicable,Not Applicable,12120
+C0826,Pooja Verma,J007,Business Analyst,Business,Campus Hiring,Neha,2026-06-12,2026-06-18,2026-06-19,2026-06-21,,,,,Shortlisted,73,70,91,74,1.7,B.Tech,Not Applicable,Not Applicable,4587
+C0827,Arjun Pawar,J005,Java Developer,Software Development,LinkedIn,Rahul,2026-02-22,2026-03-16,2026-03-21,2026-03-22,,,,,Shortlisted,83,82,81,84,5.3,M.Tech,Not Applicable,Not Applicable,8041
+C0828,Akash Patil,J002,Data Scientist,AI & ML,Indeed,Amit,2026-04-15,2026-05-10,,,,,,,Applied,65,68,81,46,4.2,M.Tech,Not Applicable,Not Applicable,5397
+C0829,Pooja Sharma,J001,Data Analyst,Data & Analytics,Campus Hiring,Amit,2025-12-29,2026-01-19,2026-01-23,2026-01-25,,,,,Shortlisted,57,60,95,42,4.5,M.Tech,Not Applicable,Not Applicable,8499
+C0830,Rahul Joshi,J001,Data Analyst,Data & Analytics,Naukri,Sneha,2026-01-07,2026-01-30,2026-02-03,2026-02-07,2026-02-09,2026-02-10,,,Selected,80,81,84,94,7.8,MBA,Not Applicable,Not Applicable,10985
+C0831,Shreya Singh,J004,Python Developer,Software Development,Indeed,Rahul,2026-01-20,2026-02-05,2026-02-10,2026-02-11,2026-02-14,2026-02-17,2026-02-18,,Offered,91,100,75,100,1.5,B.E.,Accepted,Pending,8403
+C0832,Sneha Sharma,J003,Software Developer,Software Development,Naukri,Amit,2026-06-14,2026-06-23,,,,,,,Applied,78,57,84,72,4.2,B.Sc,Not Applicable,Not Applicable,13704
+C0833,Arjun Pawar,J001,Data Analyst,Data & Analytics,Campus Hiring,Priya,2026-02-10,2026-02-25,2026-02-26,2026-03-02,2026-03-09,2026-03-12,2026-03-16,,Offered,73,64,68,92,1.5,MBA,Accepted,Pending,2076
+C0834,Akash Verma,J001,Data Analyst,Data & Analytics,Naukri,Sneha,2026-07-09,2026-07-16,2026-07-17,,,,,,Screened,45,52,53,45,2.2,B.E.,Not Applicable,Not Applicable,8908
+C0835,Rahul Mehta,J001,Data Analyst,Data & Analytics,Campus Hiring,Priya,2026-07-23,2026-07-30,2026-07-31,2026-08-02,2026-08-09,2026-08-11,2026-08-12,2026-08-30,Joined,74,68,85,71,5.9,B.E.,Accepted,Joined,10396
+C0836,Isha Mehta,J002,Data Scientist,AI & ML,Campus Hiring,Rahul,2026-03-06,2026-03-24,2026-03-29,,,,,,Screened,99,100,67,98,0.1,MCA,Not Applicable,Not Applicable,8472
+C0837,Sneha Kulkarni,J007,Business Analyst,Business,Indeed,Sneha,2026-02-20,2026-02-24,,,,,,,Applied,99,100,76,83,7.8,B.E.,Not Applicable,Not Applicable,12715
+C0838,Rahul Verma,J006,ML Engineer,AI & ML,Naukri,Priya,2026-02-09,2026-02-24,2026-03-01,2026-03-04,2026-03-06,2026-03-07,2026-03-09,,Offered,67,73,78,52,3.4,MBA,Accepted,Pending,14575
+C0839,Sneha Pawar,J008,Web Developer,IT,Career Website,Rahul,2026-06-22,2026-07-22,2026-07-27,2026-07-30,2026-08-06,2026-08-10,2026-08-12,2026-08-27,Joined,76,69,92,73,6.1,B.Sc,Accepted,Joined,4872
+C0840,Isha Singh,J006,ML Engineer,AI & ML,LinkedIn,Neha,2026-01-07,2026-01-18,2026-01-23,2026-01-25,,,,,Shortlisted,67,66,100,52,2.1,MCA,Not Applicable,Not Applicable,10248
+C0841,Priya Sharma,J001,Data Analyst,Data & Analytics,LinkedIn,Sneha,2026-05-13,2026-06-07,2026-06-09,2026-06-14,2026-06-16,2026-06-17,,,Selected,56,44,74,47,4.6,B.E.,Not Applicable,Not Applicable,4253
+C0842,Pooja Joshi,J006,ML Engineer,AI & ML,Referral,Rahul,2026-02-16,2026-02-21,,,,,,,Applied,98,100,88,83,0.8,MBA,Not Applicable,Not Applicable,13883
+C0843,Shreya Mehta,J008,Web Developer,IT,Indeed,Priya,2026-01-26,2026-02-04,2026-02-08,2026-02-11,2026-02-13,2026-02-15,2026-02-18,,Offered,99,97,66,87,3.6,MCA,Accepted,Pending,5372
+C0844,Arjun Kulkarni,J001,Data Analyst,Data & Analytics,Campus Hiring,Rahul,2026-07-03,2026-07-25,2026-07-30,2026-08-02,2026-08-05,2026-08-09,2026-08-10,,Offered,74,67,80,81,7.4,MCA,Accepted,Pending,10055
+C0845,Priya Sharma,J002,Data Scientist,AI & ML,Naukri,Rahul,2026-06-07,2026-06-12,,,,,,,Applied,63,50,80,74,4.4,B.Tech,Not Applicable,Not Applicable,10992
+C0846,Priya Pawar,J004,Python Developer,Software Development,Campus Hiring,Amit,2026-01-07,2026-01-21,,,,,,,Applied,73,76,69,74,4.1,B.Sc,Not Applicable,Not Applicable,5236
+C0847,Karan Deshmukh,J004,Python Developer,Software Development,Indeed,Sneha,2026-05-28,2026-06-05,2026-06-07,2026-06-10,,,,,Shortlisted,76,83,80,65,5.5,MCA,Not Applicable,Not Applicable,14800
+C0848,Sneha Mehta,J008,Web Developer,IT,Naukri,Amit,2026-03-30,2026-04-12,2026-04-17,2026-04-21,,,,,Shortlisted,89,86,86,91,6.1,M.Tech,Not Applicable,Not Applicable,14457
+C0849,Isha Singh,J003,Software Developer,Software Development,Referral,Amit,2025-12-12,2026-01-06,2026-01-09,2026-01-14,2026-01-20,2026-01-22,,,Selected,69,61,87,80,5.0,B.Tech,Not Applicable,Not Applicable,11057
+C0850,Neha Verma,J003,Software Developer,Software Development,Referral,Sneha,2026-04-19,2026-04-29,2026-05-03,2026-05-04,2026-05-08,,,,Interviewed,83,75,59,81,2.4,M.Tech,Not Applicable,Not Applicable,4238
+C0851,Priya Deshmukh,J008,Web Developer,IT,LinkedIn,Neha,2026-02-17,2026-02-18,2026-02-22,2026-02-26,2026-03-03,2026-03-07,,,Selected,73,70,63,71,4.9,MBA,Not Applicable,Not Applicable,14160
+C0852,Karan Singh,J006,ML Engineer,AI & ML,Career Website,Priya,2026-02-27,2026-03-20,2026-03-21,2026-03-25,2026-03-31,2026-04-02,2026-04-04,2026-04-22,Joined,69,65,85,62,7.9,M.Tech,Accepted,Joined,6182
+C0853,Ananya Singh,J006,ML Engineer,AI & ML,Indeed,Priya,2026-05-20,2026-06-12,2026-06-16,2026-06-18,,,,,Shortlisted,69,69,77,63,3.4,MBA,Not Applicable,Not Applicable,5970
+C0854,Rahul Mehta,J008,Web Developer,IT,Campus Hiring,Priya,2026-05-19,2026-06-11,2026-06-13,2026-06-16,2026-06-22,2026-06-26,,,Selected,87,87,91,83,6.5,MBA,Not Applicable,Not Applicable,13158
+C0855,Neha Kulkarni,J003,Software Developer,Software Development,Campus Hiring,Rahul,2026-05-16,2026-06-04,,,,,,,Applied,77,81,84,75,1.1,B.Tech,Not Applicable,Not Applicable,3512
+C0856,Karan Jadhav,J007,Business Analyst,Business,Naukri,Amit,2026-01-04,2026-01-21,2026-01-24,2026-01-27,2026-02-02,2026-02-07,2026-02-11,,Offered,93,82,85,87,2.2,B.E.,Accepted,Pending,14024
+C0857,Akash Patil,J007,Business Analyst,Business,Career Website,Sneha,2026-01-07,2026-01-28,2026-01-30,,,,,,Screened,72,65,66,61,5.9,B.E.,Not Applicable,Not Applicable,14259
+C0858,Shreya Joshi,J007,Business Analyst,Business,Referral,Priya,2025-12-27,2026-01-02,,,,,,,Applied,95,100,77,97,7.9,B.Tech,Not Applicable,Not Applicable,13408
+C0859,Ananya Verma,J007,Business Analyst,Business,Campus Hiring,Amit,2026-06-07,2026-06-17,,,,,,,Applied,90,88,69,79,6.4,B.E.,Not Applicable,Not Applicable,5053
+C0860,Priya Singh,J003,Software Developer,Software Development,LinkedIn,Amit,2026-01-30,2026-02-16,2026-02-18,2026-02-20,2026-02-22,2026-02-24,2026-02-26,,Offered,98,82,97,94,6.0,MCA,Accepted,Pending,8697
+C0861,Aditya Jadhav,J008,Web Developer,IT,Campus Hiring,Rahul,2025-12-31,2026-01-28,2026-02-01,,,,,,Screened,72,68,62,71,1.8,B.Tech,Not Applicable,Not Applicable,4042
+C0862,Sneha Mehta,J005,Java Developer,Software Development,Naukri,Amit,2025-12-20,2026-01-08,2026-01-09,2026-01-10,2026-01-12,2026-01-15,,,Selected,65,63,89,67,2.8,M.Tech,Not Applicable,Not Applicable,14317
+C0863,Aditya Jadhav,J001,Data Analyst,Data & Analytics,LinkedIn,Rahul,2026-07-20,2026-07-22,2026-07-26,2026-07-31,2026-08-06,2026-08-09,2026-08-13,,Offered,99,100,98,92,1.2,MCA,Accepted,Pending,7521
+C0864,Rohan Mehta,J007,Business Analyst,Business,Indeed,Sneha,2026-05-26,2026-06-24,2026-06-28,2026-07-02,2026-07-08,2026-07-09,2026-07-12,2026-07-27,Joined,71,71,90,83,3.3,B.E.,Accepted,Joined,3641
+C0865,Pooja Verma,J001,Data Analyst,Data & Analytics,Naukri,Priya,2026-06-08,2026-07-05,,,,,,,Applied,77,76,78,49,0.3,MCA,Not Applicable,Not Applicable,10693
+C0866,Shreya Kulkarni,J005,Java Developer,Software Development,Career Website,Amit,2026-03-21,2026-04-05,2026-04-07,2026-04-08,,,,,Shortlisted,84,100,82,87,7.3,MCA,Not Applicable,Not Applicable,12454
+C0867,Rahul Mehta,J006,ML Engineer,AI & ML,Campus Hiring,Sneha,2026-08-10,2026-08-12,2026-08-17,2026-08-21,,,,,Shortlisted,40,40,68,40,3.7,MBA,Not Applicable,Not Applicable,8556
+C0868,Rohan Verma,J002,Data Scientist,AI & ML,Campus Hiring,Priya,2026-04-10,2026-05-02,2026-05-07,2026-05-09,,,,,Shortlisted,89,86,84,84,4.4,MBA,Not Applicable,Not Applicable,13664
+C0869,Isha Pawar,J003,Software Developer,Software Development,Campus Hiring,Neha,2026-07-25,2026-08-13,,,,,,,Applied,47,48,91,46,4.5,B.Tech,Not Applicable,Not Applicable,3426
+C0870,Isha Pawar,J005,Java Developer,Software Development,Naukri,Amit,2026-07-28,2026-08-12,2026-08-17,2026-08-19,2026-08-22,,,,Interviewed,70,67,89,62,2.4,B.Tech,Not Applicable,Not Applicable,5467
+C0871,Akash Patil,J003,Software Developer,Software Development,Campus Hiring,Priya,2026-01-14,2026-01-28,2026-01-31,2026-02-04,2026-02-08,2026-02-10,2026-02-13,2026-03-05,Joined,66,61,83,64,3.8,B.E.,Accepted,Joined,12987
+C0872,Aditya Deshmukh,J002,Data Scientist,AI & ML,Campus Hiring,Amit,2026-04-26,2026-05-17,2026-05-20,2026-05-22,2026-05-28,2026-06-02,2026-06-03,,Offered,74,77,99,70,2.7,B.Tech,Accepted,Pending,8176
+C0873,Aditya Pawar,J007,Business Analyst,Business,Naukri,Rahul,2026-07-25,2026-08-08,,,,,,,Applied,60,69,76,48,7.9,B.Sc,Not Applicable,Not Applicable,3436
+C0874,Sneha Mehta,J002,Data Scientist,AI & ML,Naukri,Priya,2026-06-20,2026-07-09,2026-07-12,2026-07-16,,,,,Shortlisted,68,67,82,70,4.8,MCA,Not Applicable,Not Applicable,11452
+C0875,Neha Sharma,J001,Data Analyst,Data & Analytics,Naukri,Amit,2026-05-14,2026-06-01,2026-06-04,,,,,,Screened,49,75,88,46,3.5,M.Tech,Not Applicable,Not Applicable,13129
+C0876,Ananya Jadhav,J003,Software Developer,Software Development,LinkedIn,Amit,2026-05-24,2026-06-01,2026-06-05,2026-06-08,2026-06-11,,,,Interviewed,91,75,41,96,7.2,B.Tech,Not Applicable,Not Applicable,6863
+C0877,Pooja Singh,J004,Python Developer,Software Development,Indeed,Rahul,2026-01-18,2026-02-07,2026-02-08,2026-02-13,2026-02-17,2026-02-20,,,Selected,50,56,69,40,2.2,MBA,Not Applicable,Not Applicable,10230
+C0878,Neha Jadhav,J002,Data Scientist,AI & ML,Naukri,Amit,2026-04-12,2026-05-03,2026-05-07,2026-05-08,2026-05-12,2026-05-14,,,Selected,76,69,83,47,8.0,B.Sc,Not Applicable,Not Applicable,13743
+C0879,Isha Kulkarni,J004,Python Developer,Software Development,LinkedIn,Rahul,2026-06-05,2026-06-29,2026-07-02,2026-07-04,2026-07-06,2026-07-11,,,Selected,66,63,76,70,2.1,M.Tech,Not Applicable,Not Applicable,8427
+C0880,Karan Singh,J006,ML Engineer,AI & ML,Referral,Amit,2026-03-06,2026-03-31,2026-04-03,2026-04-06,2026-04-13,,,,Interviewed,75,80,100,70,4.6,B.Tech,Not Applicable,Not Applicable,5196
+C0881,Sneha Deshmukh,J007,Business Analyst,Business,Career Website,Priya,2026-02-27,2026-03-24,2026-03-26,,,,,,Screened,99,100,63,95,5.9,MBA,Not Applicable,Not Applicable,11456
+C0882,Pooja Singh,J003,Software Developer,Software Development,Naukri,Rahul,2026-02-15,2026-03-16,2026-03-18,2026-03-19,2026-03-23,2026-03-28,2026-03-29,,Offered,74,85,61,79,7.8,B.E.,Accepted,Pending,4418
+C0883,Karan Deshmukh,J007,Business Analyst,Business,Indeed,Amit,2026-01-11,2026-01-15,2026-01-16,2026-01-21,2026-01-28,2026-01-31,2026-02-04,2026-02-13,Joined,77,96,93,70,4.4,B.E.,Accepted,Joined,12272
+C0884,Priya Sharma,J007,Business Analyst,Business,Referral,Amit,2026-01-23,2026-01-31,2026-02-02,2026-02-06,2026-02-13,2026-02-14,,,Selected,51,40,95,47,1.4,B.Sc,Not Applicable,Not Applicable,14742
+C0885,Isha Verma,J008,Web Developer,IT,Campus Hiring,Amit,2026-02-19,2026-03-12,,,,,,,Applied,80,93,90,74,3.9,B.Sc,Not Applicable,Not Applicable,3910
+C0886,Sneha Singh,J002,Data Scientist,AI & ML,Career Website,Rahul,2026-05-23,2026-06-14,2026-06-19,2026-06-23,2026-06-27,,,,Interviewed,75,59,79,96,1.9,B.Tech,Not Applicable,Not Applicable,13366
+C0887,Akash Jadhav,J002,Data Scientist,AI & ML,Referral,Amit,2026-02-03,2026-02-16,2026-02-17,2026-02-20,2026-02-22,,,,Interviewed,76,80,90,77,3.6,B.Sc,Not Applicable,Not Applicable,13694
+C0888,Karan Sharma,J003,Software Developer,Software Development,Career Website,Neha,2026-03-24,2026-04-11,,,,,,,Applied,62,76,76,53,4.7,M.Tech,Not Applicable,Not Applicable,11580
+C0889,Akash Kulkarni,J002,Data Scientist,AI & ML,LinkedIn,Rahul,2026-05-20,2026-06-18,2026-06-19,2026-06-24,2026-06-29,2026-07-02,,,Selected,69,74,68,56,3.2,MCA,Not Applicable,Not Applicable,4015
+C0890,Amit Jadhav,J001,Data Analyst,Data & Analytics,Naukri,Priya,2026-02-01,2026-02-22,2026-02-23,,,,,,Screened,74,78,81,54,7.2,MCA,Not Applicable,Not Applicable,3386
+C0891,Ananya Joshi,J002,Data Scientist,AI & ML,Naukri,Amit,2026-03-17,2026-04-04,,,,,,,Applied,89,79,59,76,5.5,MBA,Not Applicable,Not Applicable,6925
+C0892,Ananya Joshi,J001,Data Analyst,Data & Analytics,Referral,Rahul,2026-05-31,2026-06-18,2026-06-21,2026-06-26,2026-06-30,,,,Interviewed,44,42,70,40,2.5,MCA,Not Applicable,Not Applicable,11931
+C0893,Shreya Patil,J004,Python Developer,Software Development,LinkedIn,Rahul,2026-05-23,2026-06-19,2026-06-22,,,,,,Screened,55,40,81,55,7.8,B.Tech,Not Applicable,Not Applicable,5526
+C0894,Vikram Pawar,J003,Software Developer,Software Development,Indeed,Sneha,2026-02-06,2026-02-25,2026-03-01,2026-03-02,2026-03-08,2026-03-11,,,Selected,92,100,68,94,1.9,B.E.,Not Applicable,Not Applicable,6270
+C0895,Aditya Deshmukh,J007,Business Analyst,Business,LinkedIn,Sneha,2026-03-29,2026-04-13,2026-04-15,2026-04-20,,,,,Shortlisted,77,70,68,83,5.4,MBA,Not Applicable,Not Applicable,5338
+C0896,Aditya Joshi,J002,Data Scientist,AI & ML,Campus Hiring,Rahul,2026-05-20,2026-06-12,2026-06-17,2026-06-22,,,,,Shortlisted,52,49,92,40,6.7,MBA,Not Applicable,Not Applicable,4687
+C0897,Isha Deshmukh,J007,Business Analyst,Business,Referral,Amit,2026-02-24,2026-03-22,2026-03-24,2026-03-25,2026-03-29,2026-03-30,2026-03-31,2026-04-18,Joined,69,62,69,62,4.4,B.Tech,Accepted,Joined,3080
+C0898,Aditya Patil,J006,ML Engineer,AI & ML,Indeed,Sneha,2026-03-04,2026-04-03,2026-04-05,2026-04-08,2026-04-10,2026-04-11,2026-04-15,,Offered,60,67,62,44,3.3,B.E.,Rejected,Not Applicable,5640
+C0899,Sneha Patil,J007,Business Analyst,Business,Campus Hiring,Sneha,2026-01-28,2026-02-14,2026-02-18,2026-02-19,2026-02-25,2026-02-28,2026-03-03,,Offered,57,48,96,57,7.8,MCA,Accepted,Pending,11952
+C0900,Arjun Sharma,J002,Data Scientist,AI & ML,Referral,Rahul,2026-02-02,2026-02-13,2026-02-18,2026-02-23,2026-03-01,2026-03-05,2026-03-09,,Offered,68,78,64,79,6.9,B.Sc,Accepted,Pending,6244
+C0901,Aditya Pawar,J001,Data Analyst,Data & Analytics,Campus Hiring,Rahul,2026-06-27,2026-07-02,2026-07-05,2026-07-06,,,,,Shortlisted,49,40,90,56,0.5,B.E.,Not Applicable,Not Applicable,13885
+C0902,Shreya Kulkarni,J006,ML Engineer,AI & ML,Referral,Amit,2026-06-03,2026-06-23,2026-06-26,2026-06-30,,,,,Shortlisted,66,75,98,61,2.4,B.E.,Not Applicable,Not Applicable,10228
+C0903,Neha Verma,J005,Java Developer,Software Development,Naukri,Sneha,2026-04-21,2026-05-14,2026-05-17,2026-05-21,2026-05-25,2026-05-26,2026-05-27,,Offered,91,100,83,100,5.5,MBA,Accepted,Pending,5932
+C0904,Amit Jadhav,J002,Data Scientist,AI & ML,Campus Hiring,Sneha,2026-01-12,2026-01-15,2026-01-16,2026-01-20,2026-01-27,2026-02-01,2026-02-03,2026-02-23,Joined,44,40,89,45,2.2,MCA,Accepted,Joined,10156
+C0905,Karan Sharma,J002,Data Scientist,AI & ML,Campus Hiring,Priya,2026-05-31,2026-06-07,2026-06-12,2026-06-15,,,,,Shortlisted,79,100,54,78,4.6,MBA,Not Applicable,Not Applicable,6001
+C0906,Vikram Singh,J001,Data Analyst,Data & Analytics,Career Website,Rahul,2026-01-22,2026-02-13,,,,,,,Applied,44,44,75,40,1.5,B.E.,Not Applicable,Not Applicable,4184
+C0907,Rahul Verma,J006,ML Engineer,AI & ML,Naukri,Sneha,2026-04-24,2026-05-07,2026-05-09,2026-05-14,,,,,Shortlisted,65,68,85,70,1.1,B.Tech,Not Applicable,Not Applicable,14556
+C0908,Neha Joshi,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-04-24,2026-05-04,2026-05-09,2026-05-13,2026-05-16,2026-05-19,,,Selected,79,70,81,90,6.1,B.Tech,Not Applicable,Not Applicable,12534
+C0909,Arjun Singh,J001,Data Analyst,Data & Analytics,Referral,Priya,2026-05-11,2026-06-08,,,,,,,Applied,99,74,79,95,5.2,B.Sc,Not Applicable,Not Applicable,9542
+C0910,Neha Mehta,J006,ML Engineer,AI & ML,Indeed,Rahul,2026-01-27,2026-01-28,2026-01-29,2026-02-02,,,,,Shortlisted,48,42,64,49,0.7,M.Tech,Not Applicable,Not Applicable,10061
+C0911,Sneha Pawar,J004,Python Developer,Software Development,Naukri,Amit,2026-04-13,2026-05-12,2026-05-13,2026-05-15,2026-05-22,2026-05-25,2026-05-27,2026-06-16,Joined,67,71,78,77,5.5,B.Tech,Accepted,Joined,8477
+C0912,Neha Mehta,J006,ML Engineer,AI & ML,Naukri,Neha,2026-03-22,2026-04-20,,,,,,,Applied,79,71,79,80,3.7,B.Sc,Not Applicable,Not Applicable,9185
+C0913,Amit Deshmukh,J008,Web Developer,IT,Referral,Priya,2026-03-08,2026-04-01,2026-04-03,2026-04-04,2026-04-07,2026-04-10,2026-04-11,2026-04-20,Joined,68,61,84,66,5.0,B.Sc,Accepted,Joined,8464
+C0914,Shreya Mehta,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-01-03,2026-01-09,2026-01-12,2026-01-13,2026-01-18,2026-01-22,2026-01-26,2026-02-04,Joined,82,90,81,76,4.9,M.Tech,Accepted,Joined,7322
+C0915,Ananya Verma,J007,Business Analyst,Business,LinkedIn,Priya,2026-01-30,2026-02-03,,,,,,,Applied,54,66,81,52,2.2,B.E.,Not Applicable,Not Applicable,10192
+C0916,Akash Kulkarni,J001,Data Analyst,Data & Analytics,Indeed,Amit,2025-12-23,2026-01-14,2026-01-18,2026-01-22,2026-01-26,2026-01-29,,,Selected,91,100,83,100,0.2,MCA,Not Applicable,Not Applicable,9961
+C0917,Akash Verma,J002,Data Scientist,AI & ML,Naukri,Neha,2026-02-13,2026-03-05,2026-03-06,,,,,,Screened,80,71,71,79,5.2,B.E.,Not Applicable,Not Applicable,6317
+C0918,Aditya Verma,J004,Python Developer,Software Development,Campus Hiring,Priya,2026-02-04,2026-02-20,2026-02-25,2026-02-27,2026-03-02,2026-03-07,,,Selected,83,91,69,82,2.9,MBA,Not Applicable,Not Applicable,12304
+C0919,Priya Patil,J003,Software Developer,Software Development,LinkedIn,Sneha,2026-01-21,2026-02-03,2026-02-07,2026-02-08,2026-02-14,2026-02-16,2026-02-17,2026-02-23,Joined,86,85,61,96,3.4,B.E.,Accepted,Joined,8231
+C0920,Ananya Joshi,J007,Business Analyst,Business,Naukri,Rahul,2026-06-08,2026-06-29,2026-06-30,2026-07-05,,,,,Shortlisted,69,46,94,58,4.2,B.Sc,Not Applicable,Not Applicable,8997
+C0921,Neha Patil,J001,Data Analyst,Data & Analytics,Indeed,Sneha,2026-02-26,2026-03-10,2026-03-13,2026-03-14,,,,,Shortlisted,60,69,68,56,5.3,MBA,Not Applicable,Not Applicable,4977
+C0922,Rahul Sharma,J001,Data Analyst,Data & Analytics,Indeed,Rahul,2026-05-26,2026-06-19,2026-06-24,2026-06-25,,,,,Shortlisted,76,71,56,53,5.2,B.Sc,Not Applicable,Not Applicable,9059
+C0923,Neha Singh,J003,Software Developer,Software Development,Indeed,Priya,2026-03-24,2026-04-04,2026-04-09,2026-04-11,2026-04-15,2026-04-18,,,Selected,89,94,72,73,0.6,B.Tech,Not Applicable,Not Applicable,14145
+C0924,Shreya Jadhav,J006,ML Engineer,AI & ML,Indeed,Rahul,2026-04-26,2026-05-16,2026-05-21,,,,,,Screened,69,74,61,71,6.7,MBA,Not Applicable,Not Applicable,8292
+C0925,Arjun Patil,J002,Data Scientist,AI & ML,Campus Hiring,Neha,2026-01-13,2026-02-03,,,,,,,Applied,71,82,85,50,0.8,B.Tech,Not Applicable,Not Applicable,12720
+C0926,Priya Singh,J004,Python Developer,Software Development,Career Website,Neha,2026-01-23,2026-01-26,2026-01-30,,,,,,Screened,82,96,72,77,0.7,B.Sc,Not Applicable,Not Applicable,14468
+C0927,Ananya Deshmukh,J004,Python Developer,Software Development,Naukri,Amit,2026-01-07,2026-01-12,2026-01-17,2026-01-20,2026-01-24,2026-01-28,,,Selected,76,69,79,70,1.5,MCA,Not Applicable,Not Applicable,12319
+C0928,Arjun Verma,J002,Data Scientist,AI & ML,Referral,Neha,2026-01-02,2026-01-18,2026-01-20,2026-01-25,2026-01-29,2026-01-31,2026-02-03,,Offered,57,43,59,63,6.6,MCA,Accepted,Pending,11276
+C0929,Akash Kulkarni,J001,Data Analyst,Data & Analytics,Referral,Amit,2026-06-12,2026-07-09,2026-07-14,2026-07-15,2026-07-18,,,,Interviewed,86,99,96,91,0.2,MBA,Not Applicable,Not Applicable,9172
+C0930,Ananya Verma,J007,Business Analyst,Business,Indeed,Rahul,2026-03-24,2026-04-13,,,,,,,Applied,66,54,88,70,5.4,B.E.,Not Applicable,Not Applicable,11369
+C0931,Vikram Sharma,J004,Python Developer,Software Development,Career Website,Amit,2026-07-15,2026-08-14,2026-08-19,2026-08-22,2026-08-26,2026-08-28,,,Selected,57,61,100,69,7.7,MCA,Not Applicable,Not Applicable,6855
+C0932,Ananya Patil,J005,Java Developer,Software Development,LinkedIn,Neha,2026-02-05,2026-02-13,2026-02-15,,,,,,Screened,87,92,72,94,6.3,B.E.,Not Applicable,Not Applicable,6550
+C0933,Neha Sharma,J003,Software Developer,Software Development,Naukri,Neha,2026-06-06,2026-06-14,,,,,,,Applied,77,76,78,72,5.1,B.Tech,Not Applicable,Not Applicable,7692
+C0934,Rohan Patil,J006,ML Engineer,AI & ML,Career Website,Sneha,2026-06-01,2026-06-30,,,,,,,Applied,62,67,77,46,1.3,MBA,Not Applicable,Not Applicable,12018
+C0935,Rohan Sharma,J005,Java Developer,Software Development,LinkedIn,Sneha,2026-05-14,2026-06-10,2026-06-13,2026-06-15,2026-06-19,2026-06-20,,,Selected,68,64,78,84,7.3,B.E.,Not Applicable,Not Applicable,10804
+C0936,Shreya Verma,J002,Data Scientist,AI & ML,Campus Hiring,Neha,2026-06-08,2026-06-17,2026-06-21,,,,,,Screened,80,70,70,75,7.3,MCA,Not Applicable,Not Applicable,5614
+C0937,Neha Kulkarni,J006,ML Engineer,AI & ML,Referral,Rahul,2026-05-08,2026-05-29,2026-06-02,,,,,,Screened,97,100,71,78,5.5,M.Tech,Not Applicable,Not Applicable,8039
+C0938,Arjun Singh,J003,Software Developer,Software Development,Naukri,Amit,2026-01-08,2026-01-24,2026-01-26,2026-01-28,2026-02-03,2026-02-07,2026-02-09,,Offered,60,46,58,64,3.2,B.E.,Accepted,Pending,2344
+C0939,Amit Deshmukh,J005,Java Developer,Software Development,Campus Hiring,Neha,2026-07-16,2026-07-29,,,,,,,Applied,82,79,81,74,7.3,B.E.,Not Applicable,Not Applicable,3180
+C0940,Priya Singh,J007,Business Analyst,Business,LinkedIn,Neha,2026-06-02,2026-06-15,2026-06-16,2026-06-21,2026-06-23,2026-06-27,,,Selected,84,83,63,94,7.3,B.E.,Not Applicable,Not Applicable,8291
+C0941,Sneha Sharma,J001,Data Analyst,Data & Analytics,Campus Hiring,Priya,2026-06-18,2026-07-15,2026-07-16,,,,,,Screened,66,63,94,62,1.5,B.E.,Not Applicable,Not Applicable,6385
+C0942,Aditya Jadhav,J003,Software Developer,Software Development,LinkedIn,Priya,2025-12-09,2026-01-04,2026-01-07,2026-01-08,2026-01-11,2026-01-13,,,Selected,80,71,72,90,1.1,MCA,Not Applicable,Not Applicable,9871
+C0943,Isha Deshmukh,J008,Web Developer,IT,Referral,Rahul,2026-03-09,2026-03-20,,,,,,,Applied,99,100,90,100,5.2,B.E.,Not Applicable,Not Applicable,13338
+C0944,Aditya Pawar,J005,Java Developer,Software Development,LinkedIn,Priya,2026-01-31,2026-02-01,2026-02-06,,,,,,Screened,74,68,80,83,2.1,MCA,Not Applicable,Not Applicable,8804
+C0945,Rahul Kulkarni,J003,Software Developer,Software Development,Referral,Amit,2025-12-30,2026-01-07,2026-01-10,2026-01-12,,,,,Shortlisted,91,100,64,98,6.7,B.E.,Not Applicable,Not Applicable,13213
+C0946,Aditya Patil,J007,Business Analyst,Business,LinkedIn,Rahul,2026-04-30,2026-05-06,2026-05-09,2026-05-12,2026-05-14,2026-05-19,2026-05-22,2026-05-30,Joined,78,74,75,85,6.4,B.Tech,Accepted,Joined,7906
+C0947,Arjun Sharma,J002,Data Scientist,AI & ML,Naukri,Amit,2026-05-30,2026-06-04,2026-06-06,2026-06-10,,,,,Shortlisted,49,40,90,41,5.0,MCA,Not Applicable,Not Applicable,4461
+C0948,Vikram Joshi,J005,Java Developer,Software Development,LinkedIn,Sneha,2026-03-02,2026-03-31,2026-04-03,2026-04-04,2026-04-06,2026-04-08,,,Selected,80,85,76,79,7.5,M.Tech,Not Applicable,Not Applicable,14743
+C0949,Rohan Deshmukh,J003,Software Developer,Software Development,Campus Hiring,Amit,2026-03-26,2026-04-10,,,,,,,Applied,78,85,66,86,2.1,B.Tech,Not Applicable,Not Applicable,9003
+C0950,Amit Patil,J005,Java Developer,Software Development,Naukri,Amit,2026-03-19,2026-03-24,2026-03-28,,,,,,Screened,73,69,65,76,5.8,B.Sc,Not Applicable,Not Applicable,9885
+C0951,Vikram Mehta,J007,Business Analyst,Business,Campus Hiring,Rahul,2026-01-10,2026-02-05,2026-02-09,2026-02-14,,,,,Shortlisted,85,72,97,68,6.6,M.Tech,Not Applicable,Not Applicable,10745
+C0952,Ananya Pawar,J008,Web Developer,IT,Referral,Priya,2026-07-22,2026-07-30,2026-08-04,2026-08-09,2026-08-16,2026-08-18,,,Selected,86,80,88,73,0.9,MCA,Not Applicable,Not Applicable,13519
+C0953,Priya Mehta,J002,Data Scientist,AI & ML,LinkedIn,Sneha,2025-12-25,2026-01-01,2026-01-03,2026-01-04,,,,,Shortlisted,75,83,73,78,7.7,MCA,Not Applicable,Not Applicable,2976
+C0954,Rohan Deshmukh,J006,ML Engineer,AI & ML,Naukri,Neha,2026-03-02,2026-03-17,2026-03-19,,,,,,Screened,66,63,87,60,7.8,M.Tech,Not Applicable,Not Applicable,2915
+C0955,Sneha Deshmukh,J003,Software Developer,Software Development,LinkedIn,Amit,2026-03-14,2026-04-07,,,,,,,Applied,71,64,78,72,3.0,B.Sc,Not Applicable,Not Applicable,3736
+C0956,Pooja Jadhav,J002,Data Scientist,AI & ML,LinkedIn,Rahul,2026-08-05,2026-08-11,,,,,,,Applied,66,74,80,56,3.3,B.Sc,Not Applicable,Not Applicable,6014
+C0957,Rahul Jadhav,J002,Data Scientist,AI & ML,Referral,Rahul,2026-07-05,2026-08-01,2026-08-03,2026-08-08,,,,,Shortlisted,93,92,99,88,7.4,B.E.,Not Applicable,Not Applicable,13445
+C0958,Pooja Verma,J005,Java Developer,Software Development,Referral,Priya,2026-06-23,2026-07-04,,,,,,,Applied,68,57,70,69,5.9,B.Sc,Not Applicable,Not Applicable,2983
+C0959,Vikram Deshmukh,J001,Data Analyst,Data & Analytics,LinkedIn,Amit,2026-05-03,2026-05-09,2026-05-13,2026-05-18,2026-05-25,2026-05-28,,,Selected,77,77,94,75,2.9,M.Tech,Not Applicable,Not Applicable,11372
+C0960,Shreya Kulkarni,J005,Java Developer,Software Development,Naukri,Sneha,2026-03-20,2026-04-19,2026-04-21,2026-04-23,2026-04-28,,,,Interviewed,81,94,75,90,3.5,B.Tech,Not Applicable,Not Applicable,12142
+C0961,Priya Verma,J001,Data Analyst,Data & Analytics,Campus Hiring,Neha,2026-01-21,2026-02-17,2026-02-21,2026-02-25,2026-03-01,2026-03-05,2026-03-09,,Offered,57,75,69,50,4.8,MCA,Accepted,Pending,8086
+C0962,Priya Joshi,J007,Business Analyst,Business,LinkedIn,Sneha,2026-01-24,2026-01-28,2026-01-31,2026-02-01,2026-02-04,2026-02-07,,,Selected,76,55,95,70,5.9,MCA,Not Applicable,Not Applicable,4666
+C0963,Sneha Kulkarni,J002,Data Scientist,AI & ML,Indeed,Rahul,2026-06-01,2026-06-02,2026-06-03,,,,,,Screened,57,79,75,57,1.2,MCA,Not Applicable,Not Applicable,5937
+C0964,Sneha Jadhav,J005,Java Developer,Software Development,Career Website,Amit,2026-05-23,2026-05-25,,,,,,,Applied,68,85,67,75,3.4,B.Tech,Not Applicable,Not Applicable,3527
+C0965,Rahul Mehta,J005,Java Developer,Software Development,Referral,Neha,2026-07-02,2026-07-12,2026-07-16,,,,,,Screened,54,58,85,40,6.5,B.E.,Not Applicable,Not Applicable,13889
+C0966,Amit Patil,J006,ML Engineer,AI & ML,Campus Hiring,Neha,2026-03-12,2026-03-26,2026-03-28,2026-03-29,2026-04-04,,,,Interviewed,51,45,82,59,6.6,B.Tech,Not Applicable,Not Applicable,8260
+C0967,Vikram Sharma,J008,Web Developer,IT,Naukri,Amit,2026-03-10,2026-03-16,2026-03-17,2026-03-19,2026-03-22,2026-03-24,2026-03-26,2026-04-10,Joined,53,52,60,66,3.6,B.Tech,Accepted,Joined,9331
+C0968,Rohan Joshi,J003,Software Developer,Software Development,Referral,Priya,2026-03-14,2026-04-03,2026-04-07,2026-04-09,2026-04-12,2026-04-17,,,Selected,44,40,87,45,8.0,MBA,Not Applicable,Not Applicable,11943
+C0969,Amit Jadhav,J002,Data Scientist,AI & ML,LinkedIn,Priya,2026-05-25,2026-06-10,2026-06-13,2026-06-18,2026-06-20,2026-06-24,,,Selected,99,95,75,100,6.4,B.E.,Not Applicable,Not Applicable,3541
+C0970,Rohan Deshmukh,J008,Web Developer,IT,LinkedIn,Sneha,2026-03-11,2026-03-17,2026-03-18,2026-03-19,,,,,Shortlisted,50,47,75,56,1.5,MCA,Not Applicable,Not Applicable,4935
+C0971,Neha Singh,J008,Web Developer,IT,Referral,Rahul,2026-02-10,2026-03-07,2026-03-11,2026-03-12,2026-03-16,2026-03-19,2026-03-23,2026-04-10,Joined,99,100,65,100,7.6,B.Tech,Accepted,Joined,12152
+C0972,Pooja Mehta,J003,Software Developer,Software Development,Career Website,Sneha,2026-04-14,2026-05-12,,,,,,,Applied,78,69,95,75,3.0,B.Sc,Not Applicable,Not Applicable,8769
+C0973,Neha Sharma,J008,Web Developer,IT,LinkedIn,Rahul,2026-05-18,2026-06-08,2026-06-09,2026-06-11,2026-06-13,2026-06-16,2026-06-20,,Offered,70,58,80,74,1.8,MBA,Accepted,Pending,8541
+C0974,Priya Verma,J002,Data Scientist,AI & ML,Campus Hiring,Priya,2026-07-28,2026-08-12,2026-08-17,2026-08-21,,,,,Shortlisted,62,62,85,45,3.4,B.Sc,Not Applicable,Not Applicable,3787
+C0975,Amit Patil,J002,Data Scientist,AI & ML,Referral,Rahul,2026-03-18,2026-04-12,2026-04-15,,,,,,Screened,56,63,89,63,0.9,M.Tech,Not Applicable,Not Applicable,7610
+C0976,Priya Singh,J008,Web Developer,IT,Referral,Priya,2026-01-21,2026-01-30,,,,,,,Applied,87,89,75,81,5.4,MCA,Not Applicable,Not Applicable,9699
+C0977,Aditya Kulkarni,J003,Software Developer,Software Development,LinkedIn,Neha,2026-03-04,2026-03-23,,,,,,,Applied,88,99,69,80,2.0,M.Tech,Not Applicable,Not Applicable,7922
+C0978,Pooja Kulkarni,J007,Business Analyst,Business,LinkedIn,Amit,2026-01-07,2026-01-14,2026-01-16,,,,,,Screened,53,48,77,55,2.3,B.Sc,Not Applicable,Not Applicable,3369
+C0979,Sneha Joshi,J003,Software Developer,Software Development,Indeed,Amit,2026-04-11,2026-04-14,2026-04-17,2026-04-19,2026-04-21,,,,Interviewed,70,72,83,64,2.7,M.Tech,Not Applicable,Not Applicable,3514
+C0980,Rohan Joshi,J007,Business Analyst,Business,Indeed,Amit,2026-02-05,2026-02-12,2026-02-14,2026-02-18,,,,,Shortlisted,76,71,66,61,4.9,M.Tech,Not Applicable,Not Applicable,7811
+C0981,Isha Sharma,J007,Business Analyst,Business,Career Website,Rahul,2026-04-28,2026-05-24,2026-05-29,2026-06-03,2026-06-06,2026-06-09,,,Selected,69,81,76,74,6.2,B.Tech,Not Applicable,Not Applicable,12880
+C0982,Rahul Deshmukh,J006,ML Engineer,AI & ML,Naukri,Amit,2026-03-29,2026-04-28,,,,,,,Applied,89,88,70,94,6.2,B.Sc,Not Applicable,Not Applicable,13041
+C0983,Neha Pawar,J007,Business Analyst,Business,Referral,Rahul,2026-07-03,2026-07-04,2026-07-09,2026-07-10,,,,,Shortlisted,68,75,79,56,6.4,MBA,Not Applicable,Not Applicable,2597
+C0984,Shreya Kulkarni,J004,Python Developer,Software Development,Career Website,Rahul,2026-03-26,2026-04-18,2026-04-21,2026-04-23,,,,,Shortlisted,85,86,90,90,4.6,MCA,Not Applicable,Not Applicable,5131
+C0985,Rohan Mehta,J001,Data Analyst,Data & Analytics,Indeed,Neha,2025-12-26,2026-01-05,2026-01-09,2026-01-13,2026-01-18,2026-01-21,,,Selected,44,65,68,43,0.1,B.Tech,Not Applicable,Not Applicable,7770
+C0986,Ananya Mehta,J007,Business Analyst,Business,Naukri,Amit,2025-12-31,2026-01-30,2026-02-04,2026-02-09,,,,,Shortlisted,98,98,63,97,5.5,M.Tech,Not Applicable,Not Applicable,4664
+C0987,Karan Joshi,J007,Business Analyst,Business,Campus Hiring,Amit,2026-07-14,2026-08-05,2026-08-10,,,,,,Screened,77,75,64,80,5.2,MBA,Not Applicable,Not Applicable,3625
+C0988,Akash Patil,J002,Data Scientist,AI & ML,LinkedIn,Neha,2026-01-02,2026-01-23,,,,,,,Applied,63,63,61,70,7.7,M.Tech,Not Applicable,Not Applicable,14287
+C0989,Aditya Singh,J002,Data Scientist,AI & ML,LinkedIn,Sneha,2026-04-20,2026-05-09,2026-05-13,,,,,,Screened,40,41,71,43,6.4,M.Tech,Not Applicable,Not Applicable,11037
+C0990,Sneha Kulkarni,J007,Business Analyst,Business,LinkedIn,Sneha,2026-07-23,2026-08-08,2026-08-12,2026-08-13,,,,,Shortlisted,61,61,91,58,4.4,M.Tech,Not Applicable,Not Applicable,8138
+C0991,Ananya Joshi,J004,Python Developer,Software Development,Campus Hiring,Sneha,2026-02-09,2026-03-10,2026-03-14,2026-03-16,2026-03-18,2026-03-22,2026-03-23,,Offered,83,79,82,76,6.8,B.Sc,Accepted,Pending,4512
+C0992,Isha Pawar,J006,ML Engineer,AI & ML,Career Website,Sneha,2026-07-05,2026-07-29,,,,,,,Applied,52,64,70,59,0.8,B.Sc,Not Applicable,Not Applicable,11374
+C0993,Priya Pawar,J007,Business Analyst,Business,Career Website,Amit,2026-04-04,2026-04-11,2026-04-16,2026-04-20,2026-04-23,2026-04-27,2026-04-29,,Offered,86,76,81,96,5.1,B.Tech,Accepted,Pending,7212
+C0994,Karan Kulkarni,J003,Software Developer,Software Development,Naukri,Neha,2026-01-03,2026-01-26,2026-01-30,2026-02-02,2026-02-08,,,,Interviewed,57,54,90,64,1.0,B.Tech,Not Applicable,Not Applicable,4605
+C0995,Priya Patil,J006,ML Engineer,AI & ML,Referral,Priya,2026-01-23,2026-01-24,2026-01-26,2026-01-27,2026-02-02,2026-02-07,,,Selected,95,95,78,100,0.8,MBA,Not Applicable,Not Applicable,3290
+C0996,Rahul Deshmukh,J007,Business Analyst,Business,Campus Hiring,Sneha,2026-04-06,2026-04-27,2026-04-29,,,,,,Screened,40,47,77,52,7.6,B.E.,Not Applicable,Not Applicable,6864
+C0997,Ananya Kulkarni,J004,Python Developer,Software Development,Referral,Sneha,2026-06-10,2026-07-05,,,,,,,Applied,93,92,73,100,3.8,MBA,Not Applicable,Not Applicable,3359
+C0998,Aditya Sharma,J003,Software Developer,Software Development,LinkedIn,Priya,2026-05-25,2026-06-13,2026-06-14,2026-06-15,2026-06-18,2026-06-21,2026-06-24,2026-07-04,Joined,99,95,86,92,2.7,M.Tech,Accepted,Joined,3520
+C0999,Pooja Mehta,J002,Data Scientist,AI & ML,Referral,Priya,2026-07-27,2026-08-03,2026-08-07,2026-08-08,2026-08-13,2026-08-14,2026-08-16,,Offered,64,60,67,58,3.9,M.Tech,Accepted,Pending,8148
+C1000,Aditya Singh,J006,ML Engineer,AI & ML,Naukri,Sneha,2026-07-20,2026-07-26,2026-07-31,2026-08-05,2026-08-07,2026-08-08,2026-08-11,2026-08-27,Joined,82,62,53,89,3.7,B.Tech,Accepted,Joined,9928
