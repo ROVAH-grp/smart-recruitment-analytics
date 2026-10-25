@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
   const emitSourcemaps = mode === 'development'
 
   return {
-  base: '/smart-recruitment-analytics/',
+  base: '/',
 
   build: {
     sourcemap: emitSourcemaps ? 'inline' : false,
